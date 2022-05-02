@@ -1,0 +1,13 @@
+type ProjectSettings {
+  id: String!
+  productSettings: [String!]
+  currentProductSettings: String!
+}
+
+type FakeProjectResult {
+  settings: ProjectSettings
+}
+
+type Query {
+  project(key: String!): FakeProjectResult!
+}

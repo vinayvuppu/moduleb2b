@@ -1,0 +1,100 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`rendering should match snapshot 1`] = `
+<Fragment>
+  <Inline
+    alignItems="center"
+    justifyContent="flex-start"
+    scale="s"
+  >
+    <injectIntl(withModalState(CustomViewsOnboarding)) />
+    <Inline
+      alignItems="center"
+      justifyContent="flex-start"
+      scale="s"
+    >
+      <div
+        className="no-shrink-wrapper"
+      >
+        <TextBody
+          isBold={true}
+        >
+          <FormattedMessage
+            defaultMessage="My views"
+            description="The text shown infront of the dropdown"
+            id="CustomViews.selectCustomView"
+            values={Object {}}
+          />
+        </TextBody>
+      </div>
+      <injectIntl(injectTracking(CustomViewsDropdown))
+        isDirty={false}
+        onCreate={[MockFunction creationModal.handleOpen]}
+        onDelete={[MockFunction deletionModal.handleOpen]}
+        onEdit={[MockFunction editingModal.handleOpen]}
+        onReset={[MockFunction onReset]}
+        onSave={[MockFunction onSave]}
+        onSelect={[MockFunction onSelect]}
+        options={
+          Array [
+            Object {
+              "id": "foo-view-id",
+              "name": Object {
+                "de": "test-de-name",
+              },
+            },
+          ]
+        }
+        projectKey="test-project-key"
+        value={
+          Object {
+            "id": "foo-view-id",
+            "name": Object {
+              "de": "test-de-name",
+            },
+          }
+        }
+      />
+    </Inline>
+  </Inline>
+  <injectIntl(CustomViewCreateModal)
+    draft={
+      Object {
+        "id": "foo-view-id",
+        "name": Object {
+          "de": "test-de-name",
+        },
+      }
+    }
+    isOpen={false}
+    onCancel={[MockFunction creationModal.handleClose]}
+    onConfirm={[Function]}
+  />
+  <injectIntl(CustomViewRenameModal)
+    draft={
+      Object {
+        "id": "foo-view-id",
+        "name": Object {
+          "de": "test-de-name",
+        },
+      }
+    }
+    isOpen={false}
+    onCancel={[MockFunction editingModal.handleClose]}
+    onConfirm={[Function]}
+  />
+  <injectIntl(CustomViewDeleteModal)
+    isOpen={false}
+    onCancel={[MockFunction deletionModal.handleClose]}
+    onConfirm={[Function]}
+    view={
+      Object {
+        "id": "foo-view-id",
+        "name": Object {
+          "de": "test-de-name",
+        },
+      }
+    }
+  />
+</Fragment>
+`;

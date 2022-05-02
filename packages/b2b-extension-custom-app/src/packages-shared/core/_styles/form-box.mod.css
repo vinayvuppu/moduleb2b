@@ -1,0 +1,95 @@
+/* ------------------------- *
+ * Column settings
+ * ------------------------- */
+
+/* Multi Column */
+
+.column-multi .form-box {
+  clear: none;
+}
+
+.form-box-base {
+  background: var(--color-surface);
+  border: 1px var(--color-neutral) solid;
+  border-radius: 6px;
+  display: block;
+  padding: var(--spacing-s);
+  margin: var(--spacing-s) var(--spacing-s) 0 0;
+  position: relative;
+  width: 100%;
+}
+
+.form-box {
+  composes: form-box-base;
+  min-width: 410px;
+  max-width: 550px;
+}
+
+.form-box-double {
+  composes: form-box-base;
+  max-width: calc(550px * 2 + var(--spacing-s));
+}
+
+.textarea {
+  margin: 0;
+}
+
+.reference {
+  composes: description from '../components/fields/label-field/label-field.mod.css';
+}
+
+.section {
+  display: block;
+}
+
+.form-box :global(.Select-value),
+.form-box :global(.Select-placeholder) {
+  background-color: var(--color-neutral-95);
+  border-radius: 6px;
+}
+
+@media (--screen-max-desktop) {
+  .column-multi {
+    flex: 0 0 100%;
+  }
+
+  .column-multi .form-box {
+    flex: 0 0 calc(100% - var(--spacing-m));
+  }
+
+  .column-multi .form-box:nth-of-type(2n + 1) {
+    clear: inherit;
+  }
+}
+
+@media (--screen-min-desktop) and (--screen-max-biggerdesktop) {
+  .column-multi .form-box {
+    flex: 0 0 calc(100% / 2 - var(--spacing-m));
+  }
+
+  .column-multi .form-box:nth-of-type(2n + 1) {
+    clear: both;
+  }
+}
+
+@media (--screen-min-biggerdesktop) and (--screen-max-giantdesktop) {
+  .column-multi .form-box {
+    min-width: 500px;
+    flex: 0 0 calc(100% / 2 - var(--spacing-m));
+  }
+
+  .column-multi .form-box:nth-of-type(2n + 1) {
+    clear: both;
+  }
+}
+
+@media (--screen-min-giantdesktop) {
+  .column-multi .form-box {
+    min-width: 400px;
+    flex: 0 0 calc(100% / 3 - var(--spacing-m));
+  }
+
+  .column-multi .form-box:nth-of-type(2n + 1) {
+    clear: none;
+  }
+}

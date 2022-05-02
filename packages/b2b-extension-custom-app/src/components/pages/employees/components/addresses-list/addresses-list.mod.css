@@ -1,0 +1,16 @@
+/* Util */
+
+.push-right {
+  composes: push-right from '~@commercetools-local/core/_styles/commons.mod.css';
+  padding: var(--spacing-xs);
+}
+
+.cell-special {
+  border-left: 2px var(--color-info) solid;
+}
+
+/* Empty results */
+
+.empty-results {
+  composes: empty-results from '~@commercetools-local/core/_styles/commons.mod.css';
+}

@@ -1,0 +1,4 @@
+.input {
+  composes: input-form from '../../../_styles/forms.mod.css';
+  width: 100%;
+}

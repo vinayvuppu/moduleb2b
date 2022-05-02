@@ -1,0 +1,267 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`OrderCreateWithState rendering should match snapshot 1`] = `
+<OrderCreate
+  company={
+    Object {
+      "id": "company-id",
+    }
+  }
+  employee={
+    Object {
+      "id": "employee-id",
+    }
+  }
+  history={
+    Object {
+      "push": [MockFunction],
+    }
+  }
+  initialOrderStateId="state-id-1"
+  intl={
+    Object {
+      "formatDate": [MockFunction],
+      "formatHTMLMessage": [MockFunction],
+      "formatMessage": [MockFunction] {
+        "calls": Array [
+          Array [
+            Object {
+              "defaultMessage": "Items",
+              "description": "The title for add lineitems step",
+              "id": "Orders.Create.Step.LineItems",
+            },
+          ],
+          Array [
+            Object {
+              "defaultMessage": "Owner",
+              "description": "The title for set owner step",
+              "id": "Orders.Create.Step.Owner",
+            },
+          ],
+          Array [
+            Object {
+              "defaultMessage": "Shipping",
+              "description": "The title for set shipping method step",
+              "id": "Orders.Create.Step.ShippingMethod",
+            },
+          ],
+          Array [
+            Object {
+              "defaultMessage": "Confirmation",
+              "description": "The label for confirming the order",
+              "id": "Orders.Create.Step.Confirmation",
+            },
+          ],
+          Array [
+            Object {
+              "defaultMessage": "Order summary",
+              "description": "The title for order summary section",
+              "id": "Orders.Create.orderSummaryTitle",
+            },
+          ],
+          Array [
+            Object {
+              "defaultMessage": "Order summary",
+              "description": "The title for order summary section",
+              "id": "Orders.Create.orderSummaryTitle",
+            },
+          ],
+          Array [
+            Object {
+              "defaultMessage": "Order summary",
+              "description": "The title for order summary section",
+              "id": "Orders.Create.orderSummaryTitle",
+            },
+          ],
+          Array [
+            Object {
+              "defaultMessage": "Order summary",
+              "description": "The title for order summary section",
+              "id": "Orders.Create.orderSummaryTitle",
+            },
+          ],
+          Array [
+            Object {
+              "defaultMessage": "Order summary",
+              "description": "The title for order summary section",
+              "id": "Orders.Create.orderSummaryTitle",
+            },
+          ],
+          Array [
+            Object {
+              "defaultMessage": "The order has been successfully created",
+              "description": "The notification message when the order is successfully created",
+              "id": "Orders.Create.orderCreated",
+            },
+          ],
+          Array [
+            Object {
+              "defaultMessage": "The order has been successfully created",
+              "description": "The notification message when the order is successfully created",
+              "id": "Orders.Create.orderCreated",
+            },
+          ],
+          Array [
+            Object {
+              "defaultMessage": "The order has been successfully created",
+              "description": "The notification message when the order is successfully created",
+              "id": "Orders.Create.orderCreated",
+            },
+          ],
+          Array [
+            Object {
+              "defaultMessage": "The order has been successfully created",
+              "description": "The notification message when the order is successfully created",
+              "id": "Orders.Create.orderCreated",
+            },
+          ],
+          Array [
+            Object {
+              "defaultMessage": "The order has been successfully created",
+              "description": "The notification message when the order is successfully created",
+              "id": "Orders.Create.orderCreated",
+            },
+          ],
+          Array [
+            Object {
+              "defaultMessage": "The order has been successfully created",
+              "description": "The notification message when the order is successfully created",
+              "id": "Orders.Create.orderCreated",
+            },
+          ],
+          Array [
+            Object {
+              "defaultMessage": "The order has been successfully created",
+              "description": "The notification message when the order is successfully created",
+              "id": "Orders.Create.orderCreated",
+            },
+          ],
+        ],
+        "results": Array [
+          Object {
+            "type": "return",
+            "value": "Orders.Create.Step.LineItems",
+          },
+          Object {
+            "type": "return",
+            "value": "Orders.Create.Step.Owner",
+          },
+          Object {
+            "type": "return",
+            "value": "Orders.Create.Step.ShippingMethod",
+          },
+          Object {
+            "type": "return",
+            "value": "Orders.Create.Step.Confirmation",
+          },
+          Object {
+            "type": "return",
+            "value": "Orders.Create.orderSummaryTitle",
+          },
+          Object {
+            "type": "return",
+            "value": "Orders.Create.orderSummaryTitle",
+          },
+          Object {
+            "type": "return",
+            "value": "Orders.Create.orderSummaryTitle",
+          },
+          Object {
+            "type": "return",
+            "value": "Orders.Create.orderSummaryTitle",
+          },
+          Object {
+            "type": "return",
+            "value": "Orders.Create.orderSummaryTitle",
+          },
+          Object {
+            "type": "return",
+            "value": "Orders.Create.orderCreated",
+          },
+          Object {
+            "type": "return",
+            "value": "Orders.Create.orderCreated",
+          },
+          Object {
+            "type": "return",
+            "value": "Orders.Create.orderCreated",
+          },
+          Object {
+            "type": "return",
+            "value": "Orders.Create.orderCreated",
+          },
+          Object {
+            "type": "return",
+            "value": "Orders.Create.orderCreated",
+          },
+          Object {
+            "type": "return",
+            "value": "Orders.Create.orderCreated",
+          },
+          Object {
+            "type": "return",
+            "value": "Orders.Create.orderCreated",
+          },
+        ],
+      },
+      "formatNumber": [MockFunction],
+      "formatPlural": [MockFunction],
+      "formatRelative": [MockFunction],
+      "formatTime": [MockFunction],
+      "locale": "en",
+      "now": [MockFunction],
+    }
+  }
+  location={
+    Object {
+      "pathname": "/test-1/b2b-extension/my-company/orders/new/owner",
+    }
+  }
+  match={
+    Object {
+      "params": Object {
+        "projectKey": "test-1",
+      },
+      "path": "/test/b2b-extension/my-company/orders/new/owner",
+      "url": "/test/b2b-extension/my-company/orders/new/owner",
+    }
+  }
+  onActionError={[MockFunction]}
+  showNotification={[MockFunction]}
+>
+  <Component />
+</OrderCreate>
+`;
+
+exports[`Tab names should have correct tab names 1`] = `
+Object {
+  "ADD_LINE_ITEMS": "lineitems",
+  "CONFIRMATION": "confirmation",
+  "SET_OWNER": "owner",
+  "SET_SHIPPING_METHOD": "shipping-method",
+}
+`;
+
+exports[`tabs confirmation should match snapshot 1`] = `
+<OrderCreateConnectorConsumer>
+  <Component />
+</OrderCreateConnectorConsumer>
+`;
+
+exports[`tabs lineitems should match snapshot 1`] = `
+<OrderCreateConnectorConsumer>
+  <Component />
+</OrderCreateConnectorConsumer>
+`;
+
+exports[`tabs owner should match snapshot 1`] = `
+<OrderCreateConnectorConsumer>
+  <Component />
+</OrderCreateConnectorConsumer>
+`;
+
+exports[`tabs shipping-method should match snapshot 1`] = `
+<OrderCreateConnectorConsumer>
+  <Component />
+</OrderCreateConnectorConsumer>
+`;

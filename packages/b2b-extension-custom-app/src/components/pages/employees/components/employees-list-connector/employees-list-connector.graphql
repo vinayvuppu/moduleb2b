@@ -1,0 +1,57 @@
+query FetchEmployeesQuery(
+  $where: String
+  $limit: Int
+  $offset: Int
+  $sort: [String!]
+) {
+
+  employees(
+    where: $where
+    limit: $limit
+    offset: $offset
+    sort: $sort
+  )  {
+    total
+    count
+    offset
+    results {
+      ...EmployeeListFragment
+    }
+  }
+}
+
+fragment EmployeeListFragment on EmployeeItem {
+  id
+  version
+  createdAt
+  lastModifiedAt
+  employeeNumber
+  externalId
+  firstName
+  lastName
+  companyName
+  email
+  customerGroup {
+    id
+    version
+    name
+    key
+  }
+  createdAt
+  lastModifiedAt
+  middleName
+  vatId
+  dateOfBirth
+  roles
+  amountExpended {
+    currencyCode
+    centAmount
+  }
+  stores {
+    key
+    nameAllLocales {
+      locale
+      value
+    }
+  }
+}

@@ -1,0 +1,29 @@
+query SearchCartDiscount {
+  cartDiscounts(limit: 500) {
+    total
+    results {
+      id
+      key
+      nameAllLocales {
+        locale
+        value
+      }
+    }
+  }
+}
+
+query CartDiscountsCount {
+  cartDiscounts {
+    total
+  }
+}
+
+query FetchCartDiscountById($cartDiscountId: String!) {
+  cartDiscount(id: $cartDiscountId) {
+    id
+    nameAllLocales {
+      locale
+      value
+    }
+  }
+}

@@ -1,0 +1,43 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`rendering interacting \`getSearchQuery\` when \`query\` does not match version should match snapshot 1`] = `
+Object {
+  "foo": "initial-search-query",
+}
+`;
+
+exports[`rendering interacting \`getSearchQuery\` with \`location.query\` when \`query\` contains invalid JSON should match snapshot 1`] = `
+Object {
+  "foo": "initial-search-query",
+}
+`;
+
+exports[`rendering interacting \`getSearchQuery\` with \`location.query\` when \`query\` contains valid JSON should match snapshot 1`] = `
+Object {
+  "foo": "bar",
+}
+`;
+
+exports[`rendering interacting \`getSearchQuery\` without \`location.search\` should match snapshot 1`] = `
+Object {
+  "foo": "bar",
+}
+`;
+
+exports[`withSearchViewRouterSearchQuery with \`propName\` should match snapshot 1`] = `
+<withRouter(SearchViewRouterSearchQuery)
+  storageSlice="testStorageSlice"
+  version={2}
+>
+  <Component />
+</withRouter(SearchViewRouterSearchQuery)>
+`;
+
+exports[`withSearchViewRouterSearchQuery without \`propName\` should match snapshot 1`] = `
+<withRouter(SearchViewRouterSearchQuery)
+  storageSlice="testStorageSlice"
+  version={3}
+>
+  <Component />
+</withRouter(SearchViewRouterSearchQuery)>
+`;

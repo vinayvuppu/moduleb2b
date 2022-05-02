@@ -1,0 +1,40 @@
+/* Custom checkbox */
+
+.custom-check {
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+}
+
+.check-element {
+  background: url('./radio-check-icons.png') 0 0;
+  flex: 0 1 auto;
+  display: block;
+  height: 18px;
+  width: 18px;
+}
+
+.check-text {
+  margin-left: var(--spacing-s);
+  flex: 1 0 auto;
+}
+
+.custom-check:hover .check-element {
+  background-position: -24px 0;
+}
+
+.input-checkbox {
+  display: none;
+}
+
+.input-checkbox:checked ~ .check-element {
+  background-position: -48px 0;
+}
+
+.disabled {
+  cursor: not-allowed !important;
+}
+
+.custom-check:hover.disabled .check-element {
+  background-position: 0 0 !important;
+}

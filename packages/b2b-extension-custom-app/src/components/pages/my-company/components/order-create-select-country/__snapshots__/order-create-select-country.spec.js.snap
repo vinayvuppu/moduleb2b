@@ -1,0 +1,165 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`render when country has been selected should match snapshot 1`] = `
+<FormDialog
+  isOpen={true}
+  isPrimaryButtonDisabled={false}
+  labelPrimary={
+    Object {
+      "defaultMessage": "Apply",
+      "description": "Label for the save button",
+      "id": "Orders.Create.Select.Country.saveButton",
+    }
+  }
+  labelSecondary={
+    Object {
+      "defaultMessage": "Cancel",
+      "id": "AppKit.Shared.cancel",
+    }
+  }
+  onClose={[MockFunction handleCloseModal]}
+  onPrimaryButtonClick={[Function]}
+  onSecondaryButtonClick={[MockFunction handleCloseModal]}
+  title="Orders.Create.Select.Country.changeTitle"
+>
+  <Stack
+    alignItems="stretch"
+    scale="m"
+  >
+    <TextDetail>
+      <FormattedMessage
+        defaultMessage="Change country for country specific pricing"
+        description="A subtitle for the change country selection"
+        id="Orders.Create.Select.Country.changeSubTitle1"
+        values={Object {}}
+      />
+    </TextDetail>
+    <Stack
+      alignItems="stretch"
+      scale="s"
+    >
+      <Label
+        isBold={true}
+        isRequiredIndicatorVisible={true}
+      >
+        <FormattedMessage
+          defaultMessage="Country"
+          description="Label for the country select box"
+          id="Orders.Create.Select.Country.label"
+          values={Object {}}
+        />
+      </Label>
+      <Horizontal
+        constraint="s"
+      >
+        <SelectInput
+          isDisabled={true}
+          maxMenuHeight={220}
+          menuPortalTarget={<body />}
+          menuPortalZIndex={1001}
+          onChange={[Function]}
+          options={
+            Array [
+              Object {
+                "label": "Germany - de",
+                "value": "de",
+              },
+            ]
+          }
+          value="de"
+        />
+      </Horizontal>
+    </Stack>
+    <TextDetail>
+      <FormattedMessage
+        defaultMessage="The pricing of all selected variants will adhere to this country. The country selection can be edited within the order summary."
+        description="A second subtitle for the country selection"
+        id="Orders.Create.Select.Country.subTitle2"
+        values={Object {}}
+      />
+    </TextDetail>
+  </Stack>
+</FormDialog>
+`;
+
+exports[`render when country hasn't been selected yet should match snapshot 1`] = `
+<FormDialog
+  isOpen={true}
+  isPrimaryButtonDisabled={false}
+  labelPrimary={
+    Object {
+      "defaultMessage": "Apply",
+      "description": "Label for the save button",
+      "id": "Orders.Create.Select.Country.saveButton",
+    }
+  }
+  labelSecondary={
+    Object {
+      "defaultMessage": "Cancel",
+      "id": "AppKit.Shared.cancel",
+    }
+  }
+  onClose={[MockFunction handleCloseModal]}
+  onPrimaryButtonClick={[Function]}
+  onSecondaryButtonClick={[MockFunction handleCloseModal]}
+  title="Orders.Create.Select.Country.title"
+>
+  <Stack
+    alignItems="stretch"
+    scale="m"
+  >
+    <TextDetail>
+      <FormattedMessage
+        defaultMessage="This variant contains multiple options for country specific pricing. Select one country as a basis"
+        description="A subtitle for the country selection"
+        id="Orders.Create.Select.Country.subTitle1"
+        values={Object {}}
+      />
+    </TextDetail>
+    <Stack
+      alignItems="stretch"
+      scale="s"
+    >
+      <Label
+        isBold={true}
+        isRequiredIndicatorVisible={true}
+      >
+        <FormattedMessage
+          defaultMessage="Country"
+          description="Label for the country select box"
+          id="Orders.Create.Select.Country.label"
+          values={Object {}}
+        />
+      </Label>
+      <Horizontal
+        constraint="s"
+      >
+        <SelectInput
+          isDisabled={true}
+          maxMenuHeight={220}
+          menuPortalTarget={<body />}
+          menuPortalZIndex={1001}
+          onChange={[Function]}
+          options={
+            Array [
+              Object {
+                "label": "Germany - de",
+                "value": "de",
+              },
+            ]
+          }
+          value="de"
+        />
+      </Horizontal>
+    </Stack>
+    <TextDetail>
+      <FormattedMessage
+        defaultMessage="The pricing of all selected variants will adhere to this country. The country selection can be edited within the order summary."
+        description="A second subtitle for the country selection"
+        id="Orders.Create.Select.Country.subTitle2"
+        values={Object {}}
+      />
+    </TextDetail>
+  </Stack>
+</FormDialog>
+`;

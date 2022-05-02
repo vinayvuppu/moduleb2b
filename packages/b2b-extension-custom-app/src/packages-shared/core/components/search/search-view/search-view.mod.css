@@ -1,0 +1,18 @@
+/* Structure */
+
+.container-flex {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+
+.results {
+  composes: show from '../../../_styles/animations.mod.css';
+  flex: 1;
+  display: flex;
+}
+
+.no-results {
+  composes: empty-results from '../../../_styles/commons.mod.css';
+  display: block;
+}

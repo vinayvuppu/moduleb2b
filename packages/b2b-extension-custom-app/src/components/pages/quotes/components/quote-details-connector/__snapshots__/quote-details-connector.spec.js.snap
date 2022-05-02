@@ -1,0 +1,12 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`rendering should match snapshot 1`] = `
+<div
+  addAmountDiscount={[Function]}
+  addComment={[Function]}
+  addPercentageDiscount={[Function]}
+  isLoading={true}
+  updateQuoteItems={[Function]}
+  updateQuoteState={[Function]}
+/>
+`;

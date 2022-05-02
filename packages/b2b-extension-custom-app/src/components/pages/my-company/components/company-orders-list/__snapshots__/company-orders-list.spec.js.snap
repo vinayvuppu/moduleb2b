@@ -1,0 +1,362 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`rendering when loaded should match snapshot 1`] = `
+<CompanyOrdersViewLayout
+  companyName="company-name"
+  projectKey="test"
+  total={1}
+>
+  <SearchViewControlledContainer
+    areFiltersVisible={true}
+    count={1}
+    filterDefinitions={Object {}}
+    noResultsText="CompanyOrders.ListView.noResultsTitle"
+    onChange={[Function]}
+    page={1}
+    pageSizes={
+      Array [
+        20,
+        50,
+        100,
+      ]
+    }
+    perPage={20}
+    renderQuickFilters={[Function]}
+    results={
+      Array [
+        Object {
+          "createdAt": "2016-08-10T16:26:09.045Z",
+          "custom": null,
+          "customLineItems": Array [],
+          "customerEmail": "jane.doe@123456.org",
+          "customerId": "394b693b-47ea-4b5a-bf31-fcc254983958",
+          "id": "abc",
+          "lastModifiedAt": "2016-08-10T16:26:09.045Z",
+          "lineItems": Array [
+            Object {
+              "createdAt": "2016-08-11T16:26:09.045Z",
+              "lastModifiedAt": "2016-08-11T16:26:09.045Z",
+              "name": Object {
+                "de": "Hundefutter",
+                "en": "dog food",
+              },
+              "price": Object {
+                "value": Object {
+                  "centAmount": 800,
+                  "currencyCode": "EUR",
+                },
+              },
+              "productId": "6863483b-7a34-44dd-900b-df15d206b754",
+              "quantity": 4,
+              "taxRate": Object {
+                "amount": 0.16,
+                "country": "DE",
+                "includedInPrice": true,
+                "name": "tax rate",
+              },
+              "variant": Object {
+                "id": 1,
+              },
+            },
+            Object {
+              "createdAt": "2016-08-11T16:26:09.045Z",
+              "lastModifiedAt": "2016-08-11T16:26:09.045Z",
+              "name": Object {
+                "de": "Katzenfutter",
+                "en": "cat food",
+              },
+              "price": Object {
+                "value": Object {
+                  "centAmount": 800,
+                  "currencyCode": "EUR",
+                },
+              },
+              "productId": "some-other-id",
+              "quantity": 1,
+              "taxRate": Object {
+                "amount": 0.16,
+                "country": "DE",
+                "includedInPrice": true,
+                "name": "tax rate",
+              },
+              "variant": Object {
+                "id": 1,
+              },
+            },
+          ],
+          "orderNumber": "OR-1234",
+          "orderState": "Confirmed",
+          "paymentState": "Pending",
+          "shipmentState": "Backorder",
+          "totalPrice": Object {
+            "centAmount": 800,
+            "currencyCode": "EUR",
+          },
+        },
+      ]
+    }
+    searchInputPlaceholder="CompanyOrders.SearchByOrder.searchPlaceholder"
+    total={1}
+    trackingPrefix="Orders List"
+    value={
+      Object {
+        "filters": Object {},
+        "page": 1,
+        "perPage": 20,
+        "searchText": "",
+        "sorting": Object {
+          "key": "createdAt",
+          "order": "desc",
+        },
+      }
+    }
+  >
+    <Component />
+  </SearchViewControlledContainer>
+</CompanyOrdersViewLayout>
+`;
+
+exports[`rendering when loaded with \`visibleColumns\` on \`activeView\` should match snapshot 1`] = `
+<Stack
+  alignItems="stretch"
+  scale="m"
+>
+  <ColumnManager
+    availableColumns={
+      Array [
+        Object {
+          "flexGrow": 1,
+          "isSortable": false,
+          "key": "store",
+          "label": <FormattedMessage
+            defaultMessage="Placed in store"
+            description="Title of the table column (store)"
+            id="CompanyOrders.ListView.column.store"
+            values={Object {}}
+          />,
+        },
+        Object {
+          "flexGrow": 1,
+          "isSortable": true,
+          "key": "orderNumber",
+          "label": <FormattedMessage
+            defaultMessage="Order number"
+            description="Title of the table column (orderNumber)"
+            id="CompanyOrders.ListView.column.orderNumber"
+            values={Object {}}
+          />,
+        },
+        Object {
+          "flexGrow": 1,
+          "key": "firstNameBilling",
+          "label": <FormattedMessage
+            defaultMessage="First name (billing)"
+            description="Title of the table column (firstNameBilling)"
+            id="CompanyOrders.ListView.column.firstNameBilling"
+            values={Object {}}
+          />,
+        },
+        Object {
+          "flexGrow": 1,
+          "key": "lastNameBilling",
+          "label": <FormattedMessage
+            defaultMessage="Last name (billing)"
+            description="Title of the table column (lastNameBilling)"
+            id="CompanyOrders.ListView.column.lastNameBilling"
+            values={Object {}}
+          />,
+        },
+        Object {
+          "flexGrow": 1,
+          "isSortable": true,
+          "key": "emailBilling",
+          "label": <FormattedMessage
+            defaultMessage="Email (billing)"
+            description="Title of the table column (emailBilling)"
+            id="CompanyOrders.ListView.column.emailBilling"
+            values={Object {}}
+          />,
+        },
+        Object {
+          "flexGrow": 1,
+          "key": "firstNameShipping",
+          "label": <FormattedMessage
+            defaultMessage="First name (shipping)"
+            description="Title of the table column (firstNameShipping)"
+            id="CompanyOrders.ListView.column.firstNameShipping"
+            values={Object {}}
+          />,
+        },
+        Object {
+          "flexGrow": 1,
+          "key": "lastNameShipping",
+          "label": <FormattedMessage
+            defaultMessage="Last name (shipping)"
+            description="Title of the table column (lastNameShipping)"
+            id="CompanyOrders.ListView.column.lastNameShipping"
+            values={Object {}}
+          />,
+        },
+        Object {
+          "flexGrow": 1,
+          "isSortable": true,
+          "key": "emailShipping",
+          "label": <FormattedMessage
+            defaultMessage="Email (shipping)"
+            description="Title of the table column (emailShipping)"
+            id="CompanyOrders.ListView.column.emailShipping"
+            values={Object {}}
+          />,
+        },
+        Object {
+          "align": "right",
+          "flexGrow": 1,
+          "key": "totalPrice",
+          "label": <FormattedMessage
+            defaultMessage="Order total"
+            description="Title of the table column (orderTotal)"
+            id="CompanyOrders.ListView.column.orderTotal"
+            values={Object {}}
+          />,
+        },
+        Object {
+          "align": "right",
+          "flexGrow": 1,
+          "key": "totalLineItemCount",
+          "label": <FormattedMessage
+            defaultMessage="No. of items"
+            description="Title of the table column (totalLineItemCount)"
+            id="CompanyOrders.ListView.column.totalLineItemCount"
+            values={Object {}}
+          />,
+        },
+        Object {
+          "flexGrow": 1,
+          "key": "state",
+          "label": <FormattedMessage
+            defaultMessage="Order workflow state"
+            description="Title of the table column (state)"
+            id="CompanyOrders.ListView.column.state"
+            values={Object {}}
+          />,
+        },
+        Object {
+          "flexGrow": 1,
+          "isSortable": true,
+          "key": "customerEmail",
+          "label": <FormattedMessage
+            defaultMessage="Email (order)"
+            description="Title of the table column (emailOrder)"
+            id="CompanyOrders.ListView.column.emailOrder"
+            values={Object {}}
+          />,
+        },
+        Object {
+          "flexGrow": 1,
+          "isSortable": true,
+          "key": "createdAt",
+          "label": <FormattedMessage
+            defaultMessage="Date created"
+            description="Title of the table column (createdAt)"
+            id="CompanyOrders.ListView.column.createdAt"
+            values={Object {}}
+          />,
+        },
+        Object {
+          "flexGrow": 1,
+          "isSortable": true,
+          "key": "lastModifiedAt",
+          "label": <FormattedMessage
+            defaultMessage="Date modified"
+            description="Title of the table column (lastModifiedAt)"
+            id="CompanyOrders.ListView.column.lastModifiedAt"
+            values={Object {}}
+          />,
+        },
+      ]
+    }
+    onUpdateColumns={[Function]}
+    selectedColumns={
+      Array [
+        Object {
+          "flexGrow": 1,
+          "key": "lastNameBilling",
+          "label": <FormattedMessage
+            defaultMessage="Last name (billing)"
+            description="Title of the table column (lastNameBilling)"
+            id="CompanyOrders.ListView.column.lastNameBilling"
+            values={Object {}}
+          />,
+        },
+        Object {
+          "flexGrow": 1,
+          "key": "firstNameShipping",
+          "label": <FormattedMessage
+            defaultMessage="First name (shipping)"
+            description="Title of the table column (firstNameShipping)"
+            id="CompanyOrders.ListView.column.firstNameShipping"
+            values={Object {}}
+          />,
+        },
+      ]
+    }
+  />
+  <Table
+    columns={
+      Array [
+        Object {
+          "flexGrow": 1,
+          "key": "lastNameBilling",
+          "label": <FormattedMessage
+            defaultMessage="Last name (billing)"
+            description="Title of the table column (lastNameBilling)"
+            id="CompanyOrders.ListView.column.lastNameBilling"
+            values={Object {}}
+          />,
+        },
+        Object {
+          "flexGrow": 1,
+          "key": "firstNameShipping",
+          "label": <FormattedMessage
+            defaultMessage="First name (shipping)"
+            description="Title of the table column (firstNameShipping)"
+            id="CompanyOrders.ListView.column.firstNameShipping"
+            values={Object {}}
+          />,
+        },
+      ]
+    }
+    itemRenderer={[Function]}
+    items={
+      Array [
+        "1",
+        "2",
+      ]
+    }
+    measurementResetter={[MockFunction]}
+    onRowClick={[Function]}
+    onSortChange={[MockFunction]}
+    rowCount={2}
+    shouldFillRemainingVerticalSpace={true}
+    sortBy="rank"
+    sortDirection="ASC"
+  >
+    <Pagination
+      onPageChange={[MockFunction]}
+      onPerPageChange={[MockFunction]}
+      page={1}
+      pageSizes={
+        Array [
+          20,
+          50,
+        ]
+      }
+      perPage={20}
+      totalItems={2}
+    />
+    <PageBottomSpacer
+      size="m"
+    />
+  </Table>
+</Stack>
+`;

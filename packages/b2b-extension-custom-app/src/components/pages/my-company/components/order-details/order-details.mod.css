@@ -1,0 +1,13 @@
+.card {
+  min-width: 410px;
+  max-width: 550px;
+}
+
+.order-items {
+  width: 100%;
+}
+
+.card-prices > div > div > :last-child {
+  border-top: 1px solid #ccc;
+  padding-top: 0.5rem;
+}

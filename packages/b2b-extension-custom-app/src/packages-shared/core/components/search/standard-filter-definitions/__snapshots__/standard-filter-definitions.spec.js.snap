@@ -1,0 +1,171 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`constants export filter type keys 1`] = `
+Object {
+  "equalTo": "equalTo",
+  "in": "in",
+  "lessThan": "lessThan",
+  "missing": "missing",
+  "missingIn": "missingIn",
+  "moreThan": "moreThan",
+  "range": "range",
+}
+`;
+
+exports[`definitions createCreatableOptionsDefinitionsMap should return a standard config for a "creatable options" field 1`] = `
+Object {
+  "in": Object {
+    "canBeAppliedMultipleTimes": true,
+    "filterComponent": [Function],
+    "isEmptyFilter": [Function],
+    "label": "Search.Filters.Definitions.Text.in",
+    "tagComponent": [Function],
+    "validator": [Function],
+  },
+}
+`;
+
+exports[`definitions createCustomFieldDefinitionsMap should return a config for a "custom field" filter 1`] = `
+Object {
+  "customField": Object {
+    "canBeAppliedMultipleTimes": true,
+    "filterComponent": [Function],
+    "isEmptyFilter": [Function],
+    "label": "",
+    "tagComponent": [Function],
+    "validator": [Function],
+  },
+}
+`;
+
+exports[`definitions createDateDefinitionsMap should return a standard config for a "date" field 1`] = `
+Object {
+  "equalTo": Object {
+    "filterComponent": [Function],
+    "label": "Search.Filters.Definitions.Date.equalTo",
+    "tagComponent": [Function],
+  },
+  "lessThan": Object {
+    "filterComponent": [Function],
+    "label": "Search.Filters.Definitions.Date.lessThan",
+    "tagComponent": [Function],
+  },
+  "moreThan": Object {
+    "filterComponent": [Function],
+    "label": "Search.Filters.Definitions.Date.moreThan",
+    "tagComponent": [Function],
+  },
+  "range": Object {
+    "filterComponent": [Function],
+    "label": "Search.Filters.Definitions.Date.range",
+    "tagComponent": [Function],
+    "validator": [Function],
+  },
+}
+`;
+
+exports[`definitions createMissingDefinitionsMap should return a standard config for a "missing" field 1`] = `
+Object {
+  "missing": Object {
+    "canBeAppliedMultipleTimes": false,
+    "filterComponent": [Function],
+    "isEmptyFilter": [Function],
+    "label": "Search.Filters.Definitions.missing",
+    "tagComponent": [Function],
+  },
+}
+`;
+
+exports[`definitions createMissingInDefinitionsMap should return a standard config for a "missingIn" field 1`] = `
+Object {
+  "missingIn": Object {
+    "canBeAppliedMultipleTimes": false,
+    "filterComponent": [Function],
+    "isEmptyFilter": [Function],
+    "label": "Search.Filters.Definitions.missingIn",
+    "tagComponent": [Function],
+    "validator": [Function],
+  },
+}
+`;
+
+exports[`definitions createNumberDefinitionsMap should return a standard config for a "numver" field 1`] = `
+Object {
+  "equalTo": Object {
+    "filterComponent": [Function],
+    "label": "Search.Filters.Definitions.Number.equalTo",
+    "tagComponent": [Function],
+    "validator": [Function],
+  },
+  "lessThan": Object {
+    "filterComponent": [Function],
+    "label": "Search.Filters.Definitions.Number.lessThan",
+    "tagComponent": [Function],
+    "validator": [Function],
+  },
+  "moreThan": Object {
+    "filterComponent": [Function],
+    "label": "Search.Filters.Definitions.Number.moreThan",
+    "tagComponent": [Function],
+    "validator": [Function],
+  },
+  "range": Object {
+    "filterComponent": [Function],
+    "label": "Search.Filters.Definitions.Number.range",
+    "tagComponent": [Function],
+    "validator": [Function],
+  },
+}
+`;
+
+exports[`definitions createOptionsDefinitionsMap should return a standard config for a "options" field 1`] = `
+Object {
+  "equalTo": Object {
+    "canBeAppliedMultipleTimes": false,
+    "filterComponent": [Function],
+    "isEmptyFilter": [Function],
+    "label": "Search.Filters.Definitions.Text.equalTo",
+    "tagComponent": [Function],
+    "validator": [Function],
+  },
+  "in": Object {
+    "canBeAppliedMultipleTimes": false,
+    "filterComponent": [Function],
+    "isEmptyFilter": [Function],
+    "label": "Search.Filters.Definitions.Text.in",
+    "tagComponent": [Function],
+    "validator": [Function],
+  },
+}
+`;
+
+exports[`definitions createReferenceDefinitionsMap should return a standard config for a "reference" field 1`] = `
+Object {
+  "equalTo": Object {
+    "filterComponent": [Function],
+    "label": "Search.Filters.Definitions.Reference.equalTo",
+    "tagComponent": [Function],
+  },
+}
+`;
+
+exports[`definitions createTypesDefinitionsMap should return a standard config for a "types" field 1`] = `
+Object {
+  "equalTo": Object {
+    "canBeAppliedMultipleTimes": false,
+    "filterComponent": [Function],
+    "isEmptyFilter": [Function],
+    "label": "Search.Filters.Definitions.Text.equalTo",
+    "tagComponent": [Function],
+    "validator": [Function],
+  },
+  "in": Object {
+    "canBeAppliedMultipleTimes": false,
+    "filterComponent": [Function],
+    "isEmptyFilter": [Function],
+    "label": "Search.Filters.Definitions.Text.in",
+    "tagComponent": [Function],
+    "validator": [Function],
+  },
+}
+`;

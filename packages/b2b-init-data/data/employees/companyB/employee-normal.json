@@ -1,0 +1,33 @@
+{
+ "email": "mathew.felker@companyb.com",
+  "firstName": "Mathew",
+  "lastName": "Felker",
+  "middleName": "",
+  "title": "",
+  "salutation": "",
+  "password": "test123",
+  "addresses": [
+    {
+      "streetName": "Trouser Leg Road",
+      "streetNumber": "878",
+      "postalCode": "01103",
+      "city": "Springfield",
+      "state": "MA",
+      "country": "US",
+      "phone": "413-812-3577",
+      "mobile": "413-374-6579"
+    }
+  ],
+  "defaultBillingAddress": 0,
+  "defaultShippingAddress": 0,
+
+  "custom": {
+    "type": {
+      "typeId": "type",
+      "key": "employee-type"
+    },
+    "fields": {
+      "roles": ["b2b-company-employee"]
+    }
+  }
+}

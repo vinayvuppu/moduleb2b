@@ -1,0 +1,73 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`rendering outputs correct tree 1`] = `
+<div>
+  <div
+    className="container"
+  >
+    <div
+      className="toggle-filter-button"
+    >
+      <SecondaryButton
+        data-track-component=""
+        data-track-event="click"
+        data-track-label="Filters"
+        iconLeft={<ForwardRef(render) />}
+        isDisabled={false}
+        isToggleButton={true}
+        isToggled={false}
+        label="Search.FilterSearchBar.filterLabel"
+        onClick={[MockFunction]}
+        theme="default"
+        type="button"
+      />
+    </div>
+    <SearchInput
+      initialValue="123"
+      onChange={[MockFunction]}
+      onSubmit={[MockFunction]}
+      placeholder="Some search placeholder..."
+      throttleMS={1}
+    />
+    <div
+      className="clear-button"
+    />
+  </div>
+</div>
+`;
+
+exports[`rendering outputs with filter button disabled 1`] = `
+<div>
+  <div
+    className="container"
+  >
+    <div
+      className="toggle-filter-button"
+    >
+      <SecondaryButton
+        data-track-component=""
+        data-track-event="click"
+        data-track-label="Filters"
+        iconLeft={<ForwardRef(render) />}
+        isDisabled={true}
+        isToggleButton={true}
+        isToggled={false}
+        label="Search.FilterSearchBar.filterLabel"
+        onClick={[MockFunction]}
+        theme="default"
+        type="button"
+      />
+    </div>
+    <SearchInput
+      initialValue="123"
+      onChange={[MockFunction]}
+      onSubmit={[MockFunction]}
+      placeholder="Some search placeholder..."
+      throttleMS={1}
+    />
+    <div
+      className="clear-button"
+    />
+  </div>
+</div>
+`;

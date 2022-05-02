@@ -1,0 +1,94 @@
+fragment EnumTypeFragment on EnumAttributeDefinitionType {
+  values {
+    total
+    offset
+    results {
+      key
+      label
+    }
+  }
+}
+
+fragment LocalizableEnumTypeFragment on LocalizableEnumAttributeDefinitionType {
+  values {
+    total
+    offset
+    results {
+      key
+      labelAllLocales {
+        locale
+        value
+      }
+    }
+  }
+}
+
+fragment ReferenceTypeFragment on ReferenceAttributeDefinitionType {
+  referenceTypeId
+}
+
+fragment NestedAttributeTypeDefinition on NestedAttributeDefinitionType {
+  typeReference {
+    id
+    typeId
+  }
+}
+
+query ProductTypeDetails($id: String) {
+  productType(id: $id) {
+    id
+    key
+    name
+    version
+    description
+    attributeDefinitions {
+      total
+      results {
+        name
+        labelAllLocales {
+          value
+          locale
+        }
+        isRequired
+        attributeConstraint
+        inputTipAllLocales {
+          locale
+          value
+        }
+        type {
+          name
+          ... on EnumAttributeDefinitionType {
+            values {
+              results {
+                key
+                label
+              }
+            }
+          }
+          ... on LocalizableEnumAttributeDefinitionType {
+            values {
+              results {
+                key
+                labelAllLocales {
+                  value
+                  locale
+                }
+              }
+            }
+          }
+          ...NestedAttributeTypeDefinition
+          ...ReferenceTypeFragment
+          ... on SetAttributeDefinitionType {
+            elementType {
+              name
+              ...EnumTypeFragment
+              ...LocalizableEnumTypeFragment
+              ...ReferenceTypeFragment
+              ...NestedAttributeTypeDefinition
+            }
+          }
+        }
+      }
+    }
+  }
+}

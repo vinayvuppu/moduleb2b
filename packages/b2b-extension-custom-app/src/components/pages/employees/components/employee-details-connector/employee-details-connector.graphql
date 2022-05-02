@@ -1,0 +1,129 @@
+#import "../employee-create-connector/employee-create-connector.graphql"
+
+mutation UpdateEmployeeMutation(
+  $id: String!
+  $version: Long!
+  $actions: [EmployeeUpdateAction!]!
+  $storeKey: KeyReferenceInput
+) {
+  updateEmployee(
+    id: $id
+    version: $version
+    actions: $actions
+    storeKey: $storeKey
+  ) {
+    ...EmployeeFrag
+  }
+}
+
+mutation DeleteEmployeeMutation($id: String!, $version: Long!) {
+  deleteEmployee(id: $id, version: $version) {
+    ...EmployeeFrag
+  }
+}
+
+mutation EmployeeResetPasswordMutation(
+  $version: Long!
+  $tokenValue: String!
+  $newPassword: String!
+) {
+  employeeResetPassword(
+    version: $version
+    tokenValue: $tokenValue
+    newPassword: $newPassword
+  ) {
+    ...EmployeeFrag
+  }
+}
+
+mutation EmployeeCreatePasswordResetTokenMutation(
+  $email: String!
+  $storeKey: KeyReferenceInput
+) {
+  employeeCreatePasswordResetToken: customerCreatePasswordResetToken(
+    email: $email
+    storeKey: $storeKey
+  ) {
+    value
+  }
+}
+
+fragment EmployeeFrag on Employee {
+  id
+  employeeNumber
+  customerNumber: employeeNumber
+  version
+  createdAt
+  lastModifiedAt
+  firstName
+  lastName
+  email
+  password
+  middleName
+  salutation
+  title
+  dateOfBirth
+  companyName
+  externalId
+  vatId
+  defaultBillingAddressId
+  defaultShippingAddressId
+  isEmailVerified
+  stores {
+    key
+    nameAllLocales {
+      locale
+      value
+    }
+  }
+  customerGroup {
+    id
+    key
+    name
+    version
+  }
+  addresses {
+    id
+    externalId
+    key
+    streetName
+    streetNumber
+    apartment
+    building
+    pOBox
+    city
+    postalCode
+    region
+    state
+    country
+    additionalStreetInfo
+    additionalAddressInfo
+    firstName
+    lastName
+    salutation
+    title
+    company
+    department
+    email
+    phone
+    mobile
+    fax
+    externalId
+  }
+  roles
+  amountRemaining {
+    currencyCode
+    centAmount
+    fractionDigits
+  }
+  amountExpended {
+    currencyCode
+    centAmount
+    fractionDigits
+  }
+}
+query FetchEmployeeQuery($id: String!) {
+  employee(id: $id) {
+    ...EmployeeFrag
+  }
+}

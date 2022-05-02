@@ -1,0 +1,59 @@
+.btn-group {
+  position: relative;
+  display: flex;
+  vertical-align: middle;
+}
+
+.btn-group button {
+  position: relative;
+  float: left;
+  background: var(--color-surface);
+  color: var(--color-neutral-60);
+  box-shadow: 0 -1px 1px 0 rgba(0, 0, 0, 0.12), 0 1px 1px 0 rgba(0, 0, 0, 0.24);
+}
+
+.btn-group button + button {
+  border-left: solid 1px var(--color-neutral-90);
+}
+
+.btn-group > button:first-of-type {
+  z-index: 2;
+}
+
+.btn-group > button:not(:first-of-type):not(:last-child) {
+  border-radius: 0;
+}
+
+.btn-group > button:first-of-type:not(:last-child) {
+  border-top-right-radius: 0;
+  border-bottom-right-radius: 0;
+}
+
+.btn-group > button:last-child:not(:first-of-type) {
+  border-top-left-radius: 0;
+  border-bottom-left-radius: 0;
+}
+
+.btn-group button:hover,
+.btn-group button.active,
+.btn-group button:active {
+  color: var(--color-solid) !important;
+}
+
+.btn-group button.active {
+  background: var(--color-neutral-90);
+  opacity: 1;
+}
+
+.btn-group button.disabled {
+  background: var(--color-neutral-90);
+  color: var(--color-neutral-60);
+}
+
+.btn-group button i {
+  font-size: 1.538rem;
+}
+
+.icon-container {
+  display: flex;
+}

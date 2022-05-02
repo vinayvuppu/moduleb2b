@@ -1,0 +1,54 @@
+query FetchEmployeesQuery(
+  $where: String
+  $limit: Int
+  $offset: Int
+  $sort: [String!]
+) {
+  employees(
+    where: $where
+    limit: $limit
+    offset: $offset
+    sort: $sort
+  ) {
+    total
+    count
+    offset
+    results {
+      id
+      version
+      employeeNumber
+      firstName
+      lastName
+      companyName
+      email
+      defaultBillingAddress: defaultBillingAddressId
+      defaultShippingAddress: defaultShippingAddressId
+      company: customerGroup {
+        id
+      }
+      addresses {
+        id
+        firstName
+        lastName
+        company
+        streetName
+        streetNumber
+        city
+        postalCode
+        region
+        country
+        additionalAddressInfo
+        additionalStreetInfo
+        email
+        phone
+      }
+      stores {
+        key
+        nameAllLocales {
+          locale
+          value
+        }
+      }
+    }
+  }
+}

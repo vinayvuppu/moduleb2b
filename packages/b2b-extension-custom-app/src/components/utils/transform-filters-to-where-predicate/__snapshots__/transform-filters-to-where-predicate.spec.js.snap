@@ -1,0 +1,21 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`createFilterPredicate VAT ID should return config for a "vatId" single filter 1`] = `"vatId = \\"surnametest\\""`;
+
+exports[`createFilterPredicate createdAt should return config for a "createdAt" single filter 1`] = `"(createdAt < \\"2017-11-01\\")"`;
+
+exports[`createFilterPredicate customerGroup.id should return config for a "customerGroup.id" multi filter 1`] = `"customerGroup(id in (\\"CG-1\\",\\"CG-2\\"))"`;
+
+exports[`createFilterPredicate customerGroup.id should return config for a "customerGroup.id" single filter 1`] = `"customerGroup(id in (\\"CG-1\\"))"`;
+
+exports[`createFilterPredicate dateOfBirth should return config for a "dateOfBirth" range filter 1`] = `"dateOfBirth >= \\"2017-11-01\\" and dateOfBirth <= \\"2017-11-09\\""`;
+
+exports[`createFilterPredicate dateOfBirth should return config for a "dateOfBirth" single filter 1`] = `"dateOfBirth < \\"2017-11-01\\""`;
+
+exports[`createFilterPredicate first name should return config for a "firstName" single filter 1`] = `"firstName = \\"surnametest\\""`;
+
+exports[`createFilterPredicate last name should return config for a "lastName" single filter 1`] = `"lastName = \\"surnametest\\""`;
+
+exports[`createFilterPredicate lastModifiedAt should return config for a "lastModifiedAt" single filter 1`] = `"(lastModifiedAt < \\"2017-11-01\\")"`;
+
+exports[`createFilterPredicate middle name should return config for a "middleName" single filter 1`] = `"middleName = \\"surnametest\\""`;

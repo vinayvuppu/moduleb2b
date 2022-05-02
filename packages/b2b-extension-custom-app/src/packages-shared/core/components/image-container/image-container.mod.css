@@ -1,0 +1,28 @@
+:root {
+  --image-dimension: 50px;
+}
+
+.container {
+  display: flex;
+  align-items: center;
+}
+
+.image-container {
+  border: 1px var(--color-neutral) solid;
+  background: var(--color-surface);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: var(--image-dimension);
+  height: var(--image-dimension);
+}
+
+.counter {
+  background: var(--color-neutral-95);
+  border-radius: var(--border-radius-6);
+  border: 1px var(--color-neutral-60) solid;
+  color: var(--color-primary);
+  margin-left: var(--spacing-s);
+  padding: var(--spacing-s) var(--spacing-m);
+  text-align: center;
+}

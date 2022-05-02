@@ -1,0 +1,26 @@
+:root {
+  --height-footer: 56px;
+  --border-top-footer: 1px;
+}
+
+.row {
+  padding: 0;
+  list-style: none;
+  margin: var(--spacing-m) 0 0;
+  box-sizing: border-box;
+
+  /* Its necessary to specify the height of the element
+  in order for the table to calculate it */
+  height: calc(var(--height-footer) + var(--border-top-footer));
+}
+
+.row > * {
+  display: inline-block;
+}
+
+.container {
+  composes: row;
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+}

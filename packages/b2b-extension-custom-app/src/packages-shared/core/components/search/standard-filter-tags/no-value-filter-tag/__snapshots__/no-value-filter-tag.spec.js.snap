@@ -1,0 +1,11 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`NoValueFilterTag render correct tree 1`] = `
+<SingleFilterTag
+  fieldLabel="Name"
+  filterTypeLabel="Missing"
+  onClick={[MockFunction]}
+  onRemove={[MockFunction]}
+  renderValue={[Function]}
+/>
+`;

@@ -1,0 +1,141 @@
+:root {
+  --column-width: calc(25% - var(--spacing-m));
+}
+
+.table {
+  overflow-x: scroll;
+  transform: translate3d(0, 0, 0);
+}
+
+.header {
+  padding: 0;
+}
+
+.header-list,
+.body-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.header-list {
+  background: var(--color-neutral-95);
+  border: 1px solid var(--color-neutral-90);
+  display: flex;
+}
+
+.body-list {
+  overflow: hidden;
+}
+
+.column {
+  display: flex;
+  flex: 1 0 var(--column-width);
+  align-items: center;
+  border-right: 1px solid var(--color-neutral-90);
+  font-weight: normal;
+}
+
+.body-column {
+  composes: column;
+  padding: var(--spacing-s);
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.column:last-child {
+  border-right: 0;
+}
+
+.header .column {
+  padding: var(--spacing-s);
+}
+
+.list-row {
+  display: flex;
+  align-items: stretch;
+  border-bottom: 1px solid var(--color-neutral-90);
+  border-left: 1px solid var(--color-neutral-90);
+  border-right: 1px solid var(--color-neutral-90);
+  transition: all 0.2s linear;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.list-row-being-sorted {
+  border-top: 1px solid var(--color-neutral-90);
+  list-style-type: none;
+  background-color: var(--color-neutral-60);
+}
+
+.list-row-even {
+  background-color: var(--color-neutral-95);
+}
+
+.list-row:hover {
+  background: var(--color-neutral-90);
+}
+
+.clickable:hover {
+  cursor: pointer;
+}
+
+.cell {
+  width: 100%;
+}
+
+.no-results {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--color-neutral-95);
+  text-align: center;
+  padding: var(--spacing-s);
+
+  /* Needed to create height equal to table row */
+  height: 40px;
+}
+
+/* Transition styles */
+
+.slider {
+  width: 200%;
+  overflow: hidden;
+}
+
+.wrapper {
+  width: 50%;
+  float: right;
+  transition: all 0.3s ease-in-out;
+}
+
+.wrapper:first-of-type {
+  position: relative;
+  left: -50%;
+}
+
+.enter-from-right,
+.exit-to-right {
+  transform: translate3d(100%, 0, 0) !important;
+}
+
+.enter-from-left,
+.exit-to-left {
+  transform: translate3d(-100%, 0, 0) !important;
+}
+
+.enter-active,
+.exit {
+  transform: translate3d(0, 0, 0);
+}
+
+.appear {
+  opacity: 0.01;
+}
+
+.appear.appear-active {
+  opacity: 1;
+  transition: opacity 0.5s ease-in;
+}

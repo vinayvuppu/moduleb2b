@@ -1,0 +1,64 @@
+{
+  "name": "b2b-ms-gateway",
+  "version": "1.0.0",
+  "description": "Gateway for graphql microservices",
+  "scripts": {
+    "lint": "eslint .",
+    "lint-fix": "eslint --fix .",
+    "lint-md": "remark -f .",
+    "start": "node index.js",
+    "start-dev": "nodemon -e js index.js",
+    "test": "jest"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "npm run lint-fix && npm test"
+    }
+  },
+  "remarkConfig": {
+    "plugins": [
+      "remark-preset-lint-recommended"
+    ]
+  },
+  "keywords": [
+    "fastify",
+    "microservice"
+  ],
+  "engines": {
+    "node": ">=14.*"
+  },
+  "author": "DevGurus.io",
+  "license": "ISC",
+  "dependencies": {
+    "@apollo/federation": "^0.21.0",
+    "@apollo/gateway": "^0.22.0",
+    "apollo-datasource-rest": "^0.6.11",
+    "apollo-server": "^2.19.2",
+    "apollo-server-fastify": "^2.19.2",
+    "common-tags": "^1.8.0",
+    "dotenv": "^8.2.0",
+    "fastify": "^2.10.0",
+    "fastify-autoload": "^0.5.1",
+    "fastify-env": "^1.0.1",
+    "fastify-healthcheck": "^2.1.0",
+    "fastify-metrics": "^4.0.9",
+    "fastify-oas": "^2.5.0",
+    "fastify-plugin": "^1.6.0",
+    "install": "^0.13.0",
+    "isomorphic-fetch": "^3.0.0",
+    "pino-pretty": "^3.3.0"
+  },
+  "devDependencies": {
+    "acorn": "7.1.1",
+    "eslint": "^6.6.0",
+    "eslint-config-prettier": "^6.5.0",
+    "eslint-plugin-jest": "^23.0.3",
+    "eslint-plugin-prettier": "^3.1.1",
+    "husky": "^3.0.9",
+    "jest": "^25.1.0",
+    "nodemon": "^2.0.7",
+    "prettier-eslint": "^9.0.0",
+    "remark-cli": "^7.0.0",
+    "remark-preset-lint-recommended": "^3.0.3"
+  }
+}

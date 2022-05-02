@@ -1,0 +1,212 @@
+{
+  "key": "b2b-extension-custom-app",
+  "uriPath": "b2b-extension",
+  "icon": "RocketIcon",
+  "permissions": [
+    "ViewCustomerGroups",
+    "ManageCustomerGroups",
+    "ViewCustomers",
+    "ManageCustomers"
+  ],
+  "featureToggle": null,
+  "submenu": [
+    {
+      "key": "companies",
+      "uriPath": "b2b-extension/companies",
+      "icon": "RocketIcon",
+      "permissions": [
+        "ManageCustomerGroups"
+      ],
+      "featureToggle": null,
+      "submenu": [],
+      "labelAllLocales": [
+        {
+          "locale": "en",
+          "value": "Companies list"
+        }
+      ]
+    },
+    {
+      "key": "companies-new",
+      "uriPath": "b2b-extension/companies/new",
+      "icon": "RocketIcon",
+      "permissions": [
+        "ManageCustomerGroups"
+      ],
+      "featureToggle": null,
+      "submenu": [],
+      "labelAllLocales": [
+        {
+          "locale": "en",
+          "value": "Add company"
+        }
+      ]
+    },
+    {
+      "key": "employees",
+      "uriPath": "b2b-extension/employees",
+      "icon": "RocketIcon",
+      "permissions": [
+        "ManageCustomers"
+      ],
+      "featureToggle": null,
+      "submenu": [],
+      "labelAllLocales": [
+        {
+          "locale": "en",
+          "value": "Employees list"
+        }
+      ]
+    },
+    {
+      "key": "quotes",
+      "uriPath": "b2b-extension/quotes",
+      "icon": "RocketIcon",
+      "permissions": [
+        "ManageCustomerGroups",
+        "ManageOrders"
+      ],
+      "featureToggle": null,
+      "submenu": [],
+      "labelAllLocales": [
+        {
+          "locale": "en",
+          "value": "Quotes list"
+        }
+      ]
+    },
+    {
+      "key": "employees-add",
+      "uriPath": "b2b-extension/employees/new",
+      "icon": "RocketIcon",
+      "permissions": [
+        "ManageCustomers"
+      ],
+      "featureToggle": null,
+      "submenu": [],
+      "labelAllLocales": [
+        {
+          "locale": "en",
+          "value": "Add employee"
+        }
+      ]
+    },
+    {
+      "key": "my-company",
+      "uriPath": "b2b-extension/my-company/employees",
+      "icon": "RocketIcon",
+      "permissions": [
+        "ViewCustomerGroups",
+        "ViewCustomers"
+      ],
+      "featureToggle": null,
+      "submenu": [],
+      "labelAllLocales": [
+        {
+          "locale": "en",
+          "value": "[My Company] Employees list"
+        }
+      ]
+    },
+    {
+      "key": "my-company-orders",
+      "uriPath": "b2b-extension/my-company/orders",
+      "icon": "RocketIcon",
+      "permissions": [
+        "ViewOrders"
+      ],
+      "featureToggle": null,
+      "submenu": [],
+      "labelAllLocales": [
+        {
+          "locale": "en",
+          "value": "[My Company] Orders list"
+        }
+      ]
+    },
+    {
+      "key": "my-company-quotes",
+      "uriPath": "b2b-extension/my-company/quotes",
+      "icon": "RocketIcon",
+      "permissions": [
+        "ViewOrders"
+      ],
+      "featureToggle": null,
+      "submenu": [],
+      "labelAllLocales": [
+        {
+          "locale": "en",
+          "value": "[My Company] Quotes list"
+        }
+      ]
+    },
+    {
+      "key": "my-company-add-quotes",
+      "uriPath": "b2b-extension/my-company/quotes/new",
+      "icon": "RocketIcon",
+      "permissions": [
+        "ViewOrders"
+      ],
+      "featureToggle": null,
+      "submenu": [],
+      "labelAllLocales": [
+        {
+          "locale": "en",
+          "value": "[My Company] Request quote"
+        }
+      ]
+    },
+    {
+      "key": "my-company-orders-approval",
+      "uriPath": "b2b-extension/my-company/orders-approval",
+      "icon": "RocketIcon",
+      "permissions": [
+        "ManageOrders"
+      ],
+      "featureToggle": null,
+      "submenu": [],
+      "labelAllLocales": [
+        {
+          "locale": "en",
+          "value": "[My Company] Pending approval orders list"
+        }
+      ]
+    },
+    {
+      "key": "my-company-add-order",
+      "uriPath": "b2b-extension/my-company/orders/new",
+      "icon": "RocketIcon",
+      "permissions": [
+        "ManageOrders"
+      ],
+      "featureToggle": null,
+      "submenu": [],
+      "labelAllLocales": [
+        {
+          "locale": "en",
+          "value": "[My Company] Add order"
+        }
+      ]
+    },
+    {
+      "key": "my-company-add-employee",
+      "uriPath": "b2b-extension/my-company/employees/new",
+      "icon": "RocketIcon",
+      "permissions": [
+        "ManageCustomers"
+      ],
+      "labelAllLocales": [
+        {
+          "locale": "en",
+          "value": "[My Company] Add employee"
+        }
+      ]
+    }
+  ],
+  "labelAllLocales": [
+    {
+      "locale": "en",
+      "value": "B2B Manager"
+    }
+  ]
+}

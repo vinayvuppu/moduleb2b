@@ -1,0 +1,13 @@
+.tagBody {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.tagBody > * + * {
+  margin-left: var(--spacing-xs);
+}
+
+.bold {
+  font-weight: bold;
+}

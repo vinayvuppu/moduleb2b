@@ -1,0 +1,28 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`rendering with orders outputs correct tree 1`] = `
+<withApplicationContext(withSearchViewRouterSearchQuery(Apollo(OrdersListConnector)))
+  employeeId="employee-id-foo-123"
+  projectKey="test-project"
+>
+  <Component />
+</withApplicationContext(withSearchViewRouterSearchQuery(Apollo(OrdersListConnector)))>
+`;
+
+exports[`rendering without orders outputs correct tree 1`] = `
+<Stack
+  alignItems="center"
+  scale="m"
+>
+  <LoadingSpinner
+    scale="l"
+  >
+    <FormattedMessage
+      defaultMessage="Loading orders..."
+      description="Title shown while fetching orders."
+      id="Employees.Details.OrdersForm.fetchingOrdersTitle"
+      values={Object {}}
+    />
+  </LoadingSpinner>
+</Stack>
+`;

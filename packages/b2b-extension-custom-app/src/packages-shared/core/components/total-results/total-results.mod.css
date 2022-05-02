@@ -1,0 +1,6 @@
+.container {
+  composes: text-body from '../../_styles/commons.mod.css';
+
+  /* FIXME: this component should not have a margin */
+  margin-left: var(--spacing-m);
+}

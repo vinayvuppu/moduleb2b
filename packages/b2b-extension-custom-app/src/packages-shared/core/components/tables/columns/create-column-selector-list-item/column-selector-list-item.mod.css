@@ -1,0 +1,12 @@
+.column-list-item {
+  display: block;
+  margin-bottom: var(--spacing-xs);
+  padding: var(--spacing-xs) var(--spacing-s);
+  background-color: var(--color-neutral-95);
+  cursor: move;
+}
+
+.column-list-item-dragging {
+  composes: column-list-item;
+  opacity: 0.5;
+}

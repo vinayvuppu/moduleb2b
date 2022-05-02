@@ -1,0 +1,31 @@
+.icon-container {
+  flex-shrink: 0;
+}
+
+.input {
+  composes: input-form from '../../../_styles/forms.mod.css';
+  width: 100%;
+}
+
+.input-container {
+  composes: react-select-container from '../../dropdowns/dropdown/dropdown.mod.css';
+  composes: react-select-container-alt from '../../dropdowns/dropdown/dropdown.mod.css';
+}
+
+.input-container :global(.Select-control) {
+  padding-right: 8px;
+}
+
+.input-container :global(.Select-arrow-zone) {
+  display: none;
+}
+
+.container {
+  flex: 1;
+  padding-right: 8px;
+  float: none;
+}
+
+.upper-case {
+  text-transform: uppercase;
+}

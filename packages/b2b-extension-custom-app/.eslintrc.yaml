@@ -1,0 +1,22 @@
+extends:
+  - '@commercetools-frontend/eslint-config-mc-app'
+  - 'plugin:testing-library/recommended'
+plugins:
+  - react-hooks
+rules:
+  'max-classes-per-file': 0
+  'react-hooks/rules-of-hooks': 'error'
+  'react-hooks/exhaustive-deps': 'warn'
+  'jest/expect-expect': 'off'
+  'no-case-declarations': 'off'
+  'consistent-return': 'warn'
+  'array-callback-return': 'warn'
+settings:
+  react:
+    version: '^16.0'
+overrides:
+  - files: ['*.spec.js']
+    rules:
+      'prefer-promise-reject-errors': 0
+      'no-console': 0
+      'jest/no-focused-tests': 'warn'

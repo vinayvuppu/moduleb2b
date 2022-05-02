@@ -1,0 +1,7 @@
+:root {
+  --width-select-field: 65px;
+}
+
+.select-container {
+  width: var(--width-select-field);
+}

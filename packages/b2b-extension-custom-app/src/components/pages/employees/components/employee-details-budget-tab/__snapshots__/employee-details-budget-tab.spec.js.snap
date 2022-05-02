@@ -1,0 +1,230 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`rendering when is loaded when amountRemaining is negative should match snapshot 1`] = `
+<CollapsiblePanel
+  condensed={false}
+  data-testid="employee-budget-details"
+  header={
+    <CollapsiblePanelHeader>
+      formatted message
+    </CollapsiblePanelHeader>
+  }
+  headerControlsAlignment="right"
+  horizontalConstraint="scale"
+  id="1"
+  isDisabled={false}
+  theme="dark"
+>
+  <FormBox
+    hasWarning={false}
+    width="single"
+  >
+    <AmountValue
+      amount={
+        Object {
+          "centAmount": -1000,
+          "currencyCode": "USD",
+          "fractionDigits": 2,
+        }
+      }
+      errorOnNegative={true}
+      errorOnZero={false}
+      label="formatted message"
+      noValueLabel="formatted message"
+    />
+  </FormBox>
+  <FormBox
+    hasWarning={false}
+    width="single"
+  >
+    <AmountValue
+      amount={
+        Object {
+          "centAmount": 1000,
+          "currencyCode": "USD",
+          "fractionDigits": 2,
+        }
+      }
+      errorOnZero={false}
+      label="formatted message"
+      noValueLabel="formatted message"
+    />
+  </FormBox>
+  <FormBox
+    hasWarning={false}
+    width="single"
+  >
+    <Stack
+      alignItems="center"
+      scale="s"
+    >
+      <Pie
+        data={
+          Object {
+            "datasets": Array [
+              Object {
+                "backgroundColor": Array [
+                  "#F5A72F",
+                  "#01B39E",
+                ],
+                "data": Array [
+                  0,
+                  10,
+                ],
+              },
+            ],
+            "labels": Array [
+              "formatted message",
+              "formatted message",
+            ],
+          }
+        }
+      />
+      <TextBody>
+        formatted message
+      </TextBody>
+    </Stack>
+  </FormBox>
+</CollapsiblePanel>
+`;
+
+exports[`rendering when is loaded when amountRemaining is not present should match snapshot 1`] = `
+<CollapsiblePanel
+  condensed={false}
+  data-testid="employee-budget-details"
+  header={
+    <CollapsiblePanelHeader>
+      formatted message
+    </CollapsiblePanelHeader>
+  }
+  headerControlsAlignment="right"
+  horizontalConstraint="scale"
+  id="1"
+  isDisabled={false}
+  theme="dark"
+>
+  <FormBox
+    hasWarning={false}
+    width="single"
+  >
+    <AmountValue
+      amount={null}
+      errorOnNegative={true}
+      errorOnZero={false}
+      label="formatted message"
+      noValueLabel="formatted message"
+    />
+  </FormBox>
+  <FormBox
+    hasWarning={false}
+    width="single"
+  >
+    <AmountValue
+      amount={
+        Object {
+          "centAmount": 1000,
+          "currencyCode": "USD",
+          "fractionDigits": 2,
+        }
+      }
+      errorOnZero={false}
+      label="formatted message"
+      noValueLabel="formatted message"
+    />
+  </FormBox>
+</CollapsiblePanel>
+`;
+
+exports[`rendering when is loaded when amountRemaining is positive should match snapshot 1`] = `
+<CollapsiblePanel
+  condensed={false}
+  data-testid="employee-budget-details"
+  header={
+    <CollapsiblePanelHeader>
+      formatted message
+    </CollapsiblePanelHeader>
+  }
+  headerControlsAlignment="right"
+  horizontalConstraint="scale"
+  id="1"
+  isDisabled={false}
+  theme="dark"
+>
+  <FormBox
+    hasWarning={false}
+    width="single"
+  >
+    <AmountValue
+      amount={
+        Object {
+          "centAmount": 1000,
+          "currencyCode": "USD",
+          "fractionDigits": 2,
+        }
+      }
+      errorOnNegative={true}
+      errorOnZero={false}
+      label="formatted message"
+      noValueLabel="formatted message"
+    />
+  </FormBox>
+  <FormBox
+    hasWarning={false}
+    width="single"
+  >
+    <AmountValue
+      amount={
+        Object {
+          "centAmount": 1000,
+          "currencyCode": "USD",
+          "fractionDigits": 2,
+        }
+      }
+      errorOnZero={false}
+      label="formatted message"
+      noValueLabel="formatted message"
+    />
+  </FormBox>
+  <FormBox
+    hasWarning={false}
+    width="single"
+  >
+    <Stack
+      alignItems="center"
+      scale="s"
+    >
+      <Pie
+        data={
+          Object {
+            "datasets": Array [
+              Object {
+                "backgroundColor": Array [
+                  "#F5A72F",
+                  "#01B39E",
+                ],
+                "data": Array [
+                  10,
+                  10,
+                ],
+              },
+            ],
+            "labels": Array [
+              "formatted message",
+              "formatted message",
+            ],
+          }
+        }
+      />
+      <TextBody>
+        formatted message
+      </TextBody>
+    </Stack>
+  </FormBox>
+</CollapsiblePanel>
+`;
+
+exports[`rendering when is loading should match snapshot 1`] = `
+<LoadingSpinner
+  scale="l"
+/>
+`;

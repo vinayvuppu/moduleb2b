@@ -1,0 +1,19 @@
+{
+  "name": "@commercetools-local/react-datetime-selector",
+  "version": "1.0.0",
+  "description": "",
+  "license": "Proprietary",
+  "private": true,
+  "dependencies": {
+    "@commercetools-frontend/ui-kit": "10.46.1",
+    "classnames": "2.2.6",
+    "lodash.range": "3.2.0",
+    "moment": "2.24.0",
+    "moment-timezone": "0.5.27",
+    "prop-types": "15.7.2",
+    "react": "16.11.0",
+    "react-dom": "16.11.0",
+    "react-intl": "3.4.0",
+    "react-router-dom": "5.1.2"
+  }
+}

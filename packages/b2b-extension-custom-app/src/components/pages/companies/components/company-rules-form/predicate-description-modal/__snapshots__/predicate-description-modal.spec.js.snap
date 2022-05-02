@@ -1,0 +1,143 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`rendering should match snapshot 1`] = `
+<Stack
+  alignItems="stretch"
+  scale="s"
+>
+  <TextHeadline
+    as="h3"
+  >
+    formatted message
+  </TextHeadline>
+  <TextSubheadline
+    as="h5"
+  >
+    formatted message
+  </TextSubheadline>
+  <TextDetail>
+    <ul>
+      <li>
+        formatted message
+        : 
+        <strong>
+          order.totalPrice
+        </strong>
+      </li>
+      <li>
+        formatted message
+        : 
+        <strong>
+          order.shippingInfo.price
+        </strong>
+      </li>
+      <li>
+        formatted message
+        : 
+        <strong>
+          order.employeeEmail
+        </strong>
+      </li>
+      <li>
+        formatted message
+        : 
+        <strong>
+          order.createdAt
+        </strong>
+      </li>
+    </ul>
+  </TextDetail>
+  <TextSubheadline
+    as="h5"
+  >
+    formatted message
+  </TextSubheadline>
+  <TextDetail>
+    <ul>
+      <li>
+        formatted message
+        : 
+        <strong>
+          employee.role
+        </strong>
+      </li>
+      <li>
+        formatted message
+        : 
+        <strong>
+          employee.email
+        </strong>
+      </li>
+    </ul>
+  </TextDetail>
+  <TextHeadline
+    as="h3"
+  >
+    formatted message
+  </TextHeadline>
+  <TextDetail
+    isBold={true}
+  >
+    <ul>
+      <li>
+        &gt;
+      </li>
+      <li>
+        &gt;=
+      </li>
+      <li>
+        &lt;
+      </li>
+      <li>
+        &lt;=
+      </li>
+      <li>
+        =
+      </li>
+      <li>
+        contains
+      </li>
+    </ul>
+  </TextDetail>
+  <TextHeadline
+    as="h3"
+  >
+    formatted message
+  </TextHeadline>
+  <TextDetail
+    isBold={true}
+  >
+    <ul>
+      <li>
+        and
+      </li>
+      <li>
+        or
+      </li>
+    </ul>
+  </TextDetail>
+  <TextHeadline
+    as="h3"
+  >
+    formatted message
+  </TextHeadline>
+  <TextDetail>
+    <ul>
+      <li>
+        formatted message
+        : 
+        <strong>
+          order.totalPrice &gt; 10000.00 or order.shippingInfo.price &gt;= 200
+        </strong>
+      </li>
+      <li>
+        formatted message
+        : 
+        <strong>
+          order.createdAt &gt; 2020-03-01T00:00:00.000Z and employee.role contains b2b-company-employee
+        </strong>
+      </li>
+    </ul>
+  </TextDetail>
+</Stack>
+`;

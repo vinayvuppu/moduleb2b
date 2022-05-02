@@ -1,0 +1,96 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`rendering base elements when no owner is selected should match snapshot 1`] = `
+<Fragment>
+  <Inline
+    alignItems="flex-start"
+    justifyContent="flex-start"
+    scale="s"
+  >
+    <Card
+      theme="light"
+      type="raised"
+    >
+      <Inline
+        alignItems="center"
+        justifyContent="space-between"
+        scale="s"
+      >
+        <TextBody>
+          <FormattedMessage
+            defaultMessage="Me"
+            id="Orders.Create.Step.Owner.ownerMe"
+            values={Object {}}
+          />
+        </TextBody>
+        <PrimaryButton
+          data-testid="ownerMeButton"
+          iconLeft={<CheckBoldIcon />}
+          isToggleButton={false}
+          label="Orders.Create.Step.Owner.ownerSelectButton"
+          onClick={[Function]}
+          size="small"
+          tone="primary"
+          type="button"
+        />
+      </Inline>
+    </Card>
+    <Card
+      theme="light"
+      type="raised"
+    >
+      <Inline
+        alignItems="center"
+        justifyContent="space-between"
+        scale="s"
+      >
+        <TextBody>
+          <FormattedMessage
+            defaultMessage="Company employee"
+            id="Orders.Create.Step.Owner.ownerEmployee"
+            values={Object {}}
+          />
+        </TextBody>
+        <PrimaryButton
+          data-testid="ownerEmployeeButton"
+          iconLeft={<CheckBoldIcon />}
+          isToggleButton={false}
+          label="Orders.Create.Step.Owner.ownerSelectButton"
+          onClick={[Function]}
+          size="small"
+          tone="primary"
+          type="button"
+        />
+      </Inline>
+    </Card>
+    <Card
+      theme="light"
+      type="raised"
+    >
+      <Inline
+        alignItems="center"
+        justifyContent="space-between"
+        scale="s"
+      >
+        <TextBody>
+          <FormattedMessage
+            defaultMessage="Company"
+            id="Orders.Create.Step.Owner.ownerCompany"
+            values={Object {}}
+          />
+        </TextBody>
+        <PrimaryButton
+          data-testid="ownerCompanyButton"
+          iconLeft={<CheckBoldIcon />}
+          isToggleButton={false}
+          label="Orders.Create.Step.Owner.ownerSelectButton"
+          onClick={[Function]}
+          size="small"
+          tone="primary"
+          type="button"
+        />
+      </Inline>
+    </Card>
+  </Inline>
+</Fragment>
+`;

@@ -1,0 +1,12 @@
+package.json
+k8s/**/*.yaml
+**/i18n/*.json
+**/dist/
+**/public/
+dist-production/
+assets/
+.yarn/**
+dist
+public
+node_modules
+.firebase

@@ -1,0 +1,176 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`render should output snapshot 1`] = `
+<Inline
+  alignItems="flex-start"
+  justifyContent="flex-start"
+  scale="m"
+>
+  <Stack
+    alignItems="stretch"
+    scale="s"
+  >
+    <TextDetail
+      isBold={true}
+    >
+      <FormattedMessage
+        defaultMessage="Name"
+        description="The label for the first name"
+        id="Orders.Create.Step.ShippingMethod.addressFirstNameLabel"
+        values={Object {}}
+      />
+    </TextDetail>
+    <TextDetail
+      isBold={true}
+    >
+      <FormattedMessage
+        defaultMessage="Last name"
+        description="The label for the last name"
+        id="Orders.Create.Step.ShippingMethod.addressLastNameLabel"
+        values={Object {}}
+      />
+    </TextDetail>
+    <TextDetail
+      isBold={true}
+    >
+      <FormattedMessage
+        defaultMessage="Phone"
+        description="The label for the phone"
+        id="Orders.Create.Step.ShippingMethod.addressPhoneLabel"
+        values={Object {}}
+      />
+    </TextDetail>
+    <TextDetail
+      isBold={true}
+    >
+      <FormattedMessage
+        defaultMessage="Email"
+        description="The label for the email"
+        id="Orders.Create.Step.ShippingMethod.addressEmailLabel"
+        values={Object {}}
+      />
+    </TextDetail>
+    <TextDetail
+      isBold={true}
+    >
+      <FormattedMessage
+        defaultMessage="Company name"
+        description="The label for the company name"
+        id="Orders.Create.Step.ShippingMethod.addressCompanyNameLabel"
+        values={Object {}}
+      />
+    </TextDetail>
+    <TextDetail
+      isBold={true}
+    >
+      <FormattedMessage
+        defaultMessage="Address"
+        description="The label for the street"
+        id="Orders.Create.Step.ShippingMethod.addressStreetLabel"
+        values={Object {}}
+      />
+    </TextDetail>
+    <TextDetail
+      isBold={true}
+    >
+      <FormattedMessage
+        defaultMessage="City"
+        description="The label for the city"
+        id="Orders.Create.Step.ShippingMethod.addressCityLabel"
+        values={Object {}}
+      />
+    </TextDetail>
+    <TextDetail
+      isBold={true}
+    >
+      <FormattedMessage
+        defaultMessage="Postal Code"
+        description="The label for the postal code"
+        id="Orders.Create.Step.ShippingMethod.addressPostalCodeLabel"
+        values={Object {}}
+      />
+    </TextDetail>
+    <TextDetail
+      isBold={true}
+    >
+      <FormattedMessage
+        defaultMessage="Region"
+        description="The label for the region"
+        id="Orders.Create.Step.ShippingMethod.addressRegionLabel"
+        values={Object {}}
+      />
+    </TextDetail>
+    <TextDetail
+      isBold={true}
+    >
+      <FormattedMessage
+        defaultMessage="Country"
+        description="The label for the country"
+        id="Orders.Create.Step.ShippingMethod.addressCountryLabel"
+        values={Object {}}
+      />
+    </TextDetail>
+    <TextDetail
+      isBold={true}
+    >
+      <FormattedMessage
+        defaultMessage="Additional street information"
+        description="The label for the additional street information"
+        id="Orders.Create.Step.ShippingMethod.addressAdditionalStreetInformationLabel"
+        values={Object {}}
+      />
+    </TextDetail>
+    <TextDetail
+      isBold={true}
+    >
+      <FormattedMessage
+        defaultMessage="Additional information"
+        description="The label for the additional information"
+        id="Orders.Create.Step.ShippingMethod.addressAdditionalInformationLabel"
+        values={Object {}}
+      />
+    </TextDetail>
+  </Stack>
+  <Stack
+    alignItems="stretch"
+    scale="s"
+  >
+    <TextDetail>
+      John
+    </TextDetail>
+    <TextDetail>
+      Doe
+    </TextDetail>
+    <TextDetail>
+      1234568
+    </TextDetail>
+    <TextDetail>
+      foo@bar.com
+    </TextDetail>
+    <TextDetail>
+      commercetools
+    </TextDetail>
+    <TextDetail>
+      -
+    </TextDetail>
+    <TextDetail>
+      Munich
+    </TextDetail>
+    <TextDetail>
+      -
+    </TextDetail>
+    <TextDetail>
+      Bavaria
+    </TextDetail>
+    <TextDetail>
+      DE
+    </TextDetail>
+    <TextDetail>
+      -
+    </TextDetail>
+    <TextDetail>
+      -
+    </TextDetail>
+  </Stack>
+</Inline>
+`;

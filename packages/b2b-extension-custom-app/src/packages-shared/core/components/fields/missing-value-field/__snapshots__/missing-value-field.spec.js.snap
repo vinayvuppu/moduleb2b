@@ -1,0 +1,23 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`rendering should output correct tree\` 1`] = `
+<div>
+  <CheckboxField
+    checked={false}
+    data-track-component="MissingValue"
+    data-track-event="change"
+    data-track-label={false}
+    disabled={false}
+    label={
+      <FormattedMessage
+        defaultMessage="Filter for missing values"
+        description="The label text for the missing values option"
+        id="MissingValueField.label"
+        values={Object {}}
+      />
+    }
+    name="missing-value"
+    onChange={[MockFunction]}
+  />
+</div>
+`;

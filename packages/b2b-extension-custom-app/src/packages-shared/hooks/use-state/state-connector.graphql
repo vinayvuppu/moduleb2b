@@ -1,0 +1,21 @@
+query FetchStatesQuery($where: String) {
+  states(
+    where: $where
+  ) {
+    total
+    results {
+      id
+      key
+      type
+      version
+      nameAllLocales {
+        locale
+        value
+      }
+      descriptionAllLocales {
+        locale
+        value
+      }
+    }
+  }
+}

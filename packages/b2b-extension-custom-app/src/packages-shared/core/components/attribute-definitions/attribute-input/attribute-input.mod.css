@@ -1,0 +1,4 @@
+.disabled input,
+.disabled textarea {
+  cursor: not-allowed;
+}

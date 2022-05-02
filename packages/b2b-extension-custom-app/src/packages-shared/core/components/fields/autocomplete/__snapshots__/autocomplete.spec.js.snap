@@ -1,0 +1,67 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`rendering with multi selection should match snapshot 1`] = `
+<div
+  className="container"
+>
+  <AsyncSelectInput
+    components={
+      Object {
+        "Option": [Function],
+      }
+    }
+    defaultOptions={false}
+    hasError={false}
+    isClearable={false}
+    isDisabled={false}
+    isMulti={true}
+    isSearchable={true}
+    loadOptions={[Function]}
+    menuPortalZIndex={1}
+    name="name"
+    onChange={[Function]}
+    onFocus={[MockFunction]}
+    placeholder="search your category ..."
+    value={
+      Array [
+        Object {
+          "label": "item:something",
+          "value": "something",
+        },
+      ]
+    }
+  />
+</div>
+`;
+
+exports[`rendering with single selection should match snapshot 1`] = `
+<div
+  className="container"
+>
+  <AsyncSelectInput
+    components={
+      Object {
+        "Option": [Function],
+      }
+    }
+    defaultOptions={false}
+    hasError={false}
+    isClearable={false}
+    isDisabled={false}
+    isMulti={false}
+    isSearchable={true}
+    loadOptions={[Function]}
+    menuPortalZIndex={1}
+    name="name"
+    onChange={[Function]}
+    onFocus={[MockFunction]}
+    placeholder="search your category ..."
+    value={
+      Object {
+        "label": "item:something",
+        "value": "something",
+      }
+    }
+  />
+</div>
+`;

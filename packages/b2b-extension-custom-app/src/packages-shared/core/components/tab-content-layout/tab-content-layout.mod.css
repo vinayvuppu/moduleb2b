@@ -1,0 +1,40 @@
+@import '../../_styles/shared.mod.css';
+
+/* Text */
+
+.container {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  flex-grow: 1;
+  flex-shrink: 0;
+}
+
+.header {
+  width: 100%;
+  overflow: hidden;
+  margin-bottom: var(--spacing-s);
+  flex-grow: 0;
+  flex-shrink: 0;
+}
+
+.description {
+  composes: text-body from '../../_styles/commons.mod.css';
+  font-weight: 400;
+  margin-bottom: var(--spacing-s);
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+  flex-shrink: 0;
+}
+
+/* TODO: Read this once we can test locally in IE again (MCD-313) */
+
+/* .container {
+  display: inline-block;
+  width: 100%;
+  overflow: hidden;
+} */

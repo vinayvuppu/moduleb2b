@@ -1,0 +1,14 @@
+:root {
+  --width-dropdown: 140px;
+  --width-dropdown-multi: 340px;
+}
+
+.select {
+  width: var(--width-dropdown);
+  border-radius: var(--border-radius-6);
+}
+
+.select-multi {
+  width: var(--width-dropdown-multi);
+  border-radius: var(--border-radius-6);
+}

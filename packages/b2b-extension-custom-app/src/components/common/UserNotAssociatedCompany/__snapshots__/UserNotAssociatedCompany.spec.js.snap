@@ -1,0 +1,33 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`UserNotAssociatedCompany component rendering should render the correct snapshot 1`] = `
+<DocumentFragment>
+  <div
+    class="css-3mrj0b"
+  >
+    <div
+      class="css-i7yiek-Horizontal-getConstraintStyles-Horizontal"
+    >
+      <div
+        class="css-y97dwm-getStyles"
+      >
+        <div>
+          <img
+            src="test-file-stub"
+          />
+        </div>
+        <h2
+          class="css-1d7aioo-headlineStyles"
+        >
+          Don't have any company
+        </h2>
+        <p
+          class="css-f4iurr-bodyStyles"
+        >
+          Your user with email foo@example.com is not associated to any company
+        </p>
+      </div>
+    </div>
+  </div>
+</DocumentFragment>
+`;

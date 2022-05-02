@@ -1,0 +1,26 @@
+:root {
+  /**
+   * This color is set to maintain consistency with the border color which
+   * is rendered in the table component
+   * @TODO: Remove this
+   */
+  --color-border-table: #d3d3d3;
+}
+
+.container {
+  width: 100%;
+  padding: var(--spacing-m) var(--spacing-s);
+  background-color: var(--color-surface);
+  text-align: right;
+  border: 1px var(--color-border-table) solid;
+  border-top: 0;
+  font-weight: 700;
+}
+
+.total {
+  font-weight: 700;
+}
+
+.total-text {
+  margin-right: var(--spacing-m);
+}

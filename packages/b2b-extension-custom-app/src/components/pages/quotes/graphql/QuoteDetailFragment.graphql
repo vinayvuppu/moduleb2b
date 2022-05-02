@@ -1,0 +1,76 @@
+fragment QuoteDetailsFragment on Quote {
+  id
+  version
+  createdAt
+  lastModifiedAt
+  quoteState
+  employeeId
+  employeeEmail
+  customerGroup {
+    key
+  }
+  company {
+    id
+    name
+  }
+  lineItems {
+    id
+    productId
+    nameAllLocales {
+      locale
+      value
+    }
+    variant {
+      sku
+      images {
+        url
+      }
+    }
+    price {
+      id
+      value {
+        currencyCode
+        centAmount
+      }
+    }
+    originalPrice {
+      currencyCode
+      centAmount
+    }
+    quantity
+    totalPrice {
+      currencyCode
+      centAmount
+    }
+  }
+  totalPrice {
+    centAmount
+    currencyCode
+  }
+  amountDiscount {
+    currencyCode
+    centAmount
+  }
+  percentageDiscount
+  originalTotalPrice {
+    currencyCode
+    centAmount
+  }
+  taxedPrice {
+    totalNet {
+      centAmount
+      currencyCode
+    }
+    totalGross {
+      centAmount
+      currencyCode
+    }
+  }
+  quoteNumber
+  comments {
+    id
+    text
+    email
+    createdAt
+  }
+}

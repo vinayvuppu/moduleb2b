@@ -1,0 +1,66 @@
+#import "./order-duplicate-connector.graphql"
+#import "./order-details.graphql"
+
+mutation CreateOrderFromCartMutation(
+  $draft: OrderCartCommand!
+  $locale: Locale!
+  $storeKey: KeyReferenceInput
+) {
+  createOrderFromCart(draft: $draft, storeKey: $storeKey) {
+    ...OrderDetailsFragment
+  }
+}
+
+mutation CreateCartMutation(
+  $draft: CartDraft!
+  $locale: Locale!
+  $storeKey: KeyReferenceInput
+) {
+  createCart(draft: $draft, storeKey: $storeKey) {
+    ...CartFragment
+  }
+}
+
+mutation ReplicateCartMutation($reference: ReferenceInput!, $locale: Locale!) {
+  replicateCart(reference: $reference) {
+    ...CartFragment
+  }
+}
+
+mutation UpdateCartMutation(
+  $id: String!
+  $version: Long!
+  $actions: [CartUpdateAction!]!
+  $locale: Locale!
+  $storeKey: KeyReferenceInput
+) {
+  updateCart(
+    id: $id
+    version: $version
+    actions: $actions
+    storeKey: $storeKey
+  ) {
+    ...CartFragment
+  }
+}
+
+mutation UpdateOrderMutation(
+  $id: String!
+  $version: Long!
+  $locale: Locale!
+  $actions: [OrderUpdateAction!]!
+) {
+  updateOrder(id: $id, version: $version, actions: $actions) {
+    ...OrderDetailsFragment
+  }
+}
+
+fragment OrderCartCommand on CartDraft {
+  id
+  version
+  paymentState
+  orderState
+  state
+  shipmentState
+  orderNumber
+}

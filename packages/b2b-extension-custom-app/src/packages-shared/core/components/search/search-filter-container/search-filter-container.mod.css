@@ -1,0 +1,13 @@
+:root {
+  /*
+    offset for the shadow width
+  */
+  --border-width: 1px;
+}
+
+.container {
+  border-radius: var(--border-radius-6);
+  background-color: var(--color-neutral-95);
+  margin: 0 var(--border-width);
+  border: var(--border-width) solid var(--color-neutral-95);
+}

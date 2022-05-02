@@ -1,0 +1,66 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`rendering should match snapshot 1`] = `
+<form
+  className="container"
+  onKeyDown={[Function]}
+  onSubmit={[MockFunction]}
+>
+  <Inline
+    alignItems="center"
+    justifyContent="flex-start"
+    scale="s"
+  >
+    <SecondaryIconButton
+      color="solid"
+      icon={<ForwardRef(render) />}
+      isDisabled={true}
+      label="RangePaginator.previousPage"
+      onClick={[Function]}
+      type="button"
+    />
+    <TextBody
+      intlMessage={
+        Object {
+          "defaultMessage": "Page",
+          "description": "Label for page",
+          "id": "RangePaginator.labelPage",
+        }
+      }
+    />
+    <div
+      className="field"
+    >
+      <NumberInput
+        horizontalConstraint="scale"
+        max={3}
+        min={1}
+        name="page"
+        onBlur={[Function]}
+        onChange={[MockFunction]}
+        value="1"
+      />
+    </div>
+    <TextBody
+      intlMessage={
+        Object {
+          "defaultMessage": "of {count}",
+          "description": "Label for total pages",
+          "id": "RangePaginator.labelOfCount",
+          "values": Object {
+            "count": "3",
+          },
+        }
+      }
+    />
+    <SecondaryIconButton
+      color="solid"
+      icon={<ForwardRef(render) />}
+      isDisabled={false}
+      label="RangePaginator.nextPage"
+      onClick={[Function]}
+      type="button"
+    />
+  </Inline>
+</form>
+`;

@@ -1,0 +1,31 @@
+{
+  "email": "michael.wong@companyc.com",
+  "firstName": "Michael",
+  "lastName": "Wong",
+  "middleName": "",
+  "title": "",
+  "salutation": "",
+  "password": "test123",
+  "addresses": [
+    {
+      "streetName": "Conference Center Way",
+      "streetNumber": "2909",
+      "city": "Pottsville",
+      "state": "PA",
+      "country": "US",
+      "phone": "570-906-0209",
+      "mobile": "570-640-0556"
+    }
+  ],
+  "defaultBillingAddress": 0,
+  "defaultShippingAddress": 0,
+  "custom": {
+    "type": {
+      "typeId": "type",
+      "key": "employee-type"
+    },
+    "fields": {
+      "roles": ["b2b-company-admin"]
+    }
+  }
+}

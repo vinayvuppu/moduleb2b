@@ -1,0 +1,7 @@
+.remove-margin > div > div > :nth-child(2) {
+  margin: 0 !important;
+}
+
+.remove-margin {
+  width: 100%;
+}

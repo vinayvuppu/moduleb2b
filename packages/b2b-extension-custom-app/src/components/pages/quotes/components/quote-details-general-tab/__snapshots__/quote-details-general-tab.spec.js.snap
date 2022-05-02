@@ -1,0 +1,45 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`rendering should match snapshot 1`] = `
+<TabContentLayout
+  description={<NoMessage />}
+  header={<branch(MetaDates) />}
+>
+  <Stack
+    alignItems="stretch"
+    scale="m"
+  >
+    <QuoteSummaryPanel
+      quote={
+        Object {
+          "id": "quote-id",
+        }
+      }
+    />
+    <QuoteEmployeePanel
+      isAuthorized={true}
+      projectKey="project-key-1"
+      quote={
+        Object {
+          "id": "quote-id",
+        }
+      }
+    />
+    <Connect(QuoteItemsPanel)
+      addAmountDiscount={[MockFunction]}
+      addPercentageDiscount={[MockFunction]}
+      isAuthorized={true}
+      onUpdateOriginalTotalPrice={[Function]}
+      quote={
+        Object {
+          "id": "quote-id",
+        }
+      }
+      updateQuoteItems={[MockFunction]}
+    />
+  </Stack>
+  <PageBottomSpacer
+    size="m"
+  />
+</TabContentLayout>
+`;

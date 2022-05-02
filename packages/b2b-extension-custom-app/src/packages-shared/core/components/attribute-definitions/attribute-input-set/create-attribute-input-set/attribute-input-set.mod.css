@@ -1,0 +1,14 @@
+.container {
+  flex: 1;
+  padding-right: 8px;
+}
+
+.invalid {
+  composes: container;
+}
+
+.invalid input[type='text'],
+.invalid input[type='number'],
+.invalid :global(.Select-control) {
+  border: 1px solid var(--color-warning) !important;
+}

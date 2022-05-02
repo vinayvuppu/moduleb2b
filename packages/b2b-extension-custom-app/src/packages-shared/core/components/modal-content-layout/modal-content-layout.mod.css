@@ -1,0 +1,61 @@
+@import '../../_styles/shared.mod.css';
+
+/* Modal */
+
+.container {
+  padding: var(--spacing-m) var(--spacing-m) 0;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.header {
+  position: relative;
+  border-bottom: 2px var(--color-neutral) solid;
+  padding-bottom: var(--spacing-m);
+  margin: 0;
+}
+
+.subtitle {
+  font-size: 1rem;
+  color: var(--color-solid);
+  margin-top: var(--spacing-s);
+  flex-grow: 1;
+}
+
+.content {
+  flex: 1;
+  overflow-y: auto;
+  padding: var(--spacing-m) 0;
+}
+
+/*
+ * manually set the margin bottom of the last child in the container. We need
+ * to do this in order to add some more space to the bottom of the scroll
+ * container. Just using a padding-bottom in the .content-container does not
+ * work in firefox unfortunately. It is a reported bug in FF that is not fixed.
+ */
+.content > :last-child {
+  margin-bottom: var(--spacing-bottom-with-save-toolbar);
+}
+
+.footer {
+  padding: var(--spacing-m) 0;
+}
+
+.button-close {
+  float: right;
+  margin-top: calc(var(--spacing-xs) * -1);
+}
+
+.subheader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.controls {
+  position: absolute;
+  right: 0;
+  bottom: var(--spacing-s);
+}

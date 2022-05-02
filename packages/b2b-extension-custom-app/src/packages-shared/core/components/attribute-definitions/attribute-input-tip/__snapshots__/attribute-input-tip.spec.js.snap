@@ -1,0 +1,7 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`AttributeInputTip attribute has input tip should render tip 1`] = `
+<TextDetail>
+  localized value
+</TextDetail>
+`;

@@ -1,0 +1,38 @@
+query SearchCategoryReference($locale: Locale!, $text: String!) {
+  categories: categoryAutocomplete(locale: $locale, text: $text) {
+    results {
+      id
+      externalId
+      nameAllLocales {
+        locale
+        value
+      }
+      slugAllLocales {
+        locale
+        value
+      }
+      parent {
+        nameAllLocales {
+          locale
+          value
+        }
+      }
+      ancestors {
+        nameAllLocales {
+          locale
+          value
+        }
+      }
+    }
+  }
+}
+
+query FetchCategoryById($categoryId: String!) {
+  category(id: $categoryId) {
+    id
+    nameAllLocales {
+      locale
+      value
+    }
+  }
+}

@@ -1,0 +1,81 @@
+query FetchViewsQuery {
+  activeView: activeOrdersListView {
+    ...ordersListViewDetails
+  }
+  views: ordersListViews {
+    id
+    isActive
+    nameAllLocales {
+      locale
+      value
+    }
+  }
+}
+
+mutation CreateViewMutation($draft: OrdersListViewInput!) {
+  createOrdersListView(data: $draft) {
+    ...ordersListViewDetails
+  }
+}
+
+mutation UpdateViewMutation($id: ID!, $draft: OrdersListViewInput!) {
+  updateOrdersListView(id: $id, data: $draft) {
+    ...ordersListViewDetails
+  }
+}
+
+mutation ActivateViewMutation($id: ID!) {
+  activateOrdersListView(id: $id) {
+    id
+    isActive
+  }
+}
+
+mutation SwitchViewActivationMutation(
+  $idOfPreviouslyActiveView: ID!
+  $idOfNextActiveView: ID!
+) {
+  deactivate: deactivateOrdersListView(id: $idOfPreviouslyActiveView) {
+    id
+    isActive
+  }
+  activate: activateOrdersListView(id: $idOfNextActiveView) {
+    id
+    isActive
+  }
+}
+
+mutation DeactivateViewMutation($id: ID!) {
+  deactivateOrdersListView(id: $id) {
+    id
+    isActive
+  }
+}
+
+mutation DeleteViewMutation($id: ID!) {
+  deleteOrdersListView(id: $id) {
+    id
+  }
+}
+
+fragment ordersListViewDetails on OrdersListView {
+  id
+  isActive
+  nameAllLocales {
+    locale
+    value
+  }
+  search
+  sort {
+    order
+    key
+  }
+  filters {
+    target
+    type
+    json
+  }
+  table {
+    visibleColumns
+  }
+}

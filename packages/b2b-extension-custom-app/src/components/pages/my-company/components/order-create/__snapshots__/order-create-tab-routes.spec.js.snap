@@ -1,0 +1,86 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`rendering employees step should match snapshot 1`] = `
+<OrderCreateOwner
+  renderSaveToolbarStep={[Function]}
+>
+  <Switch>
+    <Route
+      path="undefined/pick"
+      render={[Function]}
+    />
+    <Route
+      path="undefined/company"
+      render={[Function]}
+    />
+    <Route
+      path="undefined/:employeeId"
+      render={[Function]}
+    />
+    <Redirect
+      to="undefined/pick"
+    />
+  </Switch>
+</OrderCreateOwner>
+`;
+
+exports[`rendering lineItems step should match snapshot 1`] = `
+<withApplicationContext(injectIntl(Connect(OrderCreateAddLineItems)))
+  cartDraftState={
+    Object {
+      "reset": [MockFunction],
+      "update": [MockFunction],
+      "value": Object {
+        "billingAddress": Object {
+          "id": "address-2",
+        },
+        "currency": "EUR",
+        "customerEmail": "foo@bar.com",
+        "customerId": "customer-id",
+        "id": "cart-id",
+        "lineItems": Array [
+          Object {
+            "id": "line-item-1",
+          },
+        ],
+        "shippingAddress": Object {
+          "id": "address-1",
+        },
+        "shippingInfo": Object {
+          "id": "shipping-method-1",
+        },
+        "version": 1,
+      },
+    }
+  }
+  cartUpdater={
+    Object {
+      "execute": [MockFunction],
+      "isLoading": false,
+    }
+  }
+  goToCountrySelection={[Function]}
+  goToOrdersList={[Function]}
+  hideInitialSelectionModal={[MockFunction]}
+  projectKey="test"
+  renderSaveToolbarStep={[Function]}
+  updateStore={[MockFunction]}
+>
+  <Route
+    path="undefined/select-country"
+    render={[Function]}
+  />
+  <Route
+    path="undefined/change-country"
+    render={[Function]}
+  />
+</withApplicationContext(injectIntl(Connect(OrderCreateAddLineItems)))>
+`;
+
+exports[`rendering shipping method step should match snapshot 1`] = `
+<withApplicationContext(Apollo(OrderCreateSetShippingMethodConnector))
+  cartId="cart-id"
+>
+  <Component />
+</withApplicationContext(Apollo(OrderCreateSetShippingMethodConnector))>
+`;

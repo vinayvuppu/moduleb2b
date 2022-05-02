@@ -1,0 +1,22 @@
+{
+  "name": "B2B Management",
+  "entryPointUriPath": "b2b-extension",
+  "cloudIdentifier": "gcp-us",
+  "env": {
+    "production": {
+      "url": "https://fluted-volt-346608.firebaseapp.com",
+      "cdnUrl": "https://fluted-volt-346608.firebaseapp.com"
+    }
+  },
+  "headers": {
+    "csp": {
+      "script-src": ["fluted-volt-346608.firebaseapp.com", "https://ms-company-6uavihh4ma-ue.a.run.app", "https://ms-gateway-6uavihh4ma-ue.a.run.app"],
+      "connect-src": ["fluted-volt-346608.firebaseapp.com", "https://ms-company-6uavihh4ma-ue.a.run.app", "https://ms-gateway-6uavihh4ma-ue.a.run.app"],
+      "style-src": ["fluted-volt-346608.firebaseapp.com", "https://ms-company-6uavihh4ma-ue.a.run.app", "https://ms-gateway-6uavihh4ma-ue.a.run.app"]
+   }
+  },
+  "additionalEnv":{
+      "apiUrl": "${secrets:COMPANY_MS_URL}",
+      "graphqlApiUrl": "${secrets:GATEWAY_MS_URL}"
+  }
+}

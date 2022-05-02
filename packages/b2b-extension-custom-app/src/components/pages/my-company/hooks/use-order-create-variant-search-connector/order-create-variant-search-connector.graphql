@@ -1,0 +1,97 @@
+fragment PreciseAmount on HighPrecisionMoney {
+  preciseAmount
+}
+
+fragment VariantInfo on ProductVariant {
+  sku
+  key
+  images {
+    url
+    label
+  }
+
+  price(
+    currency: $currency
+    country: $country
+    customerGroupId: $customerGroupId
+    channelId: $channelId
+  ) {
+    value {
+      type
+      centAmount
+      currencyCode
+      fractionDigits
+      ...PreciseAmount
+    }
+    discounted {
+      value {
+        type
+        centAmount
+        currencyCode
+        fractionDigits
+        ...PreciseAmount
+      }
+      discount {
+        id
+      }
+    }
+    channel {
+      id
+    }
+  }
+
+  prices {
+    country
+    customerGroup {
+      id
+    }
+    channel {
+      id
+    }
+    value {
+      type
+      centAmount
+      currencyCode
+      fractionDigits
+      ...PreciseAmount
+    }
+  }
+}
+
+query FetchVariantQuery(
+  $where: String!
+  $currency: Currency!
+  $country: Country
+  $customerGroupId: String
+  $channelId: String
+  $locale: Locale!
+) {
+  products(where: $where) {
+    results {
+      masterData {
+        current {
+          name(locale: $locale)
+          masterVariant {
+            ...VariantInfo
+          }
+          variants {
+            ...VariantInfo
+          }
+        }
+      }
+    }
+  }
+}
+
+query FetchChannelsQuery($where: String!) {
+  channels(where: $where, limit: 500) {
+    results {
+      id
+      key
+      nameAllLocales {
+        locale
+        value
+      }
+    }
+  }
+}

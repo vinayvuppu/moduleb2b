@@ -1,0 +1,58 @@
+.form-box {
+  composes: form-box from '~@commercetools-local/core/_styles/form-box.mod.css';
+}
+
+.dropdown {
+  composes: form-react-select-container from '~@commercetools-local/core/components/dropdowns/dropdown/dropdown.mod.css';
+  display: inline-block;
+  position: relative;
+  width: 100%;
+}
+
+.description {
+  composes: reference from '~@commercetools-local/core/_styles/form-box.mod.css';
+  display: flex;
+  align-items: center;
+}
+
+.description-warning {
+  composes: description;
+  color: var(--color-warning);
+}
+
+.description > * + *,
+.description-warning > * + * {
+  margin: 0 0 0 var(--spacing-xs);
+}
+
+.input-read-only {
+  composes: input-disabled from '~@commercetools-local/core/_styles/forms.mod.css';
+}
+
+.date-container-left {
+  width: calc(100% - 40px);
+}
+
+.date-container-right {
+  width: 40px;
+}
+
+.email-label {
+  display: inline-block;
+  float: left;
+}
+
+.email-verification {
+  float: right;
+  display: inline-flex;
+  align-items: center;
+}
+
+.email-verification-container {
+  display: flex;
+  justify-content: space-between;
+}
+
+.email-verification > * + * {
+  margin: 0 0 0 var(--spacing-xs);
+}

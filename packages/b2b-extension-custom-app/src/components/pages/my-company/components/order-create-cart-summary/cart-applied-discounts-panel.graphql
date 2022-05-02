@@ -1,0 +1,15 @@
+query FetchDiscountCodesQuery($where: String!) {
+  discountCodes(where: $where) {
+    results {
+      id
+      code
+      nameAllLocales {
+        locale
+        value
+      }
+      cartDiscounts {
+        id
+      }
+    }
+  }
+}

@@ -1,0 +1,23 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`createQueryVariables with defined searchText should return the correct where query based on the props 1`] = `
+Object {
+  "limit": 10,
+  "offset": 0,
+  "sort": Array [
+    "code asc",
+  ],
+  "where": "lowercaseEmail = \\"discounts\\" or customerNumber = \\"discounts\\" or companyName = \\"discounts\\" or externalId = \\"discounts\\" and lastName = \\"Test\\"",
+}
+`;
+
+exports[`createQueryVariables with defined sorting should return the correct sort order based on the props 1`] = `
+Object {
+  "limit": 10,
+  "offset": 0,
+  "sort": Array [
+    "code asc",
+  ],
+  "where": "lowercaseEmail = \\"discounts\\" or customerNumber = \\"discounts\\" or companyName = \\"discounts\\" or externalId = \\"discounts\\" and lastName = \\"Test\\"",
+}
+`;

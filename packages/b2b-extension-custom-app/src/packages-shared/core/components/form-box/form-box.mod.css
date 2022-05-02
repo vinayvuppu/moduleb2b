@@ -1,0 +1,14 @@
+.single-width-form-box {
+  composes: form-box from '../../_styles/form-box.mod.css';
+}
+
+.double-width-form-box {
+  composes: form-box-double from '../../_styles/form-box.mod.css';
+}
+.full-width-form-box {
+  composes: form-box-base from '../../_styles/form-box.mod.css';
+}
+
+.has-warning {
+  border: 1px solid var(--color-warning);
+}

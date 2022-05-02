@@ -1,0 +1,19 @@
+@import '../../_styles/shared.mod.css';
+
+.container {
+  padding: 0 var(--spacing-m);
+  display: flex;
+  flex-direction: column;
+  flex-shrink: 0;
+  flex-grow: 1;
+}
+
+.container > :last-child {
+  margin-bottom: var(--spacing-bottom-with-save-toolbar);
+}
+
+.container::after {
+  content: ' ';
+  display: block;
+  clear: both;
+}

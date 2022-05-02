@@ -1,0 +1,193 @@
+name: B2B MS Gateway CI/CD flows
+on:
+  repository_dispatch:
+    types: ms-gateway
+  push:
+    branches:
+      - main
+      - staging
+      - develop
+      - feature/**
+      - demo
+    paths:
+      - "packages/b2b-ms-gateway/**"
+      - ".github/workflows/ms-gateway-ci.yaml"
+      - "*.json"
+      - "yarn.lock"
+env:
+  GCP_SDK_VERSION: "276.0.0"
+  GITHUB_SHA: ${{ github.sha }}
+  IMAGE: commercetools-ms-gateway
+jobs:
+  lint:
+    name: Lint (node.js, dockerfile, markdown)
+    runs-on: ubuntu-18.04
+    strategy:
+      matrix:
+        node-version: [14.x]
+    steps:
+      - uses: actions/checkout@v2
+
+      - name: Use Node.js ${{ matrix.node-version }}
+        uses: actions/setup-node@v2
+        with:
+          node-version: ${{ matrix.node-version }}
+
+      - name: Install dependencies
+        run: |
+          yarn install --no-audit
+
+      - name: Lint Node.js
+        run: |
+          yarn workspace b2b-ms-gateway lint
+
+      - name: Lint Markdown
+        run: |
+          yarn workspace b2b-ms-gateway lint-md
+
+      - name: Lint Dockerfile
+        run: |
+          cd packages/b2b-ms-gateway
+          docker run -i hadolint/hadolint:v1.17.3 < Dockerfile
+
+  build:
+    name: Build (node.js)
+    needs: lint
+    runs-on: ubuntu-18.04
+    strategy:
+      matrix:
+        node-version: [14.x]
+    steps:
+      - uses: actions/checkout@v2
+      # Setup environment variables based on github ref for environment selection.
+      - name: Set environment variables (dev)
+        if: ${{ github.ref == 'refs/heads/develop'}}
+        run: |
+          echo "GC_PROJECT_ID=${{ secrets.GC_PROJECT_ID_DEV }}" >> $GITHUB_ENV
+          echo "GCP_SA_KEY=${{ secrets.GCP_SA_KEY_DEV }}" >> $GITHUB_ENV
+      - name: Set environment variables (staging)
+        if: ${{ github.ref == 'refs/heads/staging'}}
+        run: |
+          echo "GC_PROJECT_ID=${{ secrets.GC_PROJECT_ID_STAGE }}" >> $GITHUB_ENV
+          echo "GCP_SA_KEY=${{ secrets.GCP_SA_KEY_STAGE }}" >> $GITHUB_ENV
+      - name: Set environment variables (production)
+        if: ${{ github.ref == 'refs/heads/main'}}
+        run: |
+          echo "GC_PROJECT_ID=${{ secrets.GC_PROJECT_ID_PROD }}" >> $GITHUB_ENV
+          echo "GCP_SA_KEY=${{ secrets.GCP_SA_KEY_PROD }}" >> $GITHUB_ENV
+      - name: Set environment variables (feature)
+        if: startsWith(github.ref, 'refs/heads/feature/')
+        run: |
+          echo "GC_PROJECT_ID=feature-branch" >> $GITHUB_ENV
+      - name: Set environment variables (demo)
+        if: ${{ github.ref == 'refs/heads/demo'}}
+        run: |
+          echo "GC_PROJECT_ID=${{ secrets.GC_PROJECT_ID_DEMO }}" >> $GITHUB_ENV
+          echo "GCP_SA_KEY=${{ secrets.GCP_SA_KEY_DEMO }}" >> $GITHUB_ENV
+
+      - uses: google-github-actions/setup-gcloud@v0.2.1
+        if: startsWith(github.ref , 'refs/heads/feature/') != true
+        with:
+          project_id: ${{env.GC_PROJECT_ID}}
+          version: ${{env.GCP_SDK_Version}}
+          service_account_key: ${{ env.GCP_SA_KEY }}
+
+      - name: Authenticate docker
+        if: startsWith(github.ref , 'refs/heads/feature/') != true
+        run: |
+          # Set up docker to authenticate
+          # via gcloud command-line tool.
+          gcloud auth activate-service-account terraform@fluted-volt-346608.iam.gserviceaccount.com --key-file=keys/terraform-sa-fluted-volt-346608.json
+          gcloud auth configure-docker
+
+      # Build the Docker image
+      - name: Build with Docker
+        run: |
+          cd packages/b2b-ms-gateway
+          docker build -t gcr.io/${{ secrets.GC_PROJECT_ID }}/${{ env.IMAGE }}:${{ env.GITHUB_SHA }} \
+            --build-arg PORT=8080 .
+
+      # Push the Docker image to Google Container Registry
+      - name: Publish
+        if: startsWith(github.ref , 'refs/heads/feature/') != true
+        run: docker push gcr.io/${{ secrets.GC_PROJECT_ID }}/${{ env.IMAGE }}:${{ env.GITHUB_SHA }}
+
+  test:
+    name: Test
+    runs-on: ubuntu-18.04
+    strategy:
+      matrix:
+        node-version: [14.x]
+    steps:
+      - uses: actions/checkout@v2
+      - name: Use Node.js ${{ matrix.node-version }}
+        uses: actions/setup-node@v2
+        with:
+          node-version: ${{ matrix.node-version }}
+      - name: Unit Testing
+        run: |
+          cd packages/b2b-ms-gateway
+          yarn
+          yarn test
+      - name: Audit for security vulnerabilities
+        continue-on-error: true
+        run: |
+          cd packages/b2b-ms-gateway
+          yarn
+          yarn audit --level high ; [[ $? -ge 8 ]] && exit 1 || echo "passed"
+
+  deploy:
+    name: Deploy
+    needs: [test, build]
+    runs-on: ubuntu-18.04
+    strategy:
+      matrix:
+        node-version: [14.x]
+    if: startsWith(github.ref , 'refs/heads/feature/') != true
+    steps:
+      - uses: actions/checkout@v2
+      # Setup environment variables based on github ref for environment selection.
+      - name: Set environment variables (dev)
+        if: ${{ github.ref == 'refs/heads/develop'}}
+        run: |
+          echo "GC_PROJECT_ID=${{ secrets.GC_PROJECT_ID_DEV }}" >> $GITHUB_ENV
+          echo "GCP_SA_KEY=${{ secrets.GCP_SA_KEY_DEV }}" >> $GITHUB_ENV          
+          echo "EMPLOYEE_MS_URL=https://ms-employee-${{ secrets.MS_DOMAIN_DEV }}/employees" >> $GITHUB_ENV
+          echo "QUOTE_MS_URL=https://ms-quote-${{ secrets.MS_DOMAIN_DEV }}/quotes" >> $GITHUB_ENV
+      - name: Set environment variables (staging)
+        if: ${{ github.ref == 'refs/heads/staging'}}
+        run: |
+          echo "GC_PROJECT_ID=${{ secrets.GC_PROJECT_ID_STAGE }}" >> $GITHUB_ENV
+          echo "GCP_SA_KEY=${{ secrets.GCP_SA_KEY_STAGE }}" >> $GITHUB_ENV          
+          echo "EMPLOYEE_MS_URL=https://ms-employee-${{ secrets.MS_DOMAIN_STAGE }}/employees" >> $GITHUB_ENV
+          echo "QUOTE_MS_URL=https://ms-quote-${{ secrets.MS_DOMAIN_STAGE }}/quotes" >> $GITHUB_ENV
+      - name: Set environment variables (production)
+        if: ${{ github.ref == 'refs/heads/main'}}
+        run: |
+          echo "GC_PROJECT_ID=${{ secrets.GC_PROJECT_ID_PROD }}" >> $GITHUB_ENV
+          echo "GCP_SA_KEY=${{ secrets.GCP_SA_KEY_PROD }}" >> $GITHUB_ENV          
+          echo "EMPLOYEE_MS_URL=https://ms-employee-${{ secrets.MS_DOMAIN_PROD }}/employees" >> $GITHUB_ENV
+          echo "QUOTE_MS_URL=https://ms-quote-${{ secrets.MS_DOMAIN_PROD }}/quotes" >> $GITHUB_ENV
+      - name: Set environment variables (demo)
+        if: ${{ github.ref == 'refs/heads/demo'}}
+        run: |
+          echo "GC_PROJECT_ID=${{ secrets.GC_PROJECT_ID_DEMO }}" >> $GITHUB_ENV
+          echo "GCP_SA_KEY=${{ secrets.GCP_SA_KEY_DEMO }}" >> $GITHUB_ENV          
+          echo "EMPLOYEE_MS_URL=https://ms-employee-${{ secrets.MS_DOMAIN_DEMO }}/employees" >> $GITHUB_ENV
+          echo "QUOTE_MS_URL=https://ms-quote-${{ secrets.MS_DOMAIN_DEMO }}/quotes" >> $GITHUB_ENV
+
+      - uses: google-github-actions/setup-gcloud@v0.2.1
+        with:
+          project_id: ${{env.GC_PROJECT_ID}}
+          version: ${{env.GCP_SDK_Version}}
+          service_account_key: ${{ env.GCP_SA_KEY }}
+
+      - name: Deploy to Cloud Run
+        run: |
+          # Interpolate environment variables
+          cd packages/b2b-ms-gateway
+          gcloud auth activate-service-account terraform@fluted-volt-346608.iam.gserviceaccount.com --key-file=../../keys/terraform-sa-fluted-volt-346608.json
+          gcloud config set project ${{ secrets.GC_PROJECT_ID }}
+          gcloud run deploy ms-gateway --platform=managed --region=us-east1 --allow-unauthenticated   \
+          --image=gcr.io/${{secrets.GC_PROJECT_ID}}/${{env.IMAGE}}:${{env.GITHUB_SHA}} \
+          --set-env-vars=HOST="0.0.0.0",GC_PROJECT_ID=${{secrets.GC_PROJECT_ID}},EMPLOYEE_MS_URL=${{secrets.EMPLOYEE_MS_URL}},QUOTE_MS_URL=${{secrets.QUOTE_MS_URL}}

@@ -1,0 +1,43 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`rendering outputs correct tree when value set 1`] = `
+<Tag
+  horizontalConstraint="scale"
+  isDisabled={false}
+  onClick={[MockFunction]}
+  onRemove={[MockFunction]}
+  styles={
+    Object {
+      "body": Object {},
+    }
+  }
+  type="normal"
+>
+  <div
+    className="tagBody"
+  >
+    <div
+      className="bold"
+    >
+      Date
+      :
+    </div>
+    <div>
+      Search.Filters.RangeFilterTag.from
+    </div>
+    <div
+      className="bold"
+    >
+      5
+    </div>
+    <div>
+      Search.Filters.RangeFilterTag.to
+    </div>
+    <div
+      className="bold"
+    >
+      10
+    </div>
+  </div>
+</Tag>
+`;

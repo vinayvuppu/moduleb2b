@@ -1,0 +1,79 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`render when the budget is not over outputs correct tree 1`] = `
+<Card
+  theme="light"
+  type="raised"
+>
+  <Stack
+    alignItems="stretch"
+    scale="s"
+  >
+    <Inline
+      alignItems="flex-start"
+      justifyContent="space-between"
+      scale="s"
+    >
+      <div
+        className="budget"
+      >
+        Orders.Create.CartSummaryBudget.remainingBudget
+      </div>
+      <div
+        className="budget"
+      />
+    </Inline>
+  </Stack>
+</Card>
+`;
+
+exports[`render when the budget is over outputs correct tree 1`] = `
+<Card
+  theme="light"
+  type="raised"
+>
+  <Stack
+    alignItems="stretch"
+    scale="s"
+  >
+    <Inline
+      alignItems="flex-start"
+      justifyContent="space-between"
+      scale="s"
+    >
+      <div
+        className="budget negative"
+      >
+        Orders.Create.CartSummaryBudget.isOver
+      </div>
+      <div
+        className="budget negative"
+      />
+    </Inline>
+  </Stack>
+</Card>
+`;
+
+exports[`render when the employee has not budget defined outputs correct tree 1`] = `
+<Card
+  theme="light"
+  type="raised"
+>
+  <Stack
+    alignItems="stretch"
+    scale="s"
+  >
+    <Inline
+      alignItems="flex-start"
+      justifyContent="space-between"
+      scale="s"
+    >
+      <div
+        className="budget"
+      >
+        Orders.Create.CartSummaryBudget.withoutBudget
+      </div>
+    </Inline>
+  </Stack>
+</Card>
+`;

@@ -1,0 +1,29 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`rendering when loaded when success should match snapshot 1`] = `<ChildComponent />`;
+
+exports[`rendering when loaded when the user does not exist as employee should match snapshot 1`] = `<UserNotAssociatedCompany />`;
+
+exports[`rendering when loaded when the user does not have company associated should match snapshot 1`] = `<UserNotAssociatedCompany />`;
+
+exports[`rendering when loading company should match snapshot 1`] = `
+<Stack
+  alignItems="center"
+  scale="m"
+>
+  <LoadingSpinner
+    scale="l"
+  />
+</Stack>
+`;
+
+exports[`rendering when loading employee should match snapshot 1`] = `
+<Stack
+  alignItems="center"
+  scale="m"
+>
+  <LoadingSpinner
+    scale="l"
+  />
+</Stack>
+`;

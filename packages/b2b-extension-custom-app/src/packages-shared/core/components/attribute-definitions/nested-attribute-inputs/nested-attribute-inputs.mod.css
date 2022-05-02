@@ -1,0 +1,6 @@
+.set-controls-container {
+  flex: 1;
+}
+.delete-set-item-placeholder {
+  width: var(--spacing-l);
+}

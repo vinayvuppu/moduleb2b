@@ -1,0 +1,18 @@
+.container {
+  /** noop */
+}
+
+.section {
+  margin-bottom: 16px;
+}
+
+.label {
+  color: var(--color-solid);
+  font-weight: normal;
+  margin: 0;
+}
+
+.info {
+  color: var(--color-solid);
+  font-weight: bold;
+}

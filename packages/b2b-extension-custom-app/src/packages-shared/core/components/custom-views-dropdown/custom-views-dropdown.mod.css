@@ -1,0 +1,193 @@
+:root {
+  --max-height-dropdown-items: 200px;
+  --width-dropdown: 210px;
+  --z-index-options-wrapper: 5;
+  --option-selected-background-color: var(--color-accent-95);
+  --option-selectable-hover-color: var(--color-neutral-90);
+  --option-group-separator-border-color: var(--color-neutral);
+}
+
+.option-is-dirty-icon {
+  display: flex;
+  align-items: center;
+  height: var(--spacing-s);
+  width: var(--spacing-s);
+  padding-top: var(--border-radius-2);
+}
+
+.option-mode-icon {
+  display: flex;
+  align-items: center;
+  height: 12px;
+  width: 12px;
+}
+
+.option-name-text {
+  max-width: 20ch;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.dropdown-head {
+  display: flex;
+  width: var(--width-dropdown);
+  flex-direction: column;
+  border-radius: var(--border-radius-for-input);
+  height: var(--size-height-input);
+  border: 1px var(--border-color-for-input) solid;
+  background-color: var(--background-color-for-input);
+  position: relative;
+}
+
+.dropdown-head-default {
+  composes: dropdown-head;
+  background-color: var(--background-color-for-input);
+}
+
+.dropdown-head-active {
+  composes: dropdown-head;
+  border-color: var(--border-color-for-input-when-focused);
+}
+
+.dropdown-head-disabled {
+  composes: dropdown-head;
+  color: var(--font-color-for-input-when-disabled);
+  border-color: var(--border-color-for-input-when-disabled);
+  background-color: var(--background-color-for-input-when-disabled);
+}
+
+.dropdown-content {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex: 1 0 100%;
+  padding-left: var(--spacing-s);
+}
+
+.dropdown-content > * + * {
+  margin-left: var(--spacing-m);
+}
+
+.options-wrapper {
+  color: var(--font-color-for-input);
+  background: var(--color-surface);
+  position: relative;
+  z-index: var(--z-index-options-wrapper);
+  top: var(--spacing-xs);
+  width: var(--width-dropdown);
+  border-radius: var(--border-radius-6);
+
+  /* to center the options under the header */
+  left: -1px;
+}
+
+/* otherwise the background of inner divs overlap with the outer border */
+.options-border {
+  border-radius: var(--border-radius-for-input);
+  border: 1px solid var(--border-color-for-input-when-focused);
+  overflow: hidden;
+}
+
+.dropdown-option-group:not(:last-child) {
+  border-bottom: 1px var(--option-group-separator-border-color) solid;
+}
+
+.dropdown-items {
+  max-height: var(--max-height-dropdown-items);
+  overflow-y: scroll;
+}
+
+.dropdown-chevron {
+  display: flex;
+  align-items: center;
+  padding-right: var(--spacing-xs);
+  pointer-events: none;
+}
+
+.option-actions {
+  padding-left: var(--spacing-l);
+}
+
+.option-actions-exist {
+  padding-bottom: var(--spacing-s);
+  border-bottom: 1px var(--option-group-separator-border-color) solid;
+}
+
+.option {
+  padding: 0 var(--spacing-s);
+  min-height: var(--spacing-xl);
+  display: flex;
+  flex-direction: column;
+}
+
+.option-action {
+  composes: option;
+}
+
+.option-selectable {
+  composes: option;
+}
+
+.option-create {
+  composes: option;
+  padding: var(--spacing-s) var(--spacing-xs);
+}
+
+.option-selectable:hover {
+  background: var(--option-selectable-hover-color);
+}
+
+.option-selectable-is-active:hover {
+  background: inherit;
+}
+
+.option-is-selected {
+  background: var(--option-selected-background-color);
+}
+
+.option-button {
+  width: 100%;
+  height: 100%;
+  flex-grow: 1;
+  text-align: left;
+}
+
+.option-text {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  max-width: 100%;
+}
+
+.selected-option-text {
+  composes: option-text;
+  display: flex;
+  justify-content: space-between;
+  /* Substracts the chevron width and positioning */
+  max-width: var(--width-dropdown);
+}
+
+.option-text-is-dirty {
+  display: flex;
+  justify-content: space-between;
+  max-width: var(--width-dropdown);
+}
+
+.selected-option-text-is-dirty {
+  composes: option-text-is-dirty;
+  border-radius: var(--border-radius-for-input);
+  /* Substracts the chevron width, positioning and dirty indicator */
+  max-width: calc(var(--width-dropdown) + var(--spacing-xs));
+}
+
+.option-action:hover {
+  background: var(--option-selected-background-color);
+}
+
+.option-action-icon {
+  margin-right: var(--spacing-xs);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}

@@ -1,0 +1,116 @@
+name: Terraform CI/CD release (master) flow
+on:
+  repository_dispatch:
+    types: subscription-add-monthly-spent
+  push:
+    branches:
+      - main
+      - staging
+      - develop
+      - demo
+    paths:
+      - "packages/b2b-terraform/**"
+      - ".github/workflows/terraform-ci.yaml"
+env:
+  COMMERCETOOLS_URL: "https://github.com/labd/terraform-provider-commercetools/releases/download/0.19.0/terraform-provider-commercetools-0.19.0-linux-amd64.tar.gz"
+  TERRAFORM_VERSION: "0.13.0"
+  CTP_AUTH_URL: ${{ secrets.CT_AUTH_URL }}
+  CTP_API_URL: ${{ secrets.CT_API_URL }}
+jobs:
+  lint:
+    name: Terraform Lint
+    runs-on: ubuntu-18.04
+    steps:
+      - name: "Checkout"
+        uses: actions/checkout@v2
+
+      - name: "Install Terraform"
+        run: |
+          tf_version=$TERRAFORM_VERSION
+          wget https://releases.hashicorp.com/terraform/"$tf_version"/terraform_"$tf_version"_linux_amd64.zip
+          unzip terraform_"$tf_version"_linux_amd64.zip
+          sudo mv terraform /usr/local/bin/
+          mkdir -p ~/.terraform.d/plugins
+          wget -qO commercetools.tar.gz $COMMERCETOOLS_URL
+          tar xzf commercetools.tar.gz -C ~/.terraform.d/plugins
+
+      - name: "Terraform Lint"
+        run: |
+          cd packages/b2b-terraform/default
+          terraform fmt -check=true -diff=true || ( echo >&2 "Canonical format and style doesn't match convention. Please fix (try running 'terraform fmt' locally)."; exit 3; )
+
+  plan_and_apply:
+    name: Terraform Plan and Apply
+    needs: lint
+    runs-on: ubuntu-18.04
+    if: startsWith(github.ref , 'refs/heads/feature/') != true
+    steps:
+      - name: "Checkout"
+        uses: actions/checkout@v2
+
+      - name: "Install Terraform"
+        run: |
+          tf_version=$TERRAFORM_VERSION
+          wget https://releases.hashicorp.com/terraform/"$tf_version"/terraform_"$tf_version"_linux_amd64.zip
+          unzip terraform_"$tf_version"_linux_amd64.zip
+          sudo mv terraform /usr/local/bin/
+          mkdir -p ~/.terraform.d/plugins
+          wget -qO commercetools.tar.gz $COMMERCETOOLS_URL
+          tar xzf commercetools.tar.gz -C ~/.terraform.d/plugins
+      # Setup environment variables based on github ref for environment selection.
+      - name: Set environment variables (dev)
+        if: ${{ github.ref == 'refs/heads/develop'}}
+        run: |
+          echo "GCP_SA_KEY=${{ secrets.GCP_SA_KEY_DEV }}" >> $GITHUB_ENV
+          echo "CTP_PROJECT_KEY=${{ secrets.CT_PROJECT_KEY_DEV }}" >> $GITHUB_ENV
+          echo "CTP_CLIENT_SECRET=${{ secrets.CT_CLIENT_SECRET_DEV }}" >> $GITHUB_ENV
+          echo "CTP_CLIENT_ID=${{ secrets.CT_CLIENT_ID_DEV }}" >> $GITHUB_ENV
+          echo "CTP_SCOPES=${{ secrets.CT_SCOPE_DEV }}" >> $GITHUB_ENV
+          echo "TF_VAR_project_id=${{ secrets.GC_PROJECT_ID_DEV }}" >> $GITHUB_ENV
+          echo "TF_VAR_ct_project_key=${{ secrets.CT_PROJECT_KEY_DEV }}" >> $GITHUB_ENV
+          echo "TF_VAR_region=${{ secrets.GC_PROJECT_REGION_DEV }}" >> $GITHUB_ENV
+      - name: Set environment variables (staging)
+        if: ${{ github.ref == 'refs/heads/staging'}}
+        run: |
+          echo "GCP_SA_KEY=${{ secrets.GCP_SA_KEY_STAGE }}" >> $GITHUB_ENV
+          echo "CTP_PROJECT_KEY=${{ secrets.CT_PROJECT_KEY_STAGE }}" >> $GITHUB_ENV
+          echo "CTP_CLIENT_SECRET=${{ secrets.CT_CLIENT_SECRET_STAGE }}" >> $GITHUB_ENV
+          echo "CTP_CLIENT_ID=${{ secrets.CT_CLIENT_ID_STAGE }}" >> $GITHUB_ENV
+          echo "CTP_SCOPES=${{ secrets.CT_SCOPE_STAGE }}" >> $GITHUB_ENV
+          echo "TF_VAR_project_id=${{ secrets.GC_PROJECT_ID_STAGE }}" >> $GITHUB_ENV
+          echo "TF_VAR_ct_project_key=${{ secrets.CT_PROJECT_KEY_STAGE }}" >> $GITHUB_ENV
+          echo "TF_VAR_region=${{ secrets.GC_PROJECT_REGION_STAGE }}" >> $GITHUB_ENV
+      - name: Set environment variables (production)
+        if: ${{ github.ref == 'refs/heads/main'}}
+        run: |
+          echo "GCP_SA_KEY=${{ secrets.GCP_SA_KEY_PROD }}" >> $GITHUB_ENV
+          echo "CTP_PROJECT_KEY=${{ secrets.CT_PROJECT_KEY_PROD }}" >> $GITHUB_ENV
+          echo "CTP_CLIENT_SECRET=${{ secrets.CT_CLIENT_SECRET_PROD }}" >> $GITHUB_ENV
+          echo "CTP_CLIENT_ID=${{ secrets.CT_CLIENT_ID_PROD }}" >> $GITHUB_ENV
+          echo "CTP_SCOPES=${{ secrets.CT_SCOPE_PROD }}" >> $GITHUB_ENV
+          echo "TF_VAR_project_id=${{ secrets.GC_PROJECT_ID_PROD }}" >> $GITHUB_ENV
+          echo "TF_VAR_ct_project_key=${{ secrets.CT_PROJECT_KEY_PROD }}" >> $GITHUB_ENV
+          echo "TF_VAR_region=${{ secrets.GC_PROJECT_REGION_PROD }}" >> $GITHUB_ENV
+      - name: Set environment variables (demo)
+        if: ${{ github.ref == 'refs/heads/demo'}}
+        run: |
+          echo "GCP_SA_KEY=${{ secrets.GCP_SA_KEY_DEMO }}" >> $GITHUB_ENV
+          echo "CTP_PROJECT_KEY=${{ secrets.CT_PROJECT_KEY_DEMO }}" >> $GITHUB_ENV
+          echo "CTP_CLIENT_SECRET=${{ secrets.CT_CLIENT_SECRET_DEMO }}" >> $GITHUB_ENV
+          echo "CTP_CLIENT_ID=${{ secrets.CT_CLIENT_ID_DEMO }}" >> $GITHUB_ENV
+          echo "CTP_SCOPES=${{ secrets.CT_SCOPE_DEMO }}" >> $GITHUB_ENV
+          echo "TF_VAR_project_id=${{ secrets.GC_PROJECT_ID_DEMO }}" >> $GITHUB_ENV
+          echo "TF_VAR_ct_project_key=${{ secrets.CT_PROJECT_KEY_DEMO }}" >> $GITHUB_ENV
+          echo "TF_VAR_region=${{ secrets.GC_PROJECT_REGION }}" >> $GITHUB_ENV
+      - name: "Terraform Plan"
+        run: |
+          cd packages/b2b-terraform/default
+          echo ${{env.GCP_SA_KEY}} | base64 -d > serviceaccount.json
+          cat serviceaccount.json
+          terraform init -reconfigure
+          terraform plan -out=default_plan.tfplan -input=false
+
+      - name: "Terraform Apply"
+        run: |
+          cd packages/b2b-terraform/default
+          terraform apply -input=false default_plan.tfplan

@@ -1,0 +1,24 @@
+runtime: custom
+env: flex
+manual_scaling:
+  instances: 1
+resources:
+  cpu: 1
+  memory_gb: 0.5
+  disk_size_gb: 10
+liveness_check:
+  path: "/live"
+  check_interval_sec: 120
+readiness_check:
+  path: "/ready"
+  check_interval_sec: 30
+service: ms-quote  
+env_variables:
+  HOST: "0.0.0.0" # To allow internal app engine forward rule to work (172.12.0.1)
+  CT_AUTH_URL: ${CT_AUTH_URL}
+  CT_API_URL: ${CT_API_URL}
+  CT_PROJECT_KEY: ${CT_PROJECT_KEY}
+  CT_CLIENT_ID: ${CT_CLIENT_ID}
+  CT_CLIENT_SECRET: ${CT_CLIENT_SECRET}
+  CT_SCOPE: ${CT_SCOPE}
+  GC_PROJECT_ID: ${GC_PROJECT_ID}

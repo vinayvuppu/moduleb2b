@@ -1,0 +1,19 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`rendering render component should output correct tree 1`] = `
+<div
+  aria-label="Close dialog"
+  className="button-close-container"
+  data-testid="button-close"
+  data-track-component="Close"
+  data-track-event="click"
+  onClick={[MockFunction]}
+  onMouseOut={[MockFunction]}
+  onMouseOver={[MockFunction]}
+>
+  <CloseIcon
+    color="solid"
+    size="medium"
+  />
+</div>
+`;

@@ -1,0 +1,28 @@
+.item-container {
+  display: flex;
+  align-items: center;
+}
+
+.item-container + .item-container {
+  padding-top: var(--spacing-s);
+}
+
+.item-container > * + * {
+  padding: 0 0 0 var(--spacing-s);
+}
+
+.item-grow {
+  flex-grow: 1;
+}
+
+.icon {
+  transition: margin 0s;
+}
+
+.icon + .icon {
+  margin: 0 0 0 var(--spacing-s);
+}
+
+.button {
+  flex-shrink: 0;
+}

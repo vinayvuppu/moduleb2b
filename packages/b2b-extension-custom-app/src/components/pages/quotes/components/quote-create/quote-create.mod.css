@@ -1,0 +1,78 @@
+@import '@commercetools-local/core/_styles/shared.mod.css';
+
+:root {
+  --max-stepper-width: 80%;
+}
+
+.page {
+  /* TODO replace "page" with animations */
+  display: block;
+}
+
+.header {
+  position: relative;
+  background: var(--color-neutral-90);
+  border-bottom: 1px var(--color-neutral) solid;
+  width: calc(var(--width-oneHundredPercent));
+  padding-top: var(--spacing-s);
+  z-index: 1;
+}
+
+/* copied from steps.js */
+.tabs-list {
+  width: 100%;
+  max-width: var(--max-stepper-width);
+}
+
+/* Transition styles */
+
+.slider {
+  display: flex;
+  flex-direction: column;
+  flex: 2;
+  overflow-y: auto;
+  padding: var(--spacing-m) var(--spacing-m) 0;
+  height: 100%;
+}
+
+.wrapper {
+  flex: 1;
+  transition: all 0.2s ease-in-out;
+}
+
+.enter-from-right,
+.leave-to-right {
+  transform: translate3d(100%, 0, 0) !important;
+}
+
+.leave-to-left,
+.enter-from-left {
+  transform: translate3d(-100%, 0, 0) !important;
+}
+
+.enter-active,
+.leave {
+  transform: translate3d(0, 0, 0);
+}
+
+.appear {
+  opacity: 0.01;
+  transition: opacity 0.5s ease-in;
+}
+
+.appear.appear-active {
+  opacity: 1;
+}
+
+.container {
+  display: flex;
+  flex-direction: row;
+  flex: 1;
+}
+
+.center-content {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-grow: 1;
+}

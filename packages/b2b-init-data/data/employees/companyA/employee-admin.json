@@ -1,0 +1,34 @@
+{
+  "email": "xema+companyA-admin@devgurus.io",
+  "firstName": "Catherine",
+  "lastName": "Chapman",
+  "middleName": "",
+  "title": "",
+  "salutation": "",
+  "password": "test123",
+  "addresses": [
+    {
+      "firstName": "Catherine",
+      "lastName": "Chapman",
+      "streetName": "Hanifan Lane",
+      "streetNumber": "2560 ",
+      "postalCode": "30076",
+      "city": "Roswell",
+      "state": "GA",
+      "country": "US",
+      "phone": "678-525-7018",
+      "mobile": "229-392-3713"
+    }
+  ],
+  "defaultBillingAddress": 0,
+  "defaultShippingAddress": 0,
+  "custom": {
+    "type": {
+      "typeId": "type",
+      "key": "employee-type"
+    },
+    "fields": {
+      "roles": ["b2b-company-admin"]
+    }
+  }
+}

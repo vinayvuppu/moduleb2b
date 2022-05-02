@@ -1,0 +1,197 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`rendering should match children snapshot 1`] = `
+<Stack
+  alignItems="stretch"
+  scale="m"
+>
+  <Table
+    columns={
+      Array [
+        Object {
+          "flexGrow": 1,
+          "key": "quoteNumber",
+          "label": "formatted message",
+        },
+        Object {
+          "flexGrow": 1,
+          "key": "quoteState",
+          "label": "formatted message",
+        },
+        Object {
+          "flexGrow": 1,
+          "key": "originalTotalPrice",
+          "label": "formatted message",
+        },
+        Object {
+          "key": "discount",
+          "label": "formatted message",
+        },
+        Object {
+          "flexGrow": 1,
+          "key": "totalPrice",
+          "label": "formatted message",
+        },
+        Object {
+          "align": "right",
+          "flexGrow": 1,
+          "key": "totalLineItemCount",
+          "label": "formatted message",
+        },
+        Object {
+          "flexGrow": 1,
+          "key": "company",
+          "label": "formatted message",
+        },
+        Object {
+          "flexGrow": 1,
+          "key": "employeeEmail",
+          "label": "formatted message",
+        },
+        Object {
+          "key": "actions",
+          "label": "formatted message",
+        },
+      ]
+    }
+    itemRenderer={[Function]}
+    items={
+      Array [
+        Object {
+          "id": "quote-id",
+        },
+      ]
+    }
+    onRowClick={[Function]}
+    rowCount={1}
+    shouldFillRemainingVerticalSpace={true}
+  >
+    <div />
+    <PageBottomSpacer
+      size="m"
+    />
+  </Table>
+</Stack>
+`;
+
+exports[`rendering should match snapshot 1`] = `
+<div>
+  <Inline
+    alignItems="center"
+    justifyContent="space-between"
+    scale="s"
+  >
+    <Toolbar
+      title={
+        <div>
+          formatted message
+          <TotalResults
+            total={1}
+          />
+        </div>
+      }
+    />
+    <Inset
+      scale="m"
+    >
+      <Link
+        to="/project-key/b2b-extension/my-company/quotes/new"
+      >
+        <SecondaryButton
+          iconLeft={<PlusBoldIcon />}
+          isToggleButton={false}
+          label="formatted message"
+          onClick={[Function]}
+          theme="default"
+          type="button"
+        />
+      </Link>
+    </Inset>
+  </Inline>
+  <Container>
+    <injectTracking(withPendingRequests(SearchView))
+      areFiltersVisible={true}
+      count={1}
+      filterDefinitions={
+        Object {
+          "companyId": Object {
+            "filterTypes": Object {
+              "equalTo": Object {
+                "canBeAppliedMultipleTimes": false,
+                "filterComponent": [Function],
+                "label": "formatted message",
+                "tagComponent": [Function],
+              },
+            },
+            "label": "formatted message",
+          },
+          "quoteState": Object {
+            "filterTypes": Object {
+              "in": Object {
+                "canBeAppliedMultipleTimes": false,
+                "filterComponent": [Function],
+                "isEmptyFilter": [Function],
+                "label": "formatted message",
+                "tagComponent": [Function],
+                "validator": [Function],
+              },
+            },
+            "label": "formatted message",
+          },
+        }
+      }
+      filters={
+        Object {
+          "quoteState": Array [
+            Object {
+              "type": "in",
+              "value": Object {
+                "value": Array [
+                  "submitted",
+                  "approved",
+                  "closed",
+                  "declined",
+                  "expired",
+                  "placed",
+                ],
+              },
+            },
+          ],
+        }
+      }
+      noResultsText="formatted message"
+      onFilterChange={[Function]}
+      onSearch={[Function]}
+      page={1}
+      pageSizes={
+        Array [
+          20,
+          50,
+          100,
+        ]
+      }
+      perPage={20}
+      results={
+        Array [
+          Object {
+            "id": "quote-id",
+          },
+        ]
+      }
+      searchInputPlaceholder="formatted message"
+      searchText=""
+      setSearchFiltersState={[Function]}
+      sorting={
+        Object {
+          "key": "quoteState",
+          "order": "asc",
+        }
+      }
+      total={1}
+      transformSearchFilterStateBeforeSet={[Function]}
+    >
+      <Component />
+    </injectTracking(withPendingRequests(SearchView))>
+  </Container>
+</div>
+`;

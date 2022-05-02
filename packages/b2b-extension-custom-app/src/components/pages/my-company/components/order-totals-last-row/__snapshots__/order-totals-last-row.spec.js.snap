@@ -1,0 +1,28 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`rendering outputs correct tree 1`] = `
+<div
+  className="container"
+  data-testid="order-totals-last-row"
+>
+  <div
+    className="total"
+  >
+    <span
+      className="total-text"
+    >
+      <FormattedMessage
+        defaultMessage="Total"
+        description="Total of table label"
+        id="OrderTotalsLastRow.totalLabel"
+        values={Object {}}
+      />
+    </span>
+    <span
+      className="total-amount"
+    >
+      20
+    </span>
+  </div>
+</div>
+`;

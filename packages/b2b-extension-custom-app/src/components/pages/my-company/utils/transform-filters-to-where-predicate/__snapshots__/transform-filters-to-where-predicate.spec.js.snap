@@ -1,0 +1,57 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`createFilterPredicate billing address city should return config for a "billingAddressCityFilter" single filter 1`] = `"billingAddress(city in (\\"test\\", \\"test\\", \\"Test\\"))"`;
+
+exports[`createFilterPredicate billing address postal code should return config for a "billingAddressPostalCodeFilter" single filter 1`] = `"billingAddress(postalCode = \\"test\\")"`;
+
+exports[`createFilterPredicate createdAt should return config for a "createdAt" single filter 1`] = `"(createdAt < \\"2017-11-01\\")"`;
+
+exports[`createFilterPredicate customer first name should return config for a "firstName" single filter 1`] = `"(billingAddress(firstName in (\\"test\\", \\"test\\", \\"Test\\"))or shippingAddress(firstName in (\\"test\\", \\"test\\", \\"Test\\")))"`;
+
+exports[`createFilterPredicate customer first name should return config for a "firstName" single filter when composed name 1`] = `"(billingAddress(firstName in (\\"name secondname\\", \\"name secondname\\", \\"Name Secondname\\"))or shippingAddress(firstName in (\\"name secondname\\", \\"name secondname\\", \\"Name Secondname\\")))"`;
+
+exports[`createFilterPredicate customer last name should return config for a "lastName" single filter 1`] = `"(billingAddress(lastName in (\\"surnametest\\", \\"surnametest\\", \\"Surnametest\\"))or shippingAddress(lastName in (\\"surnametest\\", \\"surnametest\\", \\"Surnametest\\")))"`;
+
+exports[`createFilterPredicate customer last name should return config for a "lastName" single filter when composed last name 1`] = `"(billingAddress(lastName in (\\"surnametest surname\\", \\"surnametest surname\\", \\"Surnametest Surname\\"))or shippingAddress(lastName in (\\"surnametest surname\\", \\"surnametest surname\\", \\"Surnametest Surname\\")))"`;
+
+exports[`createFilterPredicate customerGroup.id should return config for a "customerGroup.id" single filter 1`] = `"customerGroup(id in (\\"companyId\\"))"`;
+
+exports[`createFilterPredicate item SKU should return config for a "skuFilter" single filter 1`] = `"lineItems(variant(sku=\\"test\\"))"`;
+
+exports[`createFilterPredicate lineItemState should return config for a "lineItemState" multi filter 1`] = `"paymentState in (\\"undefined\\")"`;
+
+exports[`createFilterPredicate lineItemState should return config for a "lineItemState" single filter 1`] = `"paymentState in (\\"foo\\")"`;
+
+exports[`createFilterPredicate order predicate should return config for a "orderPredicate" filter 1`] = `"[object Object]"`;
+
+exports[`createFilterPredicate orderCustomField should return config for a "orderCustomField" single filter 1`] = `"(custom(fields(orderCustomField = \\"Foo123bar\\")))"`;
+
+exports[`createFilterPredicate orderNumber should return config for a "orderNumber" single filter 1`] = `"orderNumber in (\\"Foo123bar\\")"`;
+
+exports[`createFilterPredicate orderState should return config for a "orderState" multi filter 1`] = `"state(id in (\\"foo\\",\\"bar\\"))"`;
+
+exports[`createFilterPredicate orderState should return config for a "orderState" single filter 1`] = `"state(id in (\\"foo\\"))"`;
+
+exports[`createFilterPredicate orderStatus should return config for a "orderStatus" multi filter 1`] = `"orderState in (\\"undefined\\")"`;
+
+exports[`createFilterPredicate orderStatus should return config for a "orderStatus" single filter 1`] = `"orderState in (\\"foo\\")"`;
+
+exports[`createFilterPredicate payment custom field should return config for a "paymentCustomField" single filter 1`] = `"paymentInfo(payments(id in (\\"undefined\\")))"`;
+
+exports[`createFilterPredicate payment interaction ID should return config for a "paymentInteractionId" single filter 1`] = `"paymentInfo(payments(id in (\\"undefined\\")))"`;
+
+exports[`createFilterPredicate payment predicate should return config for a "paymentPredicate" filter 1`] = `"paymentInfo(payments(id in (\\"foo\\")))"`;
+
+exports[`createFilterPredicate payment transaction ID should return config for a "paymentTransactionId" single filter 1`] = `"paymentInfo(payments(id in (\\"undefined\\")))"`;
+
+exports[`createFilterPredicate paymentState should return config for a "paymentState" multi filter 1`] = `"paymentState in (\\"undefined\\")"`;
+
+exports[`createFilterPredicate paymentState should return config for a "paymentState" single filter 1`] = `"paymentState in (\\"foo\\")"`;
+
+exports[`createFilterPredicate shipmentState should return config for a "shipmentState" multi filter 1`] = `"shipmentState in (\\"undefined\\")"`;
+
+exports[`createFilterPredicate shipmentState should return config for a "shipmentState" single filter 1`] = `"shipmentState in (\\"foo\\")"`;
+
+exports[`createFilterPredicate shipping address city should return config for a "shippingAddressCityFilter" single filter 1`] = `"shippingAddress(city in (\\"test\\", \\"test\\", \\"Test\\"))"`;
+
+exports[`createFilterPredicate shipping address postal code should return config for a "shippingAddressPostalCodeFilter" single filter 1`] = `"shippingAddress(postalCode = \\"test\\")"`;

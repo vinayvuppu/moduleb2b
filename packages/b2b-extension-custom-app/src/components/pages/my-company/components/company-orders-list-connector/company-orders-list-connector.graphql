@@ -1,0 +1,91 @@
+query FetchStatesQuery(
+  $limit: Int
+  $offset: Int
+  $sort: [String!]
+  $where: String
+) {
+  states(limit: $limit, offset: $offset, sort: $sort, where: $where) {
+    total
+  }
+}
+
+query FetchPaymentsQuery($limit: Int, $where: String) {
+  payments(limit: $limit, where: $where) {
+    results {
+      id
+    }
+  }
+}
+
+fragment OrderListFragment on Order {
+  id
+  version
+  orderNumber
+  totalPrice {
+    centAmount
+    currencyCode
+    fractionDigits
+  }
+  lineItems {
+    id
+  }
+  customLineItems {
+    id
+  }
+  orderState
+  paymentState
+  shipmentState
+  # order workflow state
+  state {
+    id
+    key
+    nameAllLocales {
+      locale
+      value
+    }
+  }
+  customerEmail
+  createdAt
+  lastModifiedAt
+  store {
+    id
+    key
+    nameAllLocales {
+      locale
+      value
+    }
+  }
+  billingAddress {
+    id
+    firstName
+    lastName
+    email
+  }
+  shippingAddress {
+    id
+    firstName
+    lastName
+    email
+  }
+  custom {
+    customFieldsRaw {
+      name
+      value
+    }
+  }
+}
+
+query FetchOrdersListQuery(
+  $limit: Int
+  $offset: Int
+  $sort: [String!]
+  $where: String
+) {
+  orders(limit: $limit, offset: $offset, sort: $sort, where: $where) {
+    total
+    count
+    results {
+      ...OrderListFragment
+    }
+  }
+}

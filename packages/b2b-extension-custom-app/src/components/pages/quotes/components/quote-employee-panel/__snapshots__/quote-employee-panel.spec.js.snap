@@ -1,0 +1,135 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`rendering should match snapshot 1`] = `
+<CollapsiblePanel
+  condensed={false}
+  data-testid="quote-employee-panel"
+  header={
+    <CollapsiblePanelHeader>
+      <FormattedMessage
+        defaultMessage="Employee"
+        id="Quote.Details.EmployeePanel.panelTitle"
+        values={Object {}}
+      />
+    </CollapsiblePanelHeader>
+  }
+  headerControls={
+    <Inline
+      alignItems="flex-start"
+      justifyContent="flex-start"
+      scale="s"
+    >
+      <ForwardRef
+        id="employee-panel-employee-link"
+        to="/project-key-1/b2b-extension/employees/employee-id"
+      >
+        <ToolTip
+          closeAfter={0}
+          components={Object {}}
+          horizontalConstraint="scale"
+          off={false}
+          placement="left"
+          styles={
+            Object {
+              "body": Object {},
+            }
+          }
+          title="formatted message"
+        >
+          <IconButton
+            data-track-component="IconButton"
+            data-track-event="click"
+            data-track-label="go-to-employee"
+            icon={<UserLinearIcon />}
+            isToggleButton={false}
+            label="formatted message"
+            shape="round"
+            size="big"
+            theme="default"
+            type="button"
+          />
+        </ToolTip>
+      </ForwardRef>
+      <ForwardRef
+        id="employee-panel-company-link"
+        to="/project-key-1/b2b-extension/companies/company-id"
+      >
+        <ToolTip
+          closeAfter={0}
+          components={Object {}}
+          horizontalConstraint="scale"
+          off={false}
+          placement="left"
+          styles={
+            Object {
+              "body": Object {},
+            }
+          }
+          title="formatted message"
+        >
+          <IconButton
+            data-track-component="IconButton"
+            data-track-event="click"
+            data-track-label="go-to-company"
+            icon={<ConnectedSquareIcon />}
+            isToggleButton={false}
+            label="formatted message"
+            shape="round"
+            size="big"
+            theme="default"
+            type="button"
+          />
+        </ToolTip>
+      </ForwardRef>
+    </Inline>
+  }
+  headerControlsAlignment="right"
+  horizontalConstraint="scale"
+  id="1"
+  isDisabled={false}
+  theme="dark"
+>
+  <Stack
+    alignItems="stretch"
+    scale="xs"
+  >
+    <Inline
+      alignItems="center"
+      data-testid="employee-panel-employeeEmail"
+      justifyContent="flex-start"
+      scale="s"
+    >
+      <TextDetail>
+        <FormattedMessage
+          defaultMessage="Employee email: {email}"
+          id="Quote.Details.EmployeePanel.customerEmailLabel"
+          values={
+            Object {
+              "email": "employee@company.com",
+            }
+          }
+        />
+      </TextDetail>
+      <MailIcon />
+    </Inline>
+    <Inline
+      alignItems="center"
+      data-testid="employee-panel-companyName"
+      justifyContent="flex-start"
+      scale="s"
+    >
+      <TextDetail>
+        <FormattedMessage
+          defaultMessage="Company name: {name}"
+          id="Quote.Details.EmployeePanel.companylabel"
+          values={
+            Object {
+              "name": "company-name",
+            }
+          }
+        />
+      </TextDetail>
+    </Inline>
+  </Stack>
+</CollapsiblePanel>
+`;

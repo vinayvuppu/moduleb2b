@@ -1,0 +1,24 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`rendering with employees outputs correct tree 1`] = `
+<B2BApolloClientContextConsumer>
+  <Component />
+</B2BApolloClientContextConsumer>
+`;
+
+exports[`rendering without employees outputs correct tree 1`] = `
+<Stack
+  alignItems="center"
+  scale="m"
+>
+  <LoadingSpinner
+    scale="l"
+  >
+    <FormattedMessage
+      defaultMessage="Loading employees..."
+      id="Company.Details.EmployeeTab.fetchingEmployeesTitle"
+      values={Object {}}
+    />
+  </LoadingSpinner>
+</Stack>
+`;

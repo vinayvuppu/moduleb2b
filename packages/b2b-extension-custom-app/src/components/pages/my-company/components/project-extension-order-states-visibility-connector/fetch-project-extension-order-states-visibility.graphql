@@ -1,0 +1,6 @@
+query FetchProjectExtensionOrderStatesVisibilityQuery {
+  projectExtension {
+    id
+    orderStatesVisibility
+  }
+}

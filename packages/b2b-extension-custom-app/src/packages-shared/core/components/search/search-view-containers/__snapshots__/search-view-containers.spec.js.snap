@@ -1,0 +1,44 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`rendering when initialized when proxying props should output correct tree 1`] = `
+<injectTracking(withPendingRequests(SearchView))
+  count={0}
+  filterDefinitions={
+    Object {
+      "createdAt": Object {
+        "filterTypes": Object {
+          "range": Object {
+            "filterComponent": [MockFunction],
+            "label": "range",
+            "tagComponent": [MockFunction],
+          },
+        },
+        "label": "Created",
+      },
+    }
+  }
+  filters={Object {}}
+  initialSliceState={Object {}}
+  initializeSearchSlice={[MockFunction]}
+  isSearchSliceInitialized={true}
+  onSearch={[MockFunction]}
+  one="one"
+  page={1}
+  perPage={20}
+  results={Array []}
+  searchSliceName="foo"
+  searchText={null}
+  setSearchFiltersState={[Function]}
+  sorting={
+    Object {
+      "key": "createdAt",
+      "order": "desc",
+    }
+  }
+  three="three"
+  total={0}
+  two="two"
+>
+  <Component />
+</injectTracking(withPendingRequests(SearchView))>
+`;

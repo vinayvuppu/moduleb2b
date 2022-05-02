@@ -1,0 +1,9 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Match> rendering when not \`isTouched should match snapshot 1`] = `""`;
+
+exports[`<Match> rendering with \`error\` for \`rule\`  when \`isTouched\` with \`children\` should match snapshot 1`] = `<ChildComponent />`;
+
+exports[`<Match> rendering with \`error\` for \`rule\`  when \`isTouched\` with \`component\` should match snapshot 1`] = `<ChildComponent />`;
+
+exports[`<Match> rendering without \`error\` for \`rule\`  should match snapshot 1`] = `""`;

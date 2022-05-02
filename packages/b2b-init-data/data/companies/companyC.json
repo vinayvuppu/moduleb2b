@@ -1,0 +1,43 @@
+{
+  "name": "Company C",
+  "addresses": [
+    {
+      "firstName": "Lena",
+      "lastName": "Bowie",
+      "streetName": "Kenwood Place",
+      "streetNumber": "2723",
+      "postalCode": "33301",
+      "city": "Fort Lauderdale",
+      "state": "FL",
+      "country": "US",
+      "phone": "954-598-3285",
+      "mobile": "321-305-7481",
+      "email": "contact@companyC.com",
+      "id": "31694310-57c4-11ea-9844-c1671a83c1b7"
+    }
+  ],
+  "budget": [
+    {
+      "rol": "b2b-company-employee",
+      "amount": {
+        "type": "centPrecision",
+        "currencyCode": "USD",
+        "centAmount": 5000000,
+        "fractionDigits": 2
+      }
+    }
+  ],
+  "requiredApprovalRoles": [
+    {
+      "rol": "b2b-company-employee",
+      "amount": {
+        "type": "centPrecision",
+        "currencyCode": "USD",
+        "centAmount": 2500000,
+        "fractionDigits": 2
+      }
+    }
+  ],
+  "approverRoles": ["b2b-company-admin"],
+  "rules": []
+}

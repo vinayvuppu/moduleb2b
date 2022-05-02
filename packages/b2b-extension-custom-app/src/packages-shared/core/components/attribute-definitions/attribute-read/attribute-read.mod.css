@@ -1,0 +1,110 @@
+:root {
+  --value-type-width: 50px;
+}
+
+.value {
+  border-radius: var(--border-radius-6);
+  border: 1px solid var(--color-neutral);
+  color: var(--color-solid);
+  margin-bottom: var(--spacing-s);
+  padding: var(--spacing-s);
+}
+
+.value:last-of-type {
+  margin-bottom: 0;
+}
+
+.flex-element {
+  display: flex;
+  justify-content: flex-start;
+}
+
+.value-type-element {
+  min-width: var(--value-type-width);
+  width: var(--value-type-width);
+  text-align: center;
+  background-color: var(--color-neutral-95);
+}
+
+/** localized text */
+.attribute-ltext .value,
+.attribute-ltext-set .value {
+  border: none;
+  padding: 0;
+}
+
+.ltext {
+  composes: flex-element;
+  border-bottom: 1px solid var(--color-neutral);
+  border-right: 1px solid var(--color-neutral);
+  border-left: 1px solid var(--color-neutral);
+}
+
+.ltext:first-of-type {
+  border-top: 1px solid var(--color-neutral);
+  border-top-left-radius: var(--border-radius-6);
+  border-top-right-radius: var(--border-radius-6);
+}
+
+.ltext:last-of-type {
+  border-bottom: 1px solid var(--color-neutral);
+  border-bottom-left-radius: var(--border-radius-6);
+  border-bottom-right-radius: var(--border-radius-6);
+}
+
+.ltext:first-of-type .ltext-lang {
+  border-top-left-radius: var(--border-radius-6);
+}
+
+.ltext:last-of-type .ltext-lang {
+  border-bottom-left-radius: var(--border-radius-6);
+}
+
+.ltext-lang {
+  composes: value-type-element;
+  border-right: 1px solid var(--color-neutral);
+  padding: var(--spacing-s);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  position: relative;
+}
+
+.ltext-value {
+  padding: var(--spacing-s) var(--spacing-s) var(--spacing-s) var(--spacing-m);
+}
+
+.arrow-right-border {
+  composes: field-arrow-right-border from '../../../_styles/forms.mod.css';
+  border-color: transparent transparent transparent var(--color-neutral);
+}
+
+.arrow-right {
+  composes: field-arrow-right from '../../../_styles/forms.mod.css';
+  border-color: transparent transparent transparent var(--color-neutral-95) !important;
+}
+
+/** money */
+.attribute-money-set .value,
+.attribute-money .value {
+  border: none;
+  padding: 0;
+}
+
+.money {
+  composes: flex-element;
+}
+
+.money-currencyCode {
+  composes: value-type-element;
+  margin-right: var(--spacing-s);
+  padding: var(--spacing-s);
+  border-radius: var(--border-radius-6);
+}
+
+.money-centAmount {
+  padding: var(--spacing-s);
+  border: 1px solid var(--color-neutral);
+  border-radius: var(--border-radius-6);
+  width: calc(100% - var(--value-type-width));
+}

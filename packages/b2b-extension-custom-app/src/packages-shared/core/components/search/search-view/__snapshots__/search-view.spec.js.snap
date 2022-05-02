@@ -1,0 +1,46 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`rendering with results outputs correct tree 1`] = `
+<div
+  className="container-flex"
+>
+  <SearchContainer
+    onUpdateSearch={[Function]}
+  >
+    <Component />
+  </SearchContainer>
+  <div
+    className="results"
+  >
+    <div
+      className="container-flex"
+    />
+  </div>
+</div>
+`;
+
+exports[`rendering without results outputs correct tree 1`] = `
+<div
+  className="container-flex"
+>
+  <SearchContainer
+    onUpdateSearch={[Function]}
+  >
+    <Component />
+  </SearchContainer>
+  <div
+    className="results"
+  >
+    <span
+      className="no-results"
+    >
+      <FormattedMessage
+        defaultMessage="There are no results matching your search criteria."
+        description="Text for no results"
+        id="Search.View.noResults"
+        values={Object {}}
+      />
+    </span>
+  </div>
+</div>
+`;

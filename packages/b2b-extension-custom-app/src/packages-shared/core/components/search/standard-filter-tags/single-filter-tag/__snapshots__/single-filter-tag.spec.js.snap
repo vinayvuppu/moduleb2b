@@ -1,0 +1,35 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`rendering outputs correct tree 1`] = `
+<Tag
+  horizontalConstraint="scale"
+  isDisabled={false}
+  onClick={[MockFunction]}
+  onRemove={[MockFunction]}
+  styles={
+    Object {
+      "body": Object {},
+    }
+  }
+  type="normal"
+>
+  <div
+    className="tagBody"
+  >
+    <div
+      className="bold"
+    >
+      Date
+      :
+    </div>
+    <div>
+      Equals to
+    </div>
+    <div
+      className="bold"
+    >
+      123
+    </div>
+  </div>
+</Tag>
+`;

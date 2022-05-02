@@ -1,0 +1,43 @@
+.size {
+  width: 100%;
+  height: inherit;
+}
+
+.input-secondary {
+  composes: input-form from '../../../_styles/forms.mod.css';
+  composes: size;
+}
+
+.input-primary {
+  composes: input-basic from '../../../_styles/forms.mod.css';
+  composes: size;
+}
+
+.textarea {
+  composes: textarea from '../../../_styles/forms.mod.css';
+  width: 100%;
+  min-height: 36px;
+  resize: vertical;
+}
+
+.textarea-primary {
+  composes: textarea;
+  composes: input-basic from '../../../_styles/forms.mod.css';
+}
+
+.textarea-secondary {
+  composes: textarea;
+  composes: input-form from '../../../_styles/forms.mod.css';
+}
+
+.invalid {
+  composes: invalid-field from '../../../_styles/forms.mod.css';
+  border: 1px solid;
+}
+
+.disabled {
+  cursor: not-allowed;
+  background-color: var(--color-accent-98);
+  color: var(--color-solid);
+  opacity: 1; /* fix for mobile safari */
+}

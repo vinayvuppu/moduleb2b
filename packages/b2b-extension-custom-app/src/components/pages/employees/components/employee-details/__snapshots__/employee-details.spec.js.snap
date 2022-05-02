@@ -1,0 +1,87 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`rendering should output the correct tree 1`] = `
+<div
+  data-track-component="EmployeesUpdate"
+>
+  <View
+    data-testid="employee-details-view"
+  >
+    <ViewHeader
+      backToList={
+        <BackToList
+          iconType="list"
+          label="Employees.Update.backToList"
+          to="url"
+        />
+      }
+      color="neutral"
+      commands={
+        <Inline
+          alignItems="flexEnd"
+          justifyContent="flex-start"
+          scale="s"
+        >
+          <IconButton
+            data-track-component="Delete"
+            data-track-event="click"
+            icon={<BinLinearIcon />}
+            isDisabled={false}
+            isToggleButton={false}
+            label="Employees.Update.confirmDeleteTitle"
+            onClick={[MockFunction]}
+            shape="round"
+            size="big"
+            theme="default"
+            type="button"
+          />
+        </Inline>
+      }
+      title={
+        <Stack
+          alignItems="stretch"
+          scale="m"
+        >
+          John Doe
+        </Stack>
+      }
+      withBottomLine={true}
+    >
+      <withRouter(TabHeader)
+        key="general"
+        name="general"
+        to="/test1/b2b-extension/employees/employee-1/general"
+      >
+        Employees.Update.tab.general
+      </withRouter(TabHeader)>
+      <withRouter(TabHeader)
+        key="budget"
+        name="budget"
+        to="/test1/b2b-extension/employees/employee-1/budget"
+      >
+        Employees.Update.tab.budget
+      </withRouter(TabHeader)>
+      <withRouter(TabHeader)
+        key="addresses"
+        name="addresses"
+        to="/test1/b2b-extension/employees/employee-1/addresses"
+      >
+        Employees.Update.tab.addresses
+      </withRouter(TabHeader)>
+      <withRouter(TabHeader)
+        isDisabled={false}
+        key="orders"
+        name="orders"
+        to="/test1/b2b-extension/employees/employee-1/orders"
+      >
+        Employees.Update.tab.orders
+      </withRouter(TabHeader)>
+    </ViewHeader>
+    <TabContainer
+      color="surface"
+    >
+      <div />
+    </TabContainer>
+  </View>
+</div>
+`;

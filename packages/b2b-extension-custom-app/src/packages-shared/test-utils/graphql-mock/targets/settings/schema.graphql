@@ -1,0 +1,175 @@
+enum OrderStatesVisibility {
+  HidePaymentState
+  HideShipmentState
+  HideOrderState
+}
+
+scalar Json
+
+enum SortOrder {
+  Asc
+  Desc
+}
+
+enum FilterType {
+  EqualTo
+  In
+  LessThan
+  Missing
+  MissingIn
+  MoreThan
+  Range
+}
+
+type LocalizedField {
+  locale: String!
+  value: String!
+}
+
+type ImageRegexOptions {
+  flag: String!
+  search: String!
+  replace: String!
+}
+
+type ImageRegex {
+  thumb: ImageRegexOptions!
+  small: ImageRegexOptions!
+}
+
+type ProjectExtension {
+  id: String!
+  imageRegex: ImageRegex!
+  orderStatesVisibility: [OrderStatesVisibility!]!
+}
+
+type Query {
+  projectExtension: ProjectExtension
+}
+
+input LocalizedFieldCreateInput {
+  locale: String!
+  value: String!
+}
+
+input PimSearchListViewTableInput {
+  visibleColumns: [String]!
+}
+
+input SortCreateInput {
+  key: String!
+  order: SortOrder
+}
+
+input FilterValuesCreateInput {
+  target: String!
+  type: FilterType
+  json: Json!
+}
+
+type Table {
+  id: String!
+  createdAt: String!
+  updatedAt: String!
+  visibleColumns: [String!]!
+}
+
+type Sort {
+  id: String!
+  createdAt: String!
+  updatedAt: String!
+  key: String!
+  order: SortOrder!
+}
+
+type FilterValues {
+  id: String!
+  createdAt: String!
+  updatedAt: String!
+  target: String!
+  type: FilterType!
+  json: Json!
+}
+
+input PimSearchListViewInput {
+  search: String
+  nameAllLocales: [LocalizedFieldCreateInput]!
+  table: PimSearchListViewTableInput
+  sort: SortCreateInput
+  filters: [FilterValuesCreateInput]!
+}
+
+type PimSearchListView {
+  id: String!
+  createdAt: String!
+  updatedAt: String!
+  userId: String!
+  projectKey: String!
+  nameAllLocales: [LocalizedField!]
+  isActive: Boolean
+  search: String
+  table: Table
+  sort: Sort
+  filters: [FilterValues!]
+}
+
+input LocalizedFieldWhereUniqueInput {
+  id: String
+}
+
+input LocalizedFieldCreateManyInput {
+  create: [LocalizedFieldCreateInput!]
+  connect: [LocalizedFieldWhereUniqueInput!]
+}
+
+input TableCreatevisibleColumnsInput {
+  set: [String!]
+}
+
+input TableCreateInput {
+  id: String
+  visibleColumns: TableCreatevisibleColumnsInput
+}
+
+input TableWhereUniqueInput {
+  id: String
+}
+
+input TableCreateOneInput {
+  create: TableCreateInput
+  connect: TableWhereUniqueInput
+}
+
+input SortWhereUniqueInput {
+  id: String
+}
+
+input SortCreateOneInput {
+  create: SortCreateInput
+  connect: SortWhereUniqueInput
+}
+
+input FilterValuesWhereUniqueInput {
+  id: String
+}
+
+input FilterValuesCreateManyInput {
+  create: [FilterValuesCreateInput!]
+  connect: [FilterValuesWhereUniqueInput!]
+}
+
+input PimSearchListViewCreateInput {
+  id: String
+  userId: String!
+  projectKey: String!
+  nameAllLocales: LocalizedFieldCreateManyInput
+  isActive: Boolean
+  search: String
+  table: TableCreateOneInput
+  sort: SortCreateOneInput
+  filters: FilterValuesCreateManyInput
+}
+
+type Mutation {
+  createPimSearchListView(data: PimSearchListViewInput!): PimSearchListView!
+}

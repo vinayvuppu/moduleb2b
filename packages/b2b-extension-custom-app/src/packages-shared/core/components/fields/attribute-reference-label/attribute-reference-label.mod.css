@@ -1,0 +1,3 @@
+.attribute-reference {
+  composes: reference from '../../../_styles/form-box.mod.css';
+}

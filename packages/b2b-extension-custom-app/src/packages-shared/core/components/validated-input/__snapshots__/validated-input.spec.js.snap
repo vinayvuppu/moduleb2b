@@ -1,0 +1,13 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`simpleInput rendering should match snapshot 1`] = `
+<input
+  className=""
+  disabled={false}
+  name="simple-input"
+  onBlur={[Function]}
+  onChange={[MockFunction]}
+  type="text"
+  value="simple-input-value"
+/>
+`;

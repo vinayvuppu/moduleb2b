@@ -1,0 +1,32 @@
+{
+  "email": "rick.reyes@companyb.com",
+  "firstName": "Rick",
+  "lastName": "Reyes",
+  "middleName": "",
+  "title": "",
+  "salutation": "",
+  "password": "test123",
+  "addresses": [
+    {
+      "streetName": "Hiddenview Drive",
+      "streetNumber": "2096",
+      "postalCode": "58721",
+      "city": "BOWBELLS",
+      "state": "ND",
+      "country": "US",
+      "phone": "216-241-3221",
+      "mobile": "701-310-6103"
+    }
+  ],
+  "defaultBillingAddress": 0,
+  "defaultShippingAddress": 0,
+  "custom": {
+    "type": {
+      "typeId": "type",
+      "key": "employee-type"
+    },
+    "fields": {
+      "roles": ["b2b-company-admin"]
+    }
+  }
+}

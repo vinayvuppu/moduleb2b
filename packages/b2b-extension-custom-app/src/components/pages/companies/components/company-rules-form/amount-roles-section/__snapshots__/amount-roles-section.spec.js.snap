@@ -1,0 +1,159 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`AmountRolesSection component rendering should render the correct snapshot 1`] = `
+<DocumentFragment>
+  <div
+    class="css-y8qm83-Horizontal-getConstraintStyles-Horizontal"
+  >
+    <div
+      class="css-1exe63e-baseContainerStyles-getThemeStyle-CollapsiblePanel"
+    >
+      <div
+        aria-controls="panel-content-1"
+        aria-disabled="false"
+        aria-expanded="true"
+        aria-label=""
+        class="etpmm8q0 css-wtj13x-Button-normalizedButtonStyles-AccessibleButton-HeaderContainer-baseStyles-getHeaderContainerStyles-getThemeStyle-CollapsiblePanel e1hlacz70"
+        id="1"
+        role="button"
+        tabindex="0"
+      >
+        <span
+          class="css-16vcylu-getStyles"
+        >
+          <div
+            class="css-2yi65l-HeaderIcon-HeaderIcon"
+          >
+            <svg
+              class="css-msim5y-getIconStyles"
+              color="solid"
+              height="24"
+              viewBox="0 0 24 24"
+              width="24"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <g
+                fill-rule="evenodd"
+                id="angle-down_react_svg__Icons"
+                stroke="none"
+                stroke-width="1"
+              >
+                <g
+                  fill="#000"
+                  id="angle-down_react_svg__MC-icon-set"
+                  transform="translate(-168 -888)"
+                >
+                  <g
+                    id="angle-down_react_svg__Directions"
+                    transform="translate(24 888)"
+                  >
+                    <g
+                      id="angle-down_react_svg__Angle-Down"
+                      transform="translate(144)"
+                    >
+                      <path
+                        d="M20.816 8.115l-.902-.909a.567.567 0 00-.415-.182.567.567 0 00-.414.182l-7.087 7.147L4.91 7.206a.567.567 0 00-.414-.181.567.567 0 00-.415.181l-.902.91a.576.576 0 000 .836l8.403 8.474c.12.12.259.182.415.182.156 0 .294-.061.414-.182l8.404-8.474a.577.577 0 000-.837z"
+                        id="angle-down_react_svg__shape"
+                      />
+                    </g>
+                  </g>
+                </g>
+              </g>
+            </svg>
+          </div>
+          <span
+            class="css-16lu50f-getStyles"
+          >
+            <h4
+              class="css-1oq94km-subheadlineStyles"
+            >
+              foo
+            </h4>
+          </span>
+        </span>
+      </div>
+      <div
+        style="height: auto;"
+      >
+        <div
+          class="css-1t8jyu-SectionWrapper erh4hih0"
+        >
+          <div
+            class="css-1um456l-Inset"
+          >
+            <div
+              aria-hidden="false"
+              class="css-ps2rzv-SectionContent erh4hih1"
+              id="panel-content-1"
+            >
+              <span
+                class="css-79qb0q-getStyles"
+              >
+                <button
+                  aria-disabled="false"
+                  aria-label="addFoo"
+                  class="css-y36lc4-Button-normalizedButtonStyles-AccessibleButton-SecondaryButton-containerStyles-getStateStyles-getThemeStyles e1hlacz70"
+                  data-track-component="SecondaryButton"
+                  label="addFoo"
+                  type="button"
+                >
+                  <span
+                    class="css-18wydpa-getStyles"
+                  >
+                    <span
+                      class="css-1k56baa-SecondaryButton"
+                    >
+                      <svg
+                        class="css-19kq3xe-getIconStyles"
+                        height="24"
+                        viewBox="0 0 24 24"
+                        width="24"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <g
+                          fill-rule="evenodd"
+                          id="plus-bold_react_svg__Icons"
+                          stroke="none"
+                          stroke-width="1"
+                        >
+                          <g
+                            fill="#000"
+                            fill-rule="nonzero"
+                            id="plus-bold_react_svg__MC-icon-set"
+                            transform="translate(-240 -120)"
+                          >
+                            <g
+                              id="plus-bold_react_svg__CRUD"
+                              transform="translate(24 120)"
+                            >
+                              <g
+                                id="plus-bold_react_svg__Add-Bold"
+                                transform="translate(216)"
+                              >
+                                <path
+                                  d="M13.844 10.334v-3.51c0-.97-.784-1.755-1.75-1.755-.967 0-1.75.785-1.75 1.755v3.51h-3.5c-.967 0-1.75.785-1.75 1.754 0 .97.783 1.755 1.75 1.755h3.5v3.51c0 .97.783 1.755 1.75 1.755.966 0 1.75-.786 1.75-1.755v-3.51h3.5c.966 0 1.75-.785 1.75-1.755 0-.969-.784-1.754-1.75-1.754h-3.5z"
+                                  id="plus-bold_react_svg__shape"
+                                />
+                              </g>
+                            </g>
+                          </g>
+                        </g>
+                      </svg>
+                    </span>
+                    <span>
+                      addFoo
+                    </span>
+                  </span>
+                </button>
+              </span>
+              <div
+                class="css-y8qm83-Horizontal-getConstraintStyles-Horizontal"
+              />
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</DocumentFragment>
+`;

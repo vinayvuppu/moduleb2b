@@ -1,0 +1,225 @@
+:root {
+  --size-width-icon: 20px;
+}
+
+.fieldset {
+  border: 0;
+  margin: 0;
+  padding: 0;
+}
+
+.label {
+  color: var(--color-solid);
+  display: block;
+  margin-bottom: 5px;
+}
+
+.description {
+  font-size: 0.8rem;
+  margin: 0;
+}
+
+.input-checkbox {
+  height: 14px;
+  margin-right: 10px;
+}
+
+.textarea {
+  min-height: 41px;
+  resize: vertical;
+}
+
+/* FORM PROFILES: FOR COMPOSITION ONLY */
+.input-text {
+  composes: transition-standard from './commons.mod.css';
+  border-radius: 6px;
+  border-style: solid;
+  border-width: 1px;
+  color: var(--color-solid);
+  font-weight: 500;
+  font-size: 1rem;
+  font-family: 'Open Sans', sans-serif !important;
+  padding: 7.5px 10px;
+  outline: none;
+  box-shadow: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+}
+
+.input-text:focus {
+  border-color: var(--color-primary);
+}
+
+.input-text::placeholder {
+  text-overflow: ellipsis !important;
+  overflow: hidden;
+  white-space: nowrap;
+  padding-right: var(--size-width-icon);
+}
+
+/** base profile, composes input-text */
+.input-basic {
+  composes: input-text;
+  border-color: var(--color-neutral);
+  background-color: var(--color-surface);
+}
+
+/** form profile, composes input-text */
+.input-form {
+  composes: input-text;
+  background-color: var(--color-neutral-95);
+  border-color: var(--color-surface);
+  width: 100%;
+}
+
+.input-like-text {
+  composes: input-form;
+  display: inline-block;
+  width: auto;
+}
+
+.input-disabled {
+  composes: input-form;
+  background: none;
+  border: 1px solid var(--color-neutral-60);
+  color: var(--color-neutral-60);
+  word-break: break-all;
+  hyphens: auto; /* still not supported on Chrome */
+
+  /* same height as input to avoid jumping ui elements */
+  display: flex;
+  align-items: center;
+  opacity: 1; /* fix for mobile safari */
+}
+
+.textarea {
+  min-height: 36px;
+}
+
+.dropdown-filter {
+  display: inline-block;
+  position: relative;
+  width: calc(100% - 20px);
+}
+
+.dropdown-filter-label-total {
+  background-color: var(--color-accent-40);
+  border-radius: 6px;
+  color: var(--color-surface);
+  display: inline-block;
+  height: 20px;
+  margin-left: 5px;
+  position: absolute;
+  right: 0;
+  text-align: center;
+  width: 20px;
+}
+
+.range-item {
+  display: inline-block;
+}
+
+.counter-ball {
+  background-color: var(--color-accent-40);
+  border-radius: 6px;
+  color: var(--color-surface);
+  display: inline-block;
+  height: 20px;
+  margin-left: 5px;
+  position: absolute;
+  right: 0;
+  text-align: center;
+  width: 20px;
+}
+
+.label-tags-container {
+  composes: cleafix from './commons.mod.css';
+  margin-top: 10px;
+}
+
+@media screen and (--screen-max-desktop) {
+  .label-tags-container {
+    width: 100%;
+  }
+}
+
+.label-tags-inline-label {
+  display: inline-table;
+  width: 90px;
+  text-align: right;
+}
+
+/** context rule */
+
+.label-tags-inline-label + .label-tags-list {
+  display: inline-table;
+  width: calc(100% - 90px);
+  padding-left: 10px;
+}
+
+.label-tags-list {
+  text-align: left;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.label-tags-list-item {
+  display: inline-block;
+}
+
+.invalid-field {
+  /* this needs !important because react-select has a :focus style that
+    stops the border colour being set unless the element is blurred */
+  border-color: var(--color-error) !important;
+}
+
+/**
+ * match the color of the "disabled" state for react-select
+ * we keep this until we do an overhaul of select-element across the application
+ */
+.react-select-disabled-state {
+  background-color: #f9f9f9;
+  color: #aaa;
+
+  /* this needs !important because disable inputs in FF has a :focus style that
+    override border color */
+  border-color: var(--color-neutral) !important;
+}
+
+.label-field-with-icon {
+  display: flex;
+  align-items: baseline;
+}
+
+.label-field-with-icon-label {
+  width: 100%;
+}
+
+.label-field-with-icon-icon {
+  font-size: 1.6rem;
+  align-items: baseline;
+}
+
+/** arrowed-input */
+.field-arrow-base {
+  border-style: solid;
+  border-width: 6px 0 6px 6px;
+  height: 0;
+  position: absolute;
+  top: calc(50% - 6px);
+  width: 0;
+}
+
+.field-arrow-right-border {
+  composes: field-arrow-base;
+  border-left: solid 6px transparent;
+  right: -6px;
+}
+
+.field-arrow-right {
+  composes: field-arrow-base;
+  transform: translateX(-2px);
+  z-index: 1;
+  right: -7px !important;
+}

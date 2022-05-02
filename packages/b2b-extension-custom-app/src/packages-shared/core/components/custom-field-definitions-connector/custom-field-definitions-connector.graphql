@@ -1,0 +1,54 @@
+query FetchTypeDefinitionsQuery($where: String, $limit: Int, $offset: Int) {
+  typeDefinitions(where: $where, limit: $limit, offset: $offset) {
+    results {
+      fieldDefinitions {
+        type {
+          name
+          ... on SetType {
+            elementType {
+              name
+              ... on EnumType {
+                values {
+                  key
+                  label
+                }
+              }
+              ... on LocalizedEnumType {
+                values {
+                  key
+                  labelAllLocales {
+                    value
+                    locale
+                  }
+                }
+              }
+            }
+          }
+          ... on EnumType {
+            values {
+              key
+              label
+            }
+          }
+          ... on LocalizedEnumType {
+            values {
+              key
+              labelAllLocales {
+                value
+                locale
+              }
+            }
+          }
+          ... on ReferenceType {
+            referenceTypeId
+          }
+        }
+        name
+        labelAllLocales {
+          value
+          locale
+        }
+      }
+    }
+  }
+}

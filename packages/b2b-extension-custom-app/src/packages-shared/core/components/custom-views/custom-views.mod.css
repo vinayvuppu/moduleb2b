@@ -1,0 +1,4 @@
+.no-shrink-wrapper {
+  display: flex;
+  flex-shrink: 0;
+}

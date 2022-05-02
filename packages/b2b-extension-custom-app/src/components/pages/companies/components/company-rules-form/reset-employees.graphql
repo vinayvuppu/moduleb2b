@@ -1,0 +1,9 @@
+mutation ResetEmployeesMutation($companyId: String!) {
+  employeesResetAmountExpent(companyId: $companyId) {
+      id
+      customerNumber: employeeNumber
+      firstName
+      lastName
+      email
+  }
+}

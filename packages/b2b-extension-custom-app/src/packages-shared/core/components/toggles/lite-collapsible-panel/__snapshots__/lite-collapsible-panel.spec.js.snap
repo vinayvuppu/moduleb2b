@@ -1,0 +1,107 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`rendering of \`<PlainLiteCollapsiblePanel />\` when closed should output correct tree 1`] = `
+<div
+  className="container"
+>
+  <div
+    className="header"
+  >
+    <IconButton
+      icon={
+        <ForwardRef(render)
+          size="medium"
+        />
+      }
+      isToggleButton={false}
+      label="LiteCollapsiblePanel.expand"
+      onClick={[MockFunction]}
+      shape="round"
+      size="small"
+      theme="default"
+      type="button"
+    />
+    <div
+      className="title-wrapper"
+      onClick={[MockFunction]}
+    >
+      <TextSubheadline
+        as="h5"
+      >
+        <span
+          className="title"
+        >
+          foo-title
+        </span>
+         
+      </TextSubheadline>
+    </div>
+  </div>
+  <div
+    style={Object {}}
+  >
+    <div
+      className="content"
+    >
+      <ChildComponent />
+    </div>
+  </div>
+</div>
+`;
+
+exports[`rendering of \`<PlainLiteCollapsiblePanel />\` when open should output correct tree 1`] = `
+<div
+  className="container"
+>
+  <div
+    className="header"
+  >
+    <IconButton
+      icon={
+        <ForwardRef(render)
+          size="medium"
+        />
+      }
+      isToggleButton={false}
+      label="LiteCollapsiblePanel.collapse"
+      onClick={[MockFunction]}
+      shape="round"
+      size="small"
+      theme="default"
+      type="button"
+    />
+    <div
+      className="title-wrapper"
+      onClick={[MockFunction]}
+    >
+      <TextSubheadline
+        as="h5"
+      >
+        <span
+          className="title"
+        >
+          foo-title
+        </span>
+         
+      </TextSubheadline>
+    </div>
+  </div>
+  <div
+    style={Object {}}
+  >
+    <div
+      className="content"
+    >
+      <ChildComponent />
+    </div>
+  </div>
+</div>
+`;
+
+exports[`rendering should output correct tree 1`] = `
+<CollapsibleMotion
+  minHeight={0}
+>
+  <Component />
+</CollapsibleMotion>
+`;

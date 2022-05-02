@@ -1,0 +1,119 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`rendering should match snapshot 1`] = `
+<ContextProvider
+  value={
+    Object {
+      "activeView": Object {
+        "filters": Object {},
+        "id": "test-active-id",
+        "isActive": undefined,
+        "name": Object {
+          "de": "test-value-de",
+        },
+        "page": 1,
+        "perPage": 20,
+        "searchText": "",
+        "sorting": Object {
+          "key": "createdAt",
+          "order": "desc",
+        },
+        "visibleColumns": null,
+      },
+      "activeViewFetcher": Object {
+        "isLoading": false,
+        "view": Object {
+          "filters": Object {},
+          "id": "test-active-id",
+          "isActive": undefined,
+          "name": Object {
+            "de": "test-value-de",
+          },
+          "page": 1,
+          "perPage": 20,
+          "searchText": "",
+          "sorting": Object {
+            "key": "createdAt",
+            "order": "desc",
+          },
+          "visibleColumns": null,
+        },
+      },
+      "createView": [Function],
+      "deleteView": [Function],
+      "hasUnsavedChanges": false,
+      "resetActiveView": [Function],
+      "saveView": [Function],
+      "selectView": [Function],
+      "setActiveView": [Function],
+      "viewsFetcher": Object {
+        "isLoading": false,
+        "views": Array [
+          Object {
+            "filters": Object {},
+            "id": "test-active-id",
+            "isActive": undefined,
+            "name": Object {
+              "de": "test-value-de",
+            },
+            "page": 1,
+            "perPage": 20,
+            "searchText": "",
+            "sorting": Object {
+              "key": "createdAt",
+              "order": "desc",
+            },
+            "visibleColumns": null,
+          },
+          Object {
+            "filters": Object {},
+            "id": "non-active-id",
+            "isActive": undefined,
+            "name": Object {
+              "de": "test-value-de",
+            },
+            "page": 1,
+            "perPage": 20,
+            "searchText": "",
+            "sorting": Object {
+              "key": "createdAt",
+              "order": "desc",
+            },
+            "visibleColumns": null,
+          },
+          Object {
+            "filters": Object {
+              "createdAt": Array [
+                Object {
+                  "type": "range",
+                  "value": Object {
+                    "from": "12/31/2017",
+                    "quickFilterValue": "lastThirtyDays",
+                    "to": "12/31/2018",
+                  },
+                },
+              ],
+            },
+            "id": "default-orders-list-view",
+            "isImmutable": true,
+            "name": Object {
+              "de": "",
+              "en": "CompanyOrdersListCustomViewsConnector.defaultOptionLabel",
+            },
+            "page": 1,
+            "perPage": 20,
+            "searchText": "",
+            "sorting": Object {
+              "key": "createdAt",
+              "order": "desc",
+            },
+            "visibleColumns": null,
+          },
+        ],
+      },
+    }
+  }
+>
+  <TestComponent />
+</ContextProvider>
+`;

@@ -1,0 +1,29 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`rendering outputs correct tree 1`] = `
+<div
+  className="container"
+>
+  <div>
+    <injectIntl(PerPageSwitcher)
+      itemsOnPage={20}
+      onPerPageChange={[MockFunction]}
+      options={
+        Array [
+          20,
+          50,
+        ]
+      }
+      perPage={20}
+    />
+  </div>
+  <div>
+    <injectIntl(WithFormik(RangePaginator))
+      onPageChange={[MockFunction]}
+      page={1}
+      perPage={20}
+      totalItems={200}
+    />
+  </div>
+</div>
+`;

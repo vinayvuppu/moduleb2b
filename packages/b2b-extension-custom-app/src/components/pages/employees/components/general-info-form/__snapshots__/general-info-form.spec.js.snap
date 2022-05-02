@@ -1,0 +1,55 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`rendering should output correct tree 1`] = `
+<div>
+  <TabContentLayout
+    data-track-component="EmployeesGeneral"
+    description={<ManageMessage />}
+    header={<branch(MetaDates) />}
+  >
+    <Stack
+      alignItems="stretch"
+      scale="m"
+    >
+      <withApplicationContext(injectIntl(GeneralDetailsSubform))
+        canManageEmployees={true}
+        cannotChangeCustomerNumber={true}
+        formik={
+          Object {
+            "errors": Object {},
+            "handleBlur": [MockFunction handleBlur],
+            "handleChange": [MockFunction handleChange],
+            "isSubmitting": false,
+            "touched": Object {},
+            "values": Object {
+              "company": "",
+              "companyName": "Avengers",
+              "customerGroup": "cg-1",
+              "customerNumber": "9999",
+              "dateOfBirth": "1983-02-01",
+              "email": "strange@avengers.com",
+              "externalId": "aaa",
+              "firstName": "Stephen",
+              "lastName": "Strange",
+              "middleName": "Jay",
+              "password": "asdasd123",
+              "roles": Array [],
+              "title": "Doctor",
+              "vatId": "123",
+            },
+          }
+        }
+      />
+      <Connect(injectIntl(AccountDetailsResetPasswordPanel))
+        canManageEmployees={true}
+        firstName="Stephen"
+        lastName="Strange"
+        onPasswordReset={[MockFunction]}
+      />
+    </Stack>
+    <PageBottomSpacer
+      size="m"
+    />
+  </TabContentLayout>
+</div>
+`;

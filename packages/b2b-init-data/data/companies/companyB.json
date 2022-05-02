@@ -1,0 +1,44 @@
+{
+  "name": "Company B",
+  "channels": [],
+  "addresses": [
+    {
+      "firstName": "Timothy",
+      "lastName": "Garcia",
+      "streetName": "Duffy Street",
+      "streetNumber": "1990",
+      "postalCode": "50333",
+      "city": "DES MOINES",
+      "state": "IA",
+      "country": "US",
+      "phone": "219-787-7020",
+      "mobile": "712-821-9821",
+      "email": "contact@companyB.com",
+      "id": "eeb40020-57c1-11ea-9844-c1671a83c1b7"
+    }
+  ],
+  "budget": [
+    {
+      "rol": "b2b-company-employee",
+      "amount": {
+        "type": "centPrecision",
+        "currencyCode": "USD",
+        "centAmount": 2000000,
+        "fractionDigits": 2
+      }
+    }
+  ],
+  "requiredApprovalRoles": [
+    {
+      "rol": "b2b-company-employee",
+      "amount": {
+        "type": "centPrecision",
+        "currencyCode": "USD",
+        "centAmount": 200000,
+        "fractionDigits": 2
+      }
+    }
+  ],
+  "approverRoles": ["b2b-company-admin"],
+  "rules": []
+}

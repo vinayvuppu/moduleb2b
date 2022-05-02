@@ -1,0 +1,57 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`QuoteDetailsCommentsTab should render the correct snapshot 1`] = `
+<DocumentFragment>
+  <div
+    class="css-z1wx52-getStyles"
+  >
+    <button
+      data-testid="mock-button"
+    />
+    <div
+      class="css-ngf9uq-Card"
+    >
+      <div
+        class="css-z1wx52-getStyles"
+      >
+        <h4
+          class="css-78wsr5-subheadlineStyles"
+        >
+          foo@example.com - date date
+        </h4>
+        <p
+          class="css-f4iurr-bodyStyles"
+        >
+          <span
+            class="pre-wrap"
+          >
+            text
+          </span>
+        </p>
+      </div>
+    </div>
+    <div
+      class="css-ngf9uq-Card"
+    >
+      <div
+        class="css-z1wx52-getStyles"
+      >
+        <h4
+          class="css-78wsr5-subheadlineStyles"
+        >
+          bar@example.com - date date
+        </h4>
+        <p
+          class="css-f4iurr-bodyStyles"
+        >
+          <span
+            class="pre-wrap"
+          >
+            text
+          </span>
+        </p>
+      </div>
+    </div>
+  </div>
+</DocumentFragment>
+`;

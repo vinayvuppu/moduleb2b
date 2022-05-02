@@ -1,0 +1,9 @@
+#import './QuoteDetailFragment.graphql'
+
+mutation createQuote(
+  $draft: CreateQuoteDraft!
+) {
+  createQuote(draft: $draft) {
+    ...QuoteDetailsFragment
+  }
+}

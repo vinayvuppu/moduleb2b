@@ -1,0 +1,9 @@
+.flex {
+  flex: 1;
+}
+
+.column-target {
+  padding: var(--spacing-s);
+  border: 1px var(--color-neutral-60) dashed;
+  width: 100%;
+}

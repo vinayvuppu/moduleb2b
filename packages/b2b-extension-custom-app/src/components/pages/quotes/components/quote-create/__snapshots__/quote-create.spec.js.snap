@@ -1,0 +1,132 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`render should match snapshot 1`] = `
+<div
+  data-track-component="Add Quote"
+>
+  <View>
+    <div
+      className="container"
+    >
+      <div
+        className="slider"
+        data-testid="customers-list"
+      >
+        <withApplicationContext(injectIntl(Connect(QuoteCreateAddLineItems)))
+          addLineItem={[MockFunction]}
+          company={
+            Object {
+              "id": "company-id",
+            }
+          }
+          projectKey="project-key"
+          quote={
+            Object {
+              "company": Object {
+                "id": "company-id",
+                "name": "company name",
+              },
+              "customerGroup": Object {
+                "id": "customer-group-id",
+              },
+              "employeeEmail": "employee@company.com",
+              "id": "quote-id",
+              "lineItems": Array [
+                Object {
+                  "id": "line-item-id",
+                  "nameAllLocales": Array [
+                    Object {
+                      "locale": "en",
+                      "value": "Top Jucca black",
+                    },
+                  ],
+                  "price": Object {
+                    "id": "price-id-1",
+                    "value": Object {
+                      "centAmount": 100,
+                      "currencyCode": "USD",
+                    },
+                  },
+                  "productId": "product-id",
+                  "quantity": 1,
+                  "totalPrice": Object {
+                    "centAmount": 100,
+                    "currencyCode": "USD",
+                  },
+                  "variant": Object {
+                    "images": Array [
+                      Object {
+                        "url": "url-1",
+                      },
+                    ],
+                    "sku": "M0E20000000EC8N",
+                  },
+                },
+              ],
+              "totalPrice": Object {
+                "centAmount": 100,
+                "currencyCode": "USD",
+              },
+            }
+          }
+          renderSaveToolbarStep={[Function]}
+        />
+      </div>
+      <QuoteSummarySection
+        onChangeLineItemQuantity={[Function]}
+        onRemoveLineItem={[Function]}
+        quote={
+          Object {
+            "company": Object {
+              "id": "company-id",
+              "name": "company name",
+            },
+            "customerGroup": Object {
+              "id": "customer-group-id",
+            },
+            "employeeEmail": "employee@company.com",
+            "id": "quote-id",
+            "lineItems": Array [
+              Object {
+                "id": "line-item-id",
+                "nameAllLocales": Array [
+                  Object {
+                    "locale": "en",
+                    "value": "Top Jucca black",
+                  },
+                ],
+                "price": Object {
+                  "id": "price-id-1",
+                  "value": Object {
+                    "centAmount": 100,
+                    "currencyCode": "USD",
+                  },
+                },
+                "productId": "product-id",
+                "quantity": 1,
+                "totalPrice": Object {
+                  "centAmount": 100,
+                  "currencyCode": "USD",
+                },
+                "variant": Object {
+                  "images": Array [
+                    Object {
+                      "url": "url-1",
+                    },
+                  ],
+                  "sku": "M0E20000000EC8N",
+                },
+              },
+            ],
+            "totalPrice": Object {
+              "centAmount": 100,
+              "currencyCode": "USD",
+            },
+          }
+        }
+        title="formatted message"
+      />
+    </div>
+  </View>
+</div>
+`;

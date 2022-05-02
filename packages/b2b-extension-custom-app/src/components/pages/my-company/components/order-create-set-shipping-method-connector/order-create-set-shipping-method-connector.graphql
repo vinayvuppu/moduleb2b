@@ -1,0 +1,39 @@
+query FetchShippingMethodsByCartQuery(
+  $cartId: String!
+  $storeKeys: [KeyReferenceInput!]!
+  $hasGeneralPermissions: Boolean!
+) {
+  inStores(keys: $storeKeys) @skip(if: $hasGeneralPermissions) {
+    shippingMethodsByCart(id: $cartId) {
+      ...ShippingMethod
+    }
+  }
+  shippingMethodsByCart(id: $cartId) @include(if: $hasGeneralPermissions) {
+    ...ShippingMethod
+  }
+}
+
+fragment ShippingMethod on ShippingMethod {
+  id
+  name
+  description
+  isDefault
+  taxCategory {
+    name
+  }
+  zoneRates {
+    shippingRates {
+      isMatching
+      freeAbove {
+        currencyCode
+        centAmount
+        fractionDigits
+      }
+      price {
+        centAmount
+        currencyCode
+        fractionDigits
+      }
+    }
+  }
+}

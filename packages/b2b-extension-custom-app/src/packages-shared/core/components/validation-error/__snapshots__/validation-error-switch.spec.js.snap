@@ -1,0 +1,12 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Switch> rendering should match snapshot 1`] = `
+<ValidationErrorMatch
+  hasError={false}
+  isTouched={true}
+  key=".0"
+  rule="rule-bar"
+>
+  <ChildComponent />
+</ValidationErrorMatch>
+`;

@@ -1,0 +1,8 @@
+.invalid {
+  composes: invalid-field from '../../../_styles/forms.mod.css';
+  border: 1px solid;
+}
+
+.disabled {
+  cursor: not-allowed;
+}

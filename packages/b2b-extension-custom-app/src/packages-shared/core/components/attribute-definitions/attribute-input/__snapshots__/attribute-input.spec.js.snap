@@ -1,0 +1,79 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`rendering should match snapshot 1`] = `
+<div
+  className=""
+>
+  <Inline
+    alignItems="flex-start"
+    justifyContent="flex-start"
+    scale="s"
+  >
+    <Deprecated(LabelField)
+      isRequired={false}
+      title="localized value"
+    />
+  </Inline>
+  <AttributeReferenceLabel
+    definition={
+      Object {
+        "inputTip": Object {
+          "de": "german tip",
+          "en": "english tip",
+        },
+        "isRequired": false,
+        "label": Object {
+          "de": "german label",
+          "en": "english label",
+        },
+        "name": "attribute-input",
+        "type": Object {
+          "name": "text",
+        },
+      }
+    }
+  />
+  <AttributeInputTip
+    inputTip={
+      Object {
+        "de": "german tip",
+        "en": "english tip",
+      }
+    }
+    language="en"
+    languages={
+      Array [
+        "de",
+        "en",
+      ]
+    }
+  />
+  <AttributeInputByType
+    definition={
+      Object {
+        "inputTip": Object {
+          "de": "german tip",
+          "en": "english tip",
+        },
+        "isRequired": false,
+        "label": Object {
+          "de": "german label",
+          "en": "english label",
+        },
+        "name": "attribute-input",
+        "type": Object {
+          "name": "text",
+        },
+      }
+    }
+    disabled={false}
+    languages={
+      Array [
+        "de",
+        "en",
+      ]
+    }
+    selectedLanguage="en"
+  />
+</div>
+`;

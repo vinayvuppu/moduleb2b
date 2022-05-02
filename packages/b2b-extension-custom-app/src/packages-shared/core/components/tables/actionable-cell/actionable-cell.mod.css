@@ -1,0 +1,37 @@
+.action-cell {
+  position: relative;
+  display: flex;
+}
+
+.flex-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.text {
+  composes: flex-content;
+  composes: ellipsis from '../../../_styles/commons.mod.css';
+  width: 100%;
+}
+
+.button-left {
+  margin-right: var(--spacing-s);
+}
+
+.button-right {
+  margin-left: var(--spacing-s);
+}
+
+.icon-container {
+  composes: flex-content;
+  background: transparent;
+  flex-grow: 1;
+
+  /**
+   * we override the default height of the icon-container (28px)
+   * since it exceeds the content-height of the cell in the column-header,
+   * resulting the content being pushed down
+   */
+  height: auto !important;
+}

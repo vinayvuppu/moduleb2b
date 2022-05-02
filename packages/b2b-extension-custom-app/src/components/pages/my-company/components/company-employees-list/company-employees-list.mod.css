@@ -1,0 +1,3 @@
+.customer-group-reference {
+  composes: reference-filter-field from '~@commercetools-local/core/_styles/commons.mod.css';
+}

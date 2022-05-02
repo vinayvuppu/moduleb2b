@@ -1,0 +1,8 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`rendering SingleFilter should match output tree 1`] = `
+<SingleFilter
+  onUpdateValue={[MockFunction]}
+  renderInput={[Function]}
+/>
+`;

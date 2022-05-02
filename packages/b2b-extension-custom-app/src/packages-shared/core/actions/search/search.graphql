@@ -1,0 +1,37 @@
+query CategorySearch(
+  $fullText: LocalizedText
+  $filters: [SearchFilter!]
+  $offset: Int!
+  $limit: Int!
+  $sorts: [SearchSort!]
+) {
+  categories: categorySearch(
+    fulltext: $fullText
+    sorts: $sorts
+    filters: $filters
+    limit: $limit
+    offset: $offset
+  ) {
+    count
+    total
+    results {
+      id
+      externalId
+      childCount
+      stagedProductCount
+      createdAt
+      lastModifiedAt
+      nameAllLocales {
+        locale
+        value
+      }
+      ancestors {
+        id
+        nameAllLocales {
+          locale
+          value
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,704 @@
+#import '@commercetools-local/utils/graphql/fragments/custom-fields.graphql'
+
+query InitialOrderStatesQuery($where: String!, $limit: Int) {
+  states(where: $where, limit: $limit) {
+    results {
+      ...StateFragment
+    }
+  }
+}
+
+query OrderDetailsQuery(
+  $orderId: String!
+  $locale: Locale!
+  $storeKeys: [KeyReferenceInput!]!
+  $hasGeneralPermissions: Boolean!
+) {
+  inStores(keys: $storeKeys) @skip(if: $hasGeneralPermissions) {
+    order(id: $orderId) {
+      ...OrderDetailsFragment
+    }
+  }
+  order(id: $orderId) @include(if: $hasGeneralPermissions) {
+    ...OrderDetailsFragment
+  }
+}
+
+query PaymentQuery($paymentId: String!) {
+  payment(id: $paymentId) {
+    ...PaymentFragment
+  }
+}
+
+mutation UpdateOrderDetailsMutation(
+  $id: String!
+  $locale: Locale!
+  $version: Long!
+  $actions: [OrderUpdateAction!]!
+  $storeKey: KeyReferenceInput
+) {
+  updateOrder(
+    id: $id
+    version: $version
+    actions: $actions
+    storeKey: $storeKey
+  ) {
+    ...OrderDetailsFragment
+  }
+}
+
+mutation UpdateOrderDetailsOrderStateMutation(
+  $id: String!
+  $locale: Locale!
+  $version: Long!
+  $orderState: OrderState!
+  $storeKey: KeyReferenceInput
+) {
+  updateOrder(
+    id: $id
+    version: $version
+    actions: [{ changeOrderState: { orderState: $orderState } }]
+    storeKey: $storeKey
+  ) {
+    ...OrderDetailsFragment
+  }
+}
+
+mutation UpdateOrderDetailsShipmentStateMutation(
+  $id: String!
+  $locale: Locale!
+  $version: Long!
+  $shipmentState: ShipmentState!
+  $storeKey: KeyReferenceInput
+) {
+  updateOrder(
+    id: $id
+    version: $version
+    actions: [{ changeShipmentState: { shipmentState: $shipmentState } }]
+    storeKey: $storeKey
+  ) {
+    ...OrderDetailsFragment
+  }
+}
+
+mutation UpdateOrderDetailsPaymentStateMutation(
+  $id: String!
+  $locale: Locale!
+  $version: Long!
+  $paymentState: PaymentState!
+  $storeKey: KeyReferenceInput
+) {
+  updateOrder(
+    id: $id
+    version: $version
+    actions: [{ changePaymentState: { paymentState: $paymentState } }]
+    storeKey: $storeKey
+  ) {
+    ...OrderDetailsFragment
+  }
+}
+
+fragment OrderDetailsFragment on Order {
+  id
+  version
+  createdAt
+  customerEmail
+  customerId
+  lastModifiedAt
+  orderNumber
+  orderState
+  paymentState
+  shipmentState
+  store {
+    id
+    key
+    createdAt
+    lastModifiedAt
+    nameAllLocales {
+      locale
+      value
+    }
+  }
+  taxedPrice {
+    taxPortions {
+      rate
+      name
+      amount {
+        ...MoneyFragment
+      }
+    }
+    totalNet {
+      ...MoneyFragment
+    }
+    totalGross {
+      ...MoneyFragment
+    }
+  }
+  shippingInfo {
+    shippingMethodName
+    taxRate {
+      ...TaxRateFragment
+    }
+    discountedPrice {
+      value {
+        type
+        fractionDigits
+        currencyCode
+        ... on HighPrecisionMoney {
+          preciseAmount
+        }
+        ... on Money {
+          centAmount
+        }
+      }
+      includedDiscounts {
+        discount {
+          id
+          nameAllLocales {
+            locale
+            value
+          }
+          target {
+            type
+          }
+        }
+        discountedAmount {
+          type
+          fractionDigits
+          currencyCode
+          ... on HighPrecisionMoney {
+            preciseAmount
+          }
+          ... on Money {
+            centAmount
+          }
+        }
+      }
+    }
+    taxedPrice {
+      totalNet {
+        ...MoneyFragment
+      }
+      totalGross {
+        ...MoneyFragment
+      }
+    }
+    price {
+      ...MoneyFragment
+    }
+    deliveries {
+      id
+      createdAt
+      address {
+        ...OrderDetailsAddressFragment
+      }
+      items {
+        lineItemId: id
+        quantity
+      }
+      parcels {
+        id
+        createdAt
+        measurements {
+          widthInMillimeter
+          heightInMillimeter
+          lengthInMillimeter
+          weightInGram
+        }
+        trackingData {
+          trackingId
+          carrier
+          provider
+          providerTransaction
+          isReturn
+        }
+      }
+    }
+  }
+  totalPrice {
+    ...MoneyFragment
+  }
+  syncInfo {
+    externalId
+    syncedAt
+    channel {
+      id
+      nameAllLocales {
+        value
+        locale
+      }
+    }
+  }
+  returnInfo {
+    returnDate
+    returnTrackingId
+    items {
+      ... on LineItemReturnItem {
+        lineItemId
+      }
+      type
+      id
+      quantity
+      comment
+      shipmentState
+      paymentState
+      lastModifiedAt
+      createdAt
+    }
+  }
+  paymentInfo {
+    payments {
+      ...PaymentFragment
+    }
+  }
+  billingAddress {
+    ...OrderDetailsAddressFragment
+  }
+  shippingAddress {
+    ...OrderDetailsAddressFragment
+  }
+  state {
+    ...StateFragment
+  }
+  discountCodes {
+    discountCodeRef {
+      id
+    }
+    state
+  }
+  customLineItems {
+    id
+    quantity
+    nameAllLocales {
+      locale
+      value
+    }
+    discountedPricePerQuantity {
+      ...DiscountedPricePerQuantityFragment
+    }
+    totalPrice {
+      ...MoneyFragment
+    }
+    state {
+      quantity
+      state {
+        ...StateFragment
+      }
+    }
+    taxRate {
+      ...TaxRateFragment
+    }
+    money {
+      type
+      fractionDigits
+      currencyCode
+      ... on HighPrecisionMoney {
+        preciseAmount
+      }
+      ... on Money {
+        centAmount
+      }
+    }
+    custom {
+      type {
+        ...CustomFieldsTypeFragment
+      }
+      customFieldsRaw {
+        name
+        value
+      }
+    }
+  }
+  lineItems {
+    id
+    productId
+    productSlug(locale: $locale)
+    quantity
+    nameAllLocales {
+      locale
+      value
+    }
+    custom {
+      type {
+        ...CustomFieldsTypeFragment
+      }
+      customFieldsRaw {
+        name
+        value
+      }
+    }
+    discountedPricePerQuantity {
+      ...DiscountedPricePerQuantityFragment
+    }
+    totalPrice {
+      ...MoneyFragment
+    }
+    state {
+      quantity
+      state {
+        ...StateFragment
+      }
+    }
+    variant {
+      sku
+      attributesRaw {
+        name
+        value
+        attributeDefinition {
+          name
+          type {
+            name
+            ... on EnumAttributeDefinitionType {
+              values {
+                results {
+                  key
+                  label
+                }
+              }
+            }
+            ... on LocalizableEnumAttributeDefinitionType {
+              values {
+                results {
+                  key
+                  labelAllLocales {
+                    locale
+                    value
+                  }
+                }
+              }
+            }
+            ... on ReferenceAttributeDefinitionType {
+              name
+              referenceTypeId
+            }
+            ... on SetAttributeDefinitionType {
+              name
+              elementType {
+                ... on EnumAttributeDefinitionType {
+                  name
+                  values {
+                    results {
+                      key
+                      label
+                    }
+                  }
+                }
+                ... on LocalizableEnumAttributeDefinitionType {
+                  name
+                  values {
+                    results {
+                      key
+                      labelAllLocales {
+                        locale
+                        value
+                      }
+                    }
+                  }
+                }
+                ... on ReferenceAttributeDefinitionType {
+                  name
+                  referenceTypeId
+                }
+                ... on TextAttributeDefinitionType {
+                  name
+                }
+                ... on LocalizableTextAttributeDefinitionType {
+                  name
+                }
+                ... on NumberAttributeDefinitionType {
+                  name
+                }
+                ... on DateTimeAttributeDefinitionType {
+                  name
+                }
+                ... on DateAttributeDefinitionType {
+                  name
+                }
+                ... on TimeAttributeDefinitionType {
+                  name
+                }
+                ... on MoneyAttributeDefinitionType {
+                  name
+                }
+              }
+            }
+          }
+          name
+          attributeConstraint
+          inputHint
+          isRequired
+          isSearchable
+          labelAllLocales {
+            locale
+            value
+          }
+          inputTipAllLocales {
+            locale
+            value
+          }
+        }
+      }
+      images {
+        label
+        url
+        dimensions {
+          width
+          height
+        }
+      }
+    }
+    taxRate {
+      ...TaxRateFragment
+    }
+    taxedPrice {
+      totalNet {
+        ...MoneyFragment
+      }
+      totalGross {
+        ...MoneyFragment
+      }
+    }
+    price {
+      value {
+        type
+        fractionDigits
+        currencyCode
+        ... on HighPrecisionMoney {
+          preciseAmount
+        }
+        ... on Money {
+          centAmount
+        }
+      }
+      discounted {
+        value {
+          type
+          fractionDigits
+          currencyCode
+          ... on HighPrecisionMoney {
+            preciseAmount
+          }
+          ... on Money {
+            centAmount
+          }
+        }
+        discount {
+          id
+          nameAllLocales {
+            locale
+            value
+          }
+          value {
+            type
+            ... on AbsoluteDiscountValue {
+              money {
+                fractionDigits
+                centAmount
+                currencyCode
+              }
+            }
+            ... on RelativeDiscountValue {
+              permyriad
+            }
+          }
+        }
+      }
+    }
+  }
+  custom {
+    type {
+      ...CustomFieldsTypeFragment
+    }
+    customFieldsRaw {
+      name
+      value
+    }
+  }
+}
+
+fragment TaxRateFragment on TaxRate {
+  name
+  amount
+  includedInPrice
+  id
+}
+
+fragment DiscountedPricePerQuantityFragment on DiscountedLineItemPriceForQuantity {
+  quantity
+  discountedPrice {
+    value {
+      type
+      fractionDigits
+      currencyCode
+      ... on HighPrecisionMoney {
+        preciseAmount
+      }
+      ... on Money {
+        centAmount
+      }
+    }
+    includedDiscounts {
+      discountRef {
+        id
+      }
+      discount {
+        id
+        nameAllLocales {
+          locale
+          value
+        }
+        value {
+          type
+          ... on AbsoluteDiscountValue {
+            money {
+              fractionDigits
+              centAmount
+              currencyCode
+            }
+          }
+          ... on RelativeDiscountValue {
+            type
+            permyriad
+          }
+        }
+      }
+      discountedAmount {
+        type
+        currencyCode
+        fractionDigits
+        ... on HighPrecisionMoney {
+          preciseAmount
+        }
+        ... on Money {
+          centAmount
+        }
+      }
+    }
+  }
+}
+
+fragment MoneyFragment on Money {
+  centAmount
+  currencyCode
+  fractionDigits
+  type
+}
+
+fragment StateFragment on State {
+  id
+  key
+  nameAllLocales {
+    locale
+    value
+  }
+  roles
+  transitions {
+    id
+    key
+    builtIn
+    nameAllLocales {
+      locale
+      value
+    }
+  }
+}
+
+fragment OrderDetailsAddressFragment on Address {
+  id
+  additionalStreetInfo
+  additionalAddressInfo
+  apartment
+  building
+  city
+  company
+  country
+  department
+  firstName
+  key
+  lastName
+  pOBox
+  postalCode
+  region
+  salutation
+  streetName
+  streetNumber
+  title
+  phone
+  mobile
+  email
+  fax
+}
+
+fragment PaymentFragment on Payment {
+  id
+  version
+  createdAt
+  lastModifiedAt
+  customer {
+    id
+  }
+  interfaceId
+  amountPlanned {
+    currencyCode
+    centAmount
+    fractionDigits
+  }
+  paymentMethodInfo {
+    paymentInterface
+    method
+    nameAllLocales {
+      locale
+      value
+    }
+  }
+  paymentStatus {
+    interfaceCode
+    interfaceText
+    state {
+      ...StateFragment
+    }
+  }
+  transactions {
+    type
+    amount {
+      currencyCode
+      centAmount
+      fractionDigits
+    }
+    id
+    timestamp
+    interactionId
+    state
+  }
+  custom {
+    customFieldsRaw {
+      name
+      value
+    }
+    type {
+      ...CustomFieldsTypeFragment
+    }
+  }
+  interfaceInteractionsRaw {
+    results {
+      type {
+        id
+        nameAllLocales {
+          locale
+          value
+        }
+        fieldDefinitions {
+          name
+          labelAllLocales {
+            locale
+            value
+          }
+        }
+      }
+      fields {
+        name
+        value
+      }
+    }
+  }
+}

@@ -1,0 +1,7 @@
+.invalid {
+  composes: invalid-field from '../../_styles/forms.mod.css';
+}
+
+.container {
+  display: inline;
+}

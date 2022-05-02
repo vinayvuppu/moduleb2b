@@ -1,0 +1,54 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`EnumRangeFilterTag render correct tree 1`] = `
+<injectIntl(RangeFilterTag)
+  fieldLabel="Name"
+  onClick={[MockFunction]}
+  onRemove={[MockFunction]}
+  renderValue={[Function]}
+  value={
+    Object {
+      "from": Object {
+        "label": "Foo",
+        "value": "foo",
+      },
+      "to": Object {
+        "label": "Bar",
+        "value": "bar",
+      },
+    }
+  }
+/>
+`;
+
+exports[`EnumSingleFilterTag render correct tree 1`] = `
+<SingleFilterTag
+  fieldLabel="Name"
+  filterTypeLabel="Missing"
+  onClick={[MockFunction]}
+  onRemove={[MockFunction]}
+  renderValue={[Function]}
+  value={
+    Object {
+      "label": "en",
+      "value": "en",
+    }
+  }
+/>
+`;
+
+exports[`EnumSingleOptionFilterTag render correct tree 1`] = `
+<SingleFilterTag
+  fieldLabel="Name"
+  filterTypeLabel="Missing"
+  onClick={[MockFunction]}
+  onRemove={[MockFunction]}
+  renderValue={[Function]}
+  value={
+    Object {
+      "key": "option-key",
+      "label": "option-label",
+    }
+  }
+/>
+`;

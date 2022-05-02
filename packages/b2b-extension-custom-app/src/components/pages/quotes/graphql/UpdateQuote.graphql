@@ -1,0 +1,11 @@
+#import './QuoteDetailFragment.graphql'
+
+mutation updateQuote(
+  $version: Long!
+  $actions: [QuoteUpdateAction!]!
+  $id: String!
+) {
+  updateQuote(id: $id, version: $version, actions: $actions) {
+    ...QuoteDetailsFragment
+  }
+}

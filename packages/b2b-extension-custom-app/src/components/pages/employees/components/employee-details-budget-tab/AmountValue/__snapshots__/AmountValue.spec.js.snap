@@ -1,0 +1,20 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`AmountValue component rendering should render the correct snapshot 1`] = `
+<DocumentFragment>
+  <div
+    class="css-z1wx52-getStyles"
+  >
+    <p
+      class="css-17wfq1-bodyStyles"
+    >
+      foo
+    </p>
+    <h3
+      class="css-19gfu0y-headlineStyles"
+    >
+      foo-no-value
+    </h3>
+  </div>
+</DocumentFragment>
+`;

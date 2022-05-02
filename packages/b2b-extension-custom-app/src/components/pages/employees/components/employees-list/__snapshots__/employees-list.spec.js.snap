@@ -1,0 +1,454 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`render when loaded <SearchViewControlledContainer> should match snapshot 1`] = `
+<Stack
+  alignItems="stretch"
+  scale="m"
+>
+  <ColumnManager
+    availableColumns={
+      Array [
+        Object {
+          "flexGrow": 1,
+          "isSortable": true,
+          "key": "email",
+          "label": <FormattedMessage
+            defaultMessage="Email"
+            description="Title of the table column (email)"
+            id="Employees.ListView.column.email"
+            values={Object {}}
+          />,
+        },
+        Object {
+          "flexGrow": 1,
+          "key": "companyName",
+          "label": <FormattedMessage
+            defaultMessage="Company"
+            description="Title of the table column (companyName)"
+            id="Employees.ListView.column.companyName"
+            values={Object {}}
+          />,
+        },
+        Object {
+          "flexGrow": 1,
+          "isSortable": true,
+          "key": "firstName",
+          "label": <FormattedMessage
+            defaultMessage="First name"
+            description="Title of the table column (firstName)"
+            id="Employees.ListView.column.firstName"
+            values={Object {}}
+          />,
+        },
+        Object {
+          "flexGrow": 1,
+          "isSortable": true,
+          "key": "lastName",
+          "label": <FormattedMessage
+            defaultMessage="Last name"
+            description="Title of the table column (lastName)"
+            id="Employees.ListView.column.lastName"
+            values={Object {}}
+          />,
+        },
+        Object {
+          "flexGrow": 1,
+          "key": "roles",
+          "label": <FormattedMessage
+            defaultMessage="Roles"
+            id="Employees.ListView.column.roles"
+            values={Object {}}
+          />,
+        },
+        Object {
+          "flexGrow": 1,
+          "key": "amountExpended",
+          "label": <FormattedMessage
+            defaultMessage="Budget consumed"
+            id="Employees.ListView.column.budgetConsumed"
+            values={Object {}}
+          />,
+        },
+      ]
+    }
+    onUpdateColumns={[Function]}
+    selectedColumns={
+      Array [
+        Object {
+          "flexGrow": 1,
+          "isSortable": true,
+          "key": "email",
+          "label": <FormattedMessage
+            defaultMessage="Email"
+            description="Title of the table column (email)"
+            id="Employees.ListView.column.email"
+            values={Object {}}
+          />,
+        },
+        Object {
+          "flexGrow": 1,
+          "key": "companyName",
+          "label": <FormattedMessage
+            defaultMessage="Company"
+            description="Title of the table column (companyName)"
+            id="Employees.ListView.column.companyName"
+            values={Object {}}
+          />,
+        },
+        Object {
+          "flexGrow": 1,
+          "isSortable": true,
+          "key": "firstName",
+          "label": <FormattedMessage
+            defaultMessage="First name"
+            description="Title of the table column (firstName)"
+            id="Employees.ListView.column.firstName"
+            values={Object {}}
+          />,
+        },
+        Object {
+          "flexGrow": 1,
+          "isSortable": true,
+          "key": "lastName",
+          "label": <FormattedMessage
+            defaultMessage="Last name"
+            description="Title of the table column (lastName)"
+            id="Employees.ListView.column.lastName"
+            values={Object {}}
+          />,
+        },
+        Object {
+          "flexGrow": 1,
+          "key": "roles",
+          "label": <FormattedMessage
+            defaultMessage="Roles"
+            id="Employees.ListView.column.roles"
+            values={Object {}}
+          />,
+        },
+        Object {
+          "flexGrow": 1,
+          "key": "amountExpended",
+          "label": <FormattedMessage
+            defaultMessage="Budget consumed"
+            id="Employees.ListView.column.budgetConsumed"
+            values={Object {}}
+          />,
+        },
+      ]
+    }
+  />
+  <Table
+    columns={
+      Array [
+        Object {
+          "flexGrow": 1,
+          "isSortable": true,
+          "key": "email",
+          "label": <FormattedMessage
+            defaultMessage="Email"
+            description="Title of the table column (email)"
+            id="Employees.ListView.column.email"
+            values={Object {}}
+          />,
+        },
+        Object {
+          "flexGrow": 1,
+          "key": "companyName",
+          "label": <FormattedMessage
+            defaultMessage="Company"
+            description="Title of the table column (companyName)"
+            id="Employees.ListView.column.companyName"
+            values={Object {}}
+          />,
+        },
+        Object {
+          "flexGrow": 1,
+          "isSortable": true,
+          "key": "firstName",
+          "label": <FormattedMessage
+            defaultMessage="First name"
+            description="Title of the table column (firstName)"
+            id="Employees.ListView.column.firstName"
+            values={Object {}}
+          />,
+        },
+        Object {
+          "flexGrow": 1,
+          "isSortable": true,
+          "key": "lastName",
+          "label": <FormattedMessage
+            defaultMessage="Last name"
+            description="Title of the table column (lastName)"
+            id="Employees.ListView.column.lastName"
+            values={Object {}}
+          />,
+        },
+        Object {
+          "flexGrow": 1,
+          "key": "roles",
+          "label": <FormattedMessage
+            defaultMessage="Roles"
+            id="Employees.ListView.column.roles"
+            values={Object {}}
+          />,
+        },
+        Object {
+          "flexGrow": 1,
+          "key": "amountExpended",
+          "label": <FormattedMessage
+            defaultMessage="Budget consumed"
+            id="Employees.ListView.column.budgetConsumed"
+            values={Object {}}
+          />,
+        },
+      ]
+    }
+    itemRenderer={[Function]}
+    items={
+      Array [
+        "1",
+        "2",
+      ]
+    }
+    measurementResetter={[MockFunction]}
+    onRowClick={[Function]}
+    onSortChange={[MockFunction]}
+    rowCount={2}
+    shouldFillRemainingVerticalSpace={true}
+    sortBy="rank"
+    sortDirection="ASC"
+  >
+    <Pagination
+      onPageChange={[MockFunction onPageChange]}
+      onPerPageChange={[MockFunction onPerPageChange]}
+      page={1}
+      pageSizes={
+        Array [
+          20,
+          50,
+        ]
+      }
+      perPage={20}
+      totalItems={2}
+    />
+    <PageBottomSpacer
+      size="m"
+    />
+  </Table>
+</Stack>
+`;
+
+exports[`render when loaded <SearchViewControlledContainer> with \`visibleColumns\` on \`activeView\` should match snapshot 1`] = `
+<Stack
+  alignItems="stretch"
+  scale="m"
+>
+  <ColumnManager
+    availableColumns={
+      Array [
+        Object {
+          "flexGrow": 1,
+          "isSortable": true,
+          "key": "email",
+          "label": <FormattedMessage
+            defaultMessage="Email"
+            description="Title of the table column (email)"
+            id="Employees.ListView.column.email"
+            values={Object {}}
+          />,
+        },
+        Object {
+          "flexGrow": 1,
+          "key": "companyName",
+          "label": <FormattedMessage
+            defaultMessage="Company"
+            description="Title of the table column (companyName)"
+            id="Employees.ListView.column.companyName"
+            values={Object {}}
+          />,
+        },
+        Object {
+          "flexGrow": 1,
+          "isSortable": true,
+          "key": "firstName",
+          "label": <FormattedMessage
+            defaultMessage="First name"
+            description="Title of the table column (firstName)"
+            id="Employees.ListView.column.firstName"
+            values={Object {}}
+          />,
+        },
+        Object {
+          "flexGrow": 1,
+          "isSortable": true,
+          "key": "lastName",
+          "label": <FormattedMessage
+            defaultMessage="Last name"
+            description="Title of the table column (lastName)"
+            id="Employees.ListView.column.lastName"
+            values={Object {}}
+          />,
+        },
+        Object {
+          "flexGrow": 1,
+          "key": "roles",
+          "label": <FormattedMessage
+            defaultMessage="Roles"
+            id="Employees.ListView.column.roles"
+            values={Object {}}
+          />,
+        },
+        Object {
+          "flexGrow": 1,
+          "key": "amountExpended",
+          "label": <FormattedMessage
+            defaultMessage="Budget consumed"
+            id="Employees.ListView.column.budgetConsumed"
+            values={Object {}}
+          />,
+        },
+      ]
+    }
+    onUpdateColumns={[Function]}
+    selectedColumns={Array []}
+  />
+  <Table
+    columns={Array []}
+    itemRenderer={[Function]}
+    items={
+      Array [
+        "1",
+        "2",
+      ]
+    }
+    measurementResetter={[MockFunction]}
+    onRowClick={[Function]}
+    onSortChange={[MockFunction]}
+    rowCount={2}
+    shouldFillRemainingVerticalSpace={true}
+    sortBy="rank"
+    sortDirection="ASC"
+  >
+    <Pagination
+      onPageChange={[MockFunction onPageChange]}
+      onPerPageChange={[MockFunction onPerPageChange]}
+      page={1}
+      pageSizes={
+        Array [
+          20,
+          50,
+        ]
+      }
+      perPage={20}
+      totalItems={2}
+    />
+    <PageBottomSpacer
+      size="m"
+    />
+  </Table>
+</Stack>
+`;
+
+exports[`render when loaded should match snapshot 1`] = `
+<EmployeesViewLayout
+  projectKey="test"
+  total={1}
+>
+  <SearchViewControlledContainer
+    areFiltersVisible={true}
+    count={1}
+    filterDefinitions={
+      Object {
+        "customerGroup.id": Object {
+          "filterTypes": Object {
+            "equalTo": Object {
+              "canBeAppliedMultipleTimes": false,
+              "filterComponent": [Function],
+              "label": "Search.Filters.Definitions.Reference.equalTo",
+              "tagComponent": [Function],
+            },
+          },
+          "label": "Employees.ListView.filter.company",
+        },
+        "firstName": Object {
+          "filterTypes": Object {
+            "equalTo": Object {
+              "canBeAppliedMultipleTimes": false,
+              "filterComponent": [Function],
+              "label": "Search.Filters.Definitions.Text.equalTo",
+              "tagComponent": [Function],
+            },
+          },
+          "label": "Employees.ListView.filter.firstNameFilter",
+        },
+        "lastName": Object {
+          "filterTypes": Object {
+            "equalTo": Object {
+              "canBeAppliedMultipleTimes": false,
+              "filterComponent": [Function],
+              "label": "Search.Filters.Definitions.Text.equalTo",
+              "tagComponent": [Function],
+            },
+          },
+          "label": "Employees.ListView.filter.lastNameFilter",
+        },
+      }
+    }
+    noResultsText="Employees.ListView.noResultsTitle"
+    onChange={[Function]}
+    page={1}
+    pageSizes={
+      Array [
+        20,
+        50,
+        100,
+      ]
+    }
+    perPage={20}
+    results={
+      Array [
+        Object {
+          "companyName": "test",
+          "createdAt": "2016-08-11T16:26:09.045Z",
+          "custom": null,
+          "customerNumber": "123",
+          "email": "foo@bar.de",
+          "externalId": "12",
+          "firstName": "Jon",
+          "id": 1,
+          "lastModifiedAt": "2016-08-11T16:26:09.045Z",
+          "lastName": "Snow",
+        },
+      ]
+    }
+    searchInputPlaceholder="Employees.SearchByEmployees.searchPlaceholder"
+    total={1}
+    value={
+      Object {
+        "filters": Object {},
+        "page": 1,
+        "perPage": 20,
+        "searchText": "",
+        "sorting": Object {
+          "key": "createdAt",
+          "order": "desc",
+        },
+      }
+    }
+  >
+    <Component />
+  </SearchViewControlledContainer>
+</EmployeesViewLayout>
+`;
+
+exports[`render when loading should match snapshot 1`] = `
+<Stack
+  alignItems="center"
+  scale="m"
+>
+  <LoadingSpinner
+    scale="l"
+  />
+</Stack>
+`;

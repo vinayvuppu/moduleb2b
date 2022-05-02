@@ -1,0 +1,48 @@
+fragment EmployeeForOrderFragment on Employee {
+  id
+  version
+  email
+  company: customerGroup {
+    id
+    name
+    key
+  }
+  addresses {
+    id
+    firstName
+    lastName
+    company
+    streetName
+    streetNumber
+    city
+    postalCode
+    region
+    country
+    additionalAddressInfo
+    additionalStreetInfo
+    email
+    phone
+  }
+  roles
+  amountRemaining {
+    currencyCode
+    centAmount
+    fractionDigits
+  }
+}
+
+query FetchEmployeeQuery($id: String!) {
+  employee(id: $id) {
+    ...EmployeeForOrderFragment
+  }
+}
+
+mutation UpdateEmployeeMutation(
+  $id: String!
+  $version: Long!
+  $actions: [EmployeeUpdateAction!]!
+) {
+  updateEmployee(id: $id, version: $version, actions: $actions) {
+    ...EmployeeForOrderFragment
+  }
+}

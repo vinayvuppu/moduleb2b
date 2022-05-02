@@ -1,0 +1,73 @@
+query queryQuotes(
+  $quoteState: [String!]
+  $employeeId: String
+  $employeeEmail: String
+  $quoteNumber: String
+  $companyId: String
+  $searchTerm: String
+  $sort: [String!]
+  $limit: Int
+  $offset: Int
+) {
+  quotes(
+    quoteState: $quoteState
+    employeeId: $employeeId
+    employeeEmail: $employeeEmail
+    quoteNumber: $quoteNumber
+    companyId: $companyId
+    searchTerm: $searchTerm
+    sort: $sort
+    limit: $limit
+    offset: $offset
+  ) {
+    offset
+    total
+    count
+    results {
+      id
+      version
+      quoteState
+      employeeId
+      employeeEmail
+      lineItems {
+        id
+        productId
+        variant {
+          sku
+        }
+        price {
+          id
+          value {
+            currencyCode
+            centAmount
+          }
+        }
+        originalPrice {
+          currencyCode
+          centAmount
+        }
+        quantity
+        totalPrice {
+          currencyCode
+          centAmount
+        }
+      }
+      customerGroup {
+        key
+      }
+      company {
+        id
+        name
+      }
+      totalPrice {
+        centAmount
+        currencyCode
+      }
+      originalTotalPrice {
+        currencyCode
+        centAmount
+      }
+      quoteNumber
+    }
+  }
+}

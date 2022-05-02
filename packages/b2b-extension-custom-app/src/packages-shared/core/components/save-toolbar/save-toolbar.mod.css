@@ -1,0 +1,60 @@
+@import '../../_styles/shared.mod.css';
+
+:root {
+  --width-leftNavigationOpen: 200px;
+  --margin-leftNavigation: 48px;
+
+  /* Left navigation */
+  --width-leftNavigation: 64px;
+}
+
+.divisor {
+  background: red;
+}
+
+.container {
+  composes: toolbarUp from '../../_styles/animations.mod.css';
+  composes: clearfix from '../../_styles/commons.mod.css';
+  background-color: var(--color-accent);
+  border-radius: 6px 6px 0 0;
+  bottom: 0;
+  left: calc(var(--width-leftNavigation) + var(--margin-leftNavigation));
+  position: fixed;
+  width: calc(
+    var(--width-oneHundredPercent) - var(--margin-leftNavigation) -
+      var(--width-leftNavigation) * 2 - 27px
+  );
+  z-index: 10000;
+}
+
+:global(.body__menu-open) .container {
+  left: calc(var(--width-leftNavigationOpen) + var(--margin-leftNavigation));
+  width: calc(
+    var(--width-oneHundredPercent) - var(--margin-leftNavigation) -
+      var(--width-leftNavigation) - var(--width-leftNavigationOpen) - 27px
+  );
+}
+
+.list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.list-item {
+  display: inline-block;
+  padding: 10px 15px;
+}
+
+.list-left,
+.list-right {
+  composes: list;
+}
+
+.list-right {
+  float: right;
+}
+
+.list-left {
+  float: left;
+}

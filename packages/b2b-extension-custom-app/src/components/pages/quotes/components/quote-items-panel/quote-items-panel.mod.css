@@ -1,0 +1,10 @@
+.item-modified {
+  color: var(--color-warning);
+  font-style: italic;
+}
+.changePricesRadioButton {
+  margin-top: 4px;
+}
+.changePricesLabel {
+  font-weight: bold;
+}

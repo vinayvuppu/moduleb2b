@@ -1,0 +1,17 @@
+_translations/
+.firebase/*
+config/*
+dist/*
+functions/*
+public/*
+assets/
+coverage/
+dist-*/
+docs/
+/scripts/
+!/scripts/build-app-menu.js
+!/scripts/start-app-select.js
+node_modules/*
+**/node_modules/*
+**/react-dev-utils/*
+.yarn

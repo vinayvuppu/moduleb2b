@@ -1,0 +1,359 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`render when line items should match snapshot 1`] = `
+<Card
+  theme="light"
+  type="raised"
+>
+  <Stack
+    alignItems="stretch"
+    scale="s"
+  >
+    <Inline
+      alignItems="center"
+      justifyContent="flex-start"
+      scale="xs"
+    >
+      <CartIcon
+        size="medium"
+      />
+      <TextDetail
+        intlMessage={
+          Object {
+            "defaultMessage": "{items} items",
+            "description": "items label when items are selected",
+            "id": "QuoteSummary.itemsLabel",
+            "values": Object {
+              "items": 1,
+            },
+          }
+        }
+        isBold={true}
+        tone="information"
+      />
+      <TextDetail
+        isBold={true}
+      >
+        <FormattedMessage
+          defaultMessage="in your quote"
+          description="title for the cart summary panel"
+          id="QuoteSummary.quoteSummaryTittle"
+          values={Object {}}
+        />
+      </TextDetail>
+    </Inline>
+    <div
+      className="separator"
+    />
+    <SummaryItem
+      key="line-item-id"
+    >
+      <Inline
+        alignItems="flex-start"
+        justifyContent="flex-start"
+        scale="s"
+      >
+        <IconButton
+          data-testid="remove-line-item-line-item-id"
+          icon={<CloseBoldIcon />}
+          isToggleButton={false}
+          label="formatted message"
+          onClick={[Function]}
+          shape="round"
+          size="small"
+          theme="default"
+          type="button"
+        />
+        <Stack
+          alignItems="stretch"
+          scale="s"
+        >
+          <TextDetail
+            isBold={true}
+          >
+            <withApplicationContext(Localize)
+              object={
+                Object {
+                  "name": Object {
+                    "en": "Top Jucca black",
+                  },
+                }
+              }
+              objectKey="name"
+            />
+          </TextDetail>
+          <TextDetail
+            tone="secondary"
+          >
+            M0E20000000EC8N
+          </TextDetail>
+        </Stack>
+      </Inline>
+      <Stack
+        alignItems="flexEnd"
+        scale="s"
+      >
+        <TextDetail
+          tone="secondary"
+        >
+          <Component />
+        </TextDetail>
+        <Inline
+          alignItems="flex-start"
+          justifyContent="flex-start"
+          scale="s"
+        >
+          <IconButton
+            icon={<EditIcon />}
+            isToggleButton={false}
+            label="formatted message"
+            onClick={[Function]}
+            shape="round"
+            size="small"
+            theme="default"
+            type="button"
+          />
+          <TextDetail
+            isBold={true}
+          >
+            <FormattedMessage
+              defaultMessage="Qty: {quantity}"
+              description="label for the line item quantity"
+              id="QuoteSummary.quantityLabel"
+              values={
+                Object {
+                  "quantity": 1,
+                }
+              }
+            />
+          </TextDetail>
+        </Inline>
+        <TextDetail
+          isBold={true}
+        >
+          <Component />
+        </TextDetail>
+      </Stack>
+    </SummaryItem>
+    <div
+      className="separator"
+    />
+    <SummaryItem>
+      <TextDetail
+        isBold={true}
+      >
+        <FormattedMessage
+          defaultMessage="Subtotal"
+          description="label for the cart subtotal"
+          id="QuoteSummary.subtotalLabel"
+          values={Object {}}
+        />
+      </TextDetail>
+      <TextDetail
+        isBold={true}
+      >
+        <Component />
+      </TextDetail>
+    </SummaryItem>
+    <div
+      className="separator"
+    />
+    <SummaryItem>
+      <TextBody
+        isBold={true}
+      >
+        <FormattedMessage
+          defaultMessage="Total (gross)"
+          description="label for the cart total"
+          id="QuoteSummary.totalLabel"
+          values={Object {}}
+        />
+      </TextBody>
+      <TextBody
+        isBold={true}
+      >
+        <Component />
+      </TextBody>
+    </SummaryItem>
+  </Stack>
+</Card>
+`;
+
+exports[`render when no line items should match snapshot 1`] = `
+<Card
+  theme="light"
+  type="raised"
+>
+  <Stack
+    alignItems="stretch"
+    scale="s"
+  >
+    <Inline
+      alignItems="center"
+      justifyContent="flex-start"
+      scale="xs"
+    >
+      <CartIcon
+        size="medium"
+      />
+      <TextDetail
+        intlMessage={
+          Object {
+            "defaultMessage": "{items} items",
+            "description": "items label when items are selected",
+            "id": "QuoteSummary.itemsLabel",
+            "values": Object {
+              "items": 1,
+            },
+          }
+        }
+        isBold={true}
+        tone="information"
+      />
+      <TextDetail
+        isBold={true}
+      >
+        <FormattedMessage
+          defaultMessage="in your quote"
+          description="title for the cart summary panel"
+          id="QuoteSummary.quoteSummaryTittle"
+          values={Object {}}
+        />
+      </TextDetail>
+    </Inline>
+    <div
+      className="separator"
+    />
+    <SummaryItem
+      key="line-item-id"
+    >
+      <Inline
+        alignItems="flex-start"
+        justifyContent="flex-start"
+        scale="s"
+      >
+        <IconButton
+          data-testid="remove-line-item-line-item-id"
+          icon={<CloseBoldIcon />}
+          isToggleButton={false}
+          label="formatted message"
+          onClick={[Function]}
+          shape="round"
+          size="small"
+          theme="default"
+          type="button"
+        />
+        <Stack
+          alignItems="stretch"
+          scale="s"
+        >
+          <TextDetail
+            isBold={true}
+          >
+            <withApplicationContext(Localize)
+              object={
+                Object {
+                  "name": Object {
+                    "en": "Top Jucca black",
+                  },
+                }
+              }
+              objectKey="name"
+            />
+          </TextDetail>
+          <TextDetail
+            tone="secondary"
+          >
+            M0E20000000EC8N
+          </TextDetail>
+        </Stack>
+      </Inline>
+      <Stack
+        alignItems="flexEnd"
+        scale="s"
+      >
+        <TextDetail
+          tone="secondary"
+        >
+          <Component />
+        </TextDetail>
+        <Inline
+          alignItems="flex-start"
+          justifyContent="flex-start"
+          scale="s"
+        >
+          <IconButton
+            icon={<EditIcon />}
+            isToggleButton={false}
+            label="formatted message"
+            onClick={[Function]}
+            shape="round"
+            size="small"
+            theme="default"
+            type="button"
+          />
+          <TextDetail
+            isBold={true}
+          >
+            <FormattedMessage
+              defaultMessage="Qty: {quantity}"
+              description="label for the line item quantity"
+              id="QuoteSummary.quantityLabel"
+              values={
+                Object {
+                  "quantity": 1,
+                }
+              }
+            />
+          </TextDetail>
+        </Inline>
+        <TextDetail
+          isBold={true}
+        >
+          <Component />
+        </TextDetail>
+      </Stack>
+    </SummaryItem>
+    <div
+      className="separator"
+    />
+    <SummaryItem>
+      <TextDetail
+        isBold={true}
+      >
+        <FormattedMessage
+          defaultMessage="Subtotal"
+          description="label for the cart subtotal"
+          id="QuoteSummary.subtotalLabel"
+          values={Object {}}
+        />
+      </TextDetail>
+      <TextDetail
+        isBold={true}
+      >
+        <Component />
+      </TextDetail>
+    </SummaryItem>
+    <div
+      className="separator"
+    />
+    <SummaryItem>
+      <TextBody
+        isBold={true}
+      >
+        <FormattedMessage
+          defaultMessage="Total (gross)"
+          description="label for the cart total"
+          id="QuoteSummary.totalLabel"
+          values={Object {}}
+        />
+      </TextBody>
+      <TextBody
+        isBold={true}
+      >
+        <Component />
+      </TextBody>
+    </SummaryItem>
+  </Stack>
+</Card>
+`;

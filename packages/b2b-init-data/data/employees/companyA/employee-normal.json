@@ -1,0 +1,35 @@
+{
+  "email": "xema+companyA-employee@devgurus.io",
+  "firstName": "Bobby",
+  "lastName": "N Doles",
+  "middleName": "",
+  "title": "",
+  "salutation": "",
+  "password": "test123",
+  "addresses": [
+    {
+      "firstName": "Bobby",
+      "lastName": "N Doles",
+      "streetName": "Heritage Road",
+      "streetNumber": "4729 ",
+      "postalCode": "93704",
+      "city": "Fresno",
+      "state": "CA",
+      "country": "US",
+      "mobile": "559-681-8476",
+      "fax": "209-218-4768"
+    }
+  ],
+  "defaultBillingAddress": 0,
+  "defaultShippingAddress": 0,
+
+  "custom": {
+    "type": {
+      "typeId": "type",
+      "key": "employee-type"
+    },
+    "fields": {
+      "roles": ["b2b-company-employee"]
+    }
+  }
+}

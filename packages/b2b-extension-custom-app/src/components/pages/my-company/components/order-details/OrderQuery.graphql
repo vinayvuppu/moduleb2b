@@ -1,0 +1,132 @@
+query Order($orderId: String, $locale: Locale) {
+  order(id: $orderId) {
+    id
+    orderState
+    paymentState
+    shipmentState
+    shippingInfo {
+      shippingMethodName
+      taxRate {
+        name
+        amount
+      }
+    }
+    employee: customer {
+      email
+    }
+    shippingAddress {
+      streetName
+      streetNumber
+      additionalStreetInfo
+      city
+      postalCode
+      country
+      additionalAddressInfo
+    }
+    billingAddress {
+      streetName
+      streetNumber
+      additionalStreetInfo
+      city
+      postalCode
+      country
+      additionalAddressInfo
+    }
+    taxedPrice {
+      taxPortions {
+        amount {
+          type
+          currencyCode
+          centAmount
+          fractionDigits
+        }
+        name
+        rate
+      }
+      totalNet {
+        type
+        currencyCode
+        centAmount
+        fractionDigits
+      }
+      totalGross {
+        type
+        currencyCode
+        centAmount
+        fractionDigits
+      }
+    }
+    shippingInfo {
+      taxedPrice {
+        totalNet {
+          type
+          currencyCode
+          centAmount
+          fractionDigits
+        }
+        totalGross {
+          type
+          currencyCode
+          centAmount
+          fractionDigits
+        }
+      }
+      discountedPrice {
+        value {
+          type
+          currencyCode
+          centAmount
+          fractionDigits
+        }
+      }
+    }
+    totalPrice {
+      type
+      currencyCode
+      centAmount
+      fractionDigits
+    }
+    lineItems {
+      id
+      name(locale: $locale)
+      quantity
+      totalPrice {
+        centAmount
+        currencyCode
+        fractionDigits
+        type
+      }
+      price {
+        value {
+          centAmount
+          currencyCode
+          fractionDigits
+          type
+        }
+      }
+      taxRate {
+        amount
+      }
+      taxedPrice {
+        totalNet {
+          type
+          currencyCode
+          centAmount
+          fractionDigits
+        }
+        totalGross {
+          type
+          currencyCode
+          centAmount
+          fractionDigits
+        }
+      }
+      variant {
+        sku
+        images {
+          url
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,10 @@
+.budget {
+  color: #1a1a1a;
+  display: block;
+  font-size: 0.9231rem;
+  font-weight: bold;
+}
+
+.negative {
+  color: red;
+}

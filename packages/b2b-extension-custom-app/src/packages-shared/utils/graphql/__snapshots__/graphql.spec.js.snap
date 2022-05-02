@@ -1,0 +1,45 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`createGraphQlUpdateActions with actions with \`addAttributeDefinition\` with reference should match snapshot 1`] = `
+Array [
+  Object {
+    "addAttributeDefinition": Object {
+      "attributeDefinition": Object {
+        "inputTip": Array [],
+        "label": Array [],
+        "type": Object {
+          "reference": Object {
+            "referenceTypeId": "product",
+          },
+        },
+      },
+    },
+  },
+]
+`;
+
+exports[`createGraphQlUpdateActions with actions with \`addAttributeDefinition\` with text should match snapshot 1`] = `
+Array [
+  Object {
+    "addAttributeDefinition": Object {
+      "attributeDefinition": Object {
+        "inputTip": Array [
+          Object {
+            "locale": "en",
+            "value": "foo",
+          },
+        ],
+        "label": Array [
+          Object {
+            "locale": "en",
+            "value": "foo",
+          },
+        ],
+        "type": Object {
+          "text": Object {},
+        },
+      },
+    },
+  },
+]
+`;

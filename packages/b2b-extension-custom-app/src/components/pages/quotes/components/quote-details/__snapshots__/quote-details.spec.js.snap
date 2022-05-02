@@ -1,0 +1,121 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`rendering when the quote is loaded should match snapshot 1`] = `
+<div
+  data-track-component="QuoteDetail"
+>
+  <View>
+    <ViewHeader
+      backToList={
+        <RestrictedByPermissions
+          permissions={
+            Array [
+              "ViewOrders",
+            ]
+          }
+        >
+          <BackToList
+            iconType="list"
+            label="To quotes list"
+            to="route/quotes"
+          />
+        </RestrictedByPermissions>
+      }
+      color="neutral"
+      commands={
+        <React.Fragment>
+          <Inline
+            alignItems="flex-end"
+            justifyContent="flex-end"
+            scale="m"
+          >
+            <RestrictedByPermissions
+              permissions={
+                Array [
+                  "ManageCustomerGroups",
+                  "ManageOrders",
+                ]
+              }
+            >
+              <React.Fragment>
+                <SecondaryButton
+                  iconLeft={<ReviewIcon />}
+                  isToggleButton={false}
+                  label="Approve"
+                  onClick={[Function]}
+                  theme="default"
+                  type="button"
+                />
+                <PrimaryButton
+                  iconLeft={<CheckInactiveIcon />}
+                  isToggleButton={false}
+                  label="Decline"
+                  onClick={[Function]}
+                  size="big"
+                  tone="urgent"
+                  type="button"
+                />
+              </React.Fragment>
+            </RestrictedByPermissions>
+          </Inline>
+        </React.Fragment>
+      }
+      title="Quote {quoteNumber}"
+      withBottomLine={true}
+    >
+      <withRouter(TabHeader)
+        key="general"
+        name="general"
+        to="www.foo.com/general"
+      >
+        General
+      </withRouter(TabHeader)>
+      <withRouter(TabHeader)
+        key="comments"
+        name="comments"
+        to="www.foo.com/comments"
+      >
+        Comments
+      </withRouter(TabHeader)>
+    </ViewHeader>
+    <TabContainer
+      color="surface"
+    />
+  </View>
+  <ConfirmationDialog
+    isOpen={false}
+    labelPrimary={
+      Object {
+        "defaultMessage": "Decline",
+        "id": "Quote.Details.rejectButton",
+      }
+    }
+    labelSecondary={
+      Object {
+        "defaultMessage": "Cancel",
+        "id": "AppKit.Shared.cancel",
+      }
+    }
+    onCancel={[Function]}
+    onClose={[Function]}
+    onConfirm={[Function]}
+    title="Update quote state"
+  >
+    <TextBody>
+      <FormattedMessage
+        defaultMessage="Are you sure you want to change the quote state?"
+        id="Quote.Details.confirmDeleteMessage"
+        values={Object {}}
+      />
+    </TextBody>
+  </ConfirmationDialog>
+</div>
+`;
+
+exports[`rendering when the quote is loading should match snapshot 1`] = `
+<LoadingSpinner
+  scale="l"
+/>
+`;
+
+exports[`rendering when the quote is not found should match snapshot 1`] = `<PageNotFound />`;

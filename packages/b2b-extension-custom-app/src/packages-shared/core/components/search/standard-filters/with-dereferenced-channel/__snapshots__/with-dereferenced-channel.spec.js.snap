@@ -1,0 +1,724 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`named exports dereferenceQuery should implement channels dereference query AST 1`] = `
+Object {
+  "definitions": Array [
+    Object {
+      "directives": Array [],
+      "kind": "OperationDefinition",
+      "name": Object {
+        "kind": "Name",
+        "value": "MCChannelDereference",
+      },
+      "operation": "query",
+      "selectionSet": Object {
+        "kind": "SelectionSet",
+        "selections": Array [
+          Object {
+            "alias": Object {
+              "kind": "Name",
+              "value": "items",
+            },
+            "arguments": Array [
+              Object {
+                "kind": "Argument",
+                "name": Object {
+                  "kind": "Name",
+                  "value": "where",
+                },
+                "value": Object {
+                  "kind": "Variable",
+                  "name": Object {
+                    "kind": "Name",
+                    "value": "where",
+                  },
+                },
+              },
+            ],
+            "directives": Array [],
+            "kind": "Field",
+            "name": Object {
+              "kind": "Name",
+              "value": "channels",
+            },
+            "selectionSet": Object {
+              "kind": "SelectionSet",
+              "selections": Array [
+                Object {
+                  "directives": Array [],
+                  "kind": "FragmentSpread",
+                  "name": Object {
+                    "kind": "Name",
+                    "value": "ChannelQueryResultsFragment",
+                  },
+                },
+              ],
+            },
+          },
+        ],
+      },
+      "variableDefinitions": Array [
+        Object {
+          "defaultValue": undefined,
+          "directives": Array [],
+          "kind": "VariableDefinition",
+          "type": Object {
+            "kind": "NonNullType",
+            "type": Object {
+              "kind": "NamedType",
+              "name": Object {
+                "kind": "Name",
+                "value": "String",
+              },
+            },
+          },
+          "variable": Object {
+            "kind": "Variable",
+            "name": Object {
+              "kind": "Name",
+              "value": "where",
+            },
+          },
+        },
+        Object {
+          "defaultValue": undefined,
+          "directives": Array [],
+          "kind": "VariableDefinition",
+          "type": Object {
+            "kind": "NonNullType",
+            "type": Object {
+              "kind": "NamedType",
+              "name": Object {
+                "kind": "Name",
+                "value": "Locale",
+              },
+            },
+          },
+          "variable": Object {
+            "kind": "Variable",
+            "name": Object {
+              "kind": "Name",
+              "value": "locale",
+            },
+          },
+        },
+      ],
+    },
+    Object {
+      "directives": Array [],
+      "kind": "FragmentDefinition",
+      "name": Object {
+        "kind": "Name",
+        "value": "ChannelQueryResultsFragment",
+      },
+      "selectionSet": Object {
+        "kind": "SelectionSet",
+        "selections": Array [
+          Object {
+            "alias": undefined,
+            "arguments": Array [],
+            "directives": Array [],
+            "kind": "Field",
+            "name": Object {
+              "kind": "Name",
+              "value": "results",
+            },
+            "selectionSet": Object {
+              "kind": "SelectionSet",
+              "selections": Array [
+                Object {
+                  "directives": Array [],
+                  "kind": "FragmentSpread",
+                  "name": Object {
+                    "kind": "Name",
+                    "value": "ChannelQueryFragment",
+                  },
+                },
+              ],
+            },
+          },
+        ],
+      },
+      "typeCondition": Object {
+        "kind": "NamedType",
+        "name": Object {
+          "kind": "Name",
+          "value": "ChannelQueryResult",
+        },
+      },
+    },
+    Object {
+      "directives": Array [],
+      "kind": "FragmentDefinition",
+      "name": Object {
+        "kind": "Name",
+        "value": "ChannelQueryFragment",
+      },
+      "selectionSet": Object {
+        "kind": "SelectionSet",
+        "selections": Array [
+          Object {
+            "alias": undefined,
+            "arguments": Array [],
+            "directives": Array [],
+            "kind": "Field",
+            "name": Object {
+              "kind": "Name",
+              "value": "id",
+            },
+            "selectionSet": undefined,
+          },
+          Object {
+            "alias": undefined,
+            "arguments": Array [
+              Object {
+                "kind": "Argument",
+                "name": Object {
+                  "kind": "Name",
+                  "value": "locale",
+                },
+                "value": Object {
+                  "kind": "Variable",
+                  "name": Object {
+                    "kind": "Name",
+                    "value": "locale",
+                  },
+                },
+              },
+            ],
+            "directives": Array [],
+            "kind": "Field",
+            "name": Object {
+              "kind": "Name",
+              "value": "name",
+            },
+            "selectionSet": undefined,
+          },
+          Object {
+            "alias": undefined,
+            "arguments": Array [],
+            "directives": Array [],
+            "kind": "Field",
+            "name": Object {
+              "kind": "Name",
+              "value": "key",
+            },
+            "selectionSet": undefined,
+          },
+        ],
+      },
+      "typeCondition": Object {
+        "kind": "NamedType",
+        "name": Object {
+          "kind": "Name",
+          "value": "Channel",
+        },
+      },
+    },
+  ],
+  "kind": "Document",
+  "loc": Object {
+    "end": 366,
+    "start": 0,
+  },
+}
+`;
+
+exports[`named exports fragmentSearchItem should implement channel AST 1`] = `
+Object {
+  "definitions": Array [
+    Object {
+      "directives": Array [],
+      "kind": "FragmentDefinition",
+      "name": Object {
+        "kind": "Name",
+        "value": "ChannelQueryFragment",
+      },
+      "selectionSet": Object {
+        "kind": "SelectionSet",
+        "selections": Array [
+          Object {
+            "alias": undefined,
+            "arguments": Array [],
+            "directives": Array [],
+            "kind": "Field",
+            "name": Object {
+              "kind": "Name",
+              "value": "id",
+            },
+            "selectionSet": undefined,
+          },
+          Object {
+            "alias": undefined,
+            "arguments": Array [
+              Object {
+                "kind": "Argument",
+                "name": Object {
+                  "kind": "Name",
+                  "value": "locale",
+                },
+                "value": Object {
+                  "kind": "Variable",
+                  "name": Object {
+                    "kind": "Name",
+                    "value": "locale",
+                  },
+                },
+              },
+            ],
+            "directives": Array [],
+            "kind": "Field",
+            "name": Object {
+              "kind": "Name",
+              "value": "name",
+            },
+            "selectionSet": undefined,
+          },
+          Object {
+            "alias": undefined,
+            "arguments": Array [],
+            "directives": Array [],
+            "kind": "Field",
+            "name": Object {
+              "kind": "Name",
+              "value": "key",
+            },
+            "selectionSet": undefined,
+          },
+        ],
+      },
+      "typeCondition": Object {
+        "kind": "NamedType",
+        "name": Object {
+          "kind": "Name",
+          "value": "Channel",
+        },
+      },
+    },
+  ],
+  "kind": "Document",
+  "loc": Object {
+    "end": 91,
+    "start": 0,
+  },
+}
+`;
+
+exports[`named exports fragmentSearchResult should implement channel results AST 1`] = `
+Object {
+  "definitions": Array [
+    Object {
+      "directives": Array [],
+      "kind": "FragmentDefinition",
+      "name": Object {
+        "kind": "Name",
+        "value": "ChannelQueryResultsFragment",
+      },
+      "selectionSet": Object {
+        "kind": "SelectionSet",
+        "selections": Array [
+          Object {
+            "alias": undefined,
+            "arguments": Array [],
+            "directives": Array [],
+            "kind": "Field",
+            "name": Object {
+              "kind": "Name",
+              "value": "results",
+            },
+            "selectionSet": Object {
+              "kind": "SelectionSet",
+              "selections": Array [
+                Object {
+                  "directives": Array [],
+                  "kind": "FragmentSpread",
+                  "name": Object {
+                    "kind": "Name",
+                    "value": "ChannelQueryFragment",
+                  },
+                },
+              ],
+            },
+          },
+        ],
+      },
+      "typeCondition": Object {
+        "kind": "NamedType",
+        "name": Object {
+          "kind": "Name",
+          "value": "ChannelQueryResult",
+        },
+      },
+    },
+    Object {
+      "directives": Array [],
+      "kind": "FragmentDefinition",
+      "name": Object {
+        "kind": "Name",
+        "value": "ChannelQueryFragment",
+      },
+      "selectionSet": Object {
+        "kind": "SelectionSet",
+        "selections": Array [
+          Object {
+            "alias": undefined,
+            "arguments": Array [],
+            "directives": Array [],
+            "kind": "Field",
+            "name": Object {
+              "kind": "Name",
+              "value": "id",
+            },
+            "selectionSet": undefined,
+          },
+          Object {
+            "alias": undefined,
+            "arguments": Array [
+              Object {
+                "kind": "Argument",
+                "name": Object {
+                  "kind": "Name",
+                  "value": "locale",
+                },
+                "value": Object {
+                  "kind": "Variable",
+                  "name": Object {
+                    "kind": "Name",
+                    "value": "locale",
+                  },
+                },
+              },
+            ],
+            "directives": Array [],
+            "kind": "Field",
+            "name": Object {
+              "kind": "Name",
+              "value": "name",
+            },
+            "selectionSet": undefined,
+          },
+          Object {
+            "alias": undefined,
+            "arguments": Array [],
+            "directives": Array [],
+            "kind": "Field",
+            "name": Object {
+              "kind": "Name",
+              "value": "key",
+            },
+            "selectionSet": undefined,
+          },
+        ],
+      },
+      "typeCondition": Object {
+        "kind": "NamedType",
+        "name": Object {
+          "kind": "Name",
+          "value": "Channel",
+        },
+      },
+    },
+  ],
+  "kind": "Document",
+  "loc": Object {
+    "end": 212,
+    "start": 0,
+  },
+}
+`;
+
+exports[`named exports searchQuery should implement channels search query AST 1`] = `
+Object {
+  "definitions": Array [
+    Object {
+      "directives": Array [],
+      "kind": "OperationDefinition",
+      "name": Object {
+        "kind": "Name",
+        "value": "MC500Channels",
+      },
+      "operation": "query",
+      "selectionSet": Object {
+        "kind": "SelectionSet",
+        "selections": Array [
+          Object {
+            "alias": Object {
+              "kind": "Name",
+              "value": "items",
+            },
+            "arguments": Array [
+              Object {
+                "kind": "Argument",
+                "name": Object {
+                  "kind": "Name",
+                  "value": "limit",
+                },
+                "value": Object {
+                  "kind": "Variable",
+                  "name": Object {
+                    "kind": "Name",
+                    "value": "limit",
+                  },
+                },
+              },
+              Object {
+                "kind": "Argument",
+                "name": Object {
+                  "kind": "Name",
+                  "value": "sort",
+                },
+                "value": Object {
+                  "kind": "Variable",
+                  "name": Object {
+                    "kind": "Name",
+                    "value": "sort",
+                  },
+                },
+              },
+              Object {
+                "kind": "Argument",
+                "name": Object {
+                  "kind": "Name",
+                  "value": "where",
+                },
+                "value": Object {
+                  "kind": "Variable",
+                  "name": Object {
+                    "kind": "Name",
+                    "value": "where",
+                  },
+                },
+              },
+            ],
+            "directives": Array [],
+            "kind": "Field",
+            "name": Object {
+              "kind": "Name",
+              "value": "channels",
+            },
+            "selectionSet": Object {
+              "kind": "SelectionSet",
+              "selections": Array [
+                Object {
+                  "directives": Array [],
+                  "kind": "FragmentSpread",
+                  "name": Object {
+                    "kind": "Name",
+                    "value": "ChannelQueryResultsFragment",
+                  },
+                },
+              ],
+            },
+          },
+        ],
+      },
+      "variableDefinitions": Array [
+        Object {
+          "defaultValue": undefined,
+          "directives": Array [],
+          "kind": "VariableDefinition",
+          "type": Object {
+            "kind": "NonNullType",
+            "type": Object {
+              "kind": "NamedType",
+              "name": Object {
+                "kind": "Name",
+                "value": "Int",
+              },
+            },
+          },
+          "variable": Object {
+            "kind": "Variable",
+            "name": Object {
+              "kind": "Name",
+              "value": "limit",
+            },
+          },
+        },
+        Object {
+          "defaultValue": undefined,
+          "directives": Array [],
+          "kind": "VariableDefinition",
+          "type": Object {
+            "kind": "ListType",
+            "type": Object {
+              "kind": "NonNullType",
+              "type": Object {
+                "kind": "NamedType",
+                "name": Object {
+                  "kind": "Name",
+                  "value": "String",
+                },
+              },
+            },
+          },
+          "variable": Object {
+            "kind": "Variable",
+            "name": Object {
+              "kind": "Name",
+              "value": "sort",
+            },
+          },
+        },
+        Object {
+          "defaultValue": undefined,
+          "directives": Array [],
+          "kind": "VariableDefinition",
+          "type": Object {
+            "kind": "NonNullType",
+            "type": Object {
+              "kind": "NamedType",
+              "name": Object {
+                "kind": "Name",
+                "value": "Locale",
+              },
+            },
+          },
+          "variable": Object {
+            "kind": "Variable",
+            "name": Object {
+              "kind": "Name",
+              "value": "locale",
+            },
+          },
+        },
+        Object {
+          "defaultValue": undefined,
+          "directives": Array [],
+          "kind": "VariableDefinition",
+          "type": Object {
+            "kind": "NamedType",
+            "name": Object {
+              "kind": "Name",
+              "value": "String",
+            },
+          },
+          "variable": Object {
+            "kind": "Variable",
+            "name": Object {
+              "kind": "Name",
+              "value": "where",
+            },
+          },
+        },
+      ],
+    },
+    Object {
+      "directives": Array [],
+      "kind": "FragmentDefinition",
+      "name": Object {
+        "kind": "Name",
+        "value": "ChannelQueryResultsFragment",
+      },
+      "selectionSet": Object {
+        "kind": "SelectionSet",
+        "selections": Array [
+          Object {
+            "alias": undefined,
+            "arguments": Array [],
+            "directives": Array [],
+            "kind": "Field",
+            "name": Object {
+              "kind": "Name",
+              "value": "results",
+            },
+            "selectionSet": Object {
+              "kind": "SelectionSet",
+              "selections": Array [
+                Object {
+                  "directives": Array [],
+                  "kind": "FragmentSpread",
+                  "name": Object {
+                    "kind": "Name",
+                    "value": "ChannelQueryFragment",
+                  },
+                },
+              ],
+            },
+          },
+        ],
+      },
+      "typeCondition": Object {
+        "kind": "NamedType",
+        "name": Object {
+          "kind": "Name",
+          "value": "ChannelQueryResult",
+        },
+      },
+    },
+    Object {
+      "directives": Array [],
+      "kind": "FragmentDefinition",
+      "name": Object {
+        "kind": "Name",
+        "value": "ChannelQueryFragment",
+      },
+      "selectionSet": Object {
+        "kind": "SelectionSet",
+        "selections": Array [
+          Object {
+            "alias": undefined,
+            "arguments": Array [],
+            "directives": Array [],
+            "kind": "Field",
+            "name": Object {
+              "kind": "Name",
+              "value": "id",
+            },
+            "selectionSet": undefined,
+          },
+          Object {
+            "alias": undefined,
+            "arguments": Array [
+              Object {
+                "kind": "Argument",
+                "name": Object {
+                  "kind": "Name",
+                  "value": "locale",
+                },
+                "value": Object {
+                  "kind": "Variable",
+                  "name": Object {
+                    "kind": "Name",
+                    "value": "locale",
+                  },
+                },
+              },
+            ],
+            "directives": Array [],
+            "kind": "Field",
+            "name": Object {
+              "kind": "Name",
+              "value": "name",
+            },
+            "selectionSet": undefined,
+          },
+          Object {
+            "alias": undefined,
+            "arguments": Array [],
+            "directives": Array [],
+            "kind": "Field",
+            "name": Object {
+              "kind": "Name",
+              "value": "key",
+            },
+            "selectionSet": undefined,
+          },
+        ],
+      },
+      "typeCondition": Object {
+        "kind": "NamedType",
+        "name": Object {
+          "kind": "Name",
+          "value": "Channel",
+        },
+      },
+    },
+  ],
+  "kind": "Document",
+  "loc": Object {
+    "end": 435,
+    "start": 0,
+  },
+}
+`;

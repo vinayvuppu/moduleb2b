@@ -1,0 +1,19 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`rendering when the type is \`date\` should output correct tree 1`] = `
+<ApplicationContext
+  render={[Function]}
+/>
+`;
+
+exports[`rendering when the type is \`datetime\` should output correct tree 1`] = `
+<ApplicationContext
+  render={[Function]}
+/>
+`;
+
+exports[`rendering when the type is \`time\` should output correct tree 1`] = `
+<ApplicationContext
+  render={[Function]}
+/>
+`;

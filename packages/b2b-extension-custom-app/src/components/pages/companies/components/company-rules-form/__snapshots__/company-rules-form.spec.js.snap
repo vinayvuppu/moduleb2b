@@ -1,0 +1,117 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`rendering should match snapshot 1`] = `
+<Fragment>
+  <Stack
+    alignItems="stretch"
+    scale="m"
+  >
+    <RestrictedByPermissions
+      permissions={
+        Array [
+          "ManageCustomerGroups",
+        ]
+      }
+      unauthorizedComponent={[Function]}
+    />
+    <form
+      onSubmit={[MockFunction]}
+    >
+      <Stack
+        alignItems="stretch"
+        scale="m"
+      >
+        <CollapsiblePanel
+          condensed={false}
+          header={
+            <CollapsiblePanelHeader>
+              <FormattedMessage
+                defaultMessage="Order approval information"
+                description="Label for General Information title"
+                id="Company.Rules.labelRequiredInfoTitle"
+                values={Object {}}
+              />
+            </CollapsiblePanelHeader>
+          }
+          headerControlsAlignment="right"
+          horizontalConstraint="scale"
+          id="1"
+          isDisabled={false}
+          theme="dark"
+        >
+          <SelectField
+            horizontalConstraint="scale"
+            isDisabled={false}
+            isMulti={true}
+            name="approverRoles"
+            onBlur={[MockFunction]}
+            onChange={[MockFunction]}
+            options={
+              Array [
+                Object {
+                  "label": "formatted message",
+                  "value": "b2b-company-admin",
+                },
+                Object {
+                  "label": "formatted message",
+                  "value": "b2b-company-employee",
+                },
+              ]
+            }
+            title="formatted message"
+            value={Array []}
+          />
+        </CollapsiblePanel>
+        <RequiresApprovalRuleSection
+          addLabel="formatted message"
+          formik={
+            Object {
+              "errors": Object {},
+              "handleBlur": [MockFunction],
+              "handleChange": [MockFunction],
+              "handleReset": [MockFunction],
+              "handleSubmit": [MockFunction],
+              "isSubmitting": false,
+              "setFieldValue": [MockFunction],
+              "touched": Object {},
+              "values": Object {
+                "addresses": Array [],
+                "approverRoles": Array [],
+                "budget": Array [],
+                "logo": "",
+                "name": "foo-name",
+                "requiredApprovalRoles": Array [],
+              },
+            }
+          }
+          label="formatted message"
+          validate={[Function]}
+        />
+        <AmountRolesSection
+          addLabel="formatted message"
+          additionalActions={
+            <SecondaryButton
+              iconLeft={<RefreshIcon />}
+              isDisabled={false}
+              isToggleButton={false}
+              label="formatted message"
+              onClick={[Function]}
+              theme="default"
+              type="button"
+            />
+          }
+          label="formatted message"
+          setValues={[Function]}
+          validate={[Function]}
+          values={Array []}
+        />
+      </Stack>
+    </form>
+    <WarningSaveToolbar
+      isToolbarDisabled={false}
+      onCancel={[Function]}
+      onSave={[MockFunction]}
+    />
+  </Stack>
+</Fragment>
+`;

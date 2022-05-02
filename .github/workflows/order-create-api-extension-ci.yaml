@@ -1,0 +1,141 @@
+name: B2B Order Create API Extension Function CI/CD flows
+on:
+  repository_dispatch:
+    types: order-craeate-api-extension
+  push:
+    branches:
+      - main
+      - staging
+      - develop
+      - feature/**
+      - demo
+    paths:
+      - "packages/b2b-order-create-api-extension/**"
+      - ".github/workflows/order-create-api-extension-ci.yaml"
+      - "*.json"
+      - "*.yaml"
+env:
+  CT_AUTH_URL: ${{ secrets.CT_AUTH_URL }}
+  CT_API_URL: ${{ secrets.CT_API_URL }}
+jobs:
+  lint:
+    name: Lint (node.js)
+    runs-on: ubuntu-18.04
+    strategy:
+      matrix:
+        node-version: [14.x]
+    steps:
+      - name: Checkout Repo
+        uses: actions/checkout@v2
+      - name: Use Node.js ${{ matrix.node-version }}
+        uses: actions/setup-node@v2
+        with:
+          node-version: ${{ matrix.node-version }}
+      - name: Install dependencies
+        run: |
+          yarn install --no-audit
+      - name: Lint Node.js
+        run: |
+          yarn workspace b2b-order-create-api-extension lint
+      - name: Lint Markdown
+        run: |
+          yarn workspace b2b-order-create-api-extension lint-md
+  test:
+    name: Test
+    needs: lint
+    runs-on: ubuntu-18.04
+    strategy:
+      matrix:
+        node-version: [14.x]
+    steps:
+      - name: Checkout Repo
+        uses: actions/checkout@v2
+
+      - name: Use Node.js ${{ matrix.node-version }}
+        uses: actions/setup-node@v2
+        with:
+          node-version: ${{ matrix.node-version }}
+
+      - name: Install Dependencies
+        run: |
+          yarn install
+
+      - name: Unit Testing
+        run: |
+          yarn workspace b2b-order-create-api-extension test
+  deploy:
+    name: Deploy Firebase function
+    needs: test
+    runs-on: ubuntu-18.04
+    if: startsWith(github.ref , 'refs/heads/feature/') != true
+    strategy:
+      matrix:
+        node-version: [14.x]
+    steps:
+      - name: Checkout Repo
+        uses: actions/checkout@v2
+
+      - name: Use Node.js ${{ matrix.node-version }}
+        uses: actions/setup-node@v2
+        with:
+          node-version: ${{ matrix.node-version }}
+
+      - name: Install Dependencies
+        run: |
+          yarn install --production
+
+      # Setup environment variables based on github ref for environment selection.
+      - name: Set environment variables (dev)
+        if: ${{ github.ref == 'refs/heads/develop'}}
+        run: |
+          echo "GC_PROJECT_ID=${{ secrets.GC_PROJECT_ID_DEV }}" >> $GITHUB_ENV
+          echo "CT_CLIENT_ID=${{ secrets.CT_CLIENT_ID_DEV }}" >> $GITHUB_ENV
+          echo "CT_CLIENT_SECRET=${{ secrets.CT_CLIENT_SECRET_DEV }}" >> $GITHUB_ENV
+          echo "CT_SCOPE=${{ secrets.CT_SCOPE_DEV }}" >> $GITHUB_ENV
+          echo "COMPANY_MS_URL=https://ms-company-${{ secrets.MS_DOMAIN_DEV }}" >> $GITHUB_ENV
+      - name: Set environment variables (staging)
+        if: ${{ github.ref == 'refs/heads/staging'}}
+        run: |
+          echo "GC_PROJECT_ID=${{ secrets.GC_PROJECT_ID_STAGE }}" >> $GITHUB_ENV
+          echo "CT_CLIENT_ID=${{ secrets.CT_CLIENT_ID_STAGE }}" >> $GITHUB_ENV
+          echo "CT_CLIENT_SECRET=${{ secrets.CT_CLIENT_SECRET_STAGE }}" >> $GITHUB_ENV
+          echo "CT_SCOPE=${{ secrets.CT_SCOPE_STAGE }}" >> $GITHUB_ENV
+          echo "COMPANY_MS_URL=https://ms-company-${{ secrets.MS_DOMAIN_STAGE }}" >> $GITHUB_ENV
+      - name: Set environment variables (production)
+        if: ${{ github.ref == 'refs/heads/main'}}
+        run: |
+          echo "GC_PROJECT_ID=${{ secrets.GC_PROJECT_ID_PROD }}" >> $GITHUB_ENV
+          echo "CT_CLIENT_ID=${{ secrets.CT_CLIENT_ID_PROD }}" >> $GITHUB_ENV
+          echo "CT_CLIENT_SECRET=${{ secrets.CT_CLIENT_SECRET_PROD }}" >> $GITHUB_ENV
+          echo "CT_SCOPE=${{ secrets.CT_SCOPE_PROD }}" >> $GITHUB_ENV
+          echo "COMPANY_MS_URL=https://ms-company-${{ secrets.MS_DOMAIN_PROD }}" >> $GITHUB_ENV
+          echo "GCP_SA_KEY=${{ secrets.GCP_SA_KEY_PROD }}" >> $GITHUB_ENV
+          echo "PROJECT_ID=${{ secrets.GC_PROJECT_ID_PROD }}" >> $GITHUB_ENV
+          echo "PROJECT_PATH=./packages/b2b-order-create-api-extension" >> $GITHUB_ENV
+      - name: Set environment variables (demo)
+        if: ${{ github.ref == 'refs/heads/demo'}}
+        run: |
+          echo "GC_PROJECT_ID=${{ secrets.GC_PROJECT_ID_DEMO }}" >> $GITHUB_ENV
+          echo "PROJECT_ID=${{ secrets.GC_PROJECT_ID_DEMO }}" >> $GITHUB_ENV
+          echo "GCP_SA_KEY=${{ secrets.GCP_SA_KEY_DEMO }}" >> $GITHUB_ENV
+          echo "CT_CLIENT_ID=${{ secrets.CT_CLIENT_ID_DEMO }}" >> $GITHUB_ENV
+          echo "CT_CLIENT_SECRET=${{ secrets.CT_CLIENT_SECRET_DEMO }}" >> $GITHUB_ENV
+          echo "CT_SCOPE=${{ secrets.CT_SCOPE_DEMO }}" >> $GITHUB_ENV
+          echo "COMPANY_MS_URL=https://ms-company-${{ secrets.MS_DOMAIN_DEMO }}" >> $GITHUB_ENV
+          echo "PROJECT_PATH=./packages/b2b-order-create-api-extension" >> $GITHUB_ENV
+
+      - name: Set environment variables in firebase
+        uses: w9jds/firebase-action@v2.0.0
+        with:
+          args: functions:config:set company.url=${{ env.COMPANY_MS_URL }} ct.authurl=$CT_AUTH_URL ct.apiurl=$CT_API_URL ct.projectkey=${{ env.CT_PROJECT_KEY }} ct.clientid=${{ env.CT_CLIENT_ID }} ct.clientsecret=${{ env.CT_CLIENT_SECRET }} ct.scope=${{ env.CT_SCOPE }} --project fluted-volt-346608
+        env:
+          FIREBASE_PROJECT_ID: ${{ secrets.FIREBASE_PROJECT_ID }}
+          FIREBASE_TOKEN: ${{ secrets.FIREBASE_TOKEN }}
+
+      - name: Deploy to Firebase
+        uses: w9jds/firebase-action@v2.0.0
+        with:
+          args: deploy --only functions:b2bOrderCreate --project fluted-volt-346608
+        env:
+          FIREBASE_PROJECT_ID: ${{ secrets.FIREBASE_PROJECT_ID }}
+          FIREBASE_TOKEN: ${{ secrets.FIREBASE_TOKEN }}

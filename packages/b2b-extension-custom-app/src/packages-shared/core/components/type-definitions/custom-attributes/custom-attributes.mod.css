@@ -1,0 +1,11 @@
+.attribute-list {
+  composes: list-reset from '../../../_styles/commons.mod.css';
+  composes: column-multi from '../../../_styles/form-box.mod.css';
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-start;
+}
+
+.attribute-list-item {
+  composes: form-box from '../../../_styles/form-box.mod.css';
+}

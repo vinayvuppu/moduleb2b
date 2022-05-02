@@ -1,0 +1,94 @@
+# source:  https://pim-indexer.commercetools.com/project/duplicate-rewe-master-1/graphql
+# timestamp: Mon Dec 10 2018 17:39:22 GMT+0100 (CET)
+
+schema {
+  query: GraphQLQuery
+  mutation: GraphQLMutation
+}
+
+type Document {
+  id: String!
+}
+
+type FailingUpdatingDocument {
+  id: String!
+  reason: String!
+}
+
+type GraphQLMutation {
+  """
+  Re-index all products into a new index.
+  If any, the old index is deleted once the new one is ready and aliased.
+  """
+  reIndexAllProducts: ReindexingStartResponse!
+
+  """
+  Re-index all product types into a new index.
+  If any, the old index is deleted once the new one is ready and aliased.
+  """
+  reIndexAllProductTypes: ReindexingStartResponse!
+  stopProductsIndexing: StopIndexingStatus!
+  stopProductTypesIndexing: StopIndexingStatus!
+
+  """
+  Refresh the index of specific product.
+  """
+  refreshProducts(ids: [String!]!): MultipleUpdatesResponse!
+
+  """
+  Refresh the index of specific product types.
+  """
+  refreshProductTypes(ids: [String!]!): MultipleUpdatesResponse!
+}
+
+type GraphQLQuery {
+  productsIndicesExist: IndexExistence!
+  getReindexingStatus(id: String!): ReindexingStatus
+  productTypesIndicesExist: IndexExistence!
+  indicesExist: IndexesExistence!
+}
+
+type IndexedDocument {
+  id: String!
+  version: Long!
+}
+
+type IndexesExistence {
+  products: IndexExistence!
+  productTypes: IndexExistence!
+}
+
+type IndexExistence {
+  searchableIndexExists: Boolean!
+  newInProgress: Boolean!
+}
+
+"""
+The `Long` scalar type represents non-fractional signed whole numeric values.
+Long can represent values between -(2^63) and 2^63 - 1.
+"""
+scalar Long
+
+type MultipleUpdatesResponse {
+  updatedDocuments: [IndexedDocument!]!
+  deletedDocuments: [Document!]!
+  unchangedDocuments: [IndexedDocument!]!
+  notFoundDocuments: [Document!]!
+  failedRefreshedDocuments: [FailingUpdatingDocument!]!
+}
+
+type ReindexingStartResponse {
+  indexingJobId: String
+  existingIndexingJobId: String
+}
+
+type ReindexingStatus {
+  nbrOfIndexedDocuments: Long!
+  totalNbrOfDocuments: Long!
+  percentCompleted: Float!
+  completed: Boolean!
+}
+
+type StopIndexingStatus {
+  status: String!
+}

@@ -1,0 +1,32 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`rendering should match snapshot 1`] = `
+<div
+  className="dropdown-chevron"
+>
+  <CaretDownIcon
+    size="small"
+  />
+</div>
+`;
+
+exports[`rendering when disabled should match snapshot 1`] = `
+<div
+  className="dropdown-chevron"
+>
+  <CaretDownIcon
+    color="neutral60"
+    size="small"
+  />
+</div>
+`;
+
+exports[`rendering when open should match snapshot 1`] = `
+<div
+  className="dropdown-chevron"
+>
+  <CaretUpIcon
+    size="small"
+  />
+</div>
+`;

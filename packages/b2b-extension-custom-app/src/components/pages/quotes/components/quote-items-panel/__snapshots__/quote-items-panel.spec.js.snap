@@ -1,0 +1,214 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`rendering should match snapshot 1`] = `
+<CollapsiblePanel
+  condensed={false}
+  data-testid="quote-employee-panel"
+  header={
+    <CollapsiblePanelHeader>
+      <FormattedMessage
+        defaultMessage="Quote items"
+        id="Quote.Details.ItemsPanel.panelTitle"
+        values={Object {}}
+      />
+    </CollapsiblePanelHeader>
+  }
+  headerControls={false}
+  headerControlsAlignment="right"
+  horizontalConstraint="scale"
+  id="1"
+  isDisabled={false}
+  theme="dark"
+>
+  <ProjectExtensionProviderForImageRegex>
+    <Horizontal
+      constraint="scale"
+    >
+      <Stack
+        alignItems="stretch"
+        scale="s"
+      >
+        <Horizontal
+          constraint="xl"
+        >
+          <Card
+            theme="light"
+            type="raised"
+          >
+            <TextHeadline
+              as="h3"
+              className="changePricesLabel"
+            >
+              formatted message
+            </TextHeadline>
+            <div
+              className="changePricesRadioButton"
+            >
+              <RadioGroup
+                direction="stack"
+                directionProps={
+                  Object {
+                    "scale": "m",
+                  }
+                }
+                horizontalConstraint="scale"
+                isDisabled={true}
+                name="priceDiscountType"
+                onChange={[Function]}
+                value="proposal"
+              >
+                <RadioOption
+                  components={Object {}}
+                  value="amount"
+                >
+                  <Inline
+                    alignItems="center"
+                    justifyContent="space-between"
+                    scale="s"
+                  >
+                    <div>
+                      formatted message
+                    </div>
+                    <MoneyInput
+                      currencies={
+                        Array [
+                          "USD",
+                        ]
+                      }
+                      horizontalConstraint="m"
+                      isDisabled={true}
+                      menuPortalZIndex={1}
+                      name="amount"
+                      onChange={[Function]}
+                      value={
+                        Object {
+                          "amount": "0",
+                          "currencyCode": "USD",
+                        }
+                      }
+                    />
+                  </Inline>
+                </RadioOption>
+                <RadioOption
+                  components={Object {}}
+                  value="percentage"
+                >
+                  <Inline
+                    alignItems="center"
+                    justifyContent="space-between"
+                    scale="s"
+                  >
+                    <div>
+                      formatted message
+                    </div>
+                    <NumberInput
+                      horizontalConstraint="m"
+                      isDisabled={true}
+                      max={100}
+                      min={1}
+                      name="percentage"
+                      onChange={[Function]}
+                      placeholder="formatted message"
+                      step={1}
+                      value=""
+                    />
+                  </Inline>
+                </RadioOption>
+                <RadioOption
+                  components={Object {}}
+                  value="proposal"
+                >
+                  <Inline
+                    alignItems="center"
+                    justifyContent="flex-start"
+                    scale="s"
+                  >
+                    <div>
+                      formatted message
+                    </div>
+                  </Inline>
+                </RadioOption>
+              </RadioGroup>
+            </div>
+          </Card>
+        </Horizontal>
+        <Table
+          columns={
+            Array [
+              Object {
+                "flexGrow": 1,
+                "key": "name",
+                "label": "formatted message",
+              },
+              Object {
+                "align": "right",
+                "key": "originalPrice",
+                "label": "formatted message",
+              },
+              Object {
+                "align": "right",
+                "flexGrow": 1,
+                "key": "price",
+                "label": "formatted message",
+              },
+              Object {
+                "align": "right",
+                "key": "quantity",
+                "label": "formatted message",
+              },
+              Object {
+                "align": "right",
+                "key": "subtotalPrice",
+                "label": "formatted message",
+              },
+              Object {
+                "align": "right",
+                "key": "taxRate",
+                "label": "formatted message",
+              },
+              Object {
+                "align": "right",
+                "key": "totalPrice",
+                "label": "formatted message",
+              },
+            ]
+          }
+          itemRenderer={[Function]}
+          items={
+            Array [
+              Object {
+                "id": "line-item-id",
+                "nameAllLocales": Object {
+                  "locale": "EN",
+                  "value": "product-1",
+                },
+                "price": Object {
+                  "id": "price1",
+                  "value": Object {
+                    "centAmount": 1000,
+                    "currencyCode": "USD",
+                  },
+                },
+                "productId": "product-id",
+                "quantity": 1,
+                "totalPrice": Object {
+                  "centAmount": 1000,
+                  "currencyCode": "USD",
+                },
+                "variant": Object {
+                  "images": Object {
+                    "url": "url1",
+                  },
+                  "sku": "sku1",
+                },
+              },
+            ]
+          }
+          rowCount={1}
+          shouldFillRemainingVerticalSpace={false}
+        />
+      </Stack>
+    </Horizontal>
+  </ProjectExtensionProviderForImageRegex>
+</CollapsiblePanel>
+`;

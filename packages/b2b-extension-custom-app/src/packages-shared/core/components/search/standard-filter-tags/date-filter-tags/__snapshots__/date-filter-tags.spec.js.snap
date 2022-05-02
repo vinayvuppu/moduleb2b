@@ -1,0 +1,13 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`DateRangeFilterTag render correct tree 1`] = `
+<ContextConsumer>
+  <Component />
+</ContextConsumer>
+`;
+
+exports[`DateSingleFilterTag render correct tree 1`] = `
+<ContextConsumer>
+  <Component />
+</ContextConsumer>
+`;

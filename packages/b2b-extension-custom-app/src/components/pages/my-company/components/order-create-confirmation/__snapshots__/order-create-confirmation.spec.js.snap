@@ -1,0 +1,201 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`rendering should match layout structure 1`] = `
+<Stack
+  alignItems="stretch"
+  scale="m"
+>
+  <TextHeadline
+    as="h2"
+  >
+    <FormattedMessage
+      defaultMessage="Confirmation"
+      description="The label for the title"
+      id="Orders.Create.Step.Confirmation.title"
+      values={Object {}}
+    />
+  </TextHeadline>
+  <Stack
+    alignItems="stretch"
+    scale="s"
+  >
+    <TextBody>
+      <FormattedMessage
+        defaultMessage="Please check the details below before creating the order."
+        description="The label for the check details text"
+        id="Orders.Create.Step.Confirmation.checkDetailsLabel"
+        values={Object {}}
+      />
+    </TextBody>
+    <TextBody>
+      <FormattedMessage
+        defaultMessage="To Edit order details select any of the above steps and continue with each step"
+        description="The label for the edit text"
+        id="Orders.Create.Step.Confirmation.editLabel"
+        values={Object {}}
+      />
+    </TextBody>
+  </Stack>
+  <CollapsiblePanel
+    condensed={false}
+    header={
+      <CollapsiblePanelHeader>
+        <FormattedMessage
+          defaultMessage="Products"
+          description="The label for the products panel title"
+          id="Orders.Create.Step.Confirmation.itemsPanelTitle"
+          values={Object {}}
+        />
+      </CollapsiblePanelHeader>
+    }
+    headerControlsAlignment="right"
+    horizontalConstraint="scale"
+    id="1"
+    isDisabled={false}
+    theme="dark"
+  >
+    <withApplicationContext(injectIntl(withTracking(withCurrencies(OrderCreateItemsTable))))
+      omitColumns={
+        Array [
+          "originalPrice",
+        ]
+      }
+    >
+      <OrderTotalsLastRow
+        total="EUR 390"
+      />
+    </withApplicationContext(injectIntl(withTracking(withCurrencies(OrderCreateItemsTable))))>
+  </CollapsiblePanel>
+  <CollapsiblePanel
+    condensed={false}
+    header={
+      <CollapsiblePanelHeader>
+        <FormattedMessage
+          defaultMessage="Customer Shipping & Billing Address"
+          description="The label for the shipping and billing panel title"
+          id="Orders.Create.Step.Confirmation.confirmationPanelTitle"
+          values={Object {}}
+        />
+      </CollapsiblePanelHeader>
+    }
+    headerControlsAlignment="right"
+    horizontalConstraint="scale"
+    id="1"
+    isDisabled={false}
+    theme="dark"
+  >
+    <div
+      className="container"
+    >
+      <Stack
+        alignItems="stretch"
+        scale="m"
+      >
+        <Card
+          theme="light"
+          type="raised"
+        >
+          <Inline
+            alignItems="flex-start"
+            justifyContent="flex-start"
+            scale="xl"
+          >
+            <Stack
+              alignItems="stretch"
+              scale="s"
+            >
+              <Inline
+                alignItems="center"
+                justifyContent="flex-start"
+                scale="xs"
+              >
+                <TextHeadline
+                  as="h3"
+                >
+                  <FormattedMessage
+                    defaultMessage="Shipping to"
+                    description="The label for the title"
+                    id="Orders.Create.Step.Confirmation.shippingToLabel"
+                    values={Object {}}
+                  />
+                </TextHeadline>
+                <TruckIcon />
+              </Inline>
+              <AddressSummary
+                address={
+                  Object {
+                    "country": "DE",
+                  }
+                }
+              />
+            </Stack>
+            <Stack
+              alignItems="stretch"
+              scale="s"
+            >
+              <Inline
+                alignItems="center"
+                justifyContent="flex-start"
+                scale="xs"
+              >
+                <TextHeadline
+                  as="h3"
+                >
+                  <FormattedMessage
+                    defaultMessage="Billing to"
+                    description="The label for the title"
+                    id="Orders.Create.Step.Confirmation.billingToLabel"
+                    values={Object {}}
+                  />
+                </TextHeadline>
+                <PaperBillInvertedIcon />
+              </Inline>
+              <AddressSummary
+                address={
+                  Object {
+                    "country": "DE",
+                  }
+                }
+              />
+            </Stack>
+          </Inline>
+        </Card>
+        <Card
+          theme="light"
+          type="raised"
+        >
+          <Stack
+            alignItems="stretch"
+            scale="s"
+          >
+            <TextHeadline
+              as="h3"
+            >
+              <FormattedMessage
+                defaultMessage="Shipping Method"
+                description="The label for the shipping method section title"
+                id="Orders.Create.Step.Confirmation.shippingMethodTitle"
+                values={Object {}}
+              />
+            </TextHeadline>
+            <Inline
+              alignItems="flex-start"
+              justifyContent="flex-start"
+              scale="xs"
+            >
+              <TextBody
+                isBold={true}
+              >
+                UPS
+              </TextBody>
+              <TextBody>
+                EUR 10
+              </TextBody>
+            </Inline>
+          </Stack>
+        </Card>
+      </Stack>
+    </div>
+  </CollapsiblePanel>
+</Stack>
+`;

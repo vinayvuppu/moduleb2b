@@ -1,0 +1,277 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`rendering should match snapshot 1`] = `
+<div>
+  <ul
+    className="attribute-list"
+  >
+    <li
+      className="attribute-list-item"
+      key="test-0"
+    >
+      <AttributeInput
+        attribute={
+          Object {
+            "name": "test",
+            "value": "value",
+          }
+        }
+        currencies={
+          Array [
+            "EUR",
+            "USD",
+          ]
+        }
+        definition={
+          Object {
+            "inputHint": undefined,
+            "isRequired": undefined,
+            "label": undefined,
+            "name": "test",
+            "type": Object {
+              "name": "text",
+            },
+          }
+        }
+        disabled={false}
+        expandSettings={Object {}}
+        languages={
+          Array [
+            "en",
+            "de",
+          ]
+        }
+        numberFormat="en"
+        onChangeValue={[Function]}
+        selectedLanguage="en"
+        updateSettings={[MockFunction]}
+      />
+    </li>
+    <li
+      className="attribute-list-item"
+      key="boolean-1"
+    >
+      <AttributeInput
+        attribute={
+          Object {
+            "name": "boolean",
+            "value": false,
+          }
+        }
+        currencies={
+          Array [
+            "EUR",
+            "USD",
+          ]
+        }
+        definition={
+          Object {
+            "inputHint": undefined,
+            "isRequired": undefined,
+            "label": undefined,
+            "name": "boolean",
+            "type": Object {
+              "name": "boolean",
+            },
+          }
+        }
+        disabled={false}
+        expandSettings={Object {}}
+        languages={
+          Array [
+            "en",
+            "de",
+          ]
+        }
+        numberFormat="en"
+        onChangeValue={[Function]}
+        selectedLanguage="en"
+        updateSettings={[MockFunction]}
+      />
+    </li>
+    <li
+      className="attribute-list-item"
+      key="set-dates-2"
+    >
+      <AttributeInput
+        attribute={
+          Object {
+            "name": "set-dates",
+            "value": Array [
+              "2017-01-27T09:40:38.179Z",
+              "2017-05-27T09:40:38.179Z",
+            ],
+          }
+        }
+        currencies={
+          Array [
+            "EUR",
+            "USD",
+          ]
+        }
+        definition={
+          Object {
+            "inputHint": undefined,
+            "isRequired": undefined,
+            "label": undefined,
+            "name": "set-dates",
+            "type": Object {
+              "name": "set",
+            },
+          }
+        }
+        disabled={false}
+        expandSettings={Object {}}
+        languages={
+          Array [
+            "en",
+            "de",
+          ]
+        }
+        numberFormat="en"
+        onChangeValue={[Function]}
+        selectedLanguage="en"
+        updateSettings={[MockFunction]}
+      />
+    </li>
+  </ul>
+</div>
+`;
+
+exports[`rendering when disabled should match snapshot 1`] = `
+<div>
+  <ul
+    className="attribute-list"
+  >
+    <li
+      className="attribute-list-item"
+      key="test-0"
+    >
+      <AttributeInput
+        attribute={
+          Object {
+            "name": "test",
+            "value": "value",
+          }
+        }
+        currencies={
+          Array [
+            "EUR",
+            "USD",
+          ]
+        }
+        definition={
+          Object {
+            "inputHint": undefined,
+            "isRequired": undefined,
+            "label": undefined,
+            "name": "test",
+            "type": Object {
+              "name": "text",
+            },
+          }
+        }
+        disabled={true}
+        expandSettings={Object {}}
+        languages={
+          Array [
+            "en",
+            "de",
+          ]
+        }
+        numberFormat="en"
+        onChangeValue={[Function]}
+        selectedLanguage="en"
+        updateSettings={[MockFunction]}
+      />
+    </li>
+    <li
+      className="attribute-list-item"
+      key="boolean-1"
+    >
+      <AttributeInput
+        attribute={
+          Object {
+            "name": "boolean",
+            "value": false,
+          }
+        }
+        currencies={
+          Array [
+            "EUR",
+            "USD",
+          ]
+        }
+        definition={
+          Object {
+            "inputHint": undefined,
+            "isRequired": undefined,
+            "label": undefined,
+            "name": "boolean",
+            "type": Object {
+              "name": "boolean",
+            },
+          }
+        }
+        disabled={true}
+        expandSettings={Object {}}
+        languages={
+          Array [
+            "en",
+            "de",
+          ]
+        }
+        numberFormat="en"
+        onChangeValue={[Function]}
+        selectedLanguage="en"
+        updateSettings={[MockFunction]}
+      />
+    </li>
+    <li
+      className="attribute-list-item"
+      key="set-dates-2"
+    >
+      <AttributeInput
+        attribute={
+          Object {
+            "name": "set-dates",
+            "value": Array [
+              "2017-01-27T09:40:38.179Z",
+              "2017-05-27T09:40:38.179Z",
+            ],
+          }
+        }
+        currencies={
+          Array [
+            "EUR",
+            "USD",
+          ]
+        }
+        definition={
+          Object {
+            "inputHint": undefined,
+            "isRequired": undefined,
+            "label": undefined,
+            "name": "set-dates",
+            "type": Object {
+              "name": "set",
+            },
+          }
+        }
+        disabled={true}
+        expandSettings={Object {}}
+        languages={
+          Array [
+            "en",
+            "de",
+          ]
+        }
+        numberFormat="en"
+        onChangeValue={[Function]}
+        selectedLanguage="en"
+        updateSettings={[MockFunction]}
+      />
+    </li>
+  </ul>
+</div>
+`;

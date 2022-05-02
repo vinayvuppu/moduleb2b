@@ -1,0 +1,86 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`rendering should match snapshot 1`] = `
+<FormModalPage
+  customControls={
+    <Inline
+      alignItems="flex-start"
+      justifyContent="flex-start"
+      scale="s"
+    >
+      <IconButton
+        icon={<BinFilledIcon />}
+        isDisabled={false}
+        isToggleButton={false}
+        label="formatted message"
+        onClick={[Function]}
+        shape="round"
+        size="big"
+        theme="default"
+        type="button"
+      />
+      <SecondaryButton
+        isToggleButton={false}
+        label="formatted message"
+        onClick={[MockFunction]}
+        theme="default"
+        type="button"
+      />
+      <PrimaryButton
+        isDisabled={true}
+        isToggleButton={false}
+        label="formatted message"
+        onClick={[MockFunction]}
+        size="big"
+        tone="primary"
+        type="button"
+      />
+    </Inline>
+  }
+  isOpen={true}
+  labelPrimaryButton={
+    Object {
+      "defaultMessage": "Confirm",
+      "id": "AppKit.Shared.confirm",
+    }
+  }
+  labelSecondaryButton={
+    Object {
+      "defaultMessage": "Cancel",
+      "id": "AppKit.Shared.cancel",
+    }
+  }
+  onClose={[MockFunction]}
+  title="formatted message"
+>
+  <Horizontal>
+    <Stack
+      alignItems="stretch"
+      scale="s"
+    >
+      <TextField
+        horizontalConstraint="scale"
+        isDisabled={false}
+        name="name"
+        onChange={[MockFunction]}
+        title="formatted message"
+        value=""
+      />
+      <MultilineTextField
+        defaultExpandMultilineText={true}
+        horizontalConstraint="scale"
+        isDisabled={false}
+        isRequired={true}
+        name="value"
+        onChange={[MockFunction]}
+        placeholder="formatted message"
+        renderError={[Function]}
+        title="formatted message"
+        value=""
+      />
+    </Stack>
+  </Horizontal>
+  <br />
+  <PredicateDescriptionModal />
+</FormModalPage>
+`;

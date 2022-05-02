@@ -1,0 +1,8 @@
+.item {
+  margin-bottom: 3px;
+}
+
+.item-overlapped {
+  composes: item;
+  opacity: 0.5;
+}

@@ -1,0 +1,33 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`rendering by default should output correct tree 1`] = `
+<div
+  className="single-width-form-box"
+>
+  <ChildComponent />
+</div>
+`;
+
+exports[`rendering when \`double\` should output correct tree 1`] = `
+<div
+  className="double-width-form-box"
+>
+  <ChildComponent />
+</div>
+`;
+
+exports[`rendering when \`full\` should output correct tree 1`] = `
+<div
+  className="full-width-form-box"
+>
+  <ChildComponent />
+</div>
+`;
+
+exports[`rendering when \`hasWarning\` being \`true\` should output correct tree 1`] = `
+<div
+  className="single-width-form-box has-warning"
+>
+  <ChildComponent />
+</div>
+`;

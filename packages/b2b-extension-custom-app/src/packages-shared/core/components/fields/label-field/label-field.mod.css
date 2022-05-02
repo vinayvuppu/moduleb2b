@@ -1,0 +1,18 @@
+.label-wrapper {
+  display: block;
+}
+
+.label {
+  composes: text-small from '../../../_styles/commons.mod.css';
+  display: block;
+  font-weight: 700;
+  margin-bottom: var(--spacing-xs);
+}
+
+.description {
+  composes: text-small from '../../../_styles/commons.mod.css';
+  color: var(--color-solid);
+  font-weight: normal;
+  display: inline-block;
+  margin-bottom: var(--spacing-s);
+}

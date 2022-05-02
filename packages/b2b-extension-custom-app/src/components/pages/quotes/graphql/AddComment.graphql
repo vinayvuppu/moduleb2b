@@ -1,0 +1,7 @@
+#import './QuoteDetailFragment.graphql'
+
+mutation AddComment($email: String!, $text: String!, $quoteId: String!) {
+  addComment(email: $email, text: $text, quoteId: $quoteId) {
+    ...QuoteDetailsFragment
+  }
+}

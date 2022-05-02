@@ -1,0 +1,13 @@
+#import "./schema.graphql"
+
+# MyCustomType is an implementation of Type and we are adding because
+# the test project from we are fetching from does not have any implementations of Type.
+# Which in a test case scenario happens at runtime. Without this particular type defined
+# we cannot run any mocks related to custom fields (Type) or TypeDefinitions
+
+type MyCustomType implements Type {
+  customFields: Type!
+  customFieldsRaw: [RawCustomField!]
+  type: TypeDefinition!
+  typeRef: Reference!
+}

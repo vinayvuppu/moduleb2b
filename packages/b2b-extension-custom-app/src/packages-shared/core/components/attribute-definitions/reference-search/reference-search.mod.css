@@ -1,0 +1,5 @@
+.missing-label {
+  color: var(--color-warning);
+  font-size: 0.9rem;
+  margin-left: var(--spacing-xs);
+}

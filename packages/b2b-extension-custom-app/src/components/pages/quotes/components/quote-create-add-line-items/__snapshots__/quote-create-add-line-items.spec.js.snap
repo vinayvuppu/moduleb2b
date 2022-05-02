@@ -1,0 +1,60 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`render when loading should match snapshot 1`] = `
+<LoadingSpinner
+  scale="l"
+/>
+`;
+
+exports[`render when the quote is empty should match snapshot 1`] = `
+<Stack
+  alignItems="stretch"
+  scale="m"
+>
+  <Inline
+    alignItems="flex-start"
+    justifyContent="space-between"
+    scale="l"
+  >
+    <TextHeadline
+      as="h2"
+    >
+      <FormattedMessage
+        defaultMessage="Add item"
+        id="Quote.Create.Step.LineItems.title"
+        values={Object {}}
+      />
+    </TextHeadline>
+  </Inline>
+  <SearchInput
+    initialValue=""
+    onSubmit={[Function]}
+    placeholder="Quote.Create.Step.LineItems.customsearch.placeHolder"
+  />
+  <ProjectExtensionProviderForImageRegex>
+    <div
+      className="products-container"
+    >
+      <OrderCreateProductsListItem
+        id="product-id-1"
+        isAddingVariant={false}
+        key="product-id-1"
+        onAddVariantToCart={[Function]}
+      />
+    </div>
+  </ProjectExtensionProviderForImageRegex>
+  <Pagination
+    onPageChange={[Function]}
+    onPerPageChange={[Function]}
+    page={1}
+    pageSizes={
+      Array [
+        20,
+        50,
+      ]
+    }
+    perPage={20}
+    totalItems={0}
+  />
+</Stack>
+`;

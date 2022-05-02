@@ -1,0 +1,1084 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`named exports dereferenceQuery should implement categories dereference query AST 1`] = `
+Object {
+  "definitions": Array [
+    Object {
+      "directives": Array [],
+      "kind": "OperationDefinition",
+      "name": Object {
+        "kind": "Name",
+        "value": "MCCategoryDereference",
+      },
+      "operation": "query",
+      "selectionSet": Object {
+        "kind": "SelectionSet",
+        "selections": Array [
+          Object {
+            "alias": Object {
+              "kind": "Name",
+              "value": "items",
+            },
+            "arguments": Array [
+              Object {
+                "kind": "Argument",
+                "name": Object {
+                  "kind": "Name",
+                  "value": "filters",
+                },
+                "value": Object {
+                  "kind": "Variable",
+                  "name": Object {
+                    "kind": "Name",
+                    "value": "filters",
+                  },
+                },
+              },
+            ],
+            "directives": Array [],
+            "kind": "Field",
+            "name": Object {
+              "kind": "Name",
+              "value": "categorySearch",
+            },
+            "selectionSet": Object {
+              "kind": "SelectionSet",
+              "selections": Array [
+                Object {
+                  "directives": Array [],
+                  "kind": "FragmentSpread",
+                  "name": Object {
+                    "kind": "Name",
+                    "value": "CategorySearchResultsFragment",
+                  },
+                },
+              ],
+            },
+          },
+        ],
+      },
+      "variableDefinitions": Array [
+        Object {
+          "defaultValue": undefined,
+          "directives": Array [],
+          "kind": "VariableDefinition",
+          "type": Object {
+            "kind": "ListType",
+            "type": Object {
+              "kind": "NonNullType",
+              "type": Object {
+                "kind": "NamedType",
+                "name": Object {
+                  "kind": "Name",
+                  "value": "SearchFilter",
+                },
+              },
+            },
+          },
+          "variable": Object {
+            "kind": "Variable",
+            "name": Object {
+              "kind": "Name",
+              "value": "filters",
+            },
+          },
+        },
+        Object {
+          "defaultValue": undefined,
+          "directives": Array [],
+          "kind": "VariableDefinition",
+          "type": Object {
+            "kind": "NonNullType",
+            "type": Object {
+              "kind": "NamedType",
+              "name": Object {
+                "kind": "Name",
+                "value": "Locale",
+              },
+            },
+          },
+          "variable": Object {
+            "kind": "Variable",
+            "name": Object {
+              "kind": "Name",
+              "value": "locale",
+            },
+          },
+        },
+      ],
+    },
+    Object {
+      "directives": Array [],
+      "kind": "FragmentDefinition",
+      "name": Object {
+        "kind": "Name",
+        "value": "CategorySearchResultsFragment",
+      },
+      "selectionSet": Object {
+        "kind": "SelectionSet",
+        "selections": Array [
+          Object {
+            "alias": undefined,
+            "arguments": Array [],
+            "directives": Array [],
+            "kind": "Field",
+            "name": Object {
+              "kind": "Name",
+              "value": "results",
+            },
+            "selectionSet": Object {
+              "kind": "SelectionSet",
+              "selections": Array [
+                Object {
+                  "directives": Array [],
+                  "kind": "FragmentSpread",
+                  "name": Object {
+                    "kind": "Name",
+                    "value": "CategorySearchFragment",
+                  },
+                },
+              ],
+            },
+          },
+        ],
+      },
+      "typeCondition": Object {
+        "kind": "NamedType",
+        "name": Object {
+          "kind": "Name",
+          "value": "CategorySearchResult",
+        },
+      },
+    },
+    Object {
+      "directives": Array [],
+      "kind": "FragmentDefinition",
+      "name": Object {
+        "kind": "Name",
+        "value": "CategorySearchFragment",
+      },
+      "selectionSet": Object {
+        "kind": "SelectionSet",
+        "selections": Array [
+          Object {
+            "alias": undefined,
+            "arguments": Array [],
+            "directives": Array [],
+            "kind": "Field",
+            "name": Object {
+              "kind": "Name",
+              "value": "id",
+            },
+            "selectionSet": undefined,
+          },
+          Object {
+            "alias": undefined,
+            "arguments": Array [
+              Object {
+                "kind": "Argument",
+                "name": Object {
+                  "kind": "Name",
+                  "value": "locale",
+                },
+                "value": Object {
+                  "kind": "Variable",
+                  "name": Object {
+                    "kind": "Name",
+                    "value": "locale",
+                  },
+                },
+              },
+            ],
+            "directives": Array [],
+            "kind": "Field",
+            "name": Object {
+              "kind": "Name",
+              "value": "name",
+            },
+            "selectionSet": undefined,
+          },
+          Object {
+            "alias": undefined,
+            "arguments": Array [
+              Object {
+                "kind": "Argument",
+                "name": Object {
+                  "kind": "Name",
+                  "value": "locale",
+                },
+                "value": Object {
+                  "kind": "Variable",
+                  "name": Object {
+                    "kind": "Name",
+                    "value": "locale",
+                  },
+                },
+              },
+            ],
+            "directives": Array [],
+            "kind": "Field",
+            "name": Object {
+              "kind": "Name",
+              "value": "slug",
+            },
+            "selectionSet": undefined,
+          },
+          Object {
+            "alias": undefined,
+            "arguments": Array [],
+            "directives": Array [],
+            "kind": "Field",
+            "name": Object {
+              "kind": "Name",
+              "value": "externalId",
+            },
+            "selectionSet": undefined,
+          },
+          Object {
+            "alias": undefined,
+            "arguments": Array [],
+            "directives": Array [],
+            "kind": "Field",
+            "name": Object {
+              "kind": "Name",
+              "value": "parent",
+            },
+            "selectionSet": Object {
+              "kind": "SelectionSet",
+              "selections": Array [
+                Object {
+                  "alias": undefined,
+                  "arguments": Array [
+                    Object {
+                      "kind": "Argument",
+                      "name": Object {
+                        "kind": "Name",
+                        "value": "locale",
+                      },
+                      "value": Object {
+                        "kind": "Variable",
+                        "name": Object {
+                          "kind": "Name",
+                          "value": "locale",
+                        },
+                      },
+                    },
+                  ],
+                  "directives": Array [],
+                  "kind": "Field",
+                  "name": Object {
+                    "kind": "Name",
+                    "value": "name",
+                  },
+                  "selectionSet": undefined,
+                },
+              ],
+            },
+          },
+          Object {
+            "alias": undefined,
+            "arguments": Array [],
+            "directives": Array [],
+            "kind": "Field",
+            "name": Object {
+              "kind": "Name",
+              "value": "ancestors",
+            },
+            "selectionSet": Object {
+              "kind": "SelectionSet",
+              "selections": Array [
+                Object {
+                  "alias": undefined,
+                  "arguments": Array [
+                    Object {
+                      "kind": "Argument",
+                      "name": Object {
+                        "kind": "Name",
+                        "value": "locale",
+                      },
+                      "value": Object {
+                        "kind": "Variable",
+                        "name": Object {
+                          "kind": "Name",
+                          "value": "locale",
+                        },
+                      },
+                    },
+                  ],
+                  "directives": Array [],
+                  "kind": "Field",
+                  "name": Object {
+                    "kind": "Name",
+                    "value": "name",
+                  },
+                  "selectionSet": undefined,
+                },
+              ],
+            },
+          },
+        ],
+      },
+      "typeCondition": Object {
+        "kind": "NamedType",
+        "name": Object {
+          "kind": "Name",
+          "value": "CategorySearch",
+        },
+      },
+    },
+  ],
+  "kind": "Document",
+  "loc": Object {
+    "end": 534,
+    "start": 0,
+  },
+}
+`;
+
+exports[`named exports fragmentSearchItem should implement category AST 1`] = `
+Object {
+  "definitions": Array [
+    Object {
+      "directives": Array [],
+      "kind": "FragmentDefinition",
+      "name": Object {
+        "kind": "Name",
+        "value": "CategorySearchFragment",
+      },
+      "selectionSet": Object {
+        "kind": "SelectionSet",
+        "selections": Array [
+          Object {
+            "alias": undefined,
+            "arguments": Array [],
+            "directives": Array [],
+            "kind": "Field",
+            "name": Object {
+              "kind": "Name",
+              "value": "id",
+            },
+            "selectionSet": undefined,
+          },
+          Object {
+            "alias": undefined,
+            "arguments": Array [
+              Object {
+                "kind": "Argument",
+                "name": Object {
+                  "kind": "Name",
+                  "value": "locale",
+                },
+                "value": Object {
+                  "kind": "Variable",
+                  "name": Object {
+                    "kind": "Name",
+                    "value": "locale",
+                  },
+                },
+              },
+            ],
+            "directives": Array [],
+            "kind": "Field",
+            "name": Object {
+              "kind": "Name",
+              "value": "name",
+            },
+            "selectionSet": undefined,
+          },
+          Object {
+            "alias": undefined,
+            "arguments": Array [
+              Object {
+                "kind": "Argument",
+                "name": Object {
+                  "kind": "Name",
+                  "value": "locale",
+                },
+                "value": Object {
+                  "kind": "Variable",
+                  "name": Object {
+                    "kind": "Name",
+                    "value": "locale",
+                  },
+                },
+              },
+            ],
+            "directives": Array [],
+            "kind": "Field",
+            "name": Object {
+              "kind": "Name",
+              "value": "slug",
+            },
+            "selectionSet": undefined,
+          },
+          Object {
+            "alias": undefined,
+            "arguments": Array [],
+            "directives": Array [],
+            "kind": "Field",
+            "name": Object {
+              "kind": "Name",
+              "value": "externalId",
+            },
+            "selectionSet": undefined,
+          },
+          Object {
+            "alias": undefined,
+            "arguments": Array [],
+            "directives": Array [],
+            "kind": "Field",
+            "name": Object {
+              "kind": "Name",
+              "value": "parent",
+            },
+            "selectionSet": Object {
+              "kind": "SelectionSet",
+              "selections": Array [
+                Object {
+                  "alias": undefined,
+                  "arguments": Array [
+                    Object {
+                      "kind": "Argument",
+                      "name": Object {
+                        "kind": "Name",
+                        "value": "locale",
+                      },
+                      "value": Object {
+                        "kind": "Variable",
+                        "name": Object {
+                          "kind": "Name",
+                          "value": "locale",
+                        },
+                      },
+                    },
+                  ],
+                  "directives": Array [],
+                  "kind": "Field",
+                  "name": Object {
+                    "kind": "Name",
+                    "value": "name",
+                  },
+                  "selectionSet": undefined,
+                },
+              ],
+            },
+          },
+          Object {
+            "alias": undefined,
+            "arguments": Array [],
+            "directives": Array [],
+            "kind": "Field",
+            "name": Object {
+              "kind": "Name",
+              "value": "ancestors",
+            },
+            "selectionSet": Object {
+              "kind": "SelectionSet",
+              "selections": Array [
+                Object {
+                  "alias": undefined,
+                  "arguments": Array [
+                    Object {
+                      "kind": "Argument",
+                      "name": Object {
+                        "kind": "Name",
+                        "value": "locale",
+                      },
+                      "value": Object {
+                        "kind": "Variable",
+                        "name": Object {
+                          "kind": "Name",
+                          "value": "locale",
+                        },
+                      },
+                    },
+                  ],
+                  "directives": Array [],
+                  "kind": "Field",
+                  "name": Object {
+                    "kind": "Name",
+                    "value": "name",
+                  },
+                  "selectionSet": undefined,
+                },
+              ],
+            },
+          },
+        ],
+      },
+      "typeCondition": Object {
+        "kind": "NamedType",
+        "name": Object {
+          "kind": "Name",
+          "value": "CategorySearch",
+        },
+      },
+    },
+  ],
+  "kind": "Document",
+  "loc": Object {
+    "end": 230,
+    "start": 0,
+  },
+}
+`;
+
+exports[`named exports fragmentSearchResult should implement category results AST 1`] = `
+Object {
+  "definitions": Array [
+    Object {
+      "directives": Array [],
+      "kind": "FragmentDefinition",
+      "name": Object {
+        "kind": "Name",
+        "value": "CategorySearchResultsFragment",
+      },
+      "selectionSet": Object {
+        "kind": "SelectionSet",
+        "selections": Array [
+          Object {
+            "alias": undefined,
+            "arguments": Array [],
+            "directives": Array [],
+            "kind": "Field",
+            "name": Object {
+              "kind": "Name",
+              "value": "results",
+            },
+            "selectionSet": Object {
+              "kind": "SelectionSet",
+              "selections": Array [
+                Object {
+                  "directives": Array [],
+                  "kind": "FragmentSpread",
+                  "name": Object {
+                    "kind": "Name",
+                    "value": "CategorySearchFragment",
+                  },
+                },
+              ],
+            },
+          },
+        ],
+      },
+      "typeCondition": Object {
+        "kind": "NamedType",
+        "name": Object {
+          "kind": "Name",
+          "value": "CategorySearchResult",
+        },
+      },
+    },
+    Object {
+      "directives": Array [],
+      "kind": "FragmentDefinition",
+      "name": Object {
+        "kind": "Name",
+        "value": "CategorySearchFragment",
+      },
+      "selectionSet": Object {
+        "kind": "SelectionSet",
+        "selections": Array [
+          Object {
+            "alias": undefined,
+            "arguments": Array [],
+            "directives": Array [],
+            "kind": "Field",
+            "name": Object {
+              "kind": "Name",
+              "value": "id",
+            },
+            "selectionSet": undefined,
+          },
+          Object {
+            "alias": undefined,
+            "arguments": Array [
+              Object {
+                "kind": "Argument",
+                "name": Object {
+                  "kind": "Name",
+                  "value": "locale",
+                },
+                "value": Object {
+                  "kind": "Variable",
+                  "name": Object {
+                    "kind": "Name",
+                    "value": "locale",
+                  },
+                },
+              },
+            ],
+            "directives": Array [],
+            "kind": "Field",
+            "name": Object {
+              "kind": "Name",
+              "value": "name",
+            },
+            "selectionSet": undefined,
+          },
+          Object {
+            "alias": undefined,
+            "arguments": Array [
+              Object {
+                "kind": "Argument",
+                "name": Object {
+                  "kind": "Name",
+                  "value": "locale",
+                },
+                "value": Object {
+                  "kind": "Variable",
+                  "name": Object {
+                    "kind": "Name",
+                    "value": "locale",
+                  },
+                },
+              },
+            ],
+            "directives": Array [],
+            "kind": "Field",
+            "name": Object {
+              "kind": "Name",
+              "value": "slug",
+            },
+            "selectionSet": undefined,
+          },
+          Object {
+            "alias": undefined,
+            "arguments": Array [],
+            "directives": Array [],
+            "kind": "Field",
+            "name": Object {
+              "kind": "Name",
+              "value": "externalId",
+            },
+            "selectionSet": undefined,
+          },
+          Object {
+            "alias": undefined,
+            "arguments": Array [],
+            "directives": Array [],
+            "kind": "Field",
+            "name": Object {
+              "kind": "Name",
+              "value": "parent",
+            },
+            "selectionSet": Object {
+              "kind": "SelectionSet",
+              "selections": Array [
+                Object {
+                  "alias": undefined,
+                  "arguments": Array [
+                    Object {
+                      "kind": "Argument",
+                      "name": Object {
+                        "kind": "Name",
+                        "value": "locale",
+                      },
+                      "value": Object {
+                        "kind": "Variable",
+                        "name": Object {
+                          "kind": "Name",
+                          "value": "locale",
+                        },
+                      },
+                    },
+                  ],
+                  "directives": Array [],
+                  "kind": "Field",
+                  "name": Object {
+                    "kind": "Name",
+                    "value": "name",
+                  },
+                  "selectionSet": undefined,
+                },
+              ],
+            },
+          },
+          Object {
+            "alias": undefined,
+            "arguments": Array [],
+            "directives": Array [],
+            "kind": "Field",
+            "name": Object {
+              "kind": "Name",
+              "value": "ancestors",
+            },
+            "selectionSet": Object {
+              "kind": "SelectionSet",
+              "selections": Array [
+                Object {
+                  "alias": undefined,
+                  "arguments": Array [
+                    Object {
+                      "kind": "Argument",
+                      "name": Object {
+                        "kind": "Name",
+                        "value": "locale",
+                      },
+                      "value": Object {
+                        "kind": "Variable",
+                        "name": Object {
+                          "kind": "Name",
+                          "value": "locale",
+                        },
+                      },
+                    },
+                  ],
+                  "directives": Array [],
+                  "kind": "Field",
+                  "name": Object {
+                    "kind": "Name",
+                    "value": "name",
+                  },
+                  "selectionSet": undefined,
+                },
+              ],
+            },
+          },
+        ],
+      },
+      "typeCondition": Object {
+        "kind": "NamedType",
+        "name": Object {
+          "kind": "Name",
+          "value": "CategorySearch",
+        },
+      },
+    },
+  ],
+  "kind": "Document",
+  "loc": Object {
+    "end": 357,
+    "start": 0,
+  },
+}
+`;
+
+exports[`named exports searchQuery should implement categories search query AST 1`] = `
+Object {
+  "definitions": Array [
+    Object {
+      "directives": Array [],
+      "kind": "OperationDefinition",
+      "name": Object {
+        "kind": "Name",
+        "value": "MCSearchCategory",
+      },
+      "operation": "query",
+      "selectionSet": Object {
+        "kind": "SelectionSet",
+        "selections": Array [
+          Object {
+            "alias": Object {
+              "kind": "Name",
+              "value": "items",
+            },
+            "arguments": Array [
+              Object {
+                "kind": "Argument",
+                "name": Object {
+                  "kind": "Name",
+                  "value": "fulltext",
+                },
+                "value": Object {
+                  "kind": "Variable",
+                  "name": Object {
+                    "kind": "Name",
+                    "value": "searchText",
+                  },
+                },
+              },
+            ],
+            "directives": Array [],
+            "kind": "Field",
+            "name": Object {
+              "kind": "Name",
+              "value": "categorySearch",
+            },
+            "selectionSet": Object {
+              "kind": "SelectionSet",
+              "selections": Array [
+                Object {
+                  "directives": Array [],
+                  "kind": "FragmentSpread",
+                  "name": Object {
+                    "kind": "Name",
+                    "value": "CategorySearchResultsFragment",
+                  },
+                },
+              ],
+            },
+          },
+        ],
+      },
+      "variableDefinitions": Array [
+        Object {
+          "defaultValue": undefined,
+          "directives": Array [],
+          "kind": "VariableDefinition",
+          "type": Object {
+            "kind": "NamedType",
+            "name": Object {
+              "kind": "Name",
+              "value": "LocalizedText",
+            },
+          },
+          "variable": Object {
+            "kind": "Variable",
+            "name": Object {
+              "kind": "Name",
+              "value": "searchText",
+            },
+          },
+        },
+        Object {
+          "defaultValue": undefined,
+          "directives": Array [],
+          "kind": "VariableDefinition",
+          "type": Object {
+            "kind": "NonNullType",
+            "type": Object {
+              "kind": "NamedType",
+              "name": Object {
+                "kind": "Name",
+                "value": "Locale",
+              },
+            },
+          },
+          "variable": Object {
+            "kind": "Variable",
+            "name": Object {
+              "kind": "Name",
+              "value": "locale",
+            },
+          },
+        },
+      ],
+    },
+    Object {
+      "directives": Array [],
+      "kind": "FragmentDefinition",
+      "name": Object {
+        "kind": "Name",
+        "value": "CategorySearchResultsFragment",
+      },
+      "selectionSet": Object {
+        "kind": "SelectionSet",
+        "selections": Array [
+          Object {
+            "alias": undefined,
+            "arguments": Array [],
+            "directives": Array [],
+            "kind": "Field",
+            "name": Object {
+              "kind": "Name",
+              "value": "results",
+            },
+            "selectionSet": Object {
+              "kind": "SelectionSet",
+              "selections": Array [
+                Object {
+                  "directives": Array [],
+                  "kind": "FragmentSpread",
+                  "name": Object {
+                    "kind": "Name",
+                    "value": "CategorySearchFragment",
+                  },
+                },
+              ],
+            },
+          },
+        ],
+      },
+      "typeCondition": Object {
+        "kind": "NamedType",
+        "name": Object {
+          "kind": "Name",
+          "value": "CategorySearchResult",
+        },
+      },
+    },
+    Object {
+      "directives": Array [],
+      "kind": "FragmentDefinition",
+      "name": Object {
+        "kind": "Name",
+        "value": "CategorySearchFragment",
+      },
+      "selectionSet": Object {
+        "kind": "SelectionSet",
+        "selections": Array [
+          Object {
+            "alias": undefined,
+            "arguments": Array [],
+            "directives": Array [],
+            "kind": "Field",
+            "name": Object {
+              "kind": "Name",
+              "value": "id",
+            },
+            "selectionSet": undefined,
+          },
+          Object {
+            "alias": undefined,
+            "arguments": Array [
+              Object {
+                "kind": "Argument",
+                "name": Object {
+                  "kind": "Name",
+                  "value": "locale",
+                },
+                "value": Object {
+                  "kind": "Variable",
+                  "name": Object {
+                    "kind": "Name",
+                    "value": "locale",
+                  },
+                },
+              },
+            ],
+            "directives": Array [],
+            "kind": "Field",
+            "name": Object {
+              "kind": "Name",
+              "value": "name",
+            },
+            "selectionSet": undefined,
+          },
+          Object {
+            "alias": undefined,
+            "arguments": Array [
+              Object {
+                "kind": "Argument",
+                "name": Object {
+                  "kind": "Name",
+                  "value": "locale",
+                },
+                "value": Object {
+                  "kind": "Variable",
+                  "name": Object {
+                    "kind": "Name",
+                    "value": "locale",
+                  },
+                },
+              },
+            ],
+            "directives": Array [],
+            "kind": "Field",
+            "name": Object {
+              "kind": "Name",
+              "value": "slug",
+            },
+            "selectionSet": undefined,
+          },
+          Object {
+            "alias": undefined,
+            "arguments": Array [],
+            "directives": Array [],
+            "kind": "Field",
+            "name": Object {
+              "kind": "Name",
+              "value": "externalId",
+            },
+            "selectionSet": undefined,
+          },
+          Object {
+            "alias": undefined,
+            "arguments": Array [],
+            "directives": Array [],
+            "kind": "Field",
+            "name": Object {
+              "kind": "Name",
+              "value": "parent",
+            },
+            "selectionSet": Object {
+              "kind": "SelectionSet",
+              "selections": Array [
+                Object {
+                  "alias": undefined,
+                  "arguments": Array [
+                    Object {
+                      "kind": "Argument",
+                      "name": Object {
+                        "kind": "Name",
+                        "value": "locale",
+                      },
+                      "value": Object {
+                        "kind": "Variable",
+                        "name": Object {
+                          "kind": "Name",
+                          "value": "locale",
+                        },
+                      },
+                    },
+                  ],
+                  "directives": Array [],
+                  "kind": "Field",
+                  "name": Object {
+                    "kind": "Name",
+                    "value": "name",
+                  },
+                  "selectionSet": undefined,
+                },
+              ],
+            },
+          },
+          Object {
+            "alias": undefined,
+            "arguments": Array [],
+            "directives": Array [],
+            "kind": "Field",
+            "name": Object {
+              "kind": "Name",
+              "value": "ancestors",
+            },
+            "selectionSet": Object {
+              "kind": "SelectionSet",
+              "selections": Array [
+                Object {
+                  "alias": undefined,
+                  "arguments": Array [
+                    Object {
+                      "kind": "Argument",
+                      "name": Object {
+                        "kind": "Name",
+                        "value": "locale",
+                      },
+                      "value": Object {
+                        "kind": "Variable",
+                        "name": Object {
+                          "kind": "Name",
+                          "value": "locale",
+                        },
+                      },
+                    },
+                  ],
+                  "directives": Array [],
+                  "kind": "Field",
+                  "name": Object {
+                    "kind": "Name",
+                    "value": "name",
+                  },
+                  "selectionSet": undefined,
+                },
+              ],
+            },
+          },
+        ],
+      },
+      "typeCondition": Object {
+        "kind": "NamedType",
+        "name": Object {
+          "kind": "Name",
+          "value": "CategorySearch",
+        },
+      },
+    },
+  ],
+  "kind": "Document",
+  "loc": Object {
+    "end": 534,
+    "start": 0,
+  },
+}
+`;

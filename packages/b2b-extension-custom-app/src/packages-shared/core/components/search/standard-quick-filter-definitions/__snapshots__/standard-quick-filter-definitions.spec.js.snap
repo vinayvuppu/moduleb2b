@@ -1,0 +1,107 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`constants export available quick filters 1`] = `
+Object {
+  "CREATED_AT": "createdAt",
+}
+`;
+
+exports[`constants export available quick filters for dates 1`] = `
+Object {
+  "lastSixMonths": "lastSixMonths",
+  "lastThirtyDays": "lastThirtyDays",
+  "lastThreeMonths": "lastThreeMonths",
+  "lastTwelveMonths": "lastTwelveMonths",
+  "none": "none",
+}
+`;
+
+exports[`createOptionsForDateQuickFilters should return available options for date quic filters 1`] = `
+Array [
+  Object {
+    "filter": Object {
+      "fieldName": "createdAt",
+      "index": 0,
+    },
+    "label": "Search.QuickFilters.Definitions.Date.none",
+    "value": "none",
+  },
+  Object {
+    "filter": Object {
+      "fieldName": "createdAt",
+      "filter": Object {
+        "type": "range",
+        "value": Object {
+          "from": "12/31/2016",
+          "quickFilterValue": "lastThirtyDays",
+          "to": "12/31/2016",
+        },
+      },
+      "index": 0,
+    },
+    "label": "Search.QuickFilters.Definitions.Date.lastThirtyDays",
+    "value": "lastThirtyDays",
+  },
+  Object {
+    "filter": Object {
+      "fieldName": "createdAt",
+      "filter": Object {
+        "type": "range",
+        "value": Object {
+          "from": "12/31/2016",
+          "quickFilterValue": "lastThreeMonths",
+          "to": "12/31/2016",
+        },
+      },
+      "index": 0,
+    },
+    "label": "Search.QuickFilters.Definitions.Date.lastThreeMonths",
+    "value": "lastThreeMonths",
+  },
+  Object {
+    "filter": Object {
+      "fieldName": "createdAt",
+      "filter": Object {
+        "type": "range",
+        "value": Object {
+          "from": "12/31/2016",
+          "quickFilterValue": "lastSixMonths",
+          "to": "12/31/2016",
+        },
+      },
+      "index": 0,
+    },
+    "label": "Search.QuickFilters.Definitions.Date.lastSixMonths",
+    "value": "lastSixMonths",
+  },
+  Object {
+    "filter": Object {
+      "fieldName": "createdAt",
+      "filter": Object {
+        "type": "range",
+        "value": Object {
+          "from": "12/31/2016",
+          "quickFilterValue": "lastTwelveMonths",
+          "to": "12/31/2016",
+        },
+      },
+      "index": 0,
+    },
+    "label": "Search.QuickFilters.Definitions.Date.lastTwelveMonths",
+    "value": "lastTwelveMonths",
+  },
+]
+`;
+
+exports[`defaultFilters should return default filter for \`createdAt\` 1`] = `
+Array [
+  Object {
+    "type": "range",
+    "value": Object {
+      "from": "12/31/2016",
+      "quickFilterValue": "lastThirtyDays",
+      "to": "12/31/2016",
+    },
+  },
+]
+`;

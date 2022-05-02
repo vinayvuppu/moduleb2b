@@ -1,0 +1,146 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`rendering dropdown when closed should match snapshot 1`] = `
+<div
+  className="dropdown-head-default"
+>
+  <div
+    className="dropdown-content"
+    data-testid="custom-views-dropdown"
+  >
+    <SelectedOption
+      isDirty={false}
+      isImmutable={false}
+      isOpen={false}
+      key="test-id-123"
+      name="test-name-en"
+      onClick={[Function]}
+    />
+  </div>
+</div>
+`;
+
+exports[`rendering dropdown when open should match snapshot 1`] = `
+<div
+  className="dropdown-head-active"
+>
+  <div
+    className="dropdown-content"
+    data-testid="custom-views-dropdown"
+  >
+    <SelectedOption
+      isDirty={false}
+      isImmutable={false}
+      isOpen={true}
+      key="test-id-123"
+      name="test-name-en"
+      onClick={[Function]}
+    />
+  </div>
+  <div
+    className="options-wrapper"
+  >
+    <div
+      className="options-border"
+    >
+      <CustomViewDropdownOptionGroup>
+        <div
+          className="dropdown-items"
+        >
+          <div
+            className="option-is-selected"
+            key="test-id-123"
+          >
+            <SelectableOption
+              isActive={true}
+              isDirty={false}
+              isImmutable={false}
+              name="test-name-en"
+              onClick={null}
+            />
+            <div
+              className="option-actions option-actions-exist"
+            >
+              <Stack
+                alignItems="stretch"
+                scale="s"
+              >
+                <FlatButton
+                  icon={<ForwardRef(render) />}
+                  iconPosition="left"
+                  isDisabled={false}
+                  label="CustomViews.Dropdown.renameOptionLabel"
+                  name="edit"
+                  onClick={[Function]}
+                  tone="secondary"
+                  type="button"
+                />
+                <FlatButton
+                  icon={<ForwardRef(render) />}
+                  iconPosition="left"
+                  isDisabled={false}
+                  label="CustomViews.Dropdown.deleteOptionLabel"
+                  name="delete"
+                  onClick={[Function]}
+                  tone="secondary"
+                  type="button"
+                />
+              </Stack>
+            </div>
+          </div>
+          <div
+            className=""
+            key="test-id-345"
+          >
+            <SelectableOption
+              isActive={false}
+              isDirty={false}
+              name="test-name-en"
+              onClick={[Function]}
+            />
+          </div>
+        </div>
+      </CustomViewDropdownOptionGroup>
+      <CustomViewDropdownOptionGroup>
+        <div
+          className="option-create"
+        >
+          <FlatButton
+            data-testid="save-new-custom-view-button"
+            icon={<ForwardRef(render) />}
+            iconPosition="left"
+            isDisabled={false}
+            label="CustomViews.Dropdown.saveAsOptionLabel"
+            name="create"
+            onClick={[Function]}
+            tone="secondary"
+            type="button"
+          />
+        </div>
+      </CustomViewDropdownOptionGroup>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`rendering should match snapshot 1`] = `
+<Downshift
+  defaultHighlightedIndex={null}
+  defaultIsOpen={false}
+  environment={[Window]}
+  getA11yStatusMessage={[Function]}
+  itemToString={[Function]}
+  onChange={[Function]}
+  onInputValueChange={[Function]}
+  onOuterClick={[Function]}
+  onSelect={[Function]}
+  onStateChange={[Function]}
+  onUserAction={[Function]}
+  scrollIntoView={[Function]}
+  selectedItemChanged={[Function]}
+  stateReducer={[Function]}
+  suppressRefError={false}
+>
+  <Component />
+</Downshift>
+`;

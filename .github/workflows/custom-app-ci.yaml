@@ -1,0 +1,192 @@
+name: B2B Custom App CI/CD release (master) flow
+on:
+  repository_dispatch:
+    types: custom-app
+  push:
+    branches:
+      - main
+      - staging
+      - develop
+      - feature/**
+      - demo
+    paths:
+      - "packages/b2b-extension-custom-app/**"
+      - ".github/workflows/custom-app-ci.yaml"
+      - "*.json"
+      - "yarn.lock"
+env:
+  CTP_DOMAIN: us-central1.gcp.commercetools.com
+  COMPANY_MS_URL: https://ms-company-${{secrets.MS_DOMAIN}}
+  GATEWAY_MS_URL: https://ms-gateway-${{secrets.MS_DOMAIN}}
+  B2B_CUSTOM_APP_DOMAIN: ${{secrets.FIREBASE_PROJECT_ID}}.firebaseapp.com
+  PROJECT_ID: ${{secrets.FIREBASE_PROJECT_ID}}
+  GCP_SA_KEY: ${{secrets.MASTER_FIREBASE_GCP_SA_KEY}}
+  PROJECT_PATH: packages/b2b-extension-custom-app
+jobs:
+  # Installs and caches node modules
+  install:
+    name: Install and cache dependencies
+    runs-on: ubuntu-18.04
+    strategy:
+      matrix:
+        node-version: [14.x]
+    steps:
+      - name: Checkout Repo
+        uses: actions/checkout@v2
+      - name: Use Node.js ${{ matrix.node-version }}
+        uses: actions/setup-node@v2
+        with:
+          node-version: ${{ matrix.node-version }}
+      # Prepare to cache node modules per version of node
+      # - uses: actions/cache@v2
+      #   id: cache-node-modules
+      #   with:
+      #     path: |
+      #       **/node_modules
+      #     key: ${{ runner.os }}-node-${{ matrix.node-version }}-node-modules--${{ hashFiles('yarn.lock') }}
+      # Install dependencies if not pulled from cache
+      - name: Install dependencies
+        # if: steps.cache-node-modules.outputs.cache-hit != 'true'
+        run: yarn install
+
+  # Lints custom app package
+  lint:
+    name: Lint
+    runs-on: ubuntu-18.04
+    needs: install
+    strategy:
+      matrix:
+        node-version: [14.x]
+    steps:
+      - name: Checkout Repo
+        uses: actions/checkout@v2
+      - name: Use Node.js ${{ matrix.node-version }}
+        uses: actions/setup-node@v2
+        with:
+          node-version: ${{ matrix.node-version }}
+      # Prepare to cache node modules per version of node
+      # - uses: actions/cache@v2
+      #   id: cache-node-modules
+      #   with:
+      #     path: |
+      #       **/node_modules
+      #     key: ${{ runner.os }}-node-${{ matrix.node-version }}-node-modules--${{ hashFiles('yarn.lock') }}
+      # Install dependencies if not pulled from cache
+      - name: Install dependencies
+        # if: steps.cache-node-modules.outputs.cache-hit != 'true'
+        run: yarn install
+      # Lint MC Custom Application
+      - name: Lint Node.js
+        run: yarn workspace b2b-extension-custom-app lint
+
+  # test:
+  #   name: Test
+  #   needs: install
+  #   runs-on: ubuntu-18.04
+  #   strategy:
+  #     matrix:
+  #       node-version: [14.x]
+  #   steps:
+  #     - name: Checkout Repo
+  #       uses: actions/checkout@v2
+  #     - name: Use Node.js ${{ matrix.node-version }}
+  #       uses: actions/setup-node@v2
+  #       with:
+  #         node-version: ${{ matrix.node-version }}
+  #     # Prepare to cache node modules per version of node
+  #     # - uses: actions/cache@v2
+  #     #   id: cache-node-modules
+  #     #   with:
+  #     #     path: |
+  #     #       **/node_modules
+  #     #     key: ${{ runner.os }}-node-${{ matrix.node-version }}-node-modules--${{ hashFiles('yarn.lock') }}
+  #     # Install dependencies if not pulled from cache
+  #     - name: Install dependencies
+  #       # if: steps.cache-node-modules.outputs.cache-hit != 'true'
+  #       run: yarn install
+  #     # Run unit tests
+  #     - name: Lint Node.js
+  #       run: yarn workspace b2b-extension-custom-app test
+
+  build_and_deploy:
+    name: Build and Deploy
+    needs: [lint]
+    runs-on: ubuntu-18.04
+    strategy:
+      matrix:
+        node-version: [14.x]
+    steps:
+      - name: Checkout Repo
+        uses: actions/checkout@v2
+      - name: Use Node.js ${{ matrix.node-version }}
+        uses: actions/setup-node@v2
+        with:
+          node-version: ${{ matrix.node-version }}
+      # Prepare to cache node modules per version of node
+      # - uses: actions/cache@v2
+      #   id: cache-node-modules
+      #   with:
+      #     path: |
+      #       **/node_modules
+      #     key: ${{ runner.os }}-node-${{ matrix.node-version }}-node-modules--${{ hashFiles('yarn.lock') }}
+      # Install dependencies if not pulled from cache
+      - name: Install dependencies
+        # if: steps.cache-node-modules.outputs.cache-hit != 'true'
+        run: yarn install
+      # Setup environment variables based on github ref for environment selection.
+      - name: Set environment variables (dev)
+        if: ${{ github.ref == 'refs/heads/develop'}}
+        run: |
+          echo "COMPANY_MS_URL=https://ms-company-${{secrets.MS_DOMAIN_DEV}}" >> $GITHUB_ENV
+          echo "GATEWAY_MS_URL=https://ms-gateway-${{secrets.MS_DOMAIN_DEV}}" >> $GITHUB_ENV
+          echo "B2B_CUSTOM_APP_DOMAIN=${{secrets.FIREBASE_PROJECT_ID_DEV}}.firebaseapp.com" >> $GITHUB_ENV
+          echo "PROJECT_ID=${{secrets.FIREBASE_PROJECT_ID_DEV}}" >> $GITHUB_ENV
+          echo "GCP_SA_KEY=${{secrets.MASTER_FIREBASE_GCP_SA_KEY_DEV}}" >> $GITHUB_ENV
+      - name: Set environment variables (staging)
+        if: ${{ github.ref == 'refs/heads/staging'}}
+        run: |
+          echo "COMPANY_MS_URL=https://ms-company-${{secrets.MS_DOMAIN_STAGE}}" >> $GITHUB_ENV
+          echo "GATEWAY_MS_URL=https://ms-gateway-${{secrets.MS_DOMAIN_STAGE}}" >> $GITHUB_ENV
+          echo "B2B_CUSTOM_APP_DOMAIN=${{secrets.FIREBASE_PROJECT_ID_STAGE}}.firebaseapp.com" >> $GITHUB_ENV
+          echo "PROJECT_ID=${{secrets.FIREBASE_PROJECT_ID_STAGE}}" >> $GITHUB_ENV
+          echo "GCP_SA_KEY=${{secrets.MASTER_FIREBASE_GCP_SA_KEY_STAGE}}" >> $GITHUB_ENV
+      - name: Set environment variables (production)
+        if: ${{ github.ref == 'refs/heads/main'}}
+        run: |
+          echo "COMPANY_MS_URL=https://ms-company-${{secrets.MS_DOMAIN_PROD}}" >> $GITHUB_ENV
+          echo "GATEWAY_MS_URL=https://ms-gateway-${{secrets.MS_DOMAIN_PROD}}" >> $GITHUB_ENV
+          echo "B2B_CUSTOM_APP_DOMAIN=${{secrets.FIREBASE_PROJECT_ID_PROD}}.firebaseapp.com" >> $GITHUB_ENV
+          echo "PROJECT_ID=${{secrets.FIREBASE_PROJECT_ID_PROD}}" >> $GITHUB_ENV
+          echo "GCP_SA_KEY=${{secrets.MASTER_FIREBASE_GCP_SA_KEY_PROD}}" >> $GITHUB_ENV
+      - name: Set environment variables (feature)
+        if: startsWith(github.ref, 'refs/heads/feature/')
+        run: |
+          echo "COMPANY_MS_URL=https://ms-company-${{secrets.MS_DOMAIN_DEV}}" >> $GITHUB_ENV
+          echo "GATEWAY_MS_URL=https://ms-gateway-${{secrets.MS_DOMAIN_DEV}}" >> $GITHUB_ENV
+          echo "B2B_CUSTOM_APP_DOMAIN=localhost" >> $GITHUB_ENV
+          echo "PROJECT_ID=${{secrets.FIREBASE_PROJECT_ID_PROD}}" >> $GITHUB_ENV
+          echo "GCP_SA_KEY=${{secrets.MASTER_FIREBASE_GCP_SA_KEY_PROD}}" >> $GITHUB_ENV
+      - name: Set environment variables (demo)
+        if: ${{ github.ref == 'refs/heads/demo'}}
+        run: |
+          echo "COMPANY_MS_URL=https://ms-company-${{secrets.MS_DOMAIN_DEMO}}" >> $GITHUB_ENV
+          echo "GATEWAY_MS_URL=https://ms-gateway-${{secrets.MS_DOMAIN_DEMO}}" >> $GITHUB_ENV
+          echo "B2B_CUSTOM_APP_DOMAIN=${{secrets.FIREBASE_PROJECT_ID_DEMO}}.firebaseapp.com" >> $GITHUB_ENV
+          echo "PROJECT_ID=${{secrets.FIREBASE_PROJECT_ID_DEMO}}" >> $GITHUB_ENV
+          echo "GCP_SA_KEY=${{secrets.MASTER_FIREBASE_GCP_SA_KEY_DEMO}}" >> $GITHUB_ENV
+      # Build react app
+      - name: Build
+        run: yarn workspace b2b-extension-custom-app build
+      # Compile HTML for static deployment (develop)
+      - name: Compile HTML
+        if: startsWith(github.ref , 'refs/heads/feature/') != true
+        run: yarn workspace b2b-extension-custom-app compile-html:firebase
+      # Deploy application
+      - name: Deploy to Firebase
+        if: startsWith(github.ref , 'refs/heads/feature/') != true
+        uses: w9jds/firebase-action@v2.0.0
+        with:
+          args: deploy --only hosting --project fluted-volt-346608
+        env:
+          FIREBASE_PROJECT_ID: ${{ secrets.FIREBASE_PROJECT_ID }}
+          FIREBASE_TOKEN: ${{ secrets.FIREBASE_TOKEN }}

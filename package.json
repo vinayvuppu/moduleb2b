@@ -1,0 +1,56 @@
+{
+  "name": "module-b2b",
+  "private": true,
+  "version": "1.0.2",
+  "description": "Commercetools module B2B",
+  "dependencies": {
+    "firebase": "^7.5.0"
+  },
+  "devDependencies": {
+    "lerna": "^3.19.0",
+    "eslint": "6.6.0",
+    "eslint-config-airbnb-base": "14.0.0",
+    "eslint-config-prettier": "6.5.0",
+    "eslint-formatter-pretty": "2.1.1",
+    "eslint-plugin-import": "2.18.2",
+    "eslint-plugin-jest": "23.0.3",
+    "eslint-plugin-prefer-object-spread": "1.2.1",
+    "eslint-plugin-prettier": "3.1.1",
+    "eslint-plugin-testing-library": "1.3.2",
+    "prettier": "1.19.1",
+    "jest-each": "24.9.0",
+    "jest-runner-eslint": "0.7.5",
+    "jest-runner-shellcheck": "1.0.2",
+    "jest-runner-stylelint": "2.2.0"
+  },
+  "workspaces": [
+    "packages/b2b-extension-custom-app",
+    "packages/b2b-extension-custom-app/src/packages-shared/*",
+    "packages/b2b-init-data",
+    "packages/b2b-ms-company",
+    "packages/b2b-ms-employee",
+    "packages/b2b-ms-gateway",
+    "packages/b2b-ms-quote",
+    "packages/b2b-order-create-api-extension",
+    "packages/b2b-subscription-add-monthly-spent",
+    "packages/b2b-terraform"
+  ],
+  "nohoist":[
+    "b2b-extension-custom-app",
+    "b2b-extension-custom-app/**"
+  ],
+    "scripts": {
+    "format": "lerna run format",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/commercetools/module-b2b"
+  },
+  "keywords": [
+    "commercetools",
+    "b2b",
+    "merchantcenter"
+  ],
+  "homepage": "https://github.com/commercetools/module-b2b"
+}

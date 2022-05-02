@@ -1,0 +1,25 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`rendering should match snapshot 1`] = `
+<injectTracking(withPendingRequests(SearchView))
+  history={
+    Object {
+      "createHref": [MockFunction],
+      "replace": [MockFunction],
+    }
+  }
+  location={
+    Object {
+      "pathname": "foo-path",
+      "search": "foo-search",
+    }
+  }
+  onChange={[Function]}
+  onSearch={[Function]}
+  render={[MockFunction]}
+  setSearchFiltersState={[Function]}
+  version={1}
+>
+  <Component />
+</injectTracking(withPendingRequests(SearchView))>
+`;

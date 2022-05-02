@@ -1,0 +1,376 @@
+fragment PreciseAmount on HighPrecisionMoney {
+  preciseAmount
+}
+
+fragment AddressFragment on Address {
+  id
+  firstName
+  lastName
+  company
+  streetName
+  streetNumber
+  city
+  postalCode
+  region
+  country
+  additionalAddressInfo
+  additionalStreetInfo
+  email
+  phone
+}
+
+fragment CartFragment on Cart {
+  id
+  version
+  store {
+    key
+  }
+  country
+  origin
+  deleteDaysAfterLastModification
+  customer {
+    id
+    email
+  }
+  customerGroup {
+    id
+  }
+  customerId
+  customerEmail
+  shippingAddress {
+    ...AddressFragment
+  }
+  billingAddress {
+    ...AddressFragment
+  }
+  discountCodes {
+    discountCode {
+      id
+    }
+  }
+  lineItems {
+    id
+    productId
+    name(locale: $locale)
+    quantity
+    taxRate {
+      includedInPrice
+      amount
+    }
+    totalPrice {
+      centAmount
+      currencyCode
+      fractionDigits
+    }
+    variant {
+      sku
+      images {
+        url
+      }
+      prices {
+        id
+        value {
+          type
+          centAmount
+          currencyCode
+          fractionDigits
+          ...PreciseAmount
+        }
+        country
+        channel {
+          id
+        }
+        customerGroup {
+          id
+        }
+      }
+      attributesRaw {
+        name
+        value
+        attributeDefinition {
+          name
+          type {
+            name
+            ... on EnumAttributeDefinitionType {
+              values {
+                results {
+                  key
+                  label
+                }
+              }
+            }
+            ... on LocalizableEnumAttributeDefinitionType {
+              values {
+                results {
+                  key
+                  labelAllLocales {
+                    locale
+                    value
+                  }
+                }
+              }
+            }
+            ... on ReferenceAttributeDefinitionType {
+              name
+              referenceTypeId
+            }
+            ... on SetAttributeDefinitionType {
+              name
+              elementType {
+                ... on EnumAttributeDefinitionType {
+                  name
+                  values {
+                    results {
+                      key
+                      label
+                    }
+                  }
+                }
+                ... on LocalizableEnumAttributeDefinitionType {
+                  name
+                  values {
+                    results {
+                      key
+                      labelAllLocales {
+                        locale
+                        value
+                      }
+                    }
+                  }
+                }
+                ... on ReferenceAttributeDefinitionType {
+                  name
+                  referenceTypeId
+                }
+                ... on TextAttributeDefinitionType {
+                  name
+                }
+                ... on LocalizableTextAttributeDefinitionType {
+                  name
+                }
+                ... on NumberAttributeDefinitionType {
+                  name
+                }
+                ... on DateTimeAttributeDefinitionType {
+                  name
+                }
+                ... on DateAttributeDefinitionType {
+                  name
+                }
+                ... on TimeAttributeDefinitionType {
+                  name
+                }
+                ... on MoneyAttributeDefinitionType {
+                  name
+                }
+              }
+            }
+          }
+          name
+          attributeConstraint
+          inputHint
+          isRequired
+          isSearchable
+          labelAllLocales {
+            locale
+            value
+          }
+          inputTipAllLocales {
+            locale
+            value
+          }
+        }
+      }
+    }
+    price {
+      value {
+        type
+        centAmount
+        currencyCode
+        fractionDigits
+        ...PreciseAmount
+      }
+      discounted {
+        discountRef {
+          id
+        }
+        value {
+          fractionDigits
+          centAmount
+          currencyCode
+        }
+      }
+    }
+    discountedPricePerQuantity {
+      quantity
+      discountedPrice {
+        includedDiscounts {
+          discountedAmount {
+            type
+            centAmount
+            currencyCode
+            fractionDigits
+            ...PreciseAmount
+          }
+          discount {
+            id
+            nameAllLocales {
+              locale
+              value
+            }
+          }
+        }
+        value {
+          currencyCode
+          centAmount
+          type
+          fractionDigits
+          ...PreciseAmount
+        }
+      }
+    }
+    distributionChannel {
+      id
+      key
+      nameAllLocales {
+        locale
+        value
+      }
+    }
+    custom {
+      customFieldsRaw {
+        name
+        value
+      }
+    }
+  }
+  customLineItems {
+    id
+    name(locale: $locale)
+    quantity
+    taxRate {
+      includedInPrice
+      amount
+    }
+    money {
+      type
+      centAmount
+      currencyCode
+      fractionDigits
+      ...PreciseAmount
+    }
+    totalPrice {
+      centAmount
+      currencyCode
+      fractionDigits
+    }
+    discountedPricePerQuantity {
+      quantity
+      discountedPrice {
+        includedDiscounts {
+          discountedAmount {
+            type
+            centAmount
+            currencyCode
+            fractionDigits
+            ...PreciseAmount
+          }
+          discount {
+            id
+            nameAllLocales {
+              locale
+              value
+            }
+          }
+        }
+        value {
+          currencyCode
+          centAmount
+          type
+          fractionDigits
+          ...PreciseAmount
+        }
+      }
+    }
+  }
+  shippingInfo {
+    shippingMethodName
+    shippingMethod {
+      id
+    }
+    taxRate {
+      name
+      amount
+    }
+    price {
+      centAmount
+      currencyCode
+      fractionDigits
+    }
+    taxedPrice {
+      totalGross {
+        currencyCode
+        centAmount
+        fractionDigits
+      }
+      totalNet {
+        centAmount
+        currencyCode
+      }
+    }
+    discountedPrice {
+      value {
+        currencyCode
+        centAmount
+        fractionDigits
+      }
+      includedDiscounts {
+        discount {
+          id
+          nameAllLocales {
+            locale
+            value
+          }
+        }
+        discountedAmount {
+          currencyCode
+          centAmount
+          fractionDigits
+        }
+      }
+    }
+  }
+  taxedPrice {
+    totalNet {
+      centAmount
+      currencyCode
+      fractionDigits
+    }
+    totalGross {
+      centAmount
+      currencyCode
+      fractionDigits
+    }
+    taxPortions {
+      rate
+      name
+      amount {
+        centAmount
+        currencyCode
+        fractionDigits
+      }
+    }
+  }
+  totalPrice {
+    type
+    centAmount
+    currencyCode
+    fractionDigits
+  }
+}
+
+mutation DuplicateCartMutation($reference: ReferenceInput!, $locale: Locale!) {
+  replicateCart(reference: $reference) {
+    ...CartFragment
+  }
+}

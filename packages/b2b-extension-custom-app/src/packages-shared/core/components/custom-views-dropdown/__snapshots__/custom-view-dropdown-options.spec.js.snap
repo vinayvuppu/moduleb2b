@@ -1,0 +1,265 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<SelectableOption> rendering should match snapshot 1`] = `
+<div
+  className="option-selectable"
+>
+  <AccessibleButton
+    buttonAttributes={Object {}}
+    className="option-button"
+    isDisabled={false}
+    isToggleButton={false}
+    isToggled={false}
+    label="test name"
+    onClick={[MockFunction]}
+    type="button"
+  >
+    <div
+      className="option-text"
+    >
+      <Inline
+        alignItems="center"
+        justifyContent="center"
+        scale="s"
+      >
+        <div
+          className="option-name-text"
+        >
+          <TextDetail
+            truncate={true}
+          >
+            test name
+          </TextDetail>
+        </div>
+      </Inline>
+    </div>
+  </AccessibleButton>
+</div>
+`;
+
+exports[`<SelectableOption> rendering when active should match snapshot 1`] = `
+<div
+  className="option-selectable option-selectable-is-active"
+>
+  <AccessibleButton
+    buttonAttributes={Object {}}
+    className="option-button"
+    isDisabled={false}
+    isToggleButton={false}
+    isToggled={false}
+    label="test name"
+    onClick={[MockFunction]}
+    type="button"
+  >
+    <div
+      className="option-text"
+    >
+      <Inline
+        alignItems="center"
+        justifyContent="center"
+        scale="s"
+      >
+        <div
+          className="option-name-text"
+        >
+          <TextDetail
+            isBold={true}
+            truncate={true}
+          >
+            test name
+          </TextDetail>
+        </div>
+      </Inline>
+    </div>
+  </AccessibleButton>
+</div>
+`;
+
+exports[`<SelectableOption> rendering when disabled should match snapshot 1`] = `
+<div
+  className="option-selectable"
+>
+  <AccessibleButton
+    buttonAttributes={Object {}}
+    className="option-button"
+    isDisabled={true}
+    isToggleButton={false}
+    isToggled={false}
+    label="test name"
+    onClick={[MockFunction]}
+    type="button"
+  >
+    <div
+      className="option-text"
+    >
+      <Inline
+        alignItems="center"
+        justifyContent="center"
+        scale="s"
+      >
+        <div
+          className="option-name-text"
+        >
+          <TextDetail
+            tone="secondary"
+            truncate={true}
+          >
+            test name
+          </TextDetail>
+        </div>
+      </Inline>
+    </div>
+  </AccessibleButton>
+</div>
+`;
+
+exports[`<SelectableOption> rendering when immutable should match snapshot 1`] = `
+<div
+  className="option-selectable"
+>
+  <AccessibleButton
+    buttonAttributes={Object {}}
+    className="option-button"
+    isDisabled={false}
+    isToggleButton={false}
+    isToggled={false}
+    label="test name"
+    onClick={[MockFunction]}
+    type="button"
+  >
+    <div
+      className="option-text"
+    >
+      <Inline
+        alignItems="center"
+        justifyContent="center"
+        scale="s"
+      >
+        <div
+          className="option-name-text"
+        >
+          <TextDetail
+            isItalic={true}
+            truncate={true}
+          >
+            test name
+          </TextDetail>
+        </div>
+      </Inline>
+    </div>
+  </AccessibleButton>
+</div>
+`;
+
+exports[`<SelectedOption> rendering should match snapshot 1`] = `
+<AccessibleButton
+  buttonAttributes={Object {}}
+  className="option-button"
+  isDisabled={false}
+  isToggleButton={false}
+  isToggled={false}
+  label="test name"
+  onClick={[MockFunction]}
+  type="button"
+>
+  <div
+    className="selected-option-text"
+  >
+    <Inline
+      alignItems="center"
+      justifyContent="center"
+      scale="s"
+    >
+      <div
+        className="option-name-text"
+      >
+        <TextDetail
+          truncate={true}
+        >
+          test name
+        </TextDetail>
+      </div>
+    </Inline>
+    <CustomViewsDropdownChevron
+      isDisabled={false}
+      isOpen={false}
+    />
+  </div>
+</AccessibleButton>
+`;
+
+exports[`<SelectedOption> rendering when disabled should match snapshot 1`] = `
+<AccessibleButton
+  buttonAttributes={Object {}}
+  className="option-button"
+  isDisabled={true}
+  isToggleButton={false}
+  isToggled={false}
+  label="test name"
+  onClick={[MockFunction]}
+  type="button"
+>
+  <div
+    className="selected-option-text"
+  >
+    <Inline
+      alignItems="center"
+      justifyContent="center"
+      scale="s"
+    >
+      <div
+        className="option-name-text"
+      >
+        <TextDetail
+          tone="secondary"
+          truncate={true}
+        >
+          test name
+        </TextDetail>
+      </div>
+    </Inline>
+    <CustomViewsDropdownChevron
+      isDisabled={true}
+      isOpen={false}
+    />
+  </div>
+</AccessibleButton>
+`;
+
+exports[`<SelectedOption> rendering when immutable should match snapshot 1`] = `
+<AccessibleButton
+  buttonAttributes={Object {}}
+  className="option-button"
+  isDisabled={false}
+  isToggleButton={false}
+  isToggled={false}
+  label="test name"
+  onClick={[MockFunction]}
+  type="button"
+>
+  <div
+    className="selected-option-text"
+  >
+    <Inline
+      alignItems="center"
+      justifyContent="center"
+      scale="s"
+    >
+      <div
+        className="option-name-text"
+      >
+        <TextDetail
+          isItalic={true}
+          truncate={true}
+        >
+          test name
+        </TextDetail>
+      </div>
+    </Inline>
+    <CustomViewsDropdownChevron
+      isDisabled={false}
+      isOpen={false}
+    />
+  </div>
+</AccessibleButton>
+`;

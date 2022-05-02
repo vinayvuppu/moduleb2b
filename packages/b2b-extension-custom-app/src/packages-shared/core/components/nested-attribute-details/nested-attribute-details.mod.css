@@ -1,0 +1,58 @@
+:root {
+  --width-leftNavigation: 64px;
+}
+
+.modal-overlay {
+  display: flex;
+  position: absolute;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(32, 62, 72, 0.5);
+
+  /* Needed so the modal appears for the account app */
+  z-index: 999;
+}
+
+.content {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.modal-content {
+  padding: 0;
+  border-radius: 0;
+  background: var(--color-surface);
+  overflow: auto;
+  -webkit-overflow-scrolling: touch;
+  outline: none;
+  height: 100%; /* hack for safari */
+  left: 100%;
+  margin-left: auto;
+}
+
+.modal-content-level-1 {
+  /* Needed for showing a bit of
+  the background when there's an overlay */
+  width: calc(100% - calc(1 * var(--width-leftNavigation)));
+}
+
+.modal-content-level-2 {
+  width: calc(100% - calc(2 * var(--width-leftNavigation)));
+}
+
+.modal-content-level-3 {
+  width: calc(100% - calc(3 * var(--width-leftNavigation)));
+}
+
+.modal-content-level-4 {
+  width: calc(100% - calc(4 * var(--width-leftNavigation)));
+}
+
+.modal-content-level-5 {
+  width: calc(100% - calc(5 * var(--width-leftNavigation)));
+}
+
+.attribute-item {
+  margin: 0 var(--spacing-s) var(--spacing-s) 1px;
+}

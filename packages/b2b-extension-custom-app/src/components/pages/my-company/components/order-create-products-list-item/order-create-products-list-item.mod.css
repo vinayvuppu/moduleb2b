@@ -1,0 +1,16 @@
+.image-container {
+  height: auto;
+  flex: 1;
+}
+.card {
+  margin: 8px;
+  width: 300px;
+}
+
+.title {
+  line-height: 1.5rem;
+  min-height: 3rem;
+  float: left;
+  font-weight: bold;
+  font-size: 1.1rem;
+}

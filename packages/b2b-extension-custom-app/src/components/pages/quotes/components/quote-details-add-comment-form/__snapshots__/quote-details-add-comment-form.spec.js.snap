@@ -1,0 +1,50 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`QuoteDetailsAddCommentForm should render the correct snapshot 1`] = `
+<DocumentFragment>
+  <form>
+    <span
+      class="css-79qb0q-getStyles"
+    >
+      <div
+        class="remove-margin"
+      >
+        <div
+          class="css-y8qm83-Horizontal-getConstraintStyles-Horizontal"
+        >
+          <div
+            class="css-1vmkhvy-getStyles"
+          >
+            <textarea
+              aria-multiline="true"
+              class="css-m73qgu-getInputStyles-baseStyles"
+              name="text"
+              placeholder="Enter a comment..."
+              role="textbox"
+              style="height: 2px;"
+              type="text"
+            />
+          </div>
+        </div>
+      </div>
+      <button
+        aria-disabled="true"
+        aria-label="Send"
+        class="css-d10320-Button-normalizedButtonStyles-AccessibleButton-getSizeStyles-baseStyles-getButtonStyles e1hlacz70"
+        data-track-component="PrimaryButton"
+        disabled=""
+        label="Send"
+        type="submit"
+      >
+        <span
+          class="css-18wydpa-getStyles"
+        >
+          <span>
+            Send
+          </span>
+        </span>
+      </button>
+    </span>
+  </form>
+</DocumentFragment>
+`;

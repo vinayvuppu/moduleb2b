@@ -1,0 +1,13 @@
+{
+  "name": "@commercetools-local/hooks",
+  "version": "1.0.0",
+  "description": "",
+  "license": "Proprietary",
+  "private": true,
+  "dependencies": {
+    "@commercetools-frontend/application-shell-connectors": "15.3.4"
+  },
+  "devDependencies": {
+    "@testing-library/react-hooks": "3.2.1"
+  }
+}

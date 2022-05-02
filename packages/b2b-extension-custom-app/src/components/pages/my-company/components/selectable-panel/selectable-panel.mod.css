@@ -1,0 +1,22 @@
+:root {
+  --editable-form-box-min-width: 550px;
+}
+
+.title {
+  border-bottom: 1px solid var(--color-neutral-60);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: var(--spacing-s);
+}
+
+.collapsed-title {
+  composes: title;
+  border-bottom: none;
+}
+
+.editable-form-box {
+  background: var(--color-surface);
+  border-radius: var(--border-radius-6);
+  box-shadow: var(--shadow-1);
+}

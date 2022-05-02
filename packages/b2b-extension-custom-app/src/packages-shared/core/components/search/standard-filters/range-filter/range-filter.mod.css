@@ -1,0 +1,16 @@
+.range > * + * {
+  margin: 0 0 0 var(--spacing-s);
+}
+
+.range > * {
+  display: inline-block;
+}
+
+.container {
+  display: inline-flex;
+  flex-direction: column;
+}
+
+.error-container {
+  margin-top: var(--spacing-xs);
+}

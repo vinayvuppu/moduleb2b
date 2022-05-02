@@ -1,0 +1,90 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`named exports renderItem should render dropdown option 1`] = `
+<div>
+  <strong>
+    ProductType
+  </strong>
+  <div>
+    <FormattedMessage
+      defaultMessage="Key"
+      description="key label"
+      id="ProductTypeReferenceFilter.key"
+      values={Object {}}
+    />
+    : foo
+  </div>
+</div>
+`;
+
+exports[`withDereferencedResource with \`isMulti\` should compose components 1`] = `
+<ContextProvider
+  value={
+    Object {
+      "defaultFormats": Object {},
+      "defaultLocale": "en",
+      "formatDate": [Function],
+      "formatDateToParts": [Function],
+      "formatHTMLMessage": [Function],
+      "formatMessage": [Function],
+      "formatNumber": [Function],
+      "formatNumberToParts": [Function],
+      "formatPlural": [Function],
+      "formatRelativeTime": [Function],
+      "formatTime": [Function],
+      "formatTimeToParts": [Function],
+      "formats": Object {},
+      "formatters": Object {
+        "getDateTimeFormat": [Function],
+        "getMessageFormat": [Function],
+        "getNumberFormat": [Function],
+        "getPluralRules": [Function],
+        "getRelativeTimeFormat": [Function],
+      },
+      "locale": "en",
+      "messages": Object {},
+      "onError": [Function],
+      "textComponent": Symbol(react.fragment),
+      "timeZone": undefined,
+    }
+  }
+>
+  <injectIntl(InnerComponent) />
+</ContextProvider>
+`;
+
+exports[`withDereferencedResource without \`isMulti\` should compose components 1`] = `
+<ContextProvider
+  value={
+    Object {
+      "defaultFormats": Object {},
+      "defaultLocale": "en",
+      "formatDate": [Function],
+      "formatDateToParts": [Function],
+      "formatHTMLMessage": [Function],
+      "formatMessage": [Function],
+      "formatNumber": [Function],
+      "formatNumberToParts": [Function],
+      "formatPlural": [Function],
+      "formatRelativeTime": [Function],
+      "formatTime": [Function],
+      "formatTimeToParts": [Function],
+      "formats": Object {},
+      "formatters": Object {
+        "getDateTimeFormat": [Function],
+        "getMessageFormat": [Function],
+        "getNumberFormat": [Function],
+        "getPluralRules": [Function],
+        "getRelativeTimeFormat": [Function],
+      },
+      "locale": "en",
+      "messages": Object {},
+      "onError": [Function],
+      "textComponent": Symbol(react.fragment),
+      "timeZone": undefined,
+    }
+  }
+>
+  <injectIntl(InnerComponent) />
+</ContextProvider>
+`;

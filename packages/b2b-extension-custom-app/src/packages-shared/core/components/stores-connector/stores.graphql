@@ -1,0 +1,15 @@
+query FetchStoresQuery {
+  stores {
+    results {
+      ...StoreFragment
+    }
+  }
+}
+
+fragment StoreFragment on Store {
+  key
+  nameAllLocales {
+    locale
+    value
+  }
+}

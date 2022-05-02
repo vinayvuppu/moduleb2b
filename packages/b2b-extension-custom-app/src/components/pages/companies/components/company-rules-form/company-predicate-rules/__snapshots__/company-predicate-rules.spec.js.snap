@@ -1,0 +1,53 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`rendering should match snapshot 1`] = `
+<Horizontal>
+  <Stack
+    alignItems="stretch"
+    scale="s"
+  >
+    <Inline
+      alignItems="center"
+      justifyContent="flex-start"
+      scale="s"
+    >
+      <SecondaryButton
+        iconLeft={<PlusBoldIcon />}
+        isDisabled={false}
+        isToggleButton={false}
+        label="formatted message"
+        onClick={[Function]}
+        theme="default"
+        type="button"
+      />
+    </Inline>
+    <Table
+      columns={
+        Array [
+          Object {
+            "key": "name",
+            "label": "formatted message",
+          },
+          Object {
+            "flexGrow": 1,
+            "key": "value",
+            "label": "formatted message",
+          },
+        ]
+      }
+      itemRenderer={[Function]}
+      items={
+        Array [
+          Object {
+            "name": "name1",
+            "value": "rule1",
+          },
+        ]
+      }
+      onRowClick={[Function]}
+      rowCount={1}
+      shouldFillRemainingVerticalSpace={false}
+    />
+  </Stack>
+</Horizontal>
+`;

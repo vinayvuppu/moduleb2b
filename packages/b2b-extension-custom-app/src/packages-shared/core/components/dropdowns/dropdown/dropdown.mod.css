@@ -1,0 +1,423 @@
+@import '../../../_styles/shared.mod.css';
+
+:root {
+  --width-dropdown: 280px;
+  --position-arrow-x: -15px;
+  --margin-arrow-x: -1px;
+}
+
+.container {
+  display: inline-block;
+  vertical-align: middle;
+  position: relative;
+  width: auto;
+}
+
+.container .menu {
+  display: none;
+}
+
+.container.open {
+  /* @TODO: Investigate what this is */
+}
+
+.container.open .menu {
+  display: block;
+}
+
+.container.open .label-container {
+  background: var(--color-neutral-95);
+  border: 1px var(--color-primary) solid;
+}
+
+.menu {
+  composes: drop-shadow from '../../../_styles/commons.mod.css';
+  background-color: var(--color-neutral-95);
+  box-sizing: border-box;
+  display: inline-block;
+  overflow: visible;
+  padding: 10px;
+  position: absolute;
+  text-align: left;
+  width: var(--width-dropdown);
+  z-index: 5000;
+
+  /* overrideable border rules */
+  border-style: none;
+  border-width: 0;
+  border-color: transparent;
+  border-radius: 10px;
+}
+
+/**
+ * Arrows are hidden by default,
+ * if you need an arrow to be displayed for the dropdown-menu
+ * compose .menu-arrow
+ */
+.menu::before,
+.menu::after {
+  background-color: transparent;
+  content: ' ';
+  display: block;
+  height: 0;
+  position: absolute;
+  width: 0;
+  z-index: 1;
+}
+
+.menu-arrow {
+  top: 62px;
+}
+
+.menu-arrow::before,
+.menu-arrow::after {
+  border-style: solid;
+}
+
+/** list in the menu **/
+.list {
+  list-style: none;
+  margin: 0;
+  max-height: 25vh;
+  overflow-x: hidden;
+  overflow-y: auto;
+  padding: 0;
+  text-align: left;
+  width: auto;
+}
+
+.list-status {
+  composes: list;
+  display: flex;
+  flex-direction: column;
+  background-color: var(--color-surface);
+}
+
+.list-status .list-item:hover {
+  background-color: var(--color-neutral-95);
+  color: var(--color-solid);
+}
+
+.list-settings {
+  composes: list;
+  padding: 0 !important;
+}
+
+.list-settings .list-item {
+  padding: 5px 15px;
+}
+
+.list-settings .list-item:hover {
+  background-color: var(--color-neutral-90);
+}
+
+.list-item {
+  position: relative;
+  padding: 5px;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  flex: 1 0 auto;
+}
+
+.checkbox-item {
+  display: flex;
+  align-items: center;
+  flex: 1 0 auto;
+  padding: var(--spacing-s);
+}
+
+/** position **/
+.menu-position-top,
+.menu-position-right,
+.menu-position-bottom,
+.menu-position-left {
+  /** the .menu css-modules has the base styles */
+}
+
+.menu-position-bottom-right,
+.menu-position-top-right {
+  left: 0;
+}
+
+.menu-position-top-left,
+.menu-position-bottom-left {
+  right: 0;
+}
+
+.menu-position-top::before,
+.menu-position-right::before,
+.menu-position-bottom::before,
+.menu-position-left::before {
+  border-color: transparent var(--color-neutral);
+}
+
+.menu-position-top::after,
+.menu-position-right::after,
+.menu-position-bottom::after,
+.menu-position-left::after {
+  border-color: transparent var(--color-neutral-95);
+}
+
+.menu-position-right::before,
+.menu-position-right::after,
+.menu-position-left::before,
+.menu-position-left::after {
+  top: 100px; /** default. */
+}
+
+/** LEFT ARROW POSITION: X-AXIS */
+.menu-position-left::before,
+.menu-position-left::after {
+  right: var(--position-arrow-x);
+}
+
+.menu-position-left::before {
+  border-width: 21px 0 21px 16px;
+  margin-right: var(--margin-arrow-x);
+  margin-top: var(--margin-arrow-x);
+}
+
+.menu-position-left::after {
+  border-width: 20px 0 20px 15px;
+}
+
+/** RIGHT ARROW POSITION: X-AXIS */
+.menu-position-right::before,
+.menu-position-right::after {
+  left: var(--position-arrow-x);
+}
+
+.menu-position-right::before {
+  border-width: 21px 16px 21px 0;
+  margin-left: var(--margin-arrow-x);
+  margin-top: var(--margin-arrow-x);
+}
+
+.menu-position-right::after {
+  border-width: 20px 16px 20px 0;
+}
+
+/** BOTTOM RIGHT ARROW POSITION */
+.menu-position-bottom-right::before,
+.menu-position-bottom-right::after {
+  bottom: 100%;
+  left: 26px;
+}
+
+.menu-position-bottom-right::before {
+  border-color: transparent transparent var(--color-neutral) transparent;
+  border-width: 12px;
+  margin-left: -12px;
+}
+
+.menu-position-bottom-right::after {
+  border-color: transparent transparent var(--color-neutral-95) transparent;
+  border-width: 11px;
+  margin-left: -11px;
+}
+
+/** label */
+.label-container {
+  composes: pointer transition-standard from '../../../_styles/commons.mod.css';
+  font-size: 1rem;
+  padding: 5.5px 10px;
+  display: inline-flex;
+  width: 100%;
+  justify-content: space-between;
+  align-items: center;
+  background-color: var(--color-surface);
+  color: var(--color-solid);
+
+  /** overrideable border rules */
+  border-color: var(--color-neutral-60);
+  border-width: 1px;
+  border-radius: 6px;
+  border-style: solid;
+}
+
+.label-container:hover {
+  color: black;
+}
+
+/** REACT SELECT COMPOSITION */
+.react-select-container {
+  position: relative;
+}
+
+.react-select-container-alt {
+  /* noop */
+}
+
+.react-select-container-secondary {
+  /* noop */
+}
+
+.react-select-container :global(.Select-control) {
+  background: var(--color-neutral-95);
+  color: var(--color-solid);
+  border-radius: 6px;
+  border: 1px solid var(--color-neutral-60);
+}
+
+.react-select-container :global(.Select-menu-outer),
+.react-select-container-secondary :global(.Select-menu-outer) {
+  z-index: 3;
+
+  /* This transform forces GPU acceleration, which fixes high DPI issues
+     in Chrome (Blink). */
+  transform: translate3d(0, 0, 0);
+}
+
+/* Adds extra spacing on the bottom, which avoids the dropdown menu to be
+  overlapped by the save toolbar on Firefox */
+:global(.is-open.Select).react-select-container
+  :global(.Select-menu-outer)::after {
+  content: ' ';
+  position: absolute;
+  height: var(--spacing-bottom-with-save-toolbar);
+  width: 100%;
+  top: 100%;
+}
+
+.react-select-container-alt :global(.Select-menu-outer) {
+  background-color: var(--color-neutral-95);
+}
+
+:global(.is-open.Select).react-select-container :global(.Select-control) {
+  border-bottom-left-radius: 0;
+  border-bottom-right-radius: 0;
+}
+
+:global(.Select-value) {
+  padding-right: 50px;
+}
+
+:global(.Select-value-label) {
+  color: var(--color-solid) !important;
+}
+
+:global(.is-focused.has-value:not(.is-pseudo-focused)).react-select-container
+  :global(.Select-value-label) {
+  color: var(--color-neutral) !important;
+}
+
+.react-select-container
+  :global(.Select-menu-outer .Select-menu .Select-option.is-focused) {
+  background-color: var(--color-neutral-95);
+  color: var(--color-solid);
+}
+
+:global(.Select-menu-outer) {
+  border: 1px var(--color-primary) solid !important;
+  max-height: var(--constraint-m);
+}
+
+:global(.Select-option.is-selected) {
+  background: var(--color-accent-95);
+}
+
+:global(.Select-option.is-selected:hover) {
+  background: var(--color-neutral-90);
+}
+
+:global(.Select-option:hover),
+:global(.Select-option.is-focused) {
+  background: var(--color-neutral-90);
+}
+
+.react-select-container-alt
+  :global(.Select-menu-outer .Select-menu .Select-option.is-focused) {
+  background: var(--color-accent-95);
+}
+
+.form-react-select-container {
+  composes: react-select-container;
+}
+
+.filter-react-select-container {
+  composes: react-select-container;
+  width: calc(100% - 35px - 40px);
+  padding: 0;
+  margin-right: 10px;
+  display: inline-block;
+  vertical-align: middle;
+}
+
+.filter-react-select-container :global(.Select-placeholder) {
+  line-height: 36px;
+}
+
+:global(.is-focused.has-value:not(.is-open) > .Select-control),
+:global(.is-focused:not(.is-open) > .Select-control) {
+  border-color: var(--color-neutral);
+  box-shadow: none !important;
+}
+
+:global(.is-focused.has-value.is-open > .Select-control),
+:global(.is-focused.is-open > .Select-control) {
+  border: 1px var(--color-primary) solid !important;
+}
+
+/* Multi selection tags */
+
+:global(.Select--multi .Select-value) {
+  display: inline-flex !important;
+  padding: 0;
+}
+
+:global(.Select--multi .Select-value) {
+  border: 1px solid var(--color-neutral);
+  color: var(--color-solid) !important;
+}
+
+:global(.Select--multi .Select-value .Select-value-icon) {
+  order: 2;
+  border-right: none;
+  background-color: var(--color-neutral-90);
+  color: var(--color-solid) !important;
+  border-bottom-left-radius: 0;
+  border-top-left-radius: 0;
+}
+
+:global(.Select--multi .Select-value .Select-value-icon):hover {
+  background-color: var(--color-neutral-60) !important;
+}
+
+:global(.Select--multi .Select-value .Select-value-label) {
+  order: 1;
+  background-color: var(--color-neutral-90);
+  border-right: 1px solid var(--color-neutral);
+  border-bottom-right-radius: 0;
+  border-top-right-radius: 0;
+  text-overflow: clip;
+}
+
+:global(.Select--multi.is-disabled .Select-value) {
+  background-color: var(--color-neutral-90);
+}
+
+:global(.Select--multi.is-disabled .Select-value .Select-value-label) {
+  border-right: none;
+  max-width: 100%;
+  width: 100%;
+}
+
+/* When is semi-active (an action got selected, and it doesn't lose focus) */
+:global(.Select.is-focused:not(.is-open) > .Select-control) {
+  border-color: var(--color-primary);
+}
+
+/* Footer */
+
+.footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  text-align: left;
+}
+
+.disabled > * {
+  cursor: not-allowed !important;
+  background-color: var(--color-neutral-95);
+}

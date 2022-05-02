@@ -1,0 +1,10 @@
+:root {
+  --section-width: 295px;
+}
+
+.wrapper {
+  background: var(--color-neutral-95);
+  border: 1px solid var(--color-neutral);
+  flex: 1;
+  overflow: auto;
+}

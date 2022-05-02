@@ -1,0 +1,61 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`rendering should match snapshot 1`] = `
+<ContextProvider
+  value={
+    Object {
+      "cartCreator": Object {
+        "execute": [Function],
+        "isLoading": false,
+      },
+      "cartDraftState": Object {
+        "reset": [Function],
+        "update": [Function],
+        "value": Object {
+          "billingAddress": null,
+          "currency": null,
+          "customLineItems": null,
+          "customerEmail": null,
+          "customerId": null,
+          "deleteDaysAfterLastModification": 1,
+          "discountCodes": null,
+          "lineItems": null,
+          "origin": "Merchant",
+          "shippingAddress": null,
+        },
+      },
+      "cartUpdater": Object {
+        "execute": [Function],
+        "hasErrors": false,
+        "isLoading": false,
+      },
+      "initialSelectionModalState": Object {
+        "close": [Function],
+        "isOpen": true,
+      },
+      "orderCreator": Object {
+        "execute": [Function],
+        "isLoading": false,
+      },
+      "orderUpdater": Object {
+        "execute": [Function],
+        "isLoading": false,
+      },
+      "ownerState": Object {
+        "owner": Object {
+          "company": undefined,
+          "employeeId": undefined,
+          "type": undefined,
+        },
+        "update": [Function],
+      },
+      "storeState": Object {
+        "update": [Function],
+        "value": undefined,
+      },
+    }
+  }
+>
+  <TestComponent />
+</ContextProvider>
+`;

@@ -1,0 +1,405 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`rendering WarningSaveToolbar when not authorized should match snapshot 1`] = `
+<Fragment>
+  <Stack
+    alignItems="stretch"
+    scale="m"
+  >
+    <RestrictedByPermissions
+      permissions={
+        Array [
+          "ManageCustomerGroups",
+        ]
+      }
+      unauthorizedComponent={[Function]}
+    />
+    <form
+      onSubmit={[MockFunction]}
+    >
+      <Stack
+        alignItems="stretch"
+        scale="m"
+      >
+        <CollapsiblePanel
+          condensed={false}
+          header={
+            <CollapsiblePanelHeader>
+              <FormattedMessage
+                defaultMessage="General Information"
+                description="Label for General Information title"
+                id="Company.Form.labelGeneralInfoTitle"
+                values={Object {}}
+              />
+            </CollapsiblePanelHeader>
+          }
+          headerControlsAlignment="right"
+          horizontalConstraint="scale"
+          id="1"
+          isDisabled={false}
+          theme="dark"
+        >
+          <Horizontal>
+            <Stack
+              alignItems="stretch"
+              scale="s"
+            >
+              <TextField
+                autoComplete="off"
+                horizontalConstraint="l"
+                isDisabled={true}
+                isRequired={true}
+                name="name"
+                onBlur={[MockFunction]}
+                onChange={[MockFunction]}
+                title={
+                  <FormattedMessage
+                    defaultMessage="Company name"
+                    description="Label for \`name\` form field"
+                    id="Company.Form.labelNameField"
+                    values={Object {}}
+                  />
+                }
+                value="foo-name"
+              />
+              <Horizontal>
+                <Inline
+                  alignItems="center"
+                  justifyContent="flex-start"
+                  scale="s"
+                >
+                  <Label
+                    htmlFor="company-logo"
+                    isBold={true}
+                  >
+                    <FormattedMessage
+                      defaultMessage="Logo"
+                      id="Company.Form.logo"
+                      values={Object {}}
+                    />
+                  </Label>
+                </Inline>
+                <div
+                  className="image-drop-wrapper"
+                  data-track-event="drop"
+                  data-track-label="dropImage"
+                >
+                  <div
+                    className="image-drop"
+                    onBlur={[Function]}
+                    onClick={[Function]}
+                    onDragEnter={[Function]}
+                    onDragLeave={[Function]}
+                    onDragOver={[Function]}
+                    onDrop={[Function]}
+                    onFocus={[Function]}
+                    onKeyDown={[Function]}
+                    tabIndex={0}
+                  >
+                    <div>
+                      <div
+                        className="icon-holder"
+                      >
+                        <div
+                          className="camera-icon"
+                        >
+                          <CameraIcon
+                            size="scale"
+                          />
+                        </div>
+                        <div
+                          className="add-icon"
+                        >
+                          <PlusThinIcon
+                            color="surface"
+                            size="scale"
+                          />
+                        </div>
+                      </div>
+                      <span
+                        className="image-drop-text"
+                      >
+                        <FormattedMessage
+                          defaultMessage="Drag and drop new image here"
+                          id="Company.AddImagesForm.dropImage"
+                          values={Object {}}
+                        />
+                      </span>
+                    </div>
+                    <input
+                      autoComplete="off"
+                      disabled={true}
+                      id="company-logo"
+                      multiple={true}
+                      onChange={[Function]}
+                      onClick={[Function]}
+                      style={
+                        Object {
+                          "display": "none",
+                        }
+                      }
+                      tabIndex={-1}
+                      type="file"
+                    />
+                  </div>
+                </div>
+              </Horizontal>
+            </Stack>
+          </Horizontal>
+        </CollapsiblePanel>
+      </Stack>
+    </form>
+    <CollapsiblePanel
+      condensed={false}
+      header={
+        <CollapsiblePanelHeader>
+          formatted message
+        </CollapsiblePanelHeader>
+      }
+      headerControlsAlignment="right"
+      horizontalConstraint="scale"
+      id="1"
+      isDisabled={false}
+      theme="dark"
+    >
+      <Stack
+        alignItems="stretch"
+        scale="m"
+      >
+        <SecondaryButton
+          isDisabled={true}
+          isToggleButton={false}
+          label="Add address"
+          onClick={[Function]}
+          theme="default"
+          type="button"
+        />
+        <br />
+      </Stack>
+      <Horizontal
+        constraint="scale"
+      >
+        <Stack
+          alignItems="stretch"
+          scale="m"
+        />
+      </Horizontal>
+      <AddressForm
+        close={[Function]}
+        isAuthorized={false}
+        isEdit={false}
+        isOpen={false}
+        onRemove={[Function]}
+        onSubmit={[Function]}
+      />
+    </CollapsiblePanel>
+    <WarningSaveToolbar
+      isToolbarDisabled={false}
+      onCancel={[Function]}
+      onSave={[MockFunction]}
+    />
+  </Stack>
+</Fragment>
+`;
+
+exports[`rendering should match snapshot 1`] = `
+<Fragment>
+  <Stack
+    alignItems="stretch"
+    scale="m"
+  >
+    <RestrictedByPermissions
+      permissions={
+        Array [
+          "ManageCustomerGroups",
+        ]
+      }
+      unauthorizedComponent={[Function]}
+    />
+    <form
+      onSubmit={[MockFunction]}
+    >
+      <Stack
+        alignItems="stretch"
+        scale="m"
+      >
+        <CollapsiblePanel
+          condensed={false}
+          header={
+            <CollapsiblePanelHeader>
+              <FormattedMessage
+                defaultMessage="General Information"
+                description="Label for General Information title"
+                id="Company.Form.labelGeneralInfoTitle"
+                values={Object {}}
+              />
+            </CollapsiblePanelHeader>
+          }
+          headerControlsAlignment="right"
+          horizontalConstraint="scale"
+          id="1"
+          isDisabled={false}
+          theme="dark"
+        >
+          <Horizontal>
+            <Stack
+              alignItems="stretch"
+              scale="s"
+            >
+              <TextField
+                autoComplete="off"
+                horizontalConstraint="l"
+                isDisabled={false}
+                isRequired={true}
+                name="name"
+                onBlur={[MockFunction]}
+                onChange={[MockFunction]}
+                title={
+                  <FormattedMessage
+                    defaultMessage="Company name"
+                    description="Label for \`name\` form field"
+                    id="Company.Form.labelNameField"
+                    values={Object {}}
+                  />
+                }
+                value="foo-name"
+              />
+              <Horizontal>
+                <Inline
+                  alignItems="center"
+                  justifyContent="flex-start"
+                  scale="s"
+                >
+                  <Label
+                    htmlFor="company-logo"
+                    isBold={true}
+                  >
+                    <FormattedMessage
+                      defaultMessage="Logo"
+                      id="Company.Form.logo"
+                      values={Object {}}
+                    />
+                  </Label>
+                </Inline>
+                <div
+                  className="image-drop-wrapper"
+                  data-track-event="drop"
+                  data-track-label="dropImage"
+                >
+                  <div
+                    className="image-drop"
+                    onBlur={[Function]}
+                    onClick={[Function]}
+                    onDragEnter={[Function]}
+                    onDragLeave={[Function]}
+                    onDragOver={[Function]}
+                    onDrop={[Function]}
+                    onFocus={[Function]}
+                    onKeyDown={[Function]}
+                    tabIndex={0}
+                  >
+                    <div>
+                      <div
+                        className="icon-holder"
+                      >
+                        <div
+                          className="camera-icon"
+                        >
+                          <CameraIcon
+                            size="scale"
+                          />
+                        </div>
+                        <div
+                          className="add-icon"
+                        >
+                          <PlusThinIcon
+                            color="surface"
+                            size="scale"
+                          />
+                        </div>
+                      </div>
+                      <span
+                        className="image-drop-text"
+                      >
+                        <FormattedMessage
+                          defaultMessage="Drag and drop new image here"
+                          id="Company.AddImagesForm.dropImage"
+                          values={Object {}}
+                        />
+                      </span>
+                    </div>
+                    <input
+                      autoComplete="off"
+                      disabled={false}
+                      id="company-logo"
+                      multiple={true}
+                      onChange={[Function]}
+                      onClick={[Function]}
+                      style={
+                        Object {
+                          "display": "none",
+                        }
+                      }
+                      tabIndex={-1}
+                      type="file"
+                    />
+                  </div>
+                </div>
+              </Horizontal>
+            </Stack>
+          </Horizontal>
+        </CollapsiblePanel>
+      </Stack>
+    </form>
+    <CollapsiblePanel
+      condensed={false}
+      header={
+        <CollapsiblePanelHeader>
+          formatted message
+        </CollapsiblePanelHeader>
+      }
+      headerControlsAlignment="right"
+      horizontalConstraint="scale"
+      id="1"
+      isDisabled={false}
+      theme="dark"
+    >
+      <Stack
+        alignItems="stretch"
+        scale="m"
+      >
+        <SecondaryButton
+          isDisabled={false}
+          isToggleButton={false}
+          label="Add address"
+          onClick={[Function]}
+          theme="default"
+          type="button"
+        />
+        <br />
+      </Stack>
+      <Horizontal
+        constraint="scale"
+      >
+        <Stack
+          alignItems="stretch"
+          scale="m"
+        />
+      </Horizontal>
+      <AddressForm
+        close={[Function]}
+        isAuthorized={true}
+        isEdit={false}
+        isOpen={false}
+        onRemove={[Function]}
+        onSubmit={[Function]}
+      />
+    </CollapsiblePanel>
+    <WarningSaveToolbar
+      isToolbarDisabled={false}
+      onCancel={[Function]}
+      onSave={[MockFunction]}
+    />
+  </Stack>
+</Fragment>
+`;

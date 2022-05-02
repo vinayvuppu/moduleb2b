@@ -1,0 +1,33 @@
+.filter-container {
+  display: inline-flex;
+  min-width: var(--constraint-s);
+}
+
+.filter-selector {
+  min-width: var(--constraint-s);
+}
+
+.filter-option {
+  min-width: var(--constraint-s);
+  padding-left: var(--spacing-s);
+}
+
+.filter-label {
+  padding-left: var(--spacing-s);
+}
+
+.filter-input-s {
+  min-width: var(--constraint-s);
+}
+
+.filter-input-m {
+  min-width: var(--constraint-m);
+}
+
+.filter-input-l {
+  min-width: var(--constraint-l);
+}
+
+.not-supported small {
+  color: var(--color-error);
+}

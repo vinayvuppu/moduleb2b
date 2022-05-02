@@ -1,0 +1,12 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`TextSingleFilterTag render correct tree 1`] = `
+<SingleFilterTag
+  fieldLabel="Text"
+  filterTypeLabel="Equals to"
+  onClick={[MockFunction]}
+  onRemove={[MockFunction]}
+  renderValue={[Function]}
+  value="foo-bar"
+/>
+`;

@@ -1,0 +1,22 @@
+.header {
+  display: flex;
+  justify-content: space-between;
+  padding-bottom: var(--spacing-s);
+}
+
+.button-container {
+  pointer-events: auto;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.container {
+  background-color: var(--color-neutral-95);
+  border-radius: var(--border-radius-6);
+  padding: 16px;
+  min-width: 887px;
+}
+
+.dragging {
+  cursor: grabbing;
+}

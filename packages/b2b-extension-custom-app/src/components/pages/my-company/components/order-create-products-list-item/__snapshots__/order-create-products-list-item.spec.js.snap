@@ -1,0 +1,144 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`render when there is combination unique attributes should match snapshot 1`] = `
+<Card
+  className="card"
+  theme="dark"
+  type="raised"
+>
+  <Inset
+    scale="xl"
+  >
+    <Horizontal>
+      <Stack
+        alignItems="stretch"
+        scale="m"
+      >
+        <div
+          className="title"
+        >
+          product name
+        </div>
+        <ImageContainer
+          imageContainerClassName="image-container"
+          size="medium"
+          url="url1"
+          useExternalIconAsFallback={false}
+        />
+        <TextSubheadline
+          as="h5"
+          isBold={true}
+          truncate={true}
+        >
+          sku1
+        </TextSubheadline>
+        <div>
+          100
+        </div>
+        <Inline
+          alignItems="flex-start"
+          justifyContent="flex-start"
+          scale="s"
+        >
+          <QuantitySelector
+            maxSelectableValue={10}
+            maxValue={10}
+            onChange={[Function]}
+            quantity="1"
+          />
+          <PrimaryButton
+            isDisabled={false}
+            isToggleButton={false}
+            label="formatted message"
+            onClick={[Function]}
+            size="big"
+            tone="primary"
+            type="button"
+          />
+        </Inline>
+        <SelectField
+          horizontalConstraint="scale"
+          key="size"
+          onChange={[Function]}
+          options={
+            Array [
+              Object {
+                "label": "S",
+                "value": "S",
+              },
+              Object {
+                "label": "XL",
+                "value": "XL",
+              },
+            ]
+          }
+          title="size"
+          value="S"
+        />
+      </Stack>
+    </Horizontal>
+  </Inset>
+</Card>
+`;
+
+exports[`render when there is not combination unique attributes should match snapshot 1`] = `
+<Card
+  className="card"
+  theme="dark"
+  type="raised"
+>
+  <Inset
+    scale="xl"
+  >
+    <Horizontal>
+      <Stack
+        alignItems="stretch"
+        scale="m"
+      >
+        <div
+          className="title"
+        >
+          product name
+        </div>
+        <ImageContainer
+          imageContainerClassName="image-container"
+          size="medium"
+          url="url1"
+          useExternalIconAsFallback={false}
+        />
+        <TextSubheadline
+          as="h5"
+          isBold={true}
+          truncate={true}
+        >
+          sku1
+        </TextSubheadline>
+        <div>
+          100
+        </div>
+        <Inline
+          alignItems="flex-start"
+          justifyContent="flex-start"
+          scale="s"
+        >
+          <QuantitySelector
+            maxSelectableValue={10}
+            maxValue={10}
+            onChange={[Function]}
+            quantity="1"
+          />
+          <PrimaryButton
+            isDisabled={false}
+            isToggleButton={false}
+            label="formatted message"
+            onClick={[Function]}
+            size="big"
+            tone="primary"
+            type="button"
+          />
+        </Inline>
+      </Stack>
+    </Horizontal>
+  </Inset>
+</Card>
+`;

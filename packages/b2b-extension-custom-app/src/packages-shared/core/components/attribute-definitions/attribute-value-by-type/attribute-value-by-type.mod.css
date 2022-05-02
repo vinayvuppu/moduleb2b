@@ -1,0 +1,88 @@
+:root {
+  --width-locale: 50px;
+}
+
+.container {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.field {
+  width: 100%;
+  display: flex;
+}
+
+.value-item {
+  composes: field;
+  flex-direction: column;
+  white-space: pre-line;
+  border: 1px solid var(--color-neutral);
+  border-radius: 6px;
+  margin-bottom: 8px;
+}
+
+.value-item:last-child {
+  margin-bottom: 0;
+}
+
+.value {
+  padding: 8px;
+}
+
+.cleared-value-item {
+  composes: input-disabled from '../../../_styles/forms.mod.css';
+}
+
+/* Read only input field */
+
+/* field-locale-wrapper */
+
+.value-item .field:first-of-type .field-locale-wrapper {
+  border-top-left-radius: 6px;
+}
+
+.value-item .field:last-child .field-locale-wrapper {
+  border-bottom-left-radius: 6px;
+}
+
+/* locale */
+
+.value-item .field + .field .locale {
+  border-top: 1px #ccc solid;
+}
+
+/* field content */
+
+.value-item .field + .field .field-content {
+  border-top: 1px #ccc solid;
+}
+
+/* field structure */
+
+.field {
+  width: 100%;
+  display: flex;
+}
+
+.field-locale-wrapper {
+  background: var(--color-neutral-95);
+  display: flex;
+}
+
+.locale {
+  width: var(--width-locale);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--color-neutral-60);
+  text-transform: uppercase;
+  padding: 8px 0;
+  margin: 0 4px;
+}
+
+.field-content {
+  width: calc(100% - var(--width-locale));
+  padding: 8px 0 8px 8px;
+  margin: 0 4px;
+}

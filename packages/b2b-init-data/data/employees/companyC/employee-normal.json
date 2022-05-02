@@ -1,0 +1,33 @@
+{
+  "email": "david.moore@companyc.com",
+  "firstName": "David",
+  "lastName": "Moore",
+  "middleName": "",
+  "title": "",
+  "salutation": "",
+  "password": "test123",
+  "addresses": [
+    {
+      "streetName": "Ferry Street",
+      "streetNumber": "2191",
+      "postalCode": "35620",
+      "city": "Elkmont",
+      "state": "AL",
+      "country": "US",
+      "phone": "256-732-1167",
+      "mobile": "256-717-7824"
+    }
+  ],
+  "defaultBillingAddress": 0,
+  "defaultShippingAddress": 0,
+
+  "custom": {
+    "type": {
+      "typeId": "type",
+      "key": "employee-type"
+    },
+    "fields": {
+      "roles": ["b2b-company-employee"]
+    }
+  }
+}

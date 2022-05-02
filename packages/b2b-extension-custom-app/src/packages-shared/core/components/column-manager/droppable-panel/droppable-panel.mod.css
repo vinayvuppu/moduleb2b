@@ -1,0 +1,22 @@
+:root {
+  --tag-container-width: 420px;
+  --tag-container-height: 360px;
+  --searchable-input-height: 40px;
+}
+
+.tag-container-editable {
+  background-color: var(--color-surface);
+  border: var(--border-radius-1) solid #999;
+  border-radius: var(--border-radius-6);
+  padding: var(--spacing-s);
+  width: var(--tag-container-width);
+  height: var(--tag-container-height);
+  overflow: auto;
+}
+
+.column-container {
+  background-color: var(--color-surface);
+  border: var(--border-radius-1) solid #999;
+  border-radius: var(--border-radius-6);
+  padding: var(--spacing-s);
+}

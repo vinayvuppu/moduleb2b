@@ -1,0 +1,32 @@
+.input-like-text {
+  composes: input-like-text from '../../../_styles/forms.mod.css';
+}
+
+.dropdown {
+  width: 90px;
+}
+
+.input-base {
+  float: right;
+}
+
+.input-filter {
+  composes: input-base;
+  composes: input-basic from '../../../_styles/forms.mod.css';
+}
+
+.input-form {
+  composes: input-base;
+  composes: input-form from '../../../_styles/forms.mod.css';
+  width: 100%;
+}
+
+.wrapper {
+  width: 100%;
+  margin-left: var(--spacing-s);
+}
+
+.attribute-currencies {
+  display: flex;
+  align-items: center;
+}

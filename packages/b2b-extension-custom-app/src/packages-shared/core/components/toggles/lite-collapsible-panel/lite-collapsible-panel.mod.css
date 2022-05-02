@@ -1,0 +1,39 @@
+:root {
+  --header-height: var(--spacing-l);
+}
+
+/* WRAPPER */
+.container {
+  border-radius: var(--border-radius-6);
+  border: 1px solid var(--color-neutral);
+  padding: var(--spacing-s);
+  background-color: var(--color-surface);
+}
+
+/* HEADER */
+.header {
+  align-items: center;
+  display: flex;
+  height: var(--header-height);
+}
+
+/* TITLE */
+.title-wrapper {
+  flex-grow: 1;
+  padding: var(--spacing-xs) var(--spacing-xs) var(--spacing-xs)
+    var(--spacing-s);
+}
+
+.title:hover {
+  cursor: pointer;
+  text-decoration: underline;
+}
+
+/* HEADER-CONTROLS */
+.header-controls {
+  padding-right: var(--spacing-s);
+}
+
+.content {
+  margin-top: var(--spacing-s);
+}
