@@ -37,7 +37,7 @@ jobs:
       - name: Lint Node.js
         run: |
           yarn workspace b2b-ms-company lint
-      - name: Lint Markdown
+      - name: Lint MarkDown
         run: |
           yarn workspace b2b-ms-company lint-md
       - name: Lint Dockerfile
