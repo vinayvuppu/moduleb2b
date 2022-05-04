@@ -64,7 +64,7 @@ jobs:
         run: |
           yarn workspace b2b-order-create-api-extension test
   deploy:
-    name: Deploy Firebase function
+    name: Deploy Firebase Function
     needs: test
     runs-on: ubuntu-18.04
     if: startsWith(github.ref , 'refs/heads/feature/') != true
