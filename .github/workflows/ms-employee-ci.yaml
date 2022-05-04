@@ -112,26 +112,26 @@ jobs:
         run: |
           # Set up docker to authenticate
           # via gcloud command-line tool.
-          gcloud auth activate-service-account terraform@fluted-volt-346608.iam.gserviceaccount.com --key-file=keys/terraform-sa-fluted-volt-346608.json
+          gcloud auth activate-service-account terraform@ct-b2b-348510.iam.gserviceaccount.com --key-file=keys/terraform-sa-fluted-volt-346608.json
           gcloud auth configure-docker
 
       # Build the Docker image
       - name: Build with Docker
         run: |
           cd packages/b2b-ms-employee
-          docker build -t gcr.io/fluted-volt-346608/${{ env.IMAGE }}:${{ env.GITHUB_SHA }} \
+          docker build -t gcr.io/ct-b2b-348510/${{ env.IMAGE }}:${{ env.GITHUB_SHA }} \
             --build-arg PORT=8080 .
             
           cd ../b2b-ms-gateway
-          docker build -t gcr.io/fluted-volt-346608/${{ env.IMAGE_GATEWAY }}:${{ env.GITHUB_SHA }} \
+          docker build -t gcr.io/ct-b2b-348510/${{ env.IMAGE_GATEWAY }}:${{ env.GITHUB_SHA }} \
             --build-arg PORT=8080 .
 
       # Push the Docker image to Google Container Registry
       - name: Publish
         if: startsWith(github.ref , 'refs/heads/feature/') != true
         run: |
-          docker push gcr.io/fluted-volt-346608/${{ env.IMAGE }}:${{ env.GITHUB_SHA }}
-          docker push gcr.io/fluted-volt-346608/${{ env.IMAGE_GATEWAY }}:${{ env.GITHUB_SHA }}
+          docker push gcr.io/ct-b2b-348510/${{ env.IMAGE }}:${{ env.GITHUB_SHA }}
+          docker push gcr.io/ct-b2b-348510/${{ env.IMAGE_GATEWAY }}:${{ env.GITHUB_SHA }}
 
   test:
     name: Test
@@ -220,7 +220,7 @@ jobs:
         run: |
           # Interpolate environment variables
           cd packages/b2b-ms-employee
-          gcloud auth activate-service-account terraform@fluted-volt-346608.iam.gserviceaccount.com --key-file=../../keys/terraform-sa-fluted-volt-346608.json
+          gcloud auth activate-service-account terraform@ct-b2b-348510.iam.gserviceaccount.com --key-file=../../keys/terraform-sa-ct-b2b-348510.json
           gcloud config set project ${{secrets.GC_PROJECT_ID}}
           gcloud run deploy ms-employee --platform=managed --region=us-east1 --allow-unauthenticated  \
           --image=gcr.io/${{secrets.GC_PROJECT_ID}}/${{env.IMAGE}}:${{env.GITHUB_SHA}} \
