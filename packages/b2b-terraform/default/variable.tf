@@ -1,7 +1,7 @@
 variable "gcp_project_id" {
   type        = string
   description = "The Google Cloud project identifier"
-  default     = "fluted-volt-346608"
+  default     = "ct-b2b-348510"
 }
 
 variable "ct_project_key" {
