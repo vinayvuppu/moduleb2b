@@ -4,19 +4,19 @@
   "cloudIdentifier": "gcp-us",
   "env": {
     "production": {
-      "url": "https://ct-b2b-348510.firebaseapp.com",
-      "cdnUrl": "https://ct-b2b-348510.firebaseapp.com"
+      "url": "https://ct-b2b-349312.firebaseapp.com",
+      "cdnUrl": "https://ct-b2b-349312.firebaseapp.com"
     }
   },
   "headers": {
     "csp": {
-      "script-src": ["ct-b2b-348510.firebaseapp.com", "https://ms-company-w4volgfqpq-ue.a.run.app", "https://ms-gateway-w4volgfqpq-ue.a.run.app"],
-      "connect-src": ["ct-b2b-348510.firebaseapp.com", "https://ms-company-w4volgfqpq-ue.a.run.app", "https://ms-gateway-w4volgfqpq-ue.a.run.app"],
-      "style-src": ["ct-b2b-348510.firebaseapp.com", "https://ms-company-w4volgfqpq-ue.a.run.app", "https://ms-gateway-w4volgfqpq-ue.a.run.app"]
+      "script-src": ["ct-b2b-349312.firebaseapp.com", "https://ms-company-o4rcdthf6q-ue.a.run.app", "https://ms-gateway-o4rcdthf6q-ue.a.run.app"],
+      "connect-src": ["ct-b2b-349312.firebaseapp.com", "https://ms-company-o4rcdthf6q-ue.a.run.app", "https://ms-gateway-o4rcdthf6q-ue.a.run.app"],
+      "style-src": ["ct-b2b-349312.firebaseapp.com", "https://ms-company-o4rcdthf6q-ue.a.run.app", "https://ms-gateway-o4rcdthf6q-ue.a.run.app"]
    }
   },
   "additionalEnv":{
-      "apiUrl": "https://ms-company-w4volgfqpq-ue.a.run.app",
-      "graphqlApiUrl": "https://ms-gateway-w4volgfqpq-ue.a.run.app"
+      "apiUrl": "https://ms-company-o4rcdthf6q-ue.a.run.app",
+      "graphqlApiUrl": "https://ms-gateway-o4rcdthf6q-ue.a.run.app"
   }
 }
