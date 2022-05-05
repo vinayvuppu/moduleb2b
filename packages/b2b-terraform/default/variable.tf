@@ -7,7 +7,7 @@ variable "gcp_project_id" {
 variable "ct_project_key" {
   type        = string
   description = "The Commerce Tools project key"
-  default     = "b2b1"
+  default     = "ct-b2b"
 }
 
 variable "region" {
