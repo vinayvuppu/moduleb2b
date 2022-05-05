@@ -18,5 +18,5 @@ provider "commercetools" {
 provider "google" {
   project     = var.gcp_project_id
   region      = var.region
-  credentials = "../../../keys/terraform-sa-ct-b2b-348510.json"
+  credentials = "../../../keys/terraform-sa-ct-b2b-349312.json"
 }
