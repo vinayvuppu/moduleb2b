@@ -97,7 +97,7 @@ jobs:
         run: |
           # Set up docker to authenticate
           # via gcloud command-line tool.
-          gcloud auth activate-service-account terraform@ct-b2b-348510.iam.gserviceaccount.com --key-file=keys/terraform-sa-ct-b2b-348510.json
+          gcloud auth activate-service-account terraform@ct-b2b-349312.iam.gserviceaccount.com --key-file=keys/terraform-sa-ct-b2b-349312.json
           gcloud auth configure-docker
 
       # Build the Docker image
@@ -186,7 +186,7 @@ jobs:
         run: |
           # Interpolate environment variables
           cd packages/b2b-ms-gateway
-          gcloud auth activate-service-account terraform@ct-b2b-348510.iam.gserviceaccount.com --key-file=../../keys/terraform-sa-ct-b2b-348510.json
+          gcloud auth activate-service-account terraform@ct-b2b-349312.iam.gserviceaccount.com --key-file=../../keys/terraform-sa-ct-b2b-349312.json
           gcloud config set project ${{ secrets.GC_PROJECT_ID }}
           gcloud run deploy ms-gateway --platform=managed --region=us-east1 --allow-unauthenticated   \
           --image=gcr.io/${{secrets.GC_PROJECT_ID}}/${{env.IMAGE}}:${{env.GITHUB_SHA}} \
