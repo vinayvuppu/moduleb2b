@@ -1,4 +1,4 @@
-name: Terraform CI/CD release (master) flow
+name: Terraform CI/CD Release (master) flow
 on:
   repository_dispatch:
     types: subscription-add-monthly-spent
