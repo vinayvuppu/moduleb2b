@@ -15,7 +15,7 @@ on:
       - "*.json"
       - "yarn.lock"
 env:
-  CTP_DOMAIN: us-central1.gcp.commercetools.com
+  CTP_DOMAIN: europe-west1.gcp.commercetools.com
   COMPANY_MS_URL: https://ms-company-${{secrets.MS_DOMAIN}}
   GATEWAY_MS_URL: https://ms-gateway-${{secrets.MS_DOMAIN}}
   B2B_CUSTOM_APP_DOMAIN: ${{secrets.FIREBASE_PROJECT_ID}}.firebaseapp.com
