@@ -127,7 +127,7 @@ jobs:
       - name: Set environment variables in firebase
         uses: w9jds/firebase-action@v2.0.0
         with:
-          args: functions:config:set company.url=${{ env.COMPANY_MS_URL }} ct.authurl=$CT_AUTH_URL ct.apiurl=$CT_API_URL ct.projectkey=${{ env.CT_PROJECT_KEY }} ct.clientid=${{ env.CT_CLIENT_ID }} ct.clientsecret=${{ env.CT_CLIENT_SECRET }} ct.scope=${{ env.CT_SCOPE }} --project ct-b2b-348510
+          args: functions:config:set company.url=${{ env.COMPANY_MS_URL }} ct.authurl=$CT_AUTH_URL ct.apiurl=$CT_API_URL ct.projectkey=${{ env.CT_PROJECT_KEY }} ct.clientid=${{ env.CT_CLIENT_ID }} ct.clientsecret=${{ env.CT_CLIENT_SECRET }} ct.scope=${{ env.CT_SCOPE }} --project ct-b2b-349312
         env:
           FIREBASE_PROJECT_ID: ${{ secrets.FIREBASE_PROJECT_ID }}
           FIREBASE_TOKEN: ${{ secrets.FIREBASE_TOKEN }}
@@ -135,7 +135,7 @@ jobs:
       - name: Deploy to Firebase
         uses: w9jds/firebase-action@v2.0.0
         with:
-          args: deploy --only functions:b2bOrderCreate --project ct-b2b-348510
+          args: deploy --only functions:b2bOrderCreate --project ct-b2b-349312
         env:
           FIREBASE_PROJECT_ID: ${{ secrets.FIREBASE_PROJECT_ID }}
           FIREBASE_TOKEN: ${{ secrets.FIREBASE_TOKEN }}
