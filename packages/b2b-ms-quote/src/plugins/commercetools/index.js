@@ -9,11 +9,11 @@ module.exports = fastifyPlugin((fastify, opts, next) => {
       properties: {
         CT_API_URL: {
           type: 'string',
-          default: 'https://api.us-central1.gcp.commercetools.com'
+          default: 'https://api.europe-west1.gcp.commercetools.com'
         },
         CT_AUTH_URL: {
           type: 'string',
-          default: 'https://auth.us-central1.gcp.commercetools.com'
+          default: 'https://auth.europe-west1.gcp.commercetools.com'
         },
         CT_PROJECT_KEY: {
           type: 'string',
