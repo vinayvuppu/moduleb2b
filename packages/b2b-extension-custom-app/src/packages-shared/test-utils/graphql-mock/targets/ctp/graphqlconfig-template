@@ -5,7 +5,7 @@
 			"extensions": {
 				"endpoints": {
 					"default": {
-						"url": "https://api.us-central1.gcp.commercetools.com/test-with-empty-data-95/graphql",
+						"url": "https://api.europe-west1.gcp.commercetools.com/test-with-empty-data-95/graphql",
 						"headers": {
 							"Authorization": "Bearer ${env:AUTH_TOKEN}"
 						}
